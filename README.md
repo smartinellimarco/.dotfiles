@@ -1,4 +1,10 @@
-# Dotfiles
+<h3 align="center">
+.dotfiles
+</h3>
+
+<p align="center">
+  <img width="1470" alt="Screenshot 2023-09-28 at 19 21 07" src="https://github.com/smartinellimarco/.dotfiles/assets/15314838/6d2a4a96-88a6-4d7b-bd8f-f8c3c9d98341">
+</p>
 
 ## Table of contents
 
