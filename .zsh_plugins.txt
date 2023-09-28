@@ -1,7 +1,6 @@
 # These can be placed on top and are not affected by order
 ohmyzsh/ohmyzsh path:lib/history.zsh
 
-# TODO: remove prompt on this one
 agkozak/zsh-z
 romkatv/powerlevel10k
 
