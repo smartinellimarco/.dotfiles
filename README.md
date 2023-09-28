@@ -8,8 +8,11 @@
   - [Getting started](#getting-started)
     - [Requirements](#requirements)
     - [Installation](#installation)
-  - [Backing up](#backing-up)
-  - [Troubleshooting](#troubleshooting)
+  - [Archive](#archive)
+    - [Backup](#backup)
+    - [Restore](#restore)
+  - [Bootstrap file](#bootstrap-file)
+  - [Tips & Troubleshooting](#tips-troubleshooting)
 <!--toc:end-->
 
 ## Getting started
