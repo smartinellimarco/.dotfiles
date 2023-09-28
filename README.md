@@ -52,14 +52,14 @@ Install kitty and nerd fonts:
   Install [kitty](https://sw.kovidgoyal.net/kitty/binary/#binary-install) binary and follow desktop integration instructions.
 
 If needed, change default shell to zsh (requires user re-login)
-```bash
+```zsh
 chsh -s $(which zsh)
 ```
 
 ### Installation
 
 Clone the repository using yadm
-```bash
+```zsh
 yadm clone https://github.com/smartinellimarco/.dotfiles
 ```
 
@@ -104,7 +104,7 @@ This file is automatically sourced in interactive and login shells.
 
 For Ubuntu and Gnome:
 
-```bash
+```zsh
 gsettings set org.gnome.mutter center-new-windows true 
 ```
 </details>
@@ -126,7 +126,7 @@ The Python compiler might not be able to find OpenSSL if it's installed with Hom
 
 The following command sets the corresponding flags with the correct installation path.
 
-```bash
+```zsh
 LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib" \
 CPPFLAGS="-I$(brew --prefix openssl)/include" \
 CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)" \
