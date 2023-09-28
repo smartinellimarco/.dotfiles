@@ -16,55 +16,79 @@
 
 ### Requirements
 
-Install [homebrew](https://brew.sh/) and run post-installation steps.
+Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
 Use brew to setup packages, only if they are not already present in the system
-```bash
-brew tap homebrew/cask-fonts
+```zsh
 for package in git gh zsh antidote yadm gcc node make ripgrep neovim gpg fd; do
   if ! command -v $package &> /dev/null
   then
     brew install $package
   fi
 done
-brew install --cask kitty font-symbols-only-nerd-font
 ```
 
-If needed, change shell then logout/login
+Install kitty and nerd fonts:
+
+- MacOS
+  
+  ```zsh
+  brew tap homebrew/cask-fonts
+  brew install --cask kitty font-symbols-only-nerd-font
+  ```
+- Linux
+  
+  Manually install the monospaced version of the [NerdFontsSymbolsOnly](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/NerdFontsSymbolsOnly.zip) package.
+  
+  Install [kitty](https://sw.kovidgoyal.net/kitty/binary/#binary-install) binary and follow desktop integration instructions.
+
+If needed, change default shell to zsh (requires user re-login)
 ```bash
 chsh -s $(which zsh)
 ```
 
 ### Installation
 
-1. Clone dotfiles using yadm
-
+Clone the repository using yadm
 ```bash
 yadm clone https://github.com/smartinellimarco/.dotfiles
+```
+
+The first time you reopen the terminal, antidote will automatically setup all zsh plugins.
+
+Neovim will do the same for lazy plugins, treesitter parsers and mason LSPs.
+
+## Archive 
+
+Fortunately, yadm offers an easy way of backing up and restoring sensitive configuration files. 
+
+This is usefull, for example, to transfer them to another computer.
+
+### Backup
+
+Each file path must be specified in [_~/.config/yadm/encrypt_](https://github.com/smartinellimarco/.dotfiles/blob/master/.config/yadm/encrypt).
+
+Then by running
+```zsh
+GPG_TTY=$TTY yadm encrypt
+```
+and filling the password prompt, an encrypted file in _~/.local/share/yadm/archive_ will be created with the contents of every listed file.
+
+### Restore
+
+Place the archive file in _~/.local/share/yadm/archive_ and run
+```zsh
 yadm decrypt
 ```
+The files will be restored to their original locations.
 
-2. Restart shell and kitty
+## Bootstrap file
 
-## Backing up
-```bash
-yadm encrypt
-yadm add -u
-yadm commit -m "Backup"
-yadm push
-```
-
-## Troubleshooting
-
-<details> 
-  <summary> Bootstrap zsh file </summary>
-<br>
-
-Any initialization commands not intended to backed up can be placed in '.zsh_bootstrap'.
+Any initialization commands not intended to be backed up in this repository, can be placed in _~/.zsh_bootstrap_.
 
 This file is automatically sourced in interactive and login shells.
-</details>
 
+## Tips & Troubleshooting
 <details>
   <summary> Open windows at the center of the screen </summary>
 <br>
@@ -108,4 +132,3 @@ pyenv install -v <PYTHON_VERSION>
 In Ubuntu, this is most likely because of [xclip](https://linux.die.net/man/1/xclip) missing.
 
 </details>
-
