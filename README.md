@@ -12,7 +12,7 @@
     - [Backup](#backup)
     - [Restore](#restore)
   - [Bootstrap file](#bootstrap-file)
-  - [Tips & Troubleshooting](#tips-troubleshooting)
+  - [Tips & Troubleshooting](#tips--troubleshooting)
 <!--toc:end-->
 
 ## Getting started
