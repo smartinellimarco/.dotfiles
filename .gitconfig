@@ -1,0 +1,12 @@
+[user]
+	email = smartinellimarco@gmail.com
+	name = smartinellimarco
+[core]
+	editor = nvim
+	pager = less --mouse
+[credential "https://github.com"]
+	helper = 
+	helper = !gh auth git-credential
+[credential "https://gist.github.com"]
+	helper = 
+	helper = !gh auth git-credential

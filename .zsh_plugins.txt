@@ -1,0 +1,13 @@
+# These can be placed on top and are not affected by order
+ohmyzsh/ohmyzsh path:lib/history.zsh
+
+# TODO: remove prompt on this one
+agkozak/zsh-z
+romkatv/powerlevel10k
+
+# Order matters here
+zsh-users/zsh-completions
+belak/zsh-utils path:completion
+
+# Keep this block at the bottom
+zsh-users/zsh-syntax-highlighting
