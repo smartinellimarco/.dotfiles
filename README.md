@@ -43,13 +43,15 @@ Install kitty and nerd fonts:
   
   ```zsh
   brew tap homebrew/cask-fonts
-  brew install --cask kitty font-symbols-only-nerd-font
+  brew install --cask kitty font-symbols-only-nerd-font font-jetbrains-mono
   ```
 - Linux
   
   Manually install the monospaced version of the [NerdFontsSymbolsOnly](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.2/NerdFontsSymbolsOnly.zip) package.
   
   Install [kitty](https://sw.kovidgoyal.net/kitty/binary/#binary-install) binary and follow desktop integration instructions.
+
+  Install [JetBrains Mono Font](https://github.com/JetBrains/JetBrainsMono#manual-installation) manually.
 
 If needed, change default shell to zsh (requires user re-login)
 ```zsh
