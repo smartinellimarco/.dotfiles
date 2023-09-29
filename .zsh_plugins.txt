@@ -1,7 +1,7 @@
 # These can be placed on top and are not affected by order
 ohmyzsh/ohmyzsh path:lib/history.zsh
-
 agkozak/zsh-z
+zsh-users/zsh-autosuggestions
 romkatv/powerlevel10k
 
 # Order matters here
