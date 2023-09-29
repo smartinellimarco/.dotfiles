@@ -51,7 +51,7 @@ Install kitty and nerd fonts:
   
   Install [kitty](https://sw.kovidgoyal.net/kitty/binary/#binary-install) binary and follow desktop integration instructions.
 
-  Install [JetBrains Mono Font](https://github.com/JetBrains/JetBrainsMono#manual-installation) manually.
+  Install [JetBrains Mono Font](https://github.com/JetBrains/JetBrainsMono#manual-installation) using the Linux script.
 
 If needed, change default shell to zsh (requires user re-login)
 ```zsh
