@@ -5,7 +5,7 @@ vim.g.mapleader = ','
 vim.o.shortmess = vim.o.shortmess .. 'I'
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
-vim.o.scrolloff = 8
+vim.o.scrolloff = 15
 vim.wo.number = true
 vim.o.termguicolors = true
 vim.opt.fillchars = { eob = ' ' }
