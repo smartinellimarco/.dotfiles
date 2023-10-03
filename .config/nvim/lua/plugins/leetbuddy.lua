@@ -1,5 +1,9 @@
 local M = { 'Dhanus3133/LeetBuddy.nvim' }
 
+M.opts = {
+  language = 'cpp'
+}
+
 function M.config(_, opts)
   require('leetbuddy').setup(opts)
 
