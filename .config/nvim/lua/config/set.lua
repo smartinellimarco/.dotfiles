@@ -30,7 +30,4 @@ vim.api.nvim_command("autocmd VimEnter * exe 'clearjumps'")
 -- with a directory argument
 vim.api.nvim_command("autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | execute 'Telescope find_files' | execute 'cd '.argv()[0] | endif")
 
--- Select the last pasted text (opposite of 'gv')
-vim.keymap.set('n', 'gp', '`[v`]', {})
-
 -- vim: ts=2 sts=2 sw=2 et
