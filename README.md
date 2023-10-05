@@ -18,6 +18,7 @@
     - [Backup](#backup)
     - [Restore](#restore)
   - [Bootstrap file](#bootstrap-file)
+  - [Keymaps](#keymaps)
   - [Tips & Troubleshooting](#tips--troubleshooting)
 <!--toc:end-->
 
@@ -96,6 +97,36 @@ The files will be restored to their original locations.
 Any initialization commands not intended to be backed up in this repository, can be placed in _~/.zsh_bootstrap_.
 
 This file is automatically sourced in interactive and login shells.
+
+## Keymaps
+
+Kitty
+
+| keymap                     | description           | OS    |
+|----------------------------|-----------------------|-------|
+| cmd+t                      | Open new tab          | MacOS |
+| ctrl+shift+t               | Open new tab          | Linux - Windows |
+| cmd+\<number>              | Go to tab \<number>   | MacOS |
+| ctrl+\<number>             | Go to tab \<number>   | Linux - Windows |
+| ctrl+tab                   | Next tab              | Linux - Windows - MacOS |
+| ctrl+shift+tab             | Previous tab          | Linux - Windows - MacOS |
+| cmd+w                      | Close tab             | MacOS |
+| cmd+shift+w                | Close tab             | Linux - Windows - MacOS |
+| cmd+q                      | Quit application      | MacOS |
+| cmd+shift+q                | Quit application      | Linux - Windows - MacOS |
+| cmd+c                      | Copy to clipboard     | MacOS |
+| cmd+shift+c                | Copy to clipboard     | Linux - Windows - MacOS |
+| cmd+v                      | Paste from clipboard  | MacOS |
+| cmd+shift+v                | Paste from clipboard  | Linux - Windows - MacOS |
+
+Zsh
+
+| keymap                              | description                                             | source |
+|-------------------------------------|---------------------------------------------------------|--------|
+| z+\<dir>                            | Change directory to the most probable match of \<dir>   | Plugin |
+| ctrl+f                              | Accept autosuggestion                                   | Plugin |
+| ctrl+l                              | Clear screen                                            | Native |
+| ctrl+p                              | Select previous command                                 | Native |
 
 ## Tips & Troubleshooting
 <details>
