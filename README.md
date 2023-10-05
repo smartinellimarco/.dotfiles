@@ -124,7 +124,7 @@ Zsh
 | keymap                              | description                                             | source |
 |-------------------------------------|---------------------------------------------------------|--------|
 | z+\<dir>                            | Change directory to the most probable match of \<dir>   | Plugin |
-| ctrl+f                              | Accept autosuggestion                                   | Plugin |
+| ctrl+f                              | Accept autosuggestion                                   | Native |
 | ctrl+l                              | Clear screen                                            | Native |
 | ctrl+p                              | Select previous command                                 | Native |
 
