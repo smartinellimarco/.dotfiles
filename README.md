@@ -102,21 +102,21 @@ This file is automatically sourced in interactive and login shells.
 
 Kitty
 
-| keymap                     | description           | OS    |
-|----------------------------|-----------------------|-------|
-| cmd+t                      | Open new tab          | MacOS |
-| ctrl+shift+t               | Open new tab          | Linux - Windows |
-| cmd+\<number>              | Go to tab \<number>   | MacOS |
-| ctrl+\<number>             | Go to tab \<number>   | Linux - Windows |
+| keymap                     | description           | OS                      |
+|----------------------------|-----------------------|-------------------------|
+| cmd+t                      | Open new tab          | MacOS                   |
+| ctrl+shift+t               | Open new tab          | Linux - Windows         |
+| cmd+\<number>              | Go to tab \<number>   | MacOS                   |
+| ctrl+\<number>             | Go to tab \<number>   | Linux - Windows         |
 | ctrl+tab                   | Next tab              | Linux - Windows - MacOS |
 | ctrl+shift+tab             | Previous tab          | Linux - Windows - MacOS |
-| cmd+w                      | Close tab             | MacOS |
+| cmd+w                      | Close tab             | MacOS                   |
 | cmd+shift+w                | Close tab             | Linux - Windows - MacOS |
-| cmd+q                      | Quit application      | MacOS |
+| cmd+q                      | Quit application      | MacOS                   |
 | cmd+shift+q                | Quit application      | Linux - Windows - MacOS |
-| cmd+c                      | Copy to clipboard     | MacOS |
+| cmd+c                      | Copy to clipboard     | MacOS                   |
 | cmd+shift+c                | Copy to clipboard     | Linux - Windows - MacOS |
-| cmd+v                      | Paste from clipboard  | MacOS |
+| cmd+v                      | Paste from clipboard  | MacOS                   |
 | cmd+shift+v                | Paste from clipboard  | Linux - Windows - MacOS |
 
 Zsh
