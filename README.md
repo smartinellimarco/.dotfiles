@@ -125,7 +125,7 @@ Zsh
 |-------------------------------------|---------------------------------------------------------|--------|
 | z+\<dir>                            | Change directory to the most probable match of \<dir>   | Plugin |
 | ctrl+f                              | Accept autosuggestion                                   | Native |
-| ctrl+l                              | Clear screen                                            | Native |
+| ctrl+l                              | Clear screen (equivalent of pressing '→')               | Native |
 | ctrl+p                              | Select previous command                                 | Native |
 
 ## Tips & Troubleshooting
