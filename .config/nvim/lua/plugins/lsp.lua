@@ -37,11 +37,9 @@ return {
 
       lsp_zero.on_attach(function(client, bufnr)
         vim.keymap.set('n', 'gd', telescope.lsp_definitions, { buffer = bufnr })
-        vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
         vim.keymap.set('n', 'gl', telescope.diagnostics, { buffer = bufnr })
-        vim.keymap.set('n', '<F2>', vim.lsp.buf.rename, { buffer = bufnr })
-        vim.keymap.set('n', '<F3>', vim.lsp.buf.format, { buffer = bufnr })
-        vim.keymap.set('n', '<F4>', vim.lsp.buf.code_action, { buffer = bufnr })
+        vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { buffer = bufnr })
+        vim.keymap.set('n', '<leader>c', vim.lsp.buf.code_action, { buffer = bufnr })
       end)
 
       -- Disable semantic highlights to avoid conflicts with treesitter
