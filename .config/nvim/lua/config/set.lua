@@ -1,5 +1,5 @@
 -- Choose our great leader
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 -- Configs
 vim.o.shortmess = vim.o.shortmess .. 'I'
