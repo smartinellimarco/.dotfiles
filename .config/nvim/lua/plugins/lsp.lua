@@ -77,11 +77,15 @@ return {
         handlers = {
 
           -- Configs for each LSP can be placed here
-          lsp_zero.default_setup,
+
+          -- Setup lua_ls with neovim API compatibility
+          -- using lsp_zero options for lspconfig
           lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
+
+          -- Setup a less strict pyright
           pyright = function()
             require('lspconfig').pyright.setup({
               settings = {
@@ -93,7 +97,11 @@ return {
                 }
               }
             })
-          end
+          end,
+
+          -- Use the default setup on the remaining servers
+          lsp_zero.default_setup,
+
         }
       })
     end
