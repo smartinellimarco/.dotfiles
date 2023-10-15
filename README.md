@@ -141,7 +141,7 @@ Neovim
 | \<F2>                               | Rename using the available LSP                                                    | LSP             |
 | \<F3>                               | Format using the available LSP                                                    | LSP             |
 | \<F4>                               | Open available code actions                                                       | LSP             |
-| \<leader>\<leader>                  | Begin node incremental selection (keep pressing leader for incremental selection) | Treesitter      |
+| \<leader>\<leader>                  | Node incremental selection                                                        | Treesitter      |
 
 
 ## Tips & Troubleshooting
