@@ -9,17 +9,16 @@
 ## Table of contents
 
 <!--toc:start-->
-- [Dotfiles](#dotfiles)
-  - [Table of contents](#table-of-contents)
-  - [Getting started](#getting-started)
-    - [Requirements](#requirements)
-    - [Installation](#installation)
-  - [Archive](#archive)
-    - [Backup](#backup)
-    - [Restore](#restore)
-  - [Bootstrap file](#bootstrap-file)
-  - [Keymaps](#keymaps)
-  - [Tips & Troubleshooting](#tips--troubleshooting)
+- [Table of contents](#table-of-contents)
+- [Getting started](#getting-started)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+- [Archive](#archive)
+  - [Backup](#backup)
+  - [Restore](#restore)
+- [Bootstrap file](#bootstrap-file)
+- [Keymaps](#keymaps)
+- [Tips & Troubleshooting](#tips-troubleshooting)
 <!--toc:end-->
 
 ## Getting started
@@ -127,6 +126,23 @@ Zsh
 | ctrl+f                              | Accept autosuggestion (equivalent of pressing '→')      | Native |
 | ctrl+l                              | Clear screen                                            | Native |
 | ctrl+p                              | Select previous command                                 | Native |
+
+Neovim
+
+| keymap                              | description                                                                       | source          |
+|-------------------------------------|-----------------------------------------------------------------------------------|-----------------|
+| \<leader>+e                         | Open find files picker                                                            | Telescope       |
+| \<leader>+f                         | Open fuzzy finder picker                                                          | Telescope       |
+| ctrl+p                              | Go back in the jumplist until the previous buffer is reached                      | Bufjump         |
+| ctrl+n                              | Go back in the jumplist until the next buffer is reached                          | Bufjump         |
+| gd                                  | Go to definition                                                                  | LSP             |
+| K                                   | Open hover menu                                                                   | LSP             |
+| gl                                  | Open diagnostics picker                                                           | Telescope - LSP |
+| \<F2>                               | Rename using the available LSP                                                    | LSP             |
+| \<F3>                               | Format using the available LSP                                                    | LSP             |
+| \<F4>                               | Open available code actions                                                       | LSP             |
+| \<leader>\<leader>                  | Begin node incremental selection (keep pressing leader for incremental selection) | Treesitter      |
+
 
 ## Tips & Troubleshooting
 <details>
