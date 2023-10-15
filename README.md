@@ -136,12 +136,9 @@ Neovim
 | ctrl+p                              | Go back in the jumplist until the previous buffer is reached                      | Bufjump         |
 | ctrl+n                              | Go back in the jumplist until the next buffer is reached                          | Bufjump         |
 | gd                                  | Go to definition                                                                  | LSP             |
-| K                                   | Open hover menu                                                                   | LSP             |
-| gl                                  | Open diagnostics picker                                                           | Telescope - LSP |
-| \<F2>                               | Rename using the available LSP                                                    | LSP             |
-| \<F3>                               | Format using the available LSP                                                    | LSP             |
-| \<F4>                               | Open available code actions                                                       | LSP             |
-| \<leader>\<leader>                  | Node incremental selection                                                        | Treesitter      |
+| gl                                  | Open diagnostics picker                                                           | LSP - Telescope |
+| \<leader>r                          | Rename element                                                                    | LSP             |
+| \<leader>c                          | Open available code actions                                                       | LSP             |
 
 
 ## Tips & Troubleshooting
