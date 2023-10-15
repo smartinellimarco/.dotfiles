@@ -1,7 +1,9 @@
+-- TODO: add signature above cmp menu
+-- TODO: check for TS source?
 return {
   {
     'hrsh7th/nvim-cmp',
-    event = 'InsertEnter',
+    event = 'InsertEnter', -- TODO: Add ':' '/' and '?' triggers
     dependencies = {
 
       -- Snippet engine
@@ -36,6 +38,9 @@ return {
 
       -- Source for nvim lua functions
       { 'hrsh7th/cmp-nvim-lua' },
+
+      -- Source for cmdline and search
+      { 'hrsh7th/cmp-cmdline' },
 
     },
 
@@ -75,6 +80,21 @@ return {
           ['<Tab>'] = cmp_action.luasnip_supertab(),
           ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
         })
+      })
+
+      cmp.setup.cmdline({ '/', '?' }, {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = 'buffer' }
+        }
+      })
+
+      cmp.setup.cmdline(':', {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources(
+          { { name = 'path' } },
+          { { name = 'cmdline' } }
+        )
       })
     end
   }
