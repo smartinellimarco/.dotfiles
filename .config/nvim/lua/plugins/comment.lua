@@ -1,3 +1,4 @@
+-- TODO: ts commentstring?
 local M = { 'numToStr/Comment.nvim' }
 
 M.lazy = false
