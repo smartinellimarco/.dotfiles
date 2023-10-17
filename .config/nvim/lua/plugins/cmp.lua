@@ -1,4 +1,3 @@
--- TODO: add signature above cmp menu
 -- TODO: check for TS source?
 return {
   {
@@ -20,6 +19,9 @@ return {
           require('luasnip.loaders.from_vscode').lazy_load()
         end
       },
+
+      -- Display function signature while typing
+      { "ray-x/lsp_signature.nvim" },
 
       -- Icons for the menu
       { 'onsails/lspkind.nvim' },
@@ -51,6 +53,7 @@ return {
       local luasnip = require('luasnip')
       local cmp_action = require('lsp-zero').cmp_action()
       local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+      local signature = require('lsp_signature')
 
       cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
       cmp.setup({
@@ -95,6 +98,14 @@ return {
           { { name = 'path' } },
           { { name = 'cmdline' } }
         )
+      })
+
+      signature.setup({
+        bind = true,
+        handler_opts = {
+          border = "rounded"
+        },
+        hint_enable = false
       })
     end
   }
