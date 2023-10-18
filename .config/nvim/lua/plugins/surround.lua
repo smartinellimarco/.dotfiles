@@ -1,7 +1,7 @@
 local M = { 'kylechui/nvim-surround' }
 
 M.version = '*'
-M.event = 'VeryLazy'
+M.event = 'InsertEnter'
 M.opts = {}
 
 function M.config(_, opts)

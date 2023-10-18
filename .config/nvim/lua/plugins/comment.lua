@@ -1,7 +1,7 @@
--- TODO: ts commentstring?
 local M = { 'numToStr/Comment.nvim' }
 
-M.lazy = false
+M.event = 'InsertEnter'
+M.dependencies = { 'JoosepAlviste/nvim-ts-context-commentstring' }
 M.opts = {}
 
 function M.config(_, opts)
