@@ -8,13 +8,6 @@ M.opts = {
   },
   indent = {
     enable = true
-  },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = '<leader><leader>',
-      node_incremental = '<leader>',
-    }
   }
 }
 
