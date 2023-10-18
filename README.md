@@ -140,6 +140,7 @@ Neovim
 | \<leader>r                          | Rename element                                                                    | LSP             |
 | \<leader>c                          | Open available code actions                                                       | LSP             |
 
+The rest is just pure stock neovim.
 
 ## Tips & Troubleshooting
 <details>
