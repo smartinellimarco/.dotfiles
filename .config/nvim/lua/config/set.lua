@@ -1,8 +1,13 @@
--- Choose our great leader
+-- Choose leader
 vim.g.mapleader = ' '
 
 -- Configs
-vim.o.shortmess = vim.o.shortmess .. 'I'
+vim.opt.shortmess = vim.opt.shortmess + {
+    F = true,
+    W = true,
+    I = true,
+    s = true,
+}
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
 vim.o.scrolloff = 0
