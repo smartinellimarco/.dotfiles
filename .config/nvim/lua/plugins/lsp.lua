@@ -43,6 +43,8 @@ return {
       end)
 
       -- Disable semantic highlights to avoid conflicts with treesitter
+      -- Even though both provide highlights, treesitter works better in
+      -- most scenarios.
       lsp_zero.set_server_config({
         on_init = function(client)
           client.server_capabilities.semanticTokensProvider = nil
