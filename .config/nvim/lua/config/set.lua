@@ -3,10 +3,12 @@ vim.g.mapleader = ' '
 
 -- Configs
 vim.opt.shortmess = vim.opt.shortmess + {
-    F = true,
-    W = true,
-    I = true,
-    s = true,
+  F = true,
+  W = true,
+  I = true,
+  s = true,
+  q = true,
+  A = true,
 }
 vim.o.signcolumn = 'yes'
 vim.o.mouse = 'a'
