@@ -10,7 +10,5 @@
 [credential "https://gist.github.com"]
   helper = 
   helper = !gh auth git-credential
-[alias]
-  mergetool = "!nvim -c DiffviewOpen"
 
 # vim: ts=2 sts=2 sw=2 et
