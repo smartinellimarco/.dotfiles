@@ -17,3 +17,5 @@ fi
 
 # Load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# vim: ts=2 sts=2 sw=2 et
