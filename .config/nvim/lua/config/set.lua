@@ -11,7 +11,7 @@ vim.opt.shortmess = vim.opt.shortmess + {
   A = true,
 }
 vim.o.signcolumn = 'yes'
-vim.o.mouse = 'a'
+vim.o.mouse = ''
 vim.o.scrolloff = 0
 vim.wo.number = true
 vim.o.termguicolors = true
