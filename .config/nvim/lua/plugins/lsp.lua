@@ -38,6 +38,7 @@ return {
       lsp_zero.on_attach(function(client, bufnr)
         vim.keymap.set('n', 'gd', telescope.lsp_definitions, { buffer = bufnr })
         vim.keymap.set('n', 'gl', telescope.diagnostics, { buffer = bufnr })
+        vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
         vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, { buffer = bufnr })
         vim.keymap.set('n', '<leader>c', vim.lsp.buf.code_action, { buffer = bufnr })
       end)
