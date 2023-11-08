@@ -8,6 +8,7 @@ M.dependencies = {
   }
 }
 M.opts = {
+  -- TODO: override default mappings with a shorter subset.
   defaults = {
     file_ignore_patterns = {
       '.git/.*',
@@ -29,6 +30,7 @@ function M.config(_, opts)
   local builtin = require('telescope.builtin')
 
   require('telescope').setup(opts)
+  require('telescope').load_extension('fzf')
 
   -- Show line numbers in the preview
   vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
