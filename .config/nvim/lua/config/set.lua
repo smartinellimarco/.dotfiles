@@ -10,12 +10,10 @@ vim.opt.shortmess = vim.opt.shortmess + {
   q = true,
   A = true,
 }
-vim.o.signcolumn = 'yes'
 vim.o.mouse = ''
 vim.o.scrolloff = 0
 vim.wo.number = true
 vim.o.termguicolors = true
-vim.opt.fillchars = { eob = ' ' }
 vim.o.hlsearch = false
 vim.o.incsearch = true
 vim.o.ignorecase = true
