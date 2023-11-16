@@ -3,18 +3,11 @@ local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
   options = {
-    globalstatus = true
-  },
-  extensions = {
-    {
-      filetypes = { 'TelescopePrompt' },
-      sections = {
-        lualine_a = {
-          function()
-            return 'Telescope'
-          end
-        }
-      }
+    globalstatus = true,
+    component_separators = '',
+    section_separators = '',
+    disabled_filetypes = {
+      statusline = { 'TelescopePrompt', 'lazy', 'mason' }
     }
   }
 }
