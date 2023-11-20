@@ -11,19 +11,10 @@ M.dependencies = {
   }
 }
 M.opts = {
-  defaults = {
-    wrap_results = true -- TODO: this does not work
-  },
   pickers = {
     find_files = {
       hidden = true
-    },
-    diagnostics = {
-      disable_coordinates = true
     }
-    -- TODO: this should include declarations, code actions etc. Check if able to integrate them
-    -- TODO: remove some keymaps
-    -- TODO: fix what we do with the diagnostics picker
   }
 }
 
