@@ -1,9 +1,7 @@
 local M = { 'aktersnurra/no-clown-fiesta.nvim' }
 
 M.priority = 1000
-M.opts = {
-  transparent = false
-}
+M.opts = {}
 
 function M.config(_, opts)
   require('no-clown-fiesta').setup(opts)
