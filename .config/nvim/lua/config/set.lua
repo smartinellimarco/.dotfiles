@@ -2,6 +2,23 @@
 vim.g.mapleader = ' '
 
 -- Configs
+vim.o.mouse = '' -- Disable mouse
+vim.o.scrolloff = 0 -- No scrolling offset
+vim.wo.number = true -- Show line numbers
+vim.o.termguicolors = true -- Enable truecolor
+vim.o.hlsearch = false -- Highlight search results
+vim.o.incsearch = true -- Search incrementally
+vim.o.ignorecase = true -- Case insensitive search
+vim.o.smartcase = true -- Unless
+vim.o.wildmode = 'list:longest' -- TODO: review
+vim.o.completeopt = 'menuone,noselect' -- TODO: review
+vim.o.clipboard = 'unnamedplus' -- Enable OS clipboard
+vim.o.wrap = false -- Do not wrap lines
+vim.o.undofile = true -- Persist the undo history
+vim.o.signcolumn = 'yes:2' -- Use a signcolumn with 2 spaces for diagnostics and git status
+vim.o.splitright = true -- Open vertical splits to the right side of the screen
+
+-- TODO: reduce messages or use noice to capture them
 vim.opt.shortmess = vim.opt.shortmess + {
   F = true,
   W = true,
@@ -10,21 +27,8 @@ vim.opt.shortmess = vim.opt.shortmess + {
   q = true,
   A = true,
 }
-vim.o.mouse = ''
-vim.o.scrolloff = 0
-vim.wo.number = true
-vim.o.termguicolors = true
-vim.o.hlsearch = false
-vim.o.incsearch = true
-vim.o.ignorecase = true
-vim.o.smartcase = true
-vim.o.wildmode = 'list:longest'
-vim.o.completeopt = 'menuone,noselect'
-vim.o.clipboard = 'unnamedplus'
-vim.o.wrap = false
-vim.o.undofile = true
-vim.o.signcolumn = 'yes:2'
-vim.o.splitright = true
+vim.opt.cmdheight = 0
+vim.opt.showmode = false
 
 -- Clear jumplist when vim starts
 vim.api.nvim_command("autocmd VimEnter * exe 'clearjumps'")
