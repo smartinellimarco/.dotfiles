@@ -27,6 +27,8 @@ vim.opt.shortmess = vim.opt.shortmess + {
   q = true,
   A = true,
 }
+
+-- TODO: review
 vim.opt.cmdheight = 0
 vim.opt.showmode = false
 
