@@ -13,7 +13,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- Lazy options
-local config = {
+local opts = {
   install = {
     colorscheme = { 'no-clown-fiesta' },
   },
@@ -56,6 +56,6 @@ local config = {
 }
 
 -- Install plugins
-require('lazy').setup('plugins', config)
+require('lazy').setup('plugins', opts)
 
 -- vim: ts=2 sts=2 sw=2 et
