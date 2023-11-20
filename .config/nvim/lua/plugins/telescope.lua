@@ -1,3 +1,6 @@
+-- Both fd and ripgrep respect the '~/.ignore' file used
+-- for blacklisting and whitelisting files/directories.
+-- Git ignored files are not shown by default.
 local M = { 'nvim-telescope/telescope.nvim' }
 
 M.dependencies = {
@@ -8,21 +11,19 @@ M.dependencies = {
   }
 }
 M.opts = {
-  -- TODO: override default mappings with a shorter subset.
   defaults = {
-    file_ignore_patterns = {
-      '.git/.*',
-      '.venv/.*',
-      -- '!.env' TODO: fix
-    }
+    wrap_results = true -- TODO: this does not work
   },
   pickers = {
     find_files = {
-      hidden = true,
+      hidden = true
     },
     diagnostics = {
-      initial_mode = 'normal'
+      disable_coordinates = true
     }
+    -- TODO: this should include declarations, code actions etc. Check if able to integrate them
+    -- TODO: remove some keymaps
+    -- TODO: fix what we do with the diagnostics picker
   }
 }
 
