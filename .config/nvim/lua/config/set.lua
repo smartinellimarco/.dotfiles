@@ -2,21 +2,21 @@
 vim.g.mapleader = ' '
 
 -- Configs
-vim.o.mouse = '' -- Disable mouse
-vim.o.scrolloff = 0 -- No scrolling offset
-vim.wo.number = true -- Show line numbers
-vim.o.termguicolors = true -- Enable truecolor
-vim.o.hlsearch = false -- Highlight search results
-vim.o.incsearch = true -- Search incrementally
-vim.o.ignorecase = true -- Case insensitive search
-vim.o.smartcase = true -- Unless
-vim.o.wildmode = 'list:longest' -- TODO: review
+vim.o.mouse = ''                       -- Disable mouse
+vim.o.scrolloff = 0                    -- No scrolling offset
+vim.wo.number = true                   -- Show line numbers
+vim.o.termguicolors = true             -- Enable truecolor
+vim.o.hlsearch = false                 -- Highlight search results
+vim.o.incsearch = true                 -- Search incrementally
+vim.o.ignorecase = true                -- Case insensitive search
+vim.o.smartcase = true                 -- Unless
+vim.o.wildmode = 'list:longest'        -- TODO: review
 vim.o.completeopt = 'menuone,noselect' -- TODO: review
-vim.o.clipboard = 'unnamedplus' -- Enable OS clipboard
-vim.o.wrap = false -- Do not wrap lines
-vim.o.undofile = true -- Persist the undo history
-vim.o.signcolumn = 'yes:2' -- Use a signcolumn with 2 spaces for diagnostics and git status
-vim.o.splitright = true -- Open vertical splits to the right side of the screen
+vim.o.clipboard = 'unnamedplus'        -- Enable OS clipboard
+vim.o.wrap = false                     -- Do not wrap lines
+vim.o.undofile = true                  -- Persist the undo history
+vim.o.signcolumn = 'yes:1'             -- Use a signcolumn with 1 space for git status
+vim.o.splitright = true                -- Open vertical splits to the right side of the screen
 
 -- TODO: reduce messages or use noice to capture them
 vim.opt.shortmess = vim.opt.shortmess + {
@@ -30,7 +30,7 @@ vim.opt.shortmess = vim.opt.shortmess + {
 
 -- TODO: review
 vim.opt.cmdheight = 0
-vim.opt.showmode = false
+vim.opt.showmode = false -- Do not show neovim mode
 
 -- Clear jumplist when vim starts
 vim.api.nvim_command("autocmd VimEnter * exe 'clearjumps'")
