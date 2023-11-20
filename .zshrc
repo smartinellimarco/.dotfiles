@@ -10,6 +10,9 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
+# TODO: remove zsh defaults and source a keymaps file
+# with the keymaps for jumping words, or to init end of line
+
 # Other scripts which won't be included in backup
 if [ -f $HOME/.zsh_bootstrap ]; then
   source $HOME/.zsh_bootstrap

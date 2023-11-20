@@ -29,7 +29,7 @@ Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
 Use brew to setup packages, only if they are not already present in the system
 ```zsh
-for package in git gh zsh antidote yadm gcc node make ripgrep neovim gpg fd; do
+for package in git gh zsh antidote yadm gcc node make ripgrep neovim gpg fd tree; do
   if ! command -v $package &> /dev/null
   then
     brew install $package
@@ -98,47 +98,50 @@ Any initialization commands not intended to be backed up in this repository, can
 This file is automatically sourced in interactive and login shells.
 
 ## Keymaps
+TODO: update
 
 Kitty
 
-| keymap                     | description           | OS                      |
-|----------------------------|-----------------------|-------------------------|
-| cmd+t                      | Open new tab          | MacOS                   |
-| ctrl+shift+t               | Open new tab          | Linux - Windows         |
-| cmd+\<number>              | Go to tab \<number>   | MacOS                   |
-| ctrl+\<number>             | Go to tab \<number>   | Linux - Windows         |
-| ctrl+tab                   | Next tab              | Linux - Windows - MacOS |
-| ctrl+shift+tab             | Previous tab          | Linux - Windows - MacOS |
-| cmd+w                      | Close tab             | MacOS                   |
-| cmd+shift+w                | Close tab             | Linux - Windows - MacOS |
-| cmd+q                      | Quit application      | MacOS                   |
-| cmd+shift+q                | Quit application      | Linux - Windows - MacOS |
-| cmd+c                      | Copy to clipboard     | MacOS                   |
-| cmd+shift+c                | Copy to clipboard     | Linux - Windows - MacOS |
-| cmd+v                      | Paste from clipboard  | MacOS                   |
-| cmd+shift+v                | Paste from clipboard  | Linux - Windows - MacOS |
+| keymap | description | OS |
+|--------|-------------|----|
+| cmd+t | Open new tab | MacOS |
+| ctrl+shift+t | Open new tab | Linux - Windows |
+| cmd+\<number> | Go to tab \<number> | MacOS |
+| ctrl+\<number> | Go to tab \<number> | Linux - Windows |
+| ctrl+tab | Next tab | Linux - Windows - MacOS |
+| ctrl+shift+tab | Previous tab | Linux - Windows - MacOS |
+| cmd+w | Close tab | MacOS |
+| cmd+shift+w | Close tab | Linux - Windows - MacOS |
+| cmd+q | Quit application | MacOS |
+| cmd+shift+q | Quit application | Linux - Windows - MacOS |
+| cmd+c | Copy to clipboard | MacOS |
+| cmd+shift+c | Copy to clipboard | Linux - Windows - MacOS |
+| cmd+v | Paste from clipboard | MacOS |
+| cmd+shift+v | Paste from clipboard | Linux - Windows - MacOS |
 
 Zsh
 
-| keymap                              | description                                             | source |
-|-------------------------------------|---------------------------------------------------------|--------|
-| z+\<dir>                            | Change directory to the most probable match of \<dir>   | Plugin |
-| ctrl+f                              | Accept autosuggestion (equivalent of pressing '→')      | Native |
-| ctrl+l                              | Clear screen                                            | Native |
-| ctrl+p                              | Select previous command                                 | Native |
+| keymap | description | source |
+|--------|-------------|--------|
+| z+\<dir> | Change directory to the most probable match of \<dir> | Plugin |
+| ctrl+f | Accept autosuggestion (equivalent of pressing '→') | Native |
+| ctrl+l | Clear screen | Native |
+| ctrl+p | Select previous command | Native |
+| ctrl+n | Select next command | Native |
 
 Neovim
 
-| keymap                              | description                                                                       | source          |
-|-------------------------------------|-----------------------------------------------------------------------------------|-----------------|
-| \<leader>+e                         | Open find files picker                                                            | Telescope       |
-| \<leader>+f                         | Open fuzzy finder picker                                                          | Telescope       |
-| ctrl+p                              | Go back in the jumplist until the previous buffer is reached                      | Bufjump         |
-| ctrl+n                              | Go back in the jumplist until the next buffer is reached                          | Bufjump         |
-| gd                                  | Go to definition                                                                  | LSP             |
-| gl                                  | Open diagnostics picker                                                           | LSP - Telescope |
-| \<leader>r                          | Rename element                                                                    | LSP             |
-| \<leader>c                          | Open available code actions                                                       | LSP             |
+| keymap | description | source |
+|--------|-------------|--------|
+| \<leader>+e | Open find files picker | Telescope |
+| \<leader>+f | Open fuzzy finder picker | Telescope |
+| ctrl+p | Go back in the jumplist until the previous buffer is reached | Bufjump |
+| ctrl+n | Go back in the jumplist until the next buffer is reached | Bufjump |
+| gd | Go to definition | LSP |
+| gl | Open diagnostics picker | LSP - Telescope |
+| K | Hover | LSP |
+| \<F2\> | Rename element | LSP |
+| \<F4\> | Open available code actions | LSP |
 
 The rest is just pure stock neovim.
 
