@@ -51,7 +51,7 @@ function M.config(_, _)
   -- Setup 'cmp'
   cmp.setup({
     formatting = {
-      format = lspkind.cmp_format()
+      format = lspkind.cmp_format() -- Add icons to completion items
     },
     window = {
       completion = cmp.config.window.bordered(),
