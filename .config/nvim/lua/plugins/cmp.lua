@@ -29,9 +29,6 @@ M.dependencies = {
 
   -- Source for nvim lua functions
   { 'hrsh7th/cmp-nvim-lua' },
-
-  -- Source for cmdline and search
-  { 'hrsh7th/cmp-cmdline' },
 }
 
 function M.config(_, _)
@@ -74,7 +71,7 @@ function M.config(_, _)
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
       ['<Tab>'] = cmp_action.luasnip_next_or_expand(),
-      ['<S-Tab>'] = cmp_action.luasnip_shift_supertab()
+      ['<S-Tab>'] = cmp_action.luasnip_shift_supertab() -- TODO: review
     })
   })
 
