@@ -18,6 +18,9 @@ if [ -f $HOME/.zsh_bootstrap ]; then
   source $HOME/.zsh_bootstrap
 fi
 
+# Load aliases
+source $HOME/.zsh_aliases
+
 # Load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
