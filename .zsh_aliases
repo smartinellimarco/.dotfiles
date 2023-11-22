@@ -1,2 +1,0 @@
-alias ls='eza --icons=always -la -T --octal-permissions --time-style=long-iso --no-permissions --no-user --group-directories-first -t modified --no-quotes -b -L1'
-alias vim='nvim'
