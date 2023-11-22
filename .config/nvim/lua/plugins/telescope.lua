@@ -20,8 +20,33 @@ M.opts = {
 
 function M.config(_, opts)
   local builtin = require('telescope.builtin')
+  local actions = require('telescope.actions')
 
-  require('telescope').setup(opts)
+  local mappings = {
+    i = {
+      ["<C-n>"] = actions.move_selection_next,
+      ["<C-p>"] = actions.move_selection_previous,
+
+      ["<CR>"] = actions.select_default,
+      ["<C-x>"] = actions.select_horizontal,
+      ["<C-v>"] = actions.select_vertical,
+
+      ["<C-u>"] = actions.preview_scrolling_up,
+      ["<C-d>"] = actions.preview_scrolling_down,
+    },
+    n = {
+      ["<esc>"] = actions.close,
+      ["<CR>"] = actions.select_default,
+      ["<C-x>"] = actions.select_horizontal,
+      ["<C-v>"] = actions.select_vertical,
+      ["j"] = actions.move_selection_next,
+      ["k"] = actions.move_selection_previous,
+      ["<C-u>"] = actions.preview_scrolling_up,
+      ["<C-d>"] = actions.preview_scrolling_down,
+    }
+  }
+  -- TODO: extend table and do not overwrite defaults
+  require('telescope').setup({ opts, defaults = { default_mappings = mappings } })
   require('telescope').load_extension('fzf')
 
   -- Show line numbers in the preview
