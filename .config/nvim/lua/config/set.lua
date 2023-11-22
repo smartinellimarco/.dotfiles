@@ -28,8 +28,7 @@ vim.opt.shortmess = vim.opt.shortmess + {
   A = true,
 }
 
--- TODO: review
-vim.opt.cmdheight = 0
+vim.opt.cmdheight = 0 -- Hide command line
 vim.opt.showmode = false -- Do not show neovim mode
 
 -- Clear jumplist when vim starts
