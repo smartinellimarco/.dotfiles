@@ -24,6 +24,7 @@ function M.config(_, opts)
 
   local mappings = {
     i = {
+      ["<esc>"] = actions.close,
       ["<C-n>"] = actions.move_selection_next,
       ["<C-p>"] = actions.move_selection_previous,
 
@@ -33,16 +34,7 @@ function M.config(_, opts)
 
       ["<C-u>"] = actions.preview_scrolling_up,
       ["<C-d>"] = actions.preview_scrolling_down,
-    },
-    n = {
-      ["<esc>"] = actions.close,
-      ["<CR>"] = actions.select_default,
-      ["<C-x>"] = actions.select_horizontal,
-      ["<C-v>"] = actions.select_vertical,
-      ["j"] = actions.move_selection_next,
-      ["k"] = actions.move_selection_previous,
-      ["<C-u>"] = actions.preview_scrolling_up,
-      ["<C-d>"] = actions.preview_scrolling_down,
+      ["<C-w>"] = { "<c-s-w>", type = "command" }, -- Delete word
     }
   }
   -- TODO: extend table and do not overwrite defaults
