@@ -29,7 +29,7 @@ Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
 Use brew to setup packages, only if they are not already present in the system
 ```zsh
-for package in git gh zsh antidote yadm gcc node make ripgrep neovim gpg fd eza; do
+for package in git gh zsh antidote yadm gcc node make ripgrep neovim gpg fd; do
   if ! command -v $package &> /dev/null
   then
     brew install $package
