@@ -1,11 +1,11 @@
 local M = { 'ray-x/lsp_signature.nvim' }
 
 -- This plugin must load after the LSP
-M.event = "VeryLazy"
+M.event = 'VeryLazy'
 M.opts = {
   bind = true,
   handler_opts = {
-    border = "rounded"
+    border = 'rounded'
   },
   hint_enable = false,
   always_trigger = true

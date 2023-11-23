@@ -24,17 +24,17 @@ function M.config(_, opts)
 
   local mappings = {
     i = {
-      ["<esc>"] = actions.close,
-      ["<C-n>"] = actions.move_selection_next,
-      ["<C-p>"] = actions.move_selection_previous,
+      ['<esc>'] = actions.close,
+      ['<C-n>'] = actions.move_selection_next,
+      ['<C-p>'] = actions.move_selection_previous,
 
-      ["<CR>"] = actions.select_default,
-      ["<C-x>"] = actions.select_horizontal,
-      ["<C-v>"] = actions.select_vertical,
+      ['<CR>'] = actions.select_default,
+      ['<C-x>'] = actions.select_horizontal,
+      ['<C-v>'] = actions.select_vertical,
 
-      ["<C-u>"] = actions.preview_scrolling_up,
-      ["<C-d>"] = actions.preview_scrolling_down,
-      ["<C-w>"] = { "<c-s-w>", type = "command" }, -- Delete word
+      ['<C-u>'] = actions.preview_scrolling_up,
+      ['<C-d>'] = actions.preview_scrolling_down,
+      ['<C-w>'] = { '<c-s-w>', type = 'command' }, -- Delete word
     }
   }
   -- TODO: extend table and do not overwrite defaults
@@ -42,7 +42,7 @@ function M.config(_, opts)
   require('telescope').load_extension('fzf')
 
   -- Show line numbers in the preview
-  vim.cmd "autocmd User TelescopePreviewerLoaded setlocal number"
+  vim.api.nvim_command("autocmd User TelescopePreviewerLoaded setlocal number")
 
   vim.keymap.set('n', '<leader>e', builtin.find_files, {})
   vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
