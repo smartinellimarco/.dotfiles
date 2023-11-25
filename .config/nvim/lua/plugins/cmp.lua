@@ -9,9 +9,6 @@ M.dependencies = {
   -- Snippet collection (vscode)
   { 'rafamadriz/friendly-snippets' },
 
-  -- Tabout functionality
-  { 'abecodes/tabout.nvim' },
-
   -- Icons for the menu
   { 'onsails/lspkind.nvim' },
 
@@ -47,6 +44,12 @@ function M.config(_, _)
 
   -- Setup 'cmp'
   cmp.setup({
+    completion = {
+      -- menu: Show popup menu for completions
+      -- menuone: Use popup menu for single matches
+      -- noselect: Don't select a match in the menu
+      completeopt = 'menu,menuone,noselect'
+    },
     formatting = {
       format = lspkind.cmp_format() -- Add icons to completion items
     },
@@ -56,9 +59,9 @@ function M.config(_, _)
     },
     sources = {
       { name = 'nvim_lsp' },
+      { name = 'buffer' },
       { name = 'luasnip' },
       { name = 'nvim_lua' },
-      { name = 'buffer' },
       { name = 'path' },
     },
     snippet = {
@@ -67,6 +70,7 @@ function M.config(_, _)
       end
     },
     mapping = cmp.mapping.preset.insert({
+      -- If no item is selected, do not auto-select the first one on '<CR>'
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
@@ -74,9 +78,6 @@ function M.config(_, _)
       ['<S-Tab>'] = cmp_action.luasnip_shift_supertab() -- TODO: review
     })
   })
-
-  -- Ensure that the 'treesitter' and 'cmp' plugins are set up before configuring 'tabout'.
-  require('tabout').setup()
 end
 
 return M
