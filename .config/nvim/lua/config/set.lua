@@ -9,9 +9,8 @@ vim.o.termguicolors = true                -- Enable truecolor
 vim.o.hlsearch = false                    -- Highlight search results
 vim.o.incsearch = true                    -- Search incrementally
 vim.o.ignorecase = true                   -- Case insensitive search
-vim.o.smartcase = true                    -- Unless
+vim.o.smartcase = true                    -- Unless capital in search
 vim.o.wildmode = 'list:longest'           -- TODO: review
-vim.o.completeopt = 'menuone,noselect'    -- TODO: review
 vim.o.clipboard = 'unnamedplus'           -- Enable OS clipboard
 vim.o.wrap = false                        -- Do not wrap lines
 vim.o.undofile = true                     -- Persist the undo history
@@ -27,16 +26,5 @@ vim.opt.shortmess = vim.opt.shortmess + { -- Reduce messages
   q = true,
   A = true,
 }
-
--- TODO: migrate to lua
--- Clear jumplist when vim starts
-vim.api.nvim_command("autocmd VimEnter * exe 'clearjumps'")
-
--- Launch telescope file picker and change dir when opening neovim
--- with a directory argument
-vim.api.nvim_command("autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | execute 'Telescope find_files' | execute 'cd '.argv()[0] | endif")
-
--- Open help window in a vertical split to the right.
-vim.api.nvim_command("autocmd BufEnter * if &filetype=='help' | wincmd L | endif")
 
 -- vim: ts=2 sts=2 sw=2 et
