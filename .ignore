@@ -1,4 +1,5 @@
 !**/.env
+!**/secrets.yaml
 .git
 .venv
 poetry.lock
