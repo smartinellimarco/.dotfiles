@@ -1,5 +1,6 @@
 local M = { 'nvim-treesitter/nvim-treesitter' }
 
+M.lazy = false -- Lazy loading treesitter may produce errors
 M.build = ':TSUpdate'
 M.opts = {
   ensure_installed = 'all',
