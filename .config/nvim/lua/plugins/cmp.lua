@@ -59,8 +59,8 @@ function M.config(_, _)
     },
     sources = {
       { name = 'nvim_lsp' },
-      { name = 'buffer' },
       { name = 'luasnip' },
+      { name = 'buffer' },
       { name = 'nvim_lua' },
       { name = 'path' },
     },
