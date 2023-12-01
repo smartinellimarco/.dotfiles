@@ -5,10 +5,17 @@ M.opts = {
     globalstatus = true,
     component_separators = '',
     section_separators = '',
-    disabled_filetypes = {
-      statusline = { 'TelescopePrompt', 'lazy', 'mason' }
-    }
-  }
+    disabled_filetypes = { 'TelescopePrompt', 'lazy', 'mason' },
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
+  },
+
 }
 
 function M.config(_, opts)
