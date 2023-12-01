@@ -37,11 +37,8 @@ function M.config(_, _)
   })
 
   vim.diagnostic.config({
-    virtual_text = {
-      prefix = '◦', -- Change icon
-      spacing = 0,
-    },
-    signs = false, -- Disable sign column icons
+    virtual_text = false, -- Disable virtual text
+    signs = false,        -- Disable sign column icons
   })
 
   -- Icons for diagnostics
@@ -81,7 +78,7 @@ function M.config(_, _)
             python = {
               analysis = {
                 diagnosticMode = 'workspace',
-                typeCheckingMode = 'off'
+                typeCheckingMode = 'basic'
               }
             }
           }
