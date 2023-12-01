@@ -19,11 +19,12 @@ vim.o.splitright = true                   -- Open vertical splits to the right s
 vim.opt.cmdheight = 0                     -- Hide command line
 vim.opt.showmode = false                  -- Do not show neovim mode
 vim.opt.shortmess = vim.opt.shortmess + { -- Reduce messages
+  -- TODO: suppress some of these
   F = true,
   W = true,
   I = true,
   s = true,
-  q = true,
+  q = true, -- TODO: fix 'recording' not being displayed
   A = true,
 }
 
