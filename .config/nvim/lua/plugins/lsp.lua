@@ -10,9 +10,6 @@ M.dependencies = {
   -- Helper LSP setup tool
   { import = 'plugins.lsp.lsp_zero' },
 
-  -- Show function signatures while typing
-  { import = 'plugins.lsp.lsp_signature' },
-
 }
 
 function M.config(_, _)
