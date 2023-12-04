@@ -30,7 +30,7 @@ M.dependencies = {
 
 function M.config(_, _)
   local cmp = require('cmp')
-  local cmp_action = require('lsp-zero').cmp_action()
+  local cmp_utils = require('plugins.cmp.utils')
   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local lspkind = require('lspkind')
   local luasnip = require('luasnip')
@@ -44,12 +44,6 @@ function M.config(_, _)
 
   -- Setup 'cmp'
   cmp.setup({
-    completion = {
-      -- menu: Show popup menu for completions
-      -- menuone: Use popup menu for single matches
-      -- noselect: Don't select a match in the menu
-      completeopt = 'menu,menuone,noselect'
-    },
     formatting = {
       format = lspkind.cmp_format() -- Add icons to completion items
     },
@@ -69,14 +63,15 @@ function M.config(_, _)
         luasnip.lsp_expand(args.body)
       end
     },
-    mapping = cmp.mapping.preset.insert({
+    mapping = {
       -- If no item is selected, do not auto-select the first one on '<CR>'
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
-      ['<Tab>'] = cmp_action.luasnip_supertab(),
-      ['<S-Tab>'] = cmp_action.luasnip_shift_supertab(),
-    })
+      ['<C-n>'] = cmp_utils.i_CTRL_N(),
+      ['<C-p>'] = cmp_utils.i_CTRL_P(),
+      ['<C-e>'] = cmp.mapping.abort(),
+    }
   })
 end
 
