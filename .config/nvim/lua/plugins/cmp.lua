@@ -68,8 +68,8 @@ function M.config(_, _)
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
-      ['<C-n>'] = cmp_utils.i_CTRL_N(),
-      ['<C-p>'] = cmp_utils.i_CTRL_P(),
+      ['<C-n>'] = cmp_utils.i_CTRL_N(), -- Replace builtin 'i_CTRL_N'
+      ['<C-p>'] = cmp_utils.i_CTRL_P(), -- Replace builtin 'i_CTRL_P'
       ['<C-e>'] = cmp.mapping.abort(),
     }
   })
