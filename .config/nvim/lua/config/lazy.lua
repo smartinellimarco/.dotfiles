@@ -20,6 +20,9 @@ local opts = {
   ui = {
     border = 'rounded'
   },
+  change_detection = {
+    notify = false,
+  },
   performance = {
     rtp = {
       disabled_plugins = {
