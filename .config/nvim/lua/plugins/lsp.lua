@@ -1,5 +1,6 @@
 local M = { 'neovim/nvim-lspconfig' }
 -- TODO: omnifunc completion keybindings and snippets support.
+-- TODO: reorder lsp files and improve code structure
 
 -- Lazy load when one of these commands are called
 M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
@@ -14,9 +15,7 @@ M.dependencies = {
 function M.config(_, _)
   local lspconfig = require('lspconfig')
   local mason_lspconfig = require('mason-lspconfig')
-
   local lsp_utils = require('plugins.lsp.utils')
-
 
   local on_attach = function(client, bufnr)
     -- Enable completion triggered by <c-x><c-o>
