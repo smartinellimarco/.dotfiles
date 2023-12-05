@@ -23,22 +23,26 @@ function M.config(_, opts)
   local actions = require('telescope.actions')
 
   local mappings = {
-    i = {
-      ['<esc>'] = actions.close,
-      ['<C-n>'] = actions.move_selection_next,
-      ['<C-p>'] = actions.move_selection_previous,
+    defaults = {
+      default_mappings = {
+        i = {
+          ['<esc>'] = actions.close,
+          ['<C-n>'] = actions.move_selection_next,
+          ['<C-p>'] = actions.move_selection_previous,
 
-      ['<CR>'] = actions.select_default,
-      ['<C-x>'] = actions.select_horizontal,
-      ['<C-v>'] = actions.select_vertical,
+          ['<CR>'] = actions.select_default,
+          ['<C-x>'] = actions.select_horizontal,
+          ['<C-v>'] = actions.select_vertical,
 
-      ['<C-u>'] = actions.preview_scrolling_up,
-      ['<C-d>'] = actions.preview_scrolling_down,
-      ['<C-w>'] = { '<c-s-w>', type = 'command' }, -- Delete word
+          ['<C-u>'] = actions.preview_scrolling_up,
+          ['<C-d>'] = actions.preview_scrolling_down,
+          ['<C-w>'] = { '<c-s-w>', type = 'command' }, -- Delete word
+        }
+      }
     }
   }
-  -- TODO: extend table and do not overwrite defaults
-  require('telescope').setup({ opts, defaults = { default_mappings = mappings } })
+
+  require('telescope').setup(vim.tbl_extend('error', opts, mappings))
   require('telescope').load_extension('fzf')
 
   -- Show line numbers in the preview
