@@ -1,4 +1,6 @@
 local M = { 'nvim-treesitter/nvim-treesitter' }
+-- TODO: new line in lua follows comment, but not in python
+-- TODO: wrong python indent after 'try:<CR>'
 
 M.lazy = false -- Lazy loading treesitter may produce errors
 M.build = ':TSUpdate'
