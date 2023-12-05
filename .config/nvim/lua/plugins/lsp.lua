@@ -1,5 +1,7 @@
 local M = { 'neovim/nvim-lspconfig' }
+-- TODO: omnifunc completion keybindings and snippets support.
 
+-- Lazy load when one of these commands are called
 M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.dependencies = {
@@ -7,89 +9,74 @@ M.dependencies = {
   -- LSP manager
   { import = 'plugins.lsp.mason' },
 
-  -- Helper LSP setup tool
-  { import = 'plugins.lsp.lsp_zero' },
-
 }
 
 function M.config(_, _)
-  local lsp_zero = require('lsp-zero')
   local lspconfig = require('lspconfig')
   local mason_lspconfig = require('mason-lspconfig')
 
-  -- This adds the cmp capabilities to the lsp servers
-  -- Also enables the '.set_server_config' function
-  lsp_zero.extend_lspconfig()
+  local lsp_utils = require('plugins.lsp.utils')
 
-  lsp_zero.on_attach(
-    function(_, bufnr)
-      lsp_zero.default_keymaps({ buffer = bufnr })
-    end
-  )
 
-  -- Disable semantic highlights to avoid conflicts with treesitter
-  -- Even though both provide highlights, treesitter works better in
-  -- most scenarios.
-  lsp_zero.set_server_config({
-    on_init = function(client)
-      client.server_capabilities.semanticTokensProvider = nil
-    end,
-  })
+  local on_attach = function(client, bufnr)
+    -- Enable completion triggered by <c-x><c-o>
+    vim.bo[bufnr].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+    -- Exclude the 'semanticTokensProvider' capability provided by the LSP server
+    -- from Neovim's client to prevent conflicts with treesitter semantic highlights.
+    -- Even though both provide highlights, treesitter works better in most scenarios.
+    client.server_capabilities.semanticTokensProvider = nil
+
+    -- Set sign icons
+    lsp_utils.sign_icons()
+
+    -- Set keymaps only when an LSP attaches
+    lsp_utils.lsp_keymaps(bufnr)
+  end
 
   vim.diagnostic.config({
     virtual_text = false, -- Disable virtual text
     signs = false,        -- Disable sign column icons
   })
 
-  -- Icons for diagnostics
-  lsp_zero.set_sign_icons({
-    error = '',
-    warn = '',
-    hint = '',
-    information = '',
-  })
+  local servers = {
+    pyright = {
+      python = {
+        analysis = {
+          diagnosticMode = 'workspace',
+          typeCheckingMode = 'basic'
+        }
+      }
+    },
+    lua_ls = {}, -- The file '.luarc.json' configures 'lua_ls' for neovim's path
+    jsonls = {},
+    terraformls = {},
+    marksman = {},
+    clangd = {},
+    docker_compose_language_service = {},
 
+  }
   -- Ensure the servers are installed
   mason_lspconfig.setup({
-    ensure_installed = {
-      'lua_ls',
-      'jsonls',
-      'terraformls',
-      'marksman',
-      'pyright',
-      'clangd',
-      'docker_compose_language_service',
-    },
-    handlers = {
-
-      -- Configs for each LSP can be placed here
-
-      -- Setup lua_ls with neovim API compatibility
-      -- using lsp_zero options for lspconfig
-      lua_ls = function()
-        local lua_opts = lsp_zero.nvim_lua_ls()
-        lspconfig.lua_ls.setup(lua_opts)
-      end,
-
-      -- Setup a less strict pyright
-      pyright = function()
-        lspconfig.pyright.setup({
-          settings = {
-            python = {
-              analysis = {
-                diagnosticMode = 'workspace',
-                typeCheckingMode = 'basic'
-              }
-            }
-          }
-        })
-      end,
-
-      -- Use the default setup on the remaining servers
-      lsp_zero.default_setup,
-
-    }
+    ensure_installed = vim.tbl_keys(servers)
   })
+
+  -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(
+    vim.lsp.protocol.make_client_capabilities()
+  )
+
+  -- Custom configs for each LSP can be placed here
+  mason_lspconfig.setup_handlers {
+    function(server_name)
+      lspconfig[server_name].setup {
+        capabilities = capabilities,
+        on_attach = on_attach,
+        settings = servers[server_name],
+        filetypes = (servers[server_name] or {}).filetypes,
+      }
+    end,
+  }
 end
 
 return M
