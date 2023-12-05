@@ -42,7 +42,7 @@ function M.config(_, opts)
     }
   }
 
-  require('telescope').setup(vim.tbl_extend('error', opts, mappings))
+  require('telescope').setup(vim.tbl_deep_extend('error', opts, mappings))
   require('telescope').load_extension('fzf')
 
   -- Show line numbers in the preview
