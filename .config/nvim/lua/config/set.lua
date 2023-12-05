@@ -19,7 +19,7 @@ vim.o.splitright = true                       -- Open vertical splits to the rig
 vim.opt.cmdheight = 0                         -- Hide command line
 vim.opt.showmode = false                      -- Do not show neovim mode
 vim.opt.complete = ''                         -- Disable builtin i_CTRL-N and i_CTRL-P in favor of nvim-cmp
-vim.opt.completeopt = 'menu,menuone,noselect' -- Options for using a completion menu, similar to other IDEs
+vim.opt.completeopt = 'menu,menuone,noinsert' -- Options for builtin completion
 vim.opt.shortmess = vim.opt.shortmess + {     -- Reduce messages
   -- TODO: find a way to supress these
   F = true,
