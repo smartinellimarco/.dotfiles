@@ -1,4 +1,6 @@
 local M = { 'hrsh7th/nvim-cmp' }
+-- TODO: do not replace word while selecting
+-- TODO: auto select first word (maybe with completeopt)
 
 M.event = 'InsertEnter'
 M.dependencies = {
