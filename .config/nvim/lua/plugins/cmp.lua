@@ -1,6 +1,4 @@
 local M = { 'hrsh7th/nvim-cmp' }
--- TODO: do not replace word while selecting
--- TODO: auto select first word (maybe with completeopt)
 
 M.event = 'InsertEnter'
 M.dependencies = {
@@ -46,6 +44,9 @@ function M.config(_, _)
 
   -- Setup 'cmp'
   cmp.setup({
+    completion = {
+      completeopt = 'menu,menuone,noinsert' -- Only affects nvim-cmp
+    },
     formatting = {
       format = lspkind.cmp_format() -- Add icons to completion items
     },
