@@ -7,7 +7,8 @@ function M.i_CTRL_N(_)
   return cmp.mapping(
     function(_)
       if cmp.visible() then
-        cmp.select_next_item()
+        -- Do not replace word under cursor
+        cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
       elseif luasnip.expand_or_locally_jumpable() then
         luasnip.expand_or_jump()
       else
@@ -20,7 +21,8 @@ function M.i_CTRL_P(_)
   return cmp.mapping(
     function(_)
       if cmp.visible() then
-        cmp.select_prev_item()
+        -- Do not replace word under cursor
+        cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
       elseif luasnip.locally_jumpable(-1) then
         luasnip.jump(-1)
       else
