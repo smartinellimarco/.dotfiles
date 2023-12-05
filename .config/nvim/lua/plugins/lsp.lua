@@ -1,5 +1,5 @@
 local M = { 'neovim/nvim-lspconfig' }
--- TODO: omnifunc completion keybindings and snippets support.
+-- TODO: omnifunc completion keybindings and snippets support (keymaps might not be set)
 -- TODO: reorder lsp files and improve code structure
 
 -- Lazy load when one of these commands are called
