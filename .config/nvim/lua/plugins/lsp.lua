@@ -36,7 +36,18 @@ function M.config(_, _)
   vim.diagnostic.config({
     virtual_text = false, -- Disable virtual text
     signs = false,        -- Disable sign column icons
+    float = { border = 'rounded' }
   })
+
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
+    vim.lsp.handlers.hover,
+    { border = 'rounded' }
+  )
+
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
+    vim.lsp.handlers.signature_help,
+    { border = 'rounded' }
+  )
 
   local servers = {
     pyright = {
@@ -53,8 +64,8 @@ function M.config(_, _)
     marksman = {},
     clangd = {},
     docker_compose_language_service = {},
-
   }
+
   -- Ensure the servers are installed
   mason_lspconfig.setup({
     ensure_installed = vim.tbl_keys(servers)
