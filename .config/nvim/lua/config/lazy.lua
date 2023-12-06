@@ -21,7 +21,7 @@ local opts = {
     border = 'rounded'
   },
   change_detection = {
-    notify = false,
+    enabled = false,
   },
   performance = {
     rtp = {
