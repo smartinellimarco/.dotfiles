@@ -16,7 +16,7 @@ vim.o.wrap = false                            -- Do not wrap lines
 vim.o.undofile = true                         -- Persist the undo history
 vim.o.signcolumn = 'yes:1'                    -- Use a signcolumn with 1 space for git status
 vim.o.splitright = true                       -- Open vertical splits to the right side of the screen
-vim.opt.cmdheight = 0                         -- Hide command line
+-- vim.opt.cmdheight = 0                      -- Hide command line TODO: review in 0.10.0 when recording macros get fixed
 vim.opt.showmode = false                      -- Do not show neovim mode
 vim.opt.complete = ''                         -- Disable builtin i_CTRL-N and i_CTRL-P in favor of nvim-cmp
 vim.opt.completeopt = 'menu,menuone,noinsert' -- Options for builtin completion
@@ -26,7 +26,7 @@ vim.opt.shortmess = vim.opt.shortmess + {     -- Reduce messages
   W = true,
   I = true,
   s = true,
-  q = true, -- TODO: fix 'recording' not being displayed
+  q = true,
   A = true,
 }
 
