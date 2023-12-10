@@ -2,7 +2,6 @@ local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
   options = {
-    theme = 'kanagawa',
     globalstatus = true,
     component_separators = '',
     section_separators = '',
