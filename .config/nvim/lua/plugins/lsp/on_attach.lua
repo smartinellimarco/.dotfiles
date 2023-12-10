@@ -1,6 +1,10 @@
 local M = {}
 
-function M.lsp_keymaps(bufnr)
+function M.on_attach(client, bufnr)
+  -- Enable completion triggered by <c-x><c-o>
+  vim.bo[bufnr].omnifunc = vim.lsp.omnifunc()
+
+  -- Set keymaps only when an LSP attaches
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
   vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, { buffer = bufnr })
@@ -15,15 +19,13 @@ function M.lsp_keymaps(bufnr)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = bufnr })
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = bufnr })
   vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { buffer = bufnr })
+
+  -- Disable sign column icons
+  vim.diagnostic.config({
+    signs = false,
+  })
 end
 
-function M.sign_icons()
-  vim.fn.sign_define('DiagnosticSignError', { texthl = 'DiagnosticSignError', text = '', numhl = '' })
-  vim.fn.sign_define('DiagnosticSignWarn', { texthl = 'DiagnosticSignError', text =  '', numhl = '' })
-  vim.fn.sign_define('DiagnosticSignHint', { texthl = 'DiagnosticSignError', text = '', numhl = '' })
-  vim.fn.sign_define('DiagnosticSignInfo', { texthl = 'DiagnosticSignError', text = '', numhl = '' })
-end
-
-return M
+return M.on_attach
 
 -- vim: ts=2 sts=2 sw=2 et
