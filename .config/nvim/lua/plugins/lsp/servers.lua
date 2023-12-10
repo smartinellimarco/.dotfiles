@@ -1,5 +1,6 @@
 local M = {}
 
+-- Configs for each LSP
 M.server_settings = {
   pyright = {
     python = {
@@ -29,8 +30,8 @@ function M.default_setup(server_name)
   require('lspconfig')[server_name].setup {
     capabilities = M.capabilities,
     on_attach = require('plugins.lsp.on_attach'),
-    settings = M.servers[server_name],
-    filetypes = (M.servers[server_name] or {}).filetypes,
+    settings = M.server_settings[server_name],
+    filetypes = (M.server_settings[server_name] or {}).filetypes,
   }
 end
 
