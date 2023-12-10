@@ -2,6 +2,7 @@ local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
   options = {
+    theme = 'kanagawa',
     globalstatus = true,
     component_separators = '',
     section_separators = '',
@@ -14,8 +15,7 @@ M.opts = {
     lualine_x = { 'encoding' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
-  },
-
+  }
 }
 
 function M.config(_, opts)
