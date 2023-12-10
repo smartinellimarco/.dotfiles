@@ -50,10 +50,6 @@ function M.config(_, _)
     formatting = {
       format = lspkind.cmp_format() -- Add icons to completion items
     },
-    window = {
-      completion = cmp.config.window.bordered(),
-      documentation = cmp.config.window.bordered(),
-    },
     sources = {
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
