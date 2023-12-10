@@ -22,9 +22,7 @@ M.names = vim.tbl_keys(M.server_settings)
 
 -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
 -- Custom configs for each LSP can be placed here
-M.capabilities = require('cmp_nvim_lsp').default_capabilities(
-  vim.lsp.protocol.make_client_capabilities()
-)
+M.capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 function M.default_setup(server_name)
   require('lspconfig')[server_name].setup {
