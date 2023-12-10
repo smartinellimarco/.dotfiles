@@ -4,6 +4,7 @@ function M.on_attach(client, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.bo[bufnr].omnifunc = vim.lsp.omnifunc()
 
+  -- TODO: set kind icons
   -- Set keymaps only when an LSP attaches
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
@@ -23,6 +24,10 @@ function M.on_attach(client, bufnr)
   -- Disable sign column icons
   vim.diagnostic.config({
     signs = false,
+    virtual_text = {
+      prefix = '◦',
+      spacing = 0,
+    },
   })
 end
 
