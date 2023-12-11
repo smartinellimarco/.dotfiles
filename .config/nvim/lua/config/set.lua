@@ -2,6 +2,7 @@
 vim.g.mapleader = ' '
 
 -- Configs
+vim.o.updatetime = 500                        -- Timeout for CursorHold and swap files
 vim.o.mouse = ''                              -- Disable mouse
 vim.o.scrolloff = 0                           -- No scrolling offset
 vim.wo.number = true                          -- Show line numbers
@@ -18,7 +19,7 @@ vim.o.signcolumn = 'yes:1'                    -- Use a signcolumn with 1 space f
 vim.o.splitright = true                       -- Open vertical splits to the right side of the screen
 vim.opt.showmode = false                      -- Do not show neovim mode
 vim.opt.complete = ''                         -- Disable builtin i_CTRL-N and i_CTRL-P in favor of nvim-cmp
-vim.opt.completeopt = 'menu,menuone,noinsert' -- Options for builtin completion
+vim.opt.completeopt = 'menu,menuone,noinsert' -- Options for builtin completion -- TODO: add preview
 vim.opt.shortmess = vim.opt.shortmess + {     -- Reduce messages
   -- TODO: find a way to supress these
   F = true,
