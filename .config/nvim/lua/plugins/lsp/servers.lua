@@ -10,7 +10,7 @@ M.server_settings = {
       }
     }
   },
-  lua_ls = {},
+  lua_ls = {}, -- TODO: review the config file. Add formatting
   jsonls = {},
   terraformls = {},
   marksman = {},

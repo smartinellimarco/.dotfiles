@@ -1,8 +1,9 @@
+-- TODO: set kind icons from the plugin source
+-- TODO: refactor this file
+-- TODO: add aditional text actions https://www.reddit.com/r/neovim/comments/mn8ipa/lsp_add_missing_imports_on_complete_using_the/
 local M = {}
 
 function M.on_attach(client, bufnr)
-  -- TODO: set kind icons from the plugin source
-  -- TODO: refactor this file
   -- Set keymaps only when an LSP attaches
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
@@ -19,18 +20,17 @@ function M.on_attach(client, bufnr)
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = bufnr })
   vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { buffer = bufnr })
 
-
   -- Highlight word under cursor if that capability is supported
   if client.supports_method('textDocument/documentHighlight') then
-    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
-      callback = function()
-        vim.lsp.buf.clear_references()
-      end
-    })
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       callback = function()
         -- TODO: if len highlights > 1
         print(vim.lsp.buf.document_highlight())
+      end
+    })
+    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+      callback = function()
+        vim.lsp.buf.clear_references()
       end
     })
   end
