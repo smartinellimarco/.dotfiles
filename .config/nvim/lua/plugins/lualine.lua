@@ -1,3 +1,4 @@
+-- TODO: make it transparent when not disabled
 local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
