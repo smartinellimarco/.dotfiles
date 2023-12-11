@@ -2,6 +2,7 @@ local M = { 'hrsh7th/nvim-cmp' }
 
 M.event = 'InsertEnter'
 M.dependencies = {
+  -- TODO: remove snippets and use a breakpoint plugin
 
   -- Snippet engine
   { 'L3MON4D3/LuaSnip' },
