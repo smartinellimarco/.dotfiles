@@ -48,6 +48,10 @@ function M.config(_, opts)
   -- Show line numbers in the preview
   vim.api.nvim_command("autocmd User TelescopePreviewerLoaded setlocal number")
 
+  -- Launch telescope file picker and change dir when opening neovim
+  -- with a directory argument
+  vim.api.nvim_command("autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | execute 'Telescope find_files' | execute 'cd '.argv()[0] | endif")
+
   vim.keymap.set('n', '<leader>e', builtin.find_files, {})
   vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
 end

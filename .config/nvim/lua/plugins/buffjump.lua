@@ -4,6 +4,8 @@ M.opts = {}
 
 function M.config(_, opts)
   require('bufjump').setup(opts)
+  -- Clear jumplist when vim starts
+  vim.api.nvim_command("autocmd VimEnter * exe 'clearjumps'")
 end
 
 return M
