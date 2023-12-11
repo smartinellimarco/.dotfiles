@@ -1,10 +1,8 @@
 local M = {}
 
 function M.on_attach(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.bo[bufnr].omnifunc = vim.lsp.omnifunc()
-
-  -- TODO: set kind icons
+  -- TODO: set kind icons from the plugin source
+  -- TODO: refactor this file
   -- Set keymaps only when an LSP attaches
   vim.keymap.set('n', 'K', vim.lsp.buf.hover, { buffer = bufnr })
   vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = bufnr })
@@ -20,6 +18,27 @@ function M.on_attach(client, bufnr)
   vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { buffer = bufnr })
   vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { buffer = bufnr })
   vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { buffer = bufnr })
+
+
+  -- Highlight word under cursor if that capability is supported
+  if client.supports_method('textDocument/documentHighlight') then
+    vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
+      callback = function()
+        vim.lsp.buf.clear_references()
+      end
+    })
+    vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      callback = function()
+        -- TODO: if len highlights > 1
+        print(vim.lsp.buf.document_highlight())
+      end
+    })
+  end
+
+  -- Exclude the 'semanticTokensProvider' capability provided by the LSP server
+  -- from Neovim's client to prevent conflicts with treesitter semantic highlights.
+  -- Even though both provide highlights, treesitter works better in most scenarios.
+  client.server_capabilities.semanticTokensProvider = nil
 
   -- Disable sign column icons
   vim.diagnostic.config({
