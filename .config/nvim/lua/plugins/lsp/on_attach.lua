@@ -21,10 +21,10 @@ function M.on_attach(client, bufnr)
   vim.keymap.set('i', '<C-s>', vim.lsp.buf.signature_help, { buffer = bufnr })
 
   -- Highlight word under cursor if that capability is supported
-  if client.supports_method('textDocument/documentHighlight') then
+  if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
+      buffer=bufnr,
       callback = function()
-        -- TODO: if len highlights > 1
         print(vim.lsp.buf.document_highlight())
       end
     })
