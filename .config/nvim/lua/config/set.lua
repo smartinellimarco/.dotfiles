@@ -1,7 +1,9 @@
+--TODO: review when cmp is deprecated
 -- Choose leader
 vim.g.mapleader = ' '
 
 -- Configs
+vim.o.cursorline = true                       -- Highlight cursorline and line number
 vim.o.updatetime = 500                        -- Timeout for CursorHold and swap files
 vim.o.mouse = ''                              -- Disable mouse
 vim.o.scrolloff = 0                           -- No scrolling offset
@@ -17,6 +19,7 @@ vim.o.wrap = false                            -- Do not wrap lines
 vim.o.undofile = true                         -- Persist the undo history
 vim.o.signcolumn = 'yes:1'                    -- Use a signcolumn with 1 space for git status
 vim.o.splitright = true                       -- Open vertical splits to the right side of the screen
+vim.o.splitbelow = true                       -- Open horizontal splits to the bottom of the screen
 vim.opt.showmode = false                      -- Do not show neovim mode
 vim.opt.complete = ''                         -- Disable builtin i_CTRL-N and i_CTRL-P in favor of nvim-cmp
 vim.opt.completeopt = 'menu,menuone,noinsert' -- Options for builtin completion -- TODO: add preview
