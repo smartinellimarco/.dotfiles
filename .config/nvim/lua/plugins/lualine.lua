@@ -6,7 +6,6 @@ M.opts = {
     globalstatus = true,
     component_separators = '',
     section_separators = '',
-    disabled_filetypes = { 'TelescopePrompt', 'lazy', 'mason' },
   },
   sections = {
     lualine_a = { 'mode' },
@@ -15,6 +14,20 @@ M.opts = {
     lualine_x = { 'encoding' },
     lualine_y = { 'progress' },
     lualine_z = { 'location' }
+  },
+  extensions = {
+    'lazy',
+    'mason',
+    {
+      sections = {
+        lualine_a = {
+          function()
+            return 'Telescope'
+          end
+        }
+      },
+      filetypes = { 'TelescopePrompt' }
+    }
   }
 }
 
