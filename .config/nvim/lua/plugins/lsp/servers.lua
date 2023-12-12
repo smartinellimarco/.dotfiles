@@ -16,6 +16,7 @@ M.server_settings = {
   marksman = {},
   clangd = {},
   docker_compose_language_service = {},
+  yamlls = {},
 }
 
 M.names = vim.tbl_keys(M.server_settings)
