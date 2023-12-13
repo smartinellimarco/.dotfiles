@@ -1,4 +1,3 @@
--- TODO: see https://github.com/neovim/neovim/pull/24723
 -- Choose leader
 vim.g.mapleader = ' '
 
@@ -20,7 +19,6 @@ vim.o.signcolumn = 'yes:1'                    -- Use a signcolumn with 1 space f
 vim.o.splitright = true                       -- Open vertical splits to the right side of the screen
 vim.o.splitbelow = true                       -- Open horizontal splits to the bottom of the screen
 vim.opt.showmode = false                      -- Do not show neovim mode
-vim.opt.complete = ''                         -- Disable builtin i_CTRL-N and i_CTRL-P in favor of nvim-cmp
 vim.opt.completeopt = 'menu,menuone,noselect' -- Options for builtin completion
 vim.opt.shortmess = vim.opt.shortmess + {     -- Reduce messages
   -- TODO: find a way to supress these
