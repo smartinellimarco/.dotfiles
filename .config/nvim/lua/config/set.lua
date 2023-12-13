@@ -1,9 +1,8 @@
---TODO: review when cmp is deprecated
+-- TODO: see https://github.com/neovim/neovim/pull/24723
 -- Choose leader
 vim.g.mapleader = ' '
 
 -- Configs
-vim.o.cursorline = true                       -- Highlight cursorline and line number
 vim.o.updatetime = 500                        -- Timeout for CursorHold and swap files
 vim.o.mouse = ''                              -- Disable mouse
 vim.o.scrolloff = 0                           -- No scrolling offset
@@ -22,7 +21,7 @@ vim.o.splitright = true                       -- Open vertical splits to the rig
 vim.o.splitbelow = true                       -- Open horizontal splits to the bottom of the screen
 vim.opt.showmode = false                      -- Do not show neovim mode
 vim.opt.complete = ''                         -- Disable builtin i_CTRL-N and i_CTRL-P in favor of nvim-cmp
-vim.opt.completeopt = 'menu,menuone,noinsert' -- Options for builtin completion -- TODO: add preview
+vim.opt.completeopt = 'menu,menuone,noselect' -- Options for builtin completion
 vim.opt.shortmess = vim.opt.shortmess + {     -- Reduce messages
   -- TODO: find a way to supress these
   F = true,
