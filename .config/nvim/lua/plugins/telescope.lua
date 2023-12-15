@@ -1,3 +1,4 @@
+-- TODO: replace with plain fd and ripgrep or fzf
 -- Both fd and ripgrep respect the '~/.ignore' file used
 -- for blacklisting and whitelisting files/directories.
 -- Git ignored files are not shown by default.
@@ -46,7 +47,7 @@ function M.config(_, opts)
   require('telescope').load_extension('fzf')
 
   -- Show line numbers in the preview
-  vim.api.nvim_command("autocmd User TelescopePreviewerLoaded setlocal number")
+  vim.api.nvim_command("autocmd User TelescopePreviewerLoaded setlocal number") -- TODO: missing augroup
 
   -- Launch telescope file picker and change dir when opening neovim
   -- with a directory argument
