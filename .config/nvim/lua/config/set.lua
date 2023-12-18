@@ -20,6 +20,8 @@ vim.o.splitright = true                       -- Open vertical splits to the rig
 vim.o.splitbelow = true                       -- Open horizontal splits to the bottom of the screen
 vim.opt.showmode = false                      -- Do not show neovim mode
 vim.opt.completeopt = 'menu,menuone,noselect' -- Options for builtin completion
+vim.opt.laststatus = 0                        -- Hide statusline
+vim.opt.cmdheight = 0                         -- Hide commandline (see: https://github.com/neovim/neovim/issues/19193)
 vim.opt.shortmess = vim.opt.shortmess + {     -- Reduce messages
   -- TODO: find a way to supress these
   F = true,
