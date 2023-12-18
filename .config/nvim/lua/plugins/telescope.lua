@@ -1,7 +1,4 @@
 -- TODO: replace with plain fd and ripgrep or fzf
--- Both fd and ripgrep respect the '~/.ignore' file used
--- for blacklisting and whitelisting files/directories.
--- Git ignored files are not shown by default.
 local M = { 'nvim-telescope/telescope.nvim' }
 
 M.dependencies = {
@@ -20,6 +17,7 @@ M.opts = {
 }
 
 function M.config(_, opts)
+  local telescope = require('telescope')
   local builtin = require('telescope.builtin')
   local actions = require('telescope.actions')
 
@@ -43,15 +41,31 @@ function M.config(_, opts)
     }
   }
 
-  require('telescope').setup(vim.tbl_deep_extend('error', opts, mappings))
-  require('telescope').load_extension('fzf')
+  telescope.setup(vim.tbl_deep_extend('error', opts, mappings))
+  telescope.load_extension('fzf')
+
+  local augroup = vim.api.nvim_create_augroup('telescope', {})
 
   -- Show line numbers in the preview
-  vim.api.nvim_command("autocmd User TelescopePreviewerLoaded setlocal number") -- TODO: missing augroup
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'TelescopePreviewerLoaded',
+    group = augroup,
+    callback = function()
+      vim.opt_local.number = true
+    end
+  })
 
   -- Launch telescope file picker and change dir when opening neovim
   -- with a directory argument
-  vim.api.nvim_command("autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) | execute 'Telescope find_files' | execute 'cd '.argv()[0] | endif")
+  vim.api.nvim_create_autocmd('VimEnter', {
+    group = augroup,
+    callback = function(args)
+      if args.file ~= "" and vim.fn.isdirectory(args.file) ~= 0 then
+        vim.api.nvim_set_current_dir(args.file)
+        builtin.find_files()
+      end
+    end
+  })
 
   vim.keymap.set('n', '<leader>e', builtin.find_files, {})
   vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
