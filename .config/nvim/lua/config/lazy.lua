@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 -- Lazy options
 local opts = {
   install = {
-    colorscheme = { 'kanagawa' },
+    colorscheme = { 'no-clown-fiesta' },
   },
   change_detection = {
     enabled = false,
