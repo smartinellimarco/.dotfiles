@@ -1,6 +1,4 @@
 local M = { 'nvim-treesitter/nvim-treesitter' }
--- TODO: different formatexpr for python and lua?
--- TODO: LSP shows no formatexpr, should be coming from neovim
 
 M.lazy = false -- Lazy loading treesitter may produce errors
 M.build = ':TSUpdate'

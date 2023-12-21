@@ -3,7 +3,7 @@ local M = { 'NMAC427/guess-indent.nvim' }
 M.opts = {}
 
 function M.config(_, opts)
-  require( 'guess-indent' ).setup(opts)
+  require('guess-indent').setup(opts)
 end
 
 return M

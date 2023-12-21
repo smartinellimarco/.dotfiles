@@ -1,6 +1,6 @@
 local M = { 'ggandor/leap.nvim' }
 
-function M.focusable_windows_on_tabpage()
+local function focusable_windows_on_tabpage()
   -- Create a filtered list of focusable windows on the current tabpage
   local windows = vim.tbl_filter(
 
@@ -24,7 +24,7 @@ M.opts = {
 
 function M.config(_, opts)
   vim.keymap.set({ 'n', 'v' }, 's',
-    function() require('leap').leap({ opts, target_windows = M.focusable_windows_on_tabpage() }) end)
+    function() require('leap').leap({ opts, target_windows = focusable_windows_on_tabpage() }) end)
 end
 
 return M
