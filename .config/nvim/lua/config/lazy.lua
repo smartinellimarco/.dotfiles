@@ -17,6 +17,9 @@ local opts = {
   install = {
     colorscheme = { 'no-clown-fiesta' },
   },
+  ui = {
+    border = 'rounded'
+  },
   change_detection = {
     enabled = false,
   },

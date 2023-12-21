@@ -2,7 +2,11 @@ local M = { 'williamboman/mason.nvim' }
 
 M.lazy = false
 M.dependencies = { 'williamboman/mason-lspconfig.nvim' }
-M.opts = {}
+M.opts = {
+  ui = {
+    border = 'rounded'
+  }
+}
 
 function M.config(_, opts)
   require('mason').setup(opts)
