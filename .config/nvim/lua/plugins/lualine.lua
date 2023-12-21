@@ -1,0 +1,57 @@
+local M = { 'nvim-lualine/lualine.nvim' }
+
+M.opts = {
+  options = {
+    globalstatus = true,
+    component_separators = '',
+    section_separators = '',
+  },
+  sections = {
+    lualine_a = { 'mode' },
+    lualine_b = { 'branch', 'diagnostics' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'encoding' },
+    lualine_y = { 'progress' },
+    lualine_z = { 'location' }
+  },
+  extensions = {
+    {
+      sections = {
+        lualine_a = {
+          function()
+            return 'Plugins'
+          end
+        }
+      },
+      filetypes = { 'lazy' }
+    },
+    {
+      sections = {
+        lualine_a = {
+          function()
+            return 'LSPs'
+          end
+        }
+      },
+      filetypes = { 'mason' }
+    },
+    {
+      sections = {
+        lualine_a = {
+          function()
+            return 'Telescope'
+          end
+        }
+      },
+      filetypes = { 'TelescopePrompt' }
+    }
+  }
+}
+
+function M.config(_, opts)
+  require('lualine').setup(opts)
+end
+
+return M
+
+-- vim: ts=2 sts=2 sw=2 et
