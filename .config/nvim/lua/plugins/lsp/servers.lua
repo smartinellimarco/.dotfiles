@@ -1,7 +1,7 @@
 local M = {}
 
 -- Configs for each LSP
-M.server_settings = {
+local server_settings = {
   pyright = {
     python = {
       analysis = {
@@ -19,13 +19,17 @@ M.server_settings = {
   yamlls = {},
 }
 
-M.names = vim.tbl_keys(M.server_settings)
+M.names = vim.tbl_keys(server_settings)
+
+-- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 function M.default_setup(server_name)
   require('lspconfig')[server_name].setup {
+    capabilities=capabilities,
     on_attach = require('plugins.lsp.on_attach'),
-    settings = M.server_settings[server_name],
-    filetypes = (M.server_settings[server_name] or {}).filetypes,
+    settings = server_settings[server_name],
+    filetypes = (server_settings[server_name] or {}).filetypes,
   }
 end
 
