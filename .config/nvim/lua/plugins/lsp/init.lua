@@ -18,7 +18,7 @@ function M.config(_, _)
   local lspui = require("lspconfig.ui.windows")
 
   -- Configure UI borders
-  lspui.default_options.border = "rounded"
+  lspui.default_options.border = 'rounded'
 
   -- Disable sign column icons
   diagnostics.setup()
