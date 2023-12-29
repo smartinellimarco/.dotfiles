@@ -1,4 +1,3 @@
--- TODO: replace with plain fd and ripgrep or fzf
 local M = { 'nvim-telescope/telescope.nvim' }
 
 M.dependencies = {
