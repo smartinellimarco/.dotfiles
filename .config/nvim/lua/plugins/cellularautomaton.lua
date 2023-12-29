@@ -4,7 +4,7 @@ function M.config(_, _)
   local automaton = require('cellular-automaton')
   vim.keymap.set(
     'n',
-    '<leader>fml',
+    '<leader>smh',
     function()
       local animations = { 'make_it_rain', 'game_of_life' }
       _, _ = pcall(automaton.start_animation, animations[math.random(#animations)])
