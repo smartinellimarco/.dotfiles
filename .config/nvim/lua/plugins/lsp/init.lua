@@ -15,6 +15,10 @@ function M.config(_, _)
   local servers = require('plugins.lsp.servers')
   local diagnostics = require('plugins.lsp.diagnostics')
   local handlers = require('plugins.lsp.handlers')
+  local lspui = require("lspconfig.ui.windows")
+
+  -- Configure UI borders
+  lspui.default_options.border = "rounded"
 
   -- Disable sign column icons
   diagnostics.setup()
