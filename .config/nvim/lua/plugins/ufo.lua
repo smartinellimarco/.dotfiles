@@ -1,17 +1,18 @@
 local M = { 'kevinhwang91/nvim-ufo' }
 
 M.dependencies = 'kevinhwang91/promise-async'
+M.opts = {
+  provider_selector = function(bufnr, filetype, buftype) ---@diagnostic disable: unused-local
+    return { 'treesitter', 'indent' }
+  end
+}
 
 function M.config(_, opts)
-  -- Using ufo provider need remap `zR` and `zM`. If Neovim is 0.6.1, remap yourself
+  -- Required by the plugin
   vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
   vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
 
-  require('ufo').setup({
-    provider_selector = function(bufnr, filetype, buftype)
-      return { 'treesitter', 'indent' }
-    end
-  })
+  require('ufo').setup(opts)
 end
 
 return M
