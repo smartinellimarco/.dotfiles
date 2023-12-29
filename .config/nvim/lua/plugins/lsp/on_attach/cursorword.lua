@@ -2,13 +2,16 @@ local M = {}
 
 function M.setup(client, bufnr)
   if client.server_capabilities.documentHighlightProvider then
-    local augroup = vim.api.nvim_create_augroup('cursorword', {})
+    local augroup = vim.api.nvim_create_augroup('cursorword', { clear = false })
 
     vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
       buffer = bufnr,
       group = augroup,
       callback = function()
-        local _, _ = pcall(vim.lsp.buf.document_highlight)
+        local status, err = pcall(vim.lsp.buf.document_highlight)
+        if not status then
+          vim.print(err)
+        end
       end
     })
 
@@ -16,7 +19,10 @@ function M.setup(client, bufnr)
       buffer = bufnr,
       group = augroup,
       callback = function()
-        local _, _ = pcall(vim.lsp.buf.clear_references)
+        local status, err = pcall(vim.lsp.buf.clear_references)
+        if not status then
+          vim.print(err)
+        end
       end
     })
   end
