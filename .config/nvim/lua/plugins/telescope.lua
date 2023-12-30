@@ -59,7 +59,7 @@ function M.config(_, opts)
   vim.api.nvim_create_autocmd('VimEnter', {
     group = augroup,
     callback = function(args)
-      if args.file ~= "" and vim.fn.isdirectory(args.file) ~= 0 then
+      if args.file ~= '' and vim.fn.isdirectory(args.file) ~= 0 then
         vim.api.nvim_set_current_dir(args.file)
         builtin.find_files()
       end
