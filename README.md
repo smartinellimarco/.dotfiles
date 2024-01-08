@@ -97,7 +97,7 @@ Any initialization commands not intended to be backed up in this repository, can
 
 This file is automatically sourced in interactive and login shells.
 
-## keymaps
+## Keymaps
 
 See the [cheatsheets folder](https://github.com/smartinellimarco/.dotfiles/tree/master/cheatsheets).
 
