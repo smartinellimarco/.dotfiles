@@ -6,7 +6,7 @@ function M.config(_, _)
     'n',
     '<leader>smh',
     function()
-      local animations = { 'make_it_rain', 'game_of_life' }
+      local animations = { 'make_it_rain' } -- 'game_of_life'
       _, _ = pcall(automaton.start_animation, animations[math.random(#animations)])
     end
   )
