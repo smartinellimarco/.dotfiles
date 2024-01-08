@@ -12,6 +12,12 @@
 | ⌃+f | Skip word forward |
 | ⌃+b | Skip word backward |
 | ⌃+w | Delete word |
+| ⌃k | Cut to the end of the line |
+| ⌃u | Cut the whole line |
+| ⌃y | Paste the cut text |
+| ⌃r | Search history |
+| ⌃c | Interrupt process |
+| ⌃d | Exit current shell. Equivalent to typing 'exit' |
 
 ## Plugins
 

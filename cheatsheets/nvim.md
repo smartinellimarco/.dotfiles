@@ -53,12 +53,15 @@
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| gcc | Comment out line | normal |
-| gbc | Comment out line using block delimiters | normal |
-| gc | Comment out visual selection | visual |
-| gb | Comment out visual selection using block delimiters | visual |
+| gcc | Comment line toggle | normal |
+| gbc | Comment block toggle | normal |
+| gc | Comment visual selection | visual |
+| gb | Comment visual selection using block delimiters | visual |
 | gc\<motion> | Comment out text object line wise | normal |
 | gb\<motion> | Comment out text object block wise | normal |
+| gcO | Add comment on the line above | normal |
+| gco | Add comment on the line below | normal |
+| gcA | Add comment at the end of line | normal |
 
 ## Surround
 
