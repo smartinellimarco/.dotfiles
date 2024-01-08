@@ -64,7 +64,19 @@
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| s | Leap to location (space key is an alias for odd characters)| normal |
+| s | Leap to location (space key is an alias for odd characters) | normal - visual |
+
+## Lazy 
+
+| keymap | description | mode |
+|--------|-------------|--------|
+| Lazy | Open plugin manager | command |
+
+## Mason 
+
+| keymap | description | mode |
+|--------|-------------|--------|
+| Mason | Open LSPs manager | command |
 
 ## Cellular automaton
 
