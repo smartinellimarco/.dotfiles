@@ -99,7 +99,7 @@ This file is automatically sourced in interactive and login shells.
 
 ## keymaps
 
-See the cheat sheets [folder](https://github.com/smartinellimarco/.dotfiles/tree/master/cheatsheets).
+See the [cheatsheets folder](https://github.com/smartinellimarco/.dotfiles/tree/master/cheatsheets).
 
 ## Tips & Troubleshooting
 <details>
