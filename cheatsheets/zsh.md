@@ -16,7 +16,7 @@
 | ⌃u | Cut the whole line |
 | ⌃y | Paste the cut text |
 | ⌃r | Search history |
-| ⌃c | Interrupt process |
+| ⌃c | Interrupt the current process |
 | ⌃d | Exit current shell. Equivalent to typing 'exit' |
 
 ## Plugins
