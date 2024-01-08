@@ -5,20 +5,20 @@
 | keymap | description | mode |
 |--------|-------------|--------|
 | gd | Go to definition | normal |
-| ⌃+t | Go to back in definition tag stack | normal |
+| ⌃t | Go to back in definition tag stack | normal |
 | gD | Go to declaration | normal |
 | gi | Go to implementation | normal |
 | go | Go to type definition | normal |
 | gr | Go to reference | normal |
 | gl | Open diagnostics picker | normal |
 | gs | Signature help | normal |
-| ⌃+s | Signature help | insert |
+| ⌃s | Signature help | insert |
 | K | Hover | normal |
 | \]d | Next diagnostic | normal |
 | \[d | Previous diagnostic | normal |
-| \<leader>+r | Rename element | normal |
-| \<leader>+i | Format code using LSP | normal - visual |
-| \<leader>+c | Open available code actions | normal |
+| \<leader>r | Rename element | normal |
+| \<leader>i | Format code using LSP | normal - visual |
+| \<leader>c | Open available code actions | normal |
 | LspInfo | Show information about attached LSPs | command |
 | LspLog | Show LSPs logs | command |
 | LspRestart | Restart attached LSPs | command |
@@ -27,15 +27,15 @@
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| \<leader>+e | Open find files picker | normal |
-| \<leader>+f | Open fuzzy finder picker | normal |
-| ⌃+p | Previous result | - |
-| ⌃+n | Next result | - |
+| \<leader>e | Open find files picker | normal |
+| \<leader>f | Open fuzzy finder picker | normal |
+| ⌃p | Previous result | - |
+| ⌃n | Next result | - |
 | ⏎ | Select entry | - |
-| ⌃+v | Open vertical split | - |
-| ⌃+x | Open horizontal split | - |
-| ⌃+u | Scroll up in preview | - |
-| ⌃+d | Scroll down in preview | - |
+| ⌃v | Open vertical split | - |
+| ⌃x | Open horizontal split | - |
+| ⌃u | Scroll up in preview | - |
+| ⌃d | Scroll down in preview | - |
 | ⎋ | Quit telescope | - |
 
 ## Cmp
@@ -43,11 +43,11 @@
 | keymap | description | mode |
 |--------|-------------|--------|
 | ⏎ | Select entry | - |
-| ⌃+n | Next result - Jump to next snippet placeholder | - |
-| ⌃+p | Previous result - Jump to previous snippet placeholder | - |
-| ⌃+u | Scroll up in preview | - |
-| ⌃+d | Scroll down in preview | - |
-| ⌃+e | Abort autocompletion | - |
+| ⌃n | Next result - Jump to next snippet placeholder | - |
+| ⌃p | Previous result - Jump to previous snippet placeholder | - |
+| ⌃u | Scroll up in preview | - |
+| ⌃d | Scroll down in preview | - |
+| ⌃e | Abort autocompletion | - |
 
 ## Comment
 
@@ -90,4 +90,4 @@
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| \<leader>+smh | Collapse code | normal |
+| \<leader>smh | Collapse code | normal |
