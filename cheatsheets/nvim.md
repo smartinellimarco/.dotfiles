@@ -5,14 +5,14 @@
 | keymap | description | mode |
 |--------|-------------|--------|
 | gd | Go to definition | normal |
-| \<ctrl>+t | Go to back in definition tag stack | normal |
+| ⌃+t | Go to back in definition tag stack | normal |
 | gD | Go to declaration | normal |
 | gi | Go to implementation | normal |
 | go | Go to type definition | normal |
 | gr | Go to reference | normal |
 | gl | Open diagnostics picker | normal |
 | gs | Signature help | normal |
-| \<ctrl>+s | Signature help | insert |
+| ⌃+s | Signature help | insert |
 | K | Hover | normal |
 | \]d | Next diagnostic | normal |
 | \[d | Previous diagnostic | normal |
@@ -29,25 +29,25 @@
 |--------|-------------|--------|
 | \<leader>+e | Open find files picker | normal |
 | \<leader>+f | Open fuzzy finder picker | normal |
-| \<ctrl>+p | Previous result | - |
-| \<ctrl>+n | Next result | - |
-| \<cr> | Select entry | - |
-| \<ctrl>+v | Open vertical split | - |
-| \<ctrl>+x | Open horizontal split | - |
-| \<ctrl>+u | Scroll up in preview | - |
-| \<ctrl>+d | Scroll down in preview | - |
-| \<esc> | Quit telescope | - |
+| ⌃+p | Previous result | - |
+| ⌃+n | Next result | - |
+| ⏎ | Select entry | - |
+| ⌃+v | Open vertical split | - |
+| ⌃+x | Open horizontal split | - |
+| ⌃+u | Scroll up in preview | - |
+| ⌃+d | Scroll down in preview | - |
+| ⎋ | Quit telescope | - |
 
 ## Cmp
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| \<cr> | Select entry | - |
-| \<ctrl>+n | Next result - Jump to next snippet placeholder | - |
-| \<ctrl>+p | Previous result - Jump to previous snippet placeholder | - |
-| \<ctrl>+u | Scroll up in preview | - |
-| \<ctrl>+d | Scroll down in preview | - |
-| \<ctrl>+e | Abort autocompletion | - |
+| ⏎ | Select entry | - |
+| ⌃+n | Next result - Jump to next snippet placeholder | - |
+| ⌃+p | Previous result - Jump to previous snippet placeholder | - |
+| ⌃+u | Scroll up in preview | - |
+| ⌃+d | Scroll down in preview | - |
+| ⌃+e | Abort autocompletion | - |
 
 ## Comment
 
@@ -59,6 +59,11 @@
 | gb | Comment out visual selection using block delimiters | visual |
 | gc\<motion> | Comment out text object line wise | normal |
 | gb\<motion> | Comment out text object block wise | normal |
+
+## Surround
+
+| keymap | description | mode |
+|--------|-------------|--------|
 
 ## Leap
 
