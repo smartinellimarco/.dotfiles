@@ -15,7 +15,8 @@ if [ -f $HOME/.zsh_bootstrap ]; then
   source $HOME/.zsh_bootstrap
 fi
 
-# TODO: Load custom keymaps
+bindkey "^f" forward-word
+bindkey "^b" backward-word
 
 # Load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

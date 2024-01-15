@@ -1,4 +1,4 @@
-# Zsh cheat sheet
+# Nvim cheat sheet
 
 ## LSP
 
