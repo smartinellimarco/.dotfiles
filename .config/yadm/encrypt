@@ -2,6 +2,8 @@
 .zsh_history
 .z
 .ipython/profile_name/history.sqlite
+.python_history
+.pdbhistory
 .splight/config
 .aws/credentials
 .aws/config
