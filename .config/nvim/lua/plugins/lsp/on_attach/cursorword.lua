@@ -8,10 +8,7 @@ function M.setup(client, bufnr)
       buffer = bufnr,
       group = augroup,
       callback = function()
-        local status, err = pcall(vim.lsp.buf.document_highlight)
-        if not status then
-          vim.print(err)
-        end
+        pcall(vim.lsp.buf.document_highlight)
       end
     })
 
@@ -19,10 +16,7 @@ function M.setup(client, bufnr)
       buffer = bufnr,
       group = augroup,
       callback = function()
-        local status, err = pcall(vim.lsp.buf.clear_references)
-        if not status then
-          vim.print(err)
-        end
+        pcall(vim.lsp.buf.clear_references)
       end
     })
   end
