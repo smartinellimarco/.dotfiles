@@ -54,18 +54,6 @@ function M.config(_, opts)
     end
   })
 
-  -- Launch telescope file picker and change dir when opening neovim
-  -- with a directory argument
-  vim.api.nvim_create_autocmd('VimEnter', {
-    group = augroup,
-    callback = function(args)
-      if args.file ~= '' and vim.fn.isdirectory(args.file) ~= 0 then
-        vim.api.nvim_set_current_dir(args.file)
-        builtin.find_files()
-      end
-    end
-  })
-
   vim.keymap.set('n', '<leader>e', builtin.find_files, {})
   vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
 end
