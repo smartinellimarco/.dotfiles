@@ -30,7 +30,6 @@ M.dependencies = {
 
 function M.config(_, _)
   local cmp = require('cmp')
-  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local lspkind = require('lspkind')
   local luasnip = require('luasnip')
   local snippet_loader = require('luasnip.loaders.from_vscode')
@@ -38,11 +37,11 @@ function M.config(_, _)
   -- Lazy load snippet collection
   snippet_loader.lazy_load()
 
-  -- Add parenthesis when completing a function
-  cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
-
   -- Setup 'cmp'
   cmp.setup({
+    performance = {
+      max_view_entries = 10
+    },
     completion = {
       completeopt = 'menu,menuone,noinsert' -- Only affects nvim-cmp
     },
@@ -70,26 +69,24 @@ function M.config(_, _)
       ['<CR>'] = cmp.mapping.confirm({ select = false }),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
+
+      -- Do not fallback to disable i_CTRL-N and i_CTRL-P
       ['<C-n>'] = cmp.mapping(
-        function(fallback)
+        function(_)
           if cmp.visible() then
             -- Do not replace word under cursor
             cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
           elseif luasnip.expand_or_locally_jumpable() then
             luasnip.expand_or_jump()
-          else
-            fallback()
           end
         end, { 'i', 's' }),
       ['<C-p>'] = cmp.mapping(
-        function(fallback)
+        function(_)
           if cmp.visible() then
             -- Do not replace word under cursor
             cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
           elseif luasnip.locally_jumpable(-1) then
             luasnip.jump(-1)
-          else
-            fallback()
           end
         end, { 'i', 's' }),
       ['<C-e>'] = cmp.mapping.abort(),
