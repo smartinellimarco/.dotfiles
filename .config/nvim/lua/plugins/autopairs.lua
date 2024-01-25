@@ -1,7 +1,10 @@
 local M = { 'windwp/nvim-autopairs' }
 
 M.event = 'InsertEnter'
-M.opts = {}
+M.opts = {
+  check_ts = true,
+  enable_check_bracket_line = false,
+}
 
 function M.config(_, opts)
   require('nvim-autopairs').setup(opts)
