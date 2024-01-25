@@ -30,12 +30,16 @@ M.dependencies = {
 
 function M.config(_, _)
   local cmp = require('cmp')
+  local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local lspkind = require('lspkind')
   local luasnip = require('luasnip')
   local snippet_loader = require('luasnip.loaders.from_vscode')
 
   -- Lazy load snippet collection
   snippet_loader.lazy_load()
+
+  -- Add parenthesis when completing a function
+  cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
 
   -- Setup 'cmp'
   cmp.setup({
