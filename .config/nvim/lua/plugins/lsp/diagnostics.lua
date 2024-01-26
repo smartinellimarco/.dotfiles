@@ -1,6 +1,8 @@
 local M = {}
 
 function M.setup()
+  -- Diagnostics disappear if exiting insert mode with <C-c>
+  vim.keymap.set('i', '<C-c>', '<Esc>')
   vim.diagnostic.config({
     signs = false,
     virtual_text = {

@@ -25,17 +25,22 @@
 
 ### Requirements
 
+TODO: ver requirements en checkhealth y acomodar la instalacion
+TODO: split installation per OS
+
 Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
 Use brew to setup packages, only if they are not already present in the system
 ```zsh
-for package in git gh zsh antidote yadm gcc node make ripgrep fd neovim gpg tree; do
+for package in git gh zsh antidote yadm gcc nvm make ripgrep fd neovim gpg tree; do
   if ! command -v $package &> /dev/null
   then
     brew install $package
   fi
 done
 ```
+
+TODO: Install node >=18.X.X
 
 Install kitty and nerd fonts:
 

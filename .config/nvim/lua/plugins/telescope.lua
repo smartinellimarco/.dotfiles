@@ -24,7 +24,7 @@ function M.config(_, opts)
     defaults = {
       default_mappings = {
         i = {
-          ['<esc>'] = actions.close,
+          ['<Esc>'] = actions.close,
           ['<C-n>'] = actions.move_selection_next,
           ['<C-p>'] = actions.move_selection_previous,
 
