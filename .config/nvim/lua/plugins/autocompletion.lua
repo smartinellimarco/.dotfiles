@@ -70,13 +70,14 @@ function M.config(_, _)
       end
     },
     mapping = {
+      -- TODO: accept has a delay (like the remaps delay) if you press it
+      -- before the suggestions popup.
       -- If no item is selected, do not auto-select the first one on '<CR>'
       ['<C-f>'] = cmp.mapping.confirm(),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
       -- Do not fallback to disable i_CTRL-N and i_CTRL-P
-      -- TODO: the expand_or_locally_jumpable creates a delay in CR
       ['<C-n>'] = cmp.mapping(
         function(_)
           if cmp.visible() then
