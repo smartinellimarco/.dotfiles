@@ -44,10 +44,11 @@ function M.config(_, _)
   -- Setup 'cmp'
   cmp.setup({
     performance = {
-      max_view_entries = 10
+      max_view_entries = 5
     },
     completion = {
-      completeopt = 'menu,menuone,noinsert' -- Only affects nvim-cmp
+      completeopt = 'menu,menuone,noinsert', -- Only affects nvim-cmp
+      keyword_length = 3,
     },
     formatting = {
       format = lspkind.cmp_format() -- Add icons to completion items
@@ -60,8 +61,8 @@ function M.config(_, _)
       { name = 'nvim_lsp' },
       { name = 'luasnip' },
       { name = 'buffer' },
-      { name = 'nvim_lua' },
       { name = 'path' },
+      { name = 'nvim_lua' },
     },
     snippet = {
       expand = function(args)
@@ -70,11 +71,12 @@ function M.config(_, _)
     },
     mapping = {
       -- If no item is selected, do not auto-select the first one on '<CR>'
-      ['<CR>'] = cmp.mapping.confirm({ select = false }),
+      ['<C-f>'] = cmp.mapping.confirm(),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
       -- Do not fallback to disable i_CTRL-N and i_CTRL-P
+      -- TODO: the expand_or_locally_jumpable creates a delay in CR
       ['<C-n>'] = cmp.mapping(
         function(_)
           if cmp.visible() then
