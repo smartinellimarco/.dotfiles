@@ -42,7 +42,7 @@
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| ⏎ | Select entry | - |
+| ⌃f | Select entry | - |
 | ⌃n | Next result - Jump to next snippet placeholder | - |
 | ⌃p | Previous result - Jump to previous snippet placeholder | - |
 | ⌃u | Scroll up in preview | - |
