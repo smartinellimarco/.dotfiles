@@ -22,7 +22,7 @@ vim.o.signcolumn = 'yes:1'      -- Use a signcolumn with 1 space for git status
 vim.o.splitright = true         -- Open vertical splits to the right side of the screen
 vim.o.splitbelow = true         -- Open horizontal splits to the bottom of the screen
 vim.opt.showmode = false        -- Do not show neovim mode
-vim.opt.cmdheight = 0           -- Hide commandline (see: https://github.com/neovim/neovim/issues/19193)
+vim.opt.cmdheight = 0           -- Hide commandline
 vim.opt.completeopt = 'menu'    -- Options for builtin completion
 
 -- see: https://github.com/neovim/neovim/pull/17446
