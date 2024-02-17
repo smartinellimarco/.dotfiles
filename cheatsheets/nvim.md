@@ -68,12 +68,6 @@
 | keymap | description | mode |
 |--------|-------------|--------|
 
-## Leap
-
-| keymap | description | mode |
-|--------|-------------|--------|
-| s | Leap to location (space key is an alias for odd characters) | normal - visual |
-
 ## Lazy 
 
 | keymap | description | mode |
