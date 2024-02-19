@@ -38,6 +38,20 @@
 | ⌃d | Scroll down in preview | - |
 | ⎋ | Quit telescope | - |
 
+## Oil
+
+| keymap | description | mode |
+|--------|-------------|--------|
+| \<leader>o | Open file finder | normal |
+| ⏎ | Select entry | - |
+| l | Select entry | - |
+| h | Go to parent | - |
+| ⌃v | Open vertical split | - |
+| ⌃x | Open horizontal split | - |
+| . | Open current working directory | - |
+| g. | Toggle hidden files | - |
+
+
 ## Cmp
 
 | keymap | description | mode |
