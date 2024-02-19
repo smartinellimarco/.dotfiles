@@ -12,6 +12,7 @@ M.opts = {
     ["h"] = "actions.parent",
     ["."] = "actions.open_cwd",
     ["g."] = "actions.toggle_hidden",
+    ["<leader>o"] = "actions.close", -- Act as toggle
   },
   use_default_keymaps = false,
 }
