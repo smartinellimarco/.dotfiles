@@ -1,14 +1,14 @@
 local M = { 'nvim-lualine/lualine.nvim' }
 
-vim.api.nvim_create_autocmd("RecordingEnter", {
+vim.api.nvim_create_autocmd('RecordingEnter', {
   callback = function()
     require('lualine').refresh({
-      place = { "statusline" },
+      place = { 'statusline' },
     })
   end,
 })
 
-vim.api.nvim_create_autocmd("RecordingLeave", {
+vim.api.nvim_create_autocmd('RecordingLeave', {
   callback = function()
     -- The register does not clean up immediately after
     -- recording stops, so we have to wait a little bit (50ms)
@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd("RecordingLeave", {
     timer:start(50, 0,
       vim.schedule_wrap(function()
         require('lualine').refresh({
-          place = { "statusline" },
+          place = { 'statusline' },
         })
       end)
     )
@@ -35,13 +35,13 @@ M.opts = {
     lualine_c = { { 'filename', path = 1 } },
     lualine_x = {
       {
-        "macro-recording",
+        'macro-recording',
         fmt = function()
           local register = vim.fn.reg_recording()
-          if register == "" then
-            return ""
+          if register == '' then
+            return ''
           else
-            return "Recording @" .. register
+            return 'Recording @' .. register
           end
         end
       },
