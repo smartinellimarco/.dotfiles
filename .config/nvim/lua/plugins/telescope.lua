@@ -35,6 +35,8 @@ function M.config(_, opts)
           ['<C-u>'] = actions.preview_scrolling_up,
           ['<C-d>'] = actions.preview_scrolling_down,
           ['<C-w>'] = { '<c-s-w>', type = 'command' }, -- Delete word
+
+          ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
         }
       }
     }
@@ -44,11 +46,8 @@ function M.config(_, opts)
   telescope.load_extension('fzf')
 
   -- Show line numbers in the preview
-  local augroup = vim.api.nvim_create_augroup('telescope', {})
-
   vim.api.nvim_create_autocmd('User', {
     pattern = 'TelescopePreviewerLoaded',
-    group = augroup,
     callback = function()
       vim.opt_local.number = true
     end
