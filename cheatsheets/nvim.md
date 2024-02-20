@@ -42,7 +42,7 @@
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| \<leader>o | Open file finder | normal |
+| \<leader>o | Toggle oil (closes without saving) | normal |
 | ⏎ | Select entry | - |
 | l | Select entry | - |
 | h | Go to parent | - |
@@ -50,7 +50,6 @@
 | ⌃x | Open horizontal split | - |
 | . | Open current working directory | - |
 | g. | Toggle hidden files | - |
-
 
 ## Cmp
 
