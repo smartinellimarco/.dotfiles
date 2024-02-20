@@ -38,7 +38,7 @@ function M.config(_, opts)
 
           ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
           ['<C-s>'] = actions.toggle_selection,
-          ['<C-a>'] = actions.select_all,
+          ['<C-a>'] = actions.drop_all + actions.select_all,
         }
       }
     }
