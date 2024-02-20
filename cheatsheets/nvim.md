@@ -39,7 +39,7 @@
 | ⌃d | Scroll down in preview | - |
 | ⌃s | Select result | - |
 | ⌃a | Select all results | - |
-| ⌃q | Send selected result to the quickfix list | - |
+| ⌃q | Send selected results to the quickfix list | - |
 | ⎋ | Quit telescope | - |
 
 ## Oil
