@@ -51,6 +51,8 @@ M.opts = {
     lualine_z = { 'location' }
   },
   extensions = {
+    'oil',
+    'quickfix',
     {
       sections = {
         lualine_a = {
