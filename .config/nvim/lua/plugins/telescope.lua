@@ -54,22 +54,8 @@ function M.config(_, opts)
     end
   })
 
-  -- Cache the current pickers input until a new one is used
-  local _last_picker = nil
-  local function wrap_builtin(func)
-    local function wrapper()
-      if func == _last_picker then
-        builtin.resume()
-      else
-        _last_picker = func
-        func()
-      end
-    end
-    return wrapper
-  end
-
-  vim.keymap.set('n', '<leader>e', wrap_builtin(builtin.find_files), {})
-  vim.keymap.set('n', '<leader>f', wrap_builtin(builtin.live_grep), {})
+  vim.keymap.set('n', '<leader>e', builtin.find_files, {})
+  vim.keymap.set('n', '<leader>f', builtin.live_grep, {})
 end
 
 return M
