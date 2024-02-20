@@ -29,6 +29,7 @@
 |--------|-------------|--------|
 | \<leader>e | Open find files picker | normal |
 | \<leader>f | Open fuzzy finder picker | normal |
+| \<leader>d | Open workspace diagnostics picker | normal |
 | ⌃p | Previous result | - |
 | ⌃n | Next result | - |
 | ⏎ | Select entry | - |
@@ -36,6 +37,9 @@
 | ⌃x | Open horizontal split | - |
 | ⌃u | Scroll up in preview | - |
 | ⌃d | Scroll down in preview | - |
+| ⌃s | Select result | - |
+| ⌃a | Select all results | - |
+| ⌃q | Send selected result to the quickfix list | - |
 | ⎋ | Quit telescope | - |
 
 ## Oil
