@@ -2,6 +2,7 @@
 vim.g.mapleader = ' '
 
 -- Configs
+vim.o.fillchars = 'eob: '       -- Disable sign column chars for empty lines
 vim.o.nospell = true
 vim.o.cursorline = true         -- Highlight line Highlighting
 vim.o.cursoropt = 'number'      -- Only highlight line number
