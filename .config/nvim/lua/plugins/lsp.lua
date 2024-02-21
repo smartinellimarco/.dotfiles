@@ -128,7 +128,9 @@ function M.config(_, _)
       Lua = {
         completion = {
           callSnippet = "Both" -- Insert placeholders for arguments
-        }
+        },
+        workspace = { checkThirdParty = false },
+        telemetry = { enable = false },
       }
     },
     jsonls = {},
