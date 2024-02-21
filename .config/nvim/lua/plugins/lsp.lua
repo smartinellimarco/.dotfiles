@@ -1,6 +1,5 @@
 -- Function that runs each time an LSP is attached to a buffer
 local function on_attach(client, bufnr)
-
   -- Highlight word under cursor on cursor hold, only if that
   -- capability is supported
   if client.server_capabilities.documentHighlightProvider then
@@ -120,9 +119,19 @@ function M.config(_, _)
       python = {
         analysis = {
           diagnosticMode = 'workspace',
-          typeCheckingMode = 'off'
+          typeCheckingMode = 'off',
+          diagnosticSeverityOverrides = {
+            reportUnusedImport = true,
+            reportUnusedClass = true,
+            reportUnusedFunction = true,
+            reportUnusedVariable = true,
+            reportDeprecated = true
+          }
         }
-      }
+      },
+      pyright = {
+        disableTaggedHints = true,
+      },
     },
     lua_ls = {
       Lua = {
@@ -154,7 +163,7 @@ function M.config(_, _)
         capabilities = cmp_nvim_lsp.default_capabilities(),
         on_attach = on_attach,
         settings = server_settings[server_name],
-        filetypes = (server_settings[server_name] or {}).filetypes,
+        filetypes = (server_settings[server_name] or {}).filetypes, -- TODO: dafuq is this
       }
     end
   })
