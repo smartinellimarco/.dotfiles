@@ -112,6 +112,7 @@ function M.config(_, _)
 
   local mason_lspconfig = require('mason-lspconfig')
   local lspconfig = require('lspconfig')
+  local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
   -- Configs for each LSP
   local server_settings = {
@@ -138,21 +139,17 @@ function M.config(_, _)
     yamlls = {},
   }
 
-  local server_names = vim.tbl_keys(server_settings)
-
-  -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
   -- Ensure the servers are installed
   mason_lspconfig.setup({
-    ensure_installed = server_names
+    ensure_installed = vim.tbl_keys(server_settings)
   })
 
   -- Setup all LSPs
   mason_lspconfig.setup_handlers({
     function(server_name)
       lspconfig[server_name].setup {
-        capabilities = capabilities,
+        -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
+        capabilities = cmp_nvim_lsp.default_capabilities(),
         on_attach = on_attach,
         settings = server_settings[server_name],
         filetypes = (server_settings[server_name] or {}).filetypes,
