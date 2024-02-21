@@ -1,5 +1,6 @@
 -- Function that runs each time an LSP is attached to a buffer
 local function on_attach(client, bufnr)
+
   -- Highlight word under cursor on cursor hold, only if that
   -- capability is supported
   if client.server_capabilities.documentHighlightProvider then
