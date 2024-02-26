@@ -116,6 +116,7 @@ function M.config(_, _)
 
   -- Configs for each LSP
   local server_settings = {
+    gopls = {},
     pyright = {
       python = {
         analysis = {
