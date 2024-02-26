@@ -12,7 +12,7 @@ M.opts = {
     ['h'] = 'actions.parent',
     ['.'] = 'actions.open_cwd',
     ['g.'] = 'actions.toggle_hidden',
-    ['<leader>o'] = 'actions.close', -- Act as toggle
+    ['<leader>q'] = 'actions.close', -- Act as toggle
   },
   use_default_keymaps = false,
 }
@@ -33,7 +33,7 @@ function M.config(_, opts)
     end
   })
 
-  vim.keymap.set('n', '<leader>o', require('oil').open)
+  vim.keymap.set('n', '<leader>q', require('oil').open)
 end
 
 return M
