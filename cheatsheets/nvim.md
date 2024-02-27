@@ -80,6 +80,12 @@
 | gco | Add comment on the line below | normal |
 | gcA | Add comment at the end of line | normal |
 
+## Copilot
+
+| keymap | description | mode |
+|--------|-------------|--------|
+| ⇥ | Accept suggestion | insert |
+
 ## Surround
 
 | keymap | description | mode |
