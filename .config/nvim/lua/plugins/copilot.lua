@@ -6,7 +6,6 @@ M.opts = {
     enabled = false,
   },
   suggestion = {
-    enabled = true,
     auto_trigger = true,
     debounce = 0,
     keymap = {
