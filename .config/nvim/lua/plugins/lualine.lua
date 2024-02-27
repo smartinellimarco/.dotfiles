@@ -23,6 +23,8 @@ vim.api.nvim_create_autocmd('RecordingLeave', {
   end,
 
 })
+
+M.dependencies = { 'AndreM222/copilot-lualine' }
 M.opts = {
   options = {
     globalstatus = true,
@@ -45,6 +47,7 @@ M.opts = {
           end
         end
       },
+      { 'copilot' },
       { 'encoding' }
     },
     lualine_y = { 'progress' },
