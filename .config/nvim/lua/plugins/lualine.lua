@@ -1,30 +1,9 @@
 local M = { 'nvim-lualine/lualine.nvim' }
 
-vim.api.nvim_create_autocmd('RecordingEnter', {
-  callback = function()
-    require('lualine').refresh({
-      place = { 'statusline' },
-    })
-  end,
-})
-
-vim.api.nvim_create_autocmd('RecordingLeave', {
-  callback = function()
-    -- The register does not clean up immediately after
-    -- recording stops, so we have to wait a little bit (50ms)
-    local timer = vim.loop.new_timer()
-    timer:start(50, 0,
-      vim.schedule_wrap(function()
-        require('lualine').refresh({
-          place = { 'statusline' },
-        })
-      end)
-    )
-  end,
-
-})
-
-M.dependencies = { 'AndreM222/copilot-lualine' }
+M.dependencies = {
+  'AndreM222/copilot-lualine',
+  { 'linrongbin16/lsp-progress.nvim', opts = {} },
+}
 M.opts = {
   options = {
     globalstatus = true,
@@ -34,7 +13,12 @@ M.opts = {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diagnostics' },
-    lualine_c = { { 'filename', path = 1 } },
+    lualine_c = {
+      { 'filename', path = 1 },
+      function()
+        return require('lsp-progress').progress()
+      end,
+    },
     lualine_x = {
       {
         'macro-recording',
@@ -45,13 +29,13 @@ M.opts = {
           else
             return 'Recording @' .. register
           end
-        end
+        end,
       },
       { 'copilot' },
-      { 'encoding' }
+      { 'encoding' },
     },
     lualine_y = { 'progress' },
-    lualine_z = { 'location' }
+    lualine_z = { 'location' },
   },
   extensions = {
     'oil',
@@ -61,36 +45,68 @@ M.opts = {
         lualine_a = {
           function()
             return 'Plugins'
-          end
-        }
+          end,
+        },
       },
-      filetypes = { 'lazy' }
+      filetypes = { 'lazy' },
     },
     {
       sections = {
         lualine_a = {
           function()
             return 'LSPs'
-          end
-        }
+          end,
+        },
       },
-      filetypes = { 'mason' }
+      filetypes = { 'mason' },
     },
     {
       sections = {
         lualine_a = {
           function()
             return 'Telescope'
-          end
-        }
+          end,
+        },
       },
-      filetypes = { 'TelescopePrompt' }
-    }
-  }
+      filetypes = { 'TelescopePrompt' },
+    },
+  },
 }
 
 function M.config(_, opts)
   require('lualine').setup(opts)
+
+  -- Refresh lualine on LSPs status changes
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'LspProgressStatusUpdated',
+    callback = require('lualine').refresh,
+  })
+
+  -- Macro recording message
+  vim.api.nvim_create_autocmd('RecordingEnter', {
+    callback = function()
+      require('lualine').refresh({
+        place = { 'statusline' },
+      })
+    end,
+  })
+
+  vim.api.nvim_create_autocmd('RecordingLeave', {
+    callback = function()
+      -- The register does not clean up immediately after
+      -- recording stops, so we have to wait a little bit (50ms)
+      local timer = vim.loop.new_timer()
+      timer:start(
+        50,
+        0,
+        vim.schedule_wrap(function()
+          require('lualine').refresh({
+            place = { 'statusline' },
+          })
+        end)
+      )
+    end,
+  })
 end
 
 return M
