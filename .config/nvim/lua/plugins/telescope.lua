@@ -4,15 +4,15 @@ M.dependencies = {
   { 'nvim-lua/plenary.nvim' },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    build = 'make'
-  }
+    build = 'make',
+  },
 }
 M.opts = {
   pickers = {
     find_files = {
-      hidden = true
-    }
-  }
+      hidden = true,
+    },
+  },
 }
 
 function M.config(_, opts)
@@ -36,12 +36,12 @@ function M.config(_, opts)
           ['<C-d>'] = actions.preview_scrolling_down,
           ['<C-w>'] = { '<C-s-w>', type = 'command' }, -- Delete word
 
-          ["<C-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
+          ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
           ['<C-s>'] = actions.toggle_selection,
           ['<C-a>'] = actions.drop_all + actions.select_all,
-        }
-      }
-    }
+        },
+      },
+    },
   }
 
   telescope.setup(vim.tbl_deep_extend('error', opts, mappings))
@@ -52,7 +52,7 @@ function M.config(_, opts)
     pattern = 'TelescopePreviewerLoaded',
     callback = function()
       vim.opt_local.number = true
-    end
+    end,
   })
 
   vim.keymap.set('n', '<leader>e', builtin.find_files, {})

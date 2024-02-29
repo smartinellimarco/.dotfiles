@@ -1,6 +1,5 @@
 -- Function that runs each time an LSP is attached to a buffer
 local function on_attach(client, bufnr)
-
   -- Highlight word under cursor on cursor hold, only if that
   -- capability is supported
   if client.server_capabilities.documentHighlightProvider then
@@ -8,14 +7,14 @@ local function on_attach(client, bufnr)
       buffer = bufnr,
       callback = function()
         pcall(vim.lsp.buf.document_highlight)
-      end
+      end,
     })
 
     vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
       buffer = bufnr,
       callback = function()
         pcall(vim.lsp.buf.clear_references)
-      end
+      end,
     })
   end
 
@@ -33,12 +32,10 @@ local function on_attach(client, bufnr)
   bufmap('n', 'gr', vim.lsp.buf.references)
   bufmap('n', 'gs', vim.lsp.buf.signature_help)
   bufmap('n', '<leader>r', vim.lsp.buf.rename)
-  bufmap({ 'n', 'x' }, '<leader>i',
-    function()
-      -- see: https://github.com/neovim/neovim/pull/26549
-      vim.lsp.buf.format({ async = true })
-    end
-  )
+  bufmap({ 'n', 'x' }, '<leader>i', function()
+    -- see: https://github.com/neovim/neovim/pull/26549
+    vim.lsp.buf.format({ async = true })
+  end)
   bufmap('n', '<leader>c', vim.lsp.buf.code_action)
   bufmap('n', 'gl', vim.diagnostic.open_float)
   bufmap('n', '[d', vim.diagnostic.goto_prev)
@@ -65,9 +62,6 @@ M.dependencies = {
   -- Automatically configure lua_ls for neovim development
   { 'folke/neodev.nvim', opts = {} },
 
-  -- Floating status updates for LSPs
-  { 'j-hui/fidget.nvim', opts = {} },
-
   -- Automatically install LSPs
   {
     'williamboman/mason.nvim',
@@ -75,25 +69,21 @@ M.dependencies = {
     dependencies = { 'williamboman/mason-lspconfig.nvim' },
     opts = {
       ui = {
-        border = 'rounded'
-      }
+        border = 'rounded',
+      },
     },
-  }
+  },
 }
 
 function M.config(_, _)
   local lspconfig_ui = require('lspconfig.ui.windows')
 
   -- Configure borders for hover and signature help
-  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(
-    vim.lsp.handlers.hover,
-    { border = 'rounded' }
-  )
+  vim.lsp.handlers['textDocument/hover'] =
+    vim.lsp.with(vim.lsp.handlers.hover, { border = 'rounded' })
 
-  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(
-    vim.lsp.handlers.signature_help,
-    { border = 'rounded' }
-  )
+  vim.lsp.handlers['textDocument/signatureHelp'] =
+    vim.lsp.with(vim.lsp.handlers.signature_help, { border = 'rounded' })
 
   -- Configure UI border
   lspconfig_ui.default_options.border = 'rounded'
@@ -106,8 +96,8 @@ function M.config(_, _)
       spacing = 0,
     },
     float = {
-      border = 'rounded'
-    }
+      border = 'rounded',
+    },
   })
 
   local mason_lspconfig = require('mason-lspconfig')
@@ -116,6 +106,7 @@ function M.config(_, _)
 
   -- Configs for each LSP
   local server_settings = {
+    -- LSPs
     gopls = {},
     pyright = {
       python = {
@@ -127,9 +118,9 @@ function M.config(_, _)
             reportUnusedClass = true,
             reportUnusedFunction = true,
             reportUnusedVariable = true,
-            reportDeprecated = true
-          }
-        }
+            reportDeprecated = true,
+          },
+        },
       },
       pyright = {
         disableTaggedHints = true,
@@ -138,11 +129,11 @@ function M.config(_, _)
     lua_ls = {
       Lua = {
         completion = {
-          callSnippet = "Both" -- Insert placeholders for arguments
+          callSnippet = 'Both', -- Insert placeholders for arguments
         },
         workspace = { checkThirdParty = false },
         telemetry = { enable = false },
-      }
+      },
     },
     jsonls = {},
     terraformls = {},
@@ -150,24 +141,26 @@ function M.config(_, _)
     clangd = {},
     docker_compose_language_service = {},
     yamlls = {},
+
+    -- Formatters
   }
 
   -- Ensure the servers are installed
   mason_lspconfig.setup({
-    ensure_installed = vim.tbl_keys(server_settings)
+    ensure_installed = vim.tbl_keys(server_settings),
   })
 
   -- Setup all LSPs
   mason_lspconfig.setup_handlers({
     function(server_name)
-      lspconfig[server_name].setup {
+      lspconfig[server_name].setup({
         -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
         capabilities = cmp_nvim_lsp.default_capabilities(),
         on_attach = on_attach,
         settings = server_settings[server_name],
         filetypes = (server_settings[server_name] or {}).filetypes, -- TODO: dafuq is this
-      }
-    end
+      })
+    end,
   })
 end
 

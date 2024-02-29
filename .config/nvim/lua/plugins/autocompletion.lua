@@ -44,14 +44,14 @@ function M.config(_, _)
   -- Setup 'cmp'
   cmp.setup({
     performance = {
-      max_view_entries = 5
+      max_view_entries = 5,
     },
     completion = {
       completeopt = 'menu,menuone,noinsert', -- Only affects nvim-cmp
       keyword_length = 3,
     },
     formatting = {
-      format = lspkind.cmp_format() -- Add icons to completion items
+      format = lspkind.cmp_format(), -- Add icons to completion items
     },
     window = {
       completion = cmp.config.window.bordered(),
@@ -67,7 +67,7 @@ function M.config(_, _)
     snippet = {
       expand = function(args)
         luasnip.lsp_expand(args.body)
-      end
+      end,
     },
     mapping = {
       -- TODO: accept has a delay (like the remaps delay) if you press it
@@ -78,26 +78,24 @@ function M.config(_, _)
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
       -- Do not fallback to disable i_CTRL-N and i_CTRL-P
-      ['<C-n>'] = cmp.mapping(
-        function(_)
-          if cmp.visible() then
-            -- Do not replace word under cursor
-            cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
-          elseif luasnip.expand_or_locally_jumpable() then
-            luasnip.expand_or_jump()
-          end
-        end, { 'i', 's' }),
-      ['<C-p>'] = cmp.mapping(
-        function(_)
-          if cmp.visible() then
-            -- Do not replace word under cursor
-            cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
-          elseif luasnip.locally_jumpable(-1) then
-            luasnip.jump(-1)
-          end
-        end, { 'i', 's' }),
+      ['<C-n>'] = cmp.mapping(function(_)
+        if cmp.visible() then
+          -- Do not replace word under cursor
+          cmp.select_next_item({ behavior = cmp.SelectBehavior.Select })
+        elseif luasnip.expand_or_locally_jumpable() then
+          luasnip.expand_or_jump()
+        end
+      end, { 'i', 's' }),
+      ['<C-p>'] = cmp.mapping(function(_)
+        if cmp.visible() then
+          -- Do not replace word under cursor
+          cmp.select_prev_item({ behavior = cmp.SelectBehavior.Select })
+        elseif luasnip.locally_jumpable(-1) then
+          luasnip.jump(-1)
+        end
+      end, { 'i', 's' }),
       ['<C-e>'] = cmp.mapping.abort(),
-    }
+    },
   })
 end
 

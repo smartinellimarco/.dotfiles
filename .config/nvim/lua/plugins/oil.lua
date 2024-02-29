@@ -30,7 +30,7 @@ function M.config(_, opts)
           vim.api.nvim_set_current_dir(path)
         end
       end
-    end
+    end,
   })
 
   vim.keymap.set('n', '<leader>q', require('oil').open)

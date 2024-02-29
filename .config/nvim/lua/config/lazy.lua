@@ -1,14 +1,14 @@
 -- Install lazy package manager if not installed
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
+  vim.fn.system({
     'git',
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
     '--branch=stable',
     lazypath,
-  }
+  })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -18,7 +18,7 @@ local opts = {
     colorscheme = { 'no-clown-fiesta' },
   },
   ui = {
-    border = 'rounded'
+    border = 'rounded',
   },
   change_detection = {
     enabled = false,

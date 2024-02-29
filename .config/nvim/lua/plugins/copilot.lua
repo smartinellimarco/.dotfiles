@@ -1,6 +1,8 @@
 local M = { 'zbirenbaum/copilot.lua' }
 
 -- Node version must be > 18.x
+M.cmd = 'Copilot'
+M.event = 'InsertEnter'
 M.opts = {
   panel = {
     enabled = false,
@@ -9,7 +11,7 @@ M.opts = {
     auto_trigger = true,
     debounce = 0,
     keymap = {
-      accept = "<Tab>",
+      accept = '<Tab>',
       accept_word = false,
       accept_line = false,
       next = false,

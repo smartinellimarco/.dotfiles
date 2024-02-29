@@ -8,8 +8,8 @@ M.opts = {
     enable = true,
   },
   indent = {
-    enable = true
-  }
+    enable = true,
+  },
 }
 
 function M.config(_, opts)

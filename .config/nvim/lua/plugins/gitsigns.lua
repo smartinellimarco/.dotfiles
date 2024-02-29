@@ -10,8 +10,8 @@ M.opts = {
   current_line_blame_formatter = '◦ <author>, <author_time:%Y-%m-%d> - <summary>',
   current_line_blame_formatter_nc = '◦ Not committed yet',
   yadm = {
-    enable = true
-  }
+    enable = true,
+  },
 }
 
 function M.config(_, opts)

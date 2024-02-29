@@ -1,8 +1,8 @@
 -- If neovim is started from the home or config directories
 -- assume that GIT_DIR points to the yadm repository
 if vim.env.GIT_DIR == nil then
-  local cwd       = vim.fn.getcwd()
-  local homedir   = vim.fn.expand('~')
+  local cwd = vim.fn.getcwd()
+  local homedir = vim.fn.expand('~')
   local configdir = vim.fn.expand('~/.config')
 
   if cwd == homedir or string.sub(cwd, 1, #configdir) == configdir then
