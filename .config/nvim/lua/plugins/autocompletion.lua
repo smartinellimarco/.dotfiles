@@ -72,17 +72,15 @@ function M.config(_, _)
     },
     mapping = {
       -- If no item is selected, do not auto-select the first one on '<CR>'
-      ['<C-f>'] = cmp.mapping(
-        function(fallback)
-          if cmp.visible() then
-            cmp.confirm()
-          elseif copilot.is_visible() then
-            copilot.accept()
-          else
-            fallback()
-          end
+      ['<C-f>'] = cmp.mapping(function(fallback)
+        if cmp.visible() then
+          cmp.confirm()
+        elseif copilot.is_visible() then
+          copilot.accept()
+        else
+          fallback()
         end
-      ),
+      end),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
