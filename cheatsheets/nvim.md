@@ -17,7 +17,6 @@
 | \]d | Next diagnostic | normal |
 | \[d | Previous diagnostic | normal |
 | \<leader>r | Rename element | normal |
-| \<leader>i | Format code using LSP | normal - visual |
 | \<leader>c | Open available code actions | normal |
 | LspInfo | Show information about attached LSPs | command |
 | LspLog | Show LSPs logs | command |
@@ -53,7 +52,6 @@
 | ⌃v | Open vertical split | - |
 | ⌃x | Open horizontal split | - |
 | . | Open current working directory | - |
-| g. | Toggle hidden files | - |
 
 ## Cmp
 
@@ -80,11 +78,11 @@
 | gco | Add comment on the line below | normal |
 | gcA | Add comment at the end of line | normal |
 
-## Copilot
+## Conform
 
 | keymap | description | mode |
 |--------|-------------|--------|
-| ⇥ | Accept suggestion | insert |
+| \<leader>i | Format code with tools (such as Black, isort, Stylua) with LSP as a fallback option | normal - visual |
 
 ## Surround
 
@@ -102,9 +100,3 @@
 | keymap | description | mode |
 |--------|-------------|--------|
 | Mason | Open LSPs manager | command |
-
-## Cellular automaton
-
-| keymap | description | mode |
-|--------|-------------|--------|
-| \<leader>smh | Collapse code | normal |
