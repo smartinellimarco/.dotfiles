@@ -59,6 +59,9 @@ M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.dependencies = {
 
+  -- Schema definitions
+  { 'b0o/schemastore.nvim' },
+
   -- Automatically configure lua_ls for neovim development
   { 'folke/neodev.nvim', opts = {} },
 
@@ -135,12 +138,27 @@ function M.config(_, _)
         telemetry = { enable = false },
       },
     },
-    jsonls = {},
+    jsonls = {
+      json = {
+        schemas = require('schemastore').json.schemas(),
+        validate = { enable = true },
+      },
+    },
+    yamlls = {
+      yaml = {
+        schemaStore = {
+          -- Disable built-in schemaStore support
+          enable = false,
+          -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+          url = '',
+        },
+        schemas = require('schemastore').yaml.schemas(),
+      },
+    },
     terraformls = {},
     marksman = {},
     clangd = {},
     docker_compose_language_service = {},
-    yamlls = {},
 
     -- Formatters
   }
