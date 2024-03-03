@@ -4,6 +4,9 @@ M.dependencies = {
   'nvim-tree/nvim-web-devicons',
 }
 M.opts = {
+  view_options = {
+    show_hidden = true,
+  },
   keymaps = {
     ['l'] = 'actions.select',
     ['<CR>'] = 'actions.select',
@@ -11,7 +14,6 @@ M.opts = {
     ['<C-x>'] = 'actions.select_split',
     ['h'] = 'actions.parent',
     ['.'] = 'actions.open_cwd',
-    ['g.'] = 'actions.toggle_hidden',
     ['<leader>q'] = 'actions.close', -- Act as toggle
   },
   use_default_keymaps = false,
