@@ -1,9 +1,5 @@
 local M = { 'nvim-lualine/lualine.nvim' }
 
-M.dependencies = {
-  'AndreM222/copilot-lualine',
-  { 'linrongbin16/lsp-progress.nvim', opts = {} },
-}
 M.opts = {
   options = {
     globalstatus = true,
@@ -13,12 +9,7 @@ M.opts = {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diagnostics' },
-    lualine_c = {
-      { 'filename', path = 1 },
-      function()
-        return require('lsp-progress').progress()
-      end,
-    },
+    lualine_c = { { 'filename', path = 1 } },
     lualine_x = {
       {
         'macro-recording',
@@ -31,7 +22,6 @@ M.opts = {
           end
         end,
       },
-      { 'copilot' },
       { 'encoding' },
     },
     lualine_y = { 'progress' },
@@ -74,15 +64,7 @@ M.opts = {
 }
 
 function M.config(_, opts)
-  require('lualine').setup(opts)
-
-  -- Refresh lualine on LSPs status changes
-  vim.api.nvim_create_autocmd('User', {
-    pattern = 'LspProgressStatusUpdated',
-    callback = require('lualine').refresh,
-  })
-
-  -- Macro recording message
+  -- Update lualine on recording events
   vim.api.nvim_create_autocmd('RecordingEnter', {
     callback = function()
       require('lualine').refresh({
@@ -91,10 +73,10 @@ function M.config(_, opts)
     end,
   })
 
+  -- The register does not clean up immediately after
+  -- recording stops, so we have to wait a little bit (50ms)
   vim.api.nvim_create_autocmd('RecordingLeave', {
     callback = function()
-      -- The register does not clean up immediately after
-      -- recording stops, so we have to wait a little bit (50ms)
       local timer = vim.loop.new_timer()
       timer:start(
         50,
@@ -107,6 +89,8 @@ function M.config(_, opts)
       )
     end,
   })
+
+  require('lualine').setup(opts)
 end
 
 return M

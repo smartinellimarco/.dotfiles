@@ -8,5 +8,3 @@
 .aws/credentials
 .aws/config
 .kube/config
-.config/github-copilot/hosts.json
-.config/github-copilot/versions.json

@@ -34,7 +34,6 @@ function M.config(_, _)
   local lspkind = require('lspkind')
   local luasnip = require('luasnip')
   local snippet_loader = require('luasnip.loaders.from_vscode')
-  local copilot = require('copilot.suggestion')
 
   -- Lazy load snippet collection
   snippet_loader.lazy_load()
@@ -72,15 +71,7 @@ function M.config(_, _)
     },
     mapping = {
       -- If no item is selected, do not auto-select the first one on '<CR>'
-      ['<C-f>'] = cmp.mapping(function(fallback)
-        if cmp.visible() then
-          cmp.confirm()
-        elseif copilot.is_visible() then
-          copilot.accept()
-        else
-          fallback()
-        end
-      end),
+      ['<C-f>'] = cmp.mapping.confirm(),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
