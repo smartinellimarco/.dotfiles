@@ -32,10 +32,6 @@ local function on_attach(client, bufnr)
   bufmap('n', 'gr', vim.lsp.buf.references)
   bufmap('n', 'gs', vim.lsp.buf.signature_help)
   bufmap('n', '<leader>r', vim.lsp.buf.rename)
-  bufmap({ 'n', 'x' }, '<leader>i', function()
-    -- see: https://github.com/neovim/neovim/pull/26549
-    vim.lsp.buf.format({ async = true })
-  end)
   bufmap('n', '<leader>c', vim.lsp.buf.code_action)
   bufmap('n', 'gl', vim.diagnostic.open_float)
   bufmap('n', '[d', vim.diagnostic.goto_prev)
@@ -58,6 +54,9 @@ local M = { 'neovim/nvim-lspconfig' }
 M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.dependencies = {
+
+  -- Mason installer
+  { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
 
   -- Schema definitions
   { 'b0o/schemastore.nvim' },
@@ -104,6 +103,7 @@ function M.config(_, _)
   })
 
   local mason_lspconfig = require('mason-lspconfig')
+  local mason_installer = require('mason-tool-installer')
   local lspconfig = require('lspconfig')
   local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
@@ -159,26 +159,31 @@ function M.config(_, _)
     marksman = {},
     clangd = {},
     docker_compose_language_service = {},
-
-    -- Formatters
   }
 
-  -- Ensure the servers are installed
-  mason_lspconfig.setup({
-    ensure_installed = vim.tbl_keys(server_settings),
+  local ensure_installed = vim.tbl_keys(server_settings)
+  vim.list_extend(ensure_installed, {
+    'stylua',
+    'black',
+    'isort',
+    'prettier',
   })
 
+  -- Ensure the servers are installed
+  mason_installer.setup({ ensure_installed = ensure_installed })
+
   -- Setup all LSPs
-  mason_lspconfig.setup_handlers({
-    function(server_name)
-      lspconfig[server_name].setup({
-        -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
-        capabilities = cmp_nvim_lsp.default_capabilities(),
-        on_attach = on_attach,
-        settings = server_settings[server_name],
-        filetypes = (server_settings[server_name] or {}).filetypes, -- TODO: dafuq is this
-      })
-    end,
+  mason_lspconfig.setup({
+    handlers = {
+      function(server_name)
+        lspconfig[server_name].setup({
+          -- Broadcast more supported capabilities (from 'nvim-cmp') to the LSP servers
+          capabilities = cmp_nvim_lsp.default_capabilities(),
+          on_attach = on_attach,
+          settings = server_settings[server_name],
+        })
+      end,
+    },
   })
 end
 
