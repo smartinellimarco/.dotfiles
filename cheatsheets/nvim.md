@@ -51,7 +51,7 @@
 | h | Go to parent | - |
 | ⌃v | Open vertical split | - |
 | ⌃x | Open horizontal split | - |
-| . | Open current working directory | - |
+| . | Go to current working directory | - |
 
 ## Cmp
 
