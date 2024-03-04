@@ -116,17 +116,7 @@ function M.config(_, _)
         analysis = {
           diagnosticMode = 'workspace',
           typeCheckingMode = 'off',
-          diagnosticSeverityOverrides = {
-            reportUnusedImport = true,
-            reportUnusedClass = true,
-            reportUnusedFunction = true,
-            reportUnusedVariable = true,
-            reportDeprecated = true,
-          },
         },
-      },
-      pyright = {
-        disableTaggedHints = true,
       },
     },
     lua_ls = {
