@@ -1,7 +1,7 @@
 local M = { 'nvim-telescope/telescope.nvim' }
 
 M.dependencies = {
-  { 'nvim-lua/plenary.nvim' },
+  'nvim-lua/plenary.nvim',
   {
     'nvim-telescope/telescope-fzf-native.nvim',
     build = 'make',
@@ -45,6 +45,7 @@ function M.config(_, opts)
   }
 
   telescope.setup(vim.tbl_deep_extend('error', opts, mappings))
+
   telescope.load_extension('fzf')
 
   -- Show line numbers in the preview
