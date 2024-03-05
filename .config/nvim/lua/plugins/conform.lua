@@ -14,7 +14,10 @@ function M.config(_, opts)
   conform.setup(opts)
 
   vim.keymap.set({ 'n', 'x' }, '<leader>i', function()
-    conform.format()
+    conform.format({
+      lsp_fallback = true,
+      quiet = true,
+    })
   end)
 end
 
