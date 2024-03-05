@@ -151,8 +151,7 @@ function M.config(_, _)
     docker_compose_language_service = {},
   }
 
-  local ensure_installed = vim.tbl_keys(server_settings)
-  vim.list_extend(ensure_installed, {
+  local ensure_installed = vim.list_extend(vim.tbl_keys(server_settings), {
     'stylua',
     'black',
     'isort',
