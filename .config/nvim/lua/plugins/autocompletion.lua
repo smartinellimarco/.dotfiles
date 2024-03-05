@@ -70,12 +70,11 @@ function M.config(_, _)
       end,
     },
     mapping = {
-      -- If no item is selected, do not auto-select the first one on '<CR>'
       ['<C-f>'] = cmp.mapping.confirm(),
       ['<C-u>'] = cmp.mapping.scroll_docs(-4),
       ['<C-d>'] = cmp.mapping.scroll_docs(4),
 
-      -- Do not fallback to disable i_CTRL-N and i_CTRL-P
+      -- Do not fallback in order to disable i_CTRL-N and i_CTRL-P
       ['<C-n>'] = cmp.mapping(function(_)
         if cmp.visible() then
           -- Do not replace word under cursor
