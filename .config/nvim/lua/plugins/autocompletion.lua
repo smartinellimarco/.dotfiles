@@ -15,7 +15,7 @@ M.dependencies = {
   -- Source for the LSP and extra capabilities
   { 'hrsh7th/cmp-nvim-lsp' },
 
-  -- Source for the snippet engine.
+  -- Source for the snippet engine
   { 'saadparwaiz1/cmp_luasnip' },
 
   -- Source for buffers
