@@ -1,6 +1,8 @@
 local M = { 'norcalli/nvim-colorizer.lua' }
 
 function M.config(_, _)
+  -- Do not use an empty table as argument for
+  -- this plugin
   require('colorizer').setup()
 end
 
