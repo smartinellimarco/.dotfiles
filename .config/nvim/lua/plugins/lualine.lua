@@ -22,7 +22,7 @@ M.opts = {
           end
         end,
       },
-      { 'encoding' },
+      'encoding',
     },
     lualine_y = { 'progress' },
     lualine_z = { 'location' },
