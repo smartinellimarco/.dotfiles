@@ -33,6 +33,12 @@ local function on_attach(client, bufnr)
   bufmap('n', 'gs', vim.lsp.buf.signature_help)
   bufmap('n', '<leader>r', vim.lsp.buf.rename)
   bufmap('n', '<leader>c', vim.lsp.buf.code_action)
+  bufmap({ 'n', 'x' }, '<leader>i', function()
+    require('conform').format({
+      lsp_fallback = true,
+      quiet = true,
+    })
+  end)
   bufmap('n', 'gl', vim.diagnostic.open_float)
   bufmap('n', '[d', vim.diagnostic.goto_prev)
   bufmap('n', ']d', vim.diagnostic.goto_next)
@@ -55,26 +61,31 @@ M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.dependencies = {
 
-  -- Mason installer
-  { 'WhoIsSethDaniel/mason-tool-installer.nvim' },
-
-  -- Schema definitions
-  { 'b0o/schemastore.nvim' },
-
-  -- Automatically configure lua_ls for neovim development
-  { 'folke/neodev.nvim', opts = {} },
-
-  -- Automatically install LSPs
+  -- LSP and formatter registry
   {
     'williamboman/mason.nvim',
     lazy = false,
-    dependencies = { 'williamboman/mason-lspconfig.nvim' },
     opts = {
       ui = {
         border = 'rounded',
       },
     },
   },
+
+  -- Auto installation of mason elements
+  { 'WhoIsSethDaniel/mason-tool-installer.nvim', lazy = false },
+
+  -- Configuration of LSPs
+  { 'williamboman/mason-lspconfig.nvim' },
+
+  -- Configuration of formatters
+  { 'stevearc/conform.nvim' },
+
+  -- Schema definitions for 'jsonls' and 'yamlls'
+  { 'b0o/schemastore.nvim' },
+
+  -- Automatically configure lua_ls for neovim development
+  { 'folke/neodev.nvim', opts = {} },
 }
 
 function M.config(_, _)
@@ -102,9 +113,10 @@ function M.config(_, _)
     },
   })
 
-  local mason_lspconfig = require('mason-lspconfig')
   local mason_installer = require('mason-tool-installer')
+  local mason_lspconfig = require('mason-lspconfig')
   local lspconfig = require('lspconfig')
+  local conform = require('conform')
   local cmp_nvim_lsp = require('cmp_nvim_lsp')
 
   -- Configs for each LSP
@@ -151,12 +163,15 @@ function M.config(_, _)
     docker_compose_language_service = {},
   }
 
-  local ensure_installed = vim.list_extend(vim.tbl_keys(server_settings), {
-    'stylua',
-    'black',
-    'isort',
-    'prettier',
-  })
+  local formatter_settings = {
+    lua = { 'stylua' },
+    python = { 'isort', 'black' },
+  }
+
+  local ensure_installed = vim.list_extend(
+    vim.tbl_keys(server_settings),
+    vim.tbl_flatten(vim.tbl_values(formatter_settings))
+  )
 
   -- Ensure the servers are installed
   mason_installer.setup({ ensure_installed = ensure_installed })
@@ -173,6 +188,11 @@ function M.config(_, _)
         })
       end,
     },
+  })
+
+  -- Setup all formatters
+  conform.setup({
+    formatters_by_ft = formatter_settings,
   })
 end
 
