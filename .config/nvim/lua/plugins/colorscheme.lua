@@ -1,10 +1,12 @@
 local M = { 'aktersnurra/no-clown-fiesta.nvim' }
 
+M.lazy = false
 M.priority = 1000
 M.opts = {}
 
 function M.config(_, opts)
   require('no-clown-fiesta').setup(opts)
+
   vim.cmd([[colorscheme no-clown-fiesta]])
 end
 
