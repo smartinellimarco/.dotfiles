@@ -43,4 +43,16 @@ vim.opt.shortmess = vim.opt.shortmess
     A = true,
   }
 
+-- Configure diagnostics virtual text and borders
+vim.diagnostic.config({
+  signs = false,
+  virtual_text = {
+    prefix = '◦',
+    spacing = 0,
+  },
+  float = {
+    border = 'rounded',
+  },
+})
+
 -- vim: ts=2 sts=2 sw=2 et
