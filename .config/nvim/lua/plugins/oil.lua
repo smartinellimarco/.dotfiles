@@ -20,7 +20,9 @@ M.opts = {
 }
 
 function M.config(_, opts)
-  require('oil').setup(opts)
+  local oil = require('oil')
+
+  oil.setup(opts)
 
   -- Change cwd when opening neovim with a directory
   -- argument
@@ -35,7 +37,7 @@ function M.config(_, opts)
     end,
   })
 
-  vim.keymap.set('n', '<leader>q', require('oil').open)
+  vim.keymap.set('n', '<leader>q', oil.open)
 end
 
 return M
