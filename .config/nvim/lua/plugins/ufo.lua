@@ -8,11 +8,13 @@ M.opts = {
 }
 
 function M.config(_, opts)
-  -- Required by the plugin
-  vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
-  vim.keymap.set('n', 'zM', require('ufo').closeAllFolds)
+  local ufo = require('ufo')
 
-  require('ufo').setup(opts)
+  ufo.setup(opts)
+
+  -- Required by the plugin
+  vim.keymap.set('n', 'zR', ufo.openAllFolds)
+  vim.keymap.set('n', 'zM', ufo.closeAllFolds)
 end
 
 return M
