@@ -48,7 +48,7 @@ function M.config(_, _)
     },
     completion = {
       completeopt = 'menu,menuone,noinsert', -- Only affects nvim-cmp
-      keyword_length = 3,
+      keyword_length = 1,
     },
     formatting = {
       format = lspkind.cmp_format(), -- Add icons to completion items
