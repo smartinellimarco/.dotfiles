@@ -14,6 +14,9 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Lazy options
 local opts = {
+  dev = {
+    path = "~/Desktop/",
+  },
   install = {
     colorscheme = { 'no-clown-fiesta' },
   },
