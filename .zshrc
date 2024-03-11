@@ -8,15 +8,24 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
 # Load zsh plugins
 source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
+
+# Config for zsh-autosuggestions
+export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=()
+export ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(forward-word)
+
+# Word movement
+bindkey "^f" forward-word
+bindkey "^b" backward-word
+
+# Remove '/' from wordchars to be able to navigate directories
+export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
 antidote load
 
 # Other scripts which won't be included in backup
 if [ -f $HOME/.zsh_bootstrap ]; then
   source $HOME/.zsh_bootstrap
 fi
-
-bindkey "^f" forward-word
-bindkey "^b" backward-word
 
 # Load p10k
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
