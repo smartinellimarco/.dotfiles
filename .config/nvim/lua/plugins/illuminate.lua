@@ -2,6 +2,9 @@ local M = { 'RRethy/vim-illuminate' }
 
 M.opts = {
   delay = 500,
+  filetypes_denylist = {
+    'nvcheatsheet',
+  },
 }
 
 function M.config(_, opts)
