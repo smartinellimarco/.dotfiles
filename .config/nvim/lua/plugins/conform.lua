@@ -1,5 +1,6 @@
 local M = { 'stevearc/conform.nvim' }
 
+M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
   formatters_by_ft = {
     lua = { 'stylua' },
