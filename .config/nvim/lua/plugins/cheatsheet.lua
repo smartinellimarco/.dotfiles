@@ -1,6 +1,6 @@
 local M = { 'smartinellimarco/nvcheatsheet.nvim' }
 
-M.path = { '~/Desktop/nvcheatsheet.nvim/' }
+M.dev = true
 M.opts = {
   keymaps = {
     ['LSP'] = {
@@ -83,7 +83,7 @@ function M.config(_, opts)
 
   nvcheatsheet.setup(opts)
 
-  vim.keymap.set('n', '<leader>ch', nvcheatsheet.open)
+  vim.keymap.set('n', '<F1>', nvcheatsheet.toggle)
 end
 
 return M
