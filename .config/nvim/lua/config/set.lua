@@ -55,4 +55,10 @@ vim.diagnostic.config({
   },
 })
 
+-- Disable default providers
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
+
 -- vim: ts=2 sts=2 sw=2 et
