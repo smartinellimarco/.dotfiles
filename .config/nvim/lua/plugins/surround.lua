@@ -1,7 +1,7 @@
 local M = { 'kylechui/nvim-surround' }
 
 M.version = '*'
-M.event = 'InsertEnter'
+M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {}
 
 function M.config(_, opts)
