@@ -7,6 +7,7 @@ M.opts = {
   view_options = {
     show_hidden = true,
   },
+  -- TODO: consider adding more once I change the keyboard
   keymaps = {
     ['l'] = 'actions.select',
     ['<CR>'] = 'actions.select',
