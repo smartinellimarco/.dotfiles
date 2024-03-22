@@ -1,6 +1,5 @@
 local M = { 'smartinellimarco/nvcheatsheet.nvim' }
 
-M.dev = true
 M.opts = {
   keymaps = {
     ['LSP'] = {
