@@ -14,6 +14,9 @@ function M.config(_, opts)
   -- These are package names sourced from the Mason registry,
   -- and may not necessarily match the server names used in lspconfig
   local ensure_installed = {
+    'prettierd',
+    'tailwindcss-language-server',
+    'typescript-language-server',
     'bash-language-server',
     'yaml-language-server',
     'terraform-ls',
