@@ -48,10 +48,10 @@ local function on_attach(_, bufnr)
   bufmap('n', 'gD', vim.lsp.buf.declaration)
   bufmap('n', 'gi', vim.lsp.buf.implementation)
   bufmap('n', 'go', vim.lsp.buf.type_definition)
-  bufmap('n', 'gr', vim.lsp.buf.references)
+  bufmap('n', 'gR', vim.lsp.buf.references)
   bufmap('n', 'gs', vim.lsp.buf.signature_help)
-  bufmap('n', '<leader>r', vim.lsp.buf.rename)
-  bufmap('n', '<leader>c', vim.lsp.buf.code_action)
+  bufmap('n', 'gr', vim.lsp.buf.rename)
+  bufmap('n', 'ga', vim.lsp.buf.code_action)
   bufmap('n', 'gl', vim.diagnostic.open_float)
   bufmap('n', '[d', vim.diagnostic.goto_prev)
   bufmap('n', ']d', vim.diagnostic.goto_next)
@@ -69,11 +69,27 @@ end
 
 function M.config()
   local server_settings = {
+    bashls = {},
     gopls = {},
+    ruff_lsp = {
+      capabilities = {
+        textDocument = {
+          publishDiagnostics = {
+            tagSupport = {
+              valueSet = { 2 },
+            },
+          },
+        },
+      },
+    },
     pyright = {
+      pyright = {
+        disableOrganizeImports = true, -- Using Ruff
+      },
       python = {
         analysis = {
           diagnosticMode = 'workspace',
+          ignore = { '*' }, -- Using Ruff
           typeCheckingMode = 'off',
         },
       },
