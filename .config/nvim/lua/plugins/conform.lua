@@ -4,7 +4,6 @@ M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
   formatters_by_ft = {
     lua = { 'stylua' },
-    python = { 'isort', 'black' },
   },
 }
 
@@ -13,8 +12,9 @@ function M.config(_, opts)
 
   conform.setup(opts)
 
-  vim.keymap.set({ 'n', 'x' }, '<leader>i', function()
+  vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
+      async = true,
       lsp_fallback = true,
       quiet = true,
     })
