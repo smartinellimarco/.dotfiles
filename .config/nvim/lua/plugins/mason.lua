@@ -14,6 +14,7 @@ function M.config(_, opts)
   -- These are package names sourced from the Mason registry,
   -- and may not necessarily match the server names used in lspconfig
   local ensure_installed = {
+    'bash-language-server',
     'yaml-language-server',
     'terraform-ls',
     'stylua',
@@ -21,11 +22,10 @@ function M.config(_, opts)
     'marksman',
     'lua-language-server',
     'json-lsp',
-    'isort',
     'gopls',
     'docker-compose-language-service',
     'clangd',
-    'black',
+    'ruff-lsp',
   }
 
   -- Ensure packages are installed and up to date
