@@ -15,7 +15,7 @@ M.opts = {
     ['<C-x>'] = 'actions.select_split',
     ['h'] = 'actions.parent',
     ['.'] = 'actions.open_cwd',
-    ['<leader>q'] = 'actions.close', -- Act as toggle
+    ['<leader>o'] = 'actions.close', -- Act as toggle
   },
   use_default_keymaps = false,
 }
@@ -38,7 +38,7 @@ function M.config(_, opts)
     end,
   })
 
-  vim.keymap.set('n', '<leader>q', oil.open)
+  vim.keymap.set('n', '<leader>o', oil.open)
 end
 
 return M
