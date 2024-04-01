@@ -23,9 +23,6 @@ M.dependencies = {
 
   -- Source for paths
   { 'hrsh7th/cmp-path' },
-
-  -- Source for nvim lua functions
-  { 'hrsh7th/cmp-nvim-lua' },
 }
 
 function M.config(_, _)
@@ -43,6 +40,11 @@ function M.config(_, _)
 
   -- Setup 'cmp'
   cmp.setup({
+    view = {
+      entries = {
+        follow_cursor = true,
+      },
+    },
     performance = {
       max_view_entries = 5,
     },
@@ -62,7 +64,6 @@ function M.config(_, _)
       { name = 'luasnip' },
       { name = 'buffer' },
       { name = 'path' },
-      { name = 'nvim_lua' },
     },
     snippet = {
       expand = function(args)
