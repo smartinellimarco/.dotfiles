@@ -99,7 +99,8 @@ function M.config()
     lua_ls = {
       Lua = {
         completion = {
-          callSnippet = 'Both', -- Insert placeholders for arguments
+          callSnippet = 'Replace', -- see: https://luals.github.io/wiki/settings/#completion
+          keywordSnippet = 'Replace',
         },
         workspace = { checkThirdParty = false },
         telemetry = { enable = false },
