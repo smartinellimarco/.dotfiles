@@ -13,6 +13,7 @@ function M.config(_, opts)
 
   conform.setup(opts)
 
+  -- TODO: replicate native 'gw' and 'gq'
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
       async = true,

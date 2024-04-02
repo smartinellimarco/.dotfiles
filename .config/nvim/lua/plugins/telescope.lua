@@ -7,20 +7,18 @@ M.dependencies = {
     build = 'make',
   },
 }
-M.opts = {
-  pickers = {
-    find_files = {
-      hidden = true,
-    },
-  },
-}
 
-function M.config(_, opts)
+function M.config()
   local telescope = require('telescope')
   local builtin = require('telescope.builtin')
   local actions = require('telescope.actions')
 
-  local mappings = {
+  telescope.setup({
+    pickers = {
+      find_files = {
+        hidden = true,
+      },
+    },
     defaults = {
       default_mappings = {
         i = {
@@ -42,9 +40,7 @@ function M.config(_, opts)
         },
       },
     },
-  }
-
-  telescope.setup(vim.tbl_deep_extend('error', opts, mappings))
+  })
 
   telescope.load_extension('fzf')
 

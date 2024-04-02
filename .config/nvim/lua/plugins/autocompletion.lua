@@ -25,7 +25,7 @@ M.dependencies = {
   { 'hrsh7th/cmp-path' },
 }
 
-function M.config(_, _)
+function M.config()
   local cmp = require('cmp')
   local cmp_autopairs = require('nvim-autopairs.completion.cmp')
   local lspkind = require('lspkind')
