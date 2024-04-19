@@ -2,6 +2,9 @@
 vim.g.mapleader = ' '
 
 -- Configs
+vim.o.signcolumn = 'yes:1' -- Use a signcolumn with 1 space for git status
+vim.o.statuscolumn = "%=%{&rnu && v:relnum ? v:relnum : (&nu ? v:lnum : '')} %C%s" -- Status column layout. This is assumes 'nu' is always true
+vim.o.number = true -- Show line numbers
 vim.o.fillchars = 'eob: ' -- Disable sign column chars for empty lines
 vim.o.nospell = true
 vim.o.cursorline = true -- Highlight line Highlighting
@@ -9,7 +12,6 @@ vim.o.cursoropt = 'number' -- Only highlight line number
 vim.o.updatetime = 500 -- Timeout for CursorHold and swap files
 vim.o.mouse = '' -- Disable mouse
 vim.o.scrolloff = 0 -- No scrolling offset
-vim.wo.number = true -- Show line numbers
 vim.o.termguicolors = true -- Enable truecolor
 vim.o.hlsearch = false -- Highlight search results
 vim.o.incsearch = true -- Search incrementally
@@ -19,7 +21,6 @@ vim.o.wildmode = 'list:longest' -- TODO: review
 vim.o.clipboard = 'unnamedplus' -- Enable OS clipboard
 vim.o.wrap = false -- Do not wrap lines
 vim.o.undofile = true -- Persist the undo history
-vim.o.signcolumn = 'yes:1' -- Use a signcolumn with 1 space for git status
 vim.o.splitright = true -- Open vertical splits to the right side of the screen
 vim.o.splitbelow = true -- Open horizontal splits to the bottom of the screen
 vim.opt.showmode = false -- Do not show neovim mode
