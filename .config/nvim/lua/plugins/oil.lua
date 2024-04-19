@@ -17,6 +17,7 @@ M.opts = {
     ['.'] = 'actions.open_cwd',
     ['<leader>o'] = 'actions.close', -- Act as toggle
   },
+  skip_confirm_for_simple_edits = true,
   use_default_keymaps = false,
 }
 
