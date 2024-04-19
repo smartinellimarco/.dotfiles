@@ -1,5 +1,7 @@
 !**/.env
-!**/secrets.yaml
+!**/*secrets.yaml
+!**/terraform.tfstate
+!**/*.tfvars
 .git
 .venv
 poetry.lock
