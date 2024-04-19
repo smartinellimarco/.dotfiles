@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 
 -- Configs
 vim.o.signcolumn = 'yes:1' -- Use a signcolumn with 1 space for git status
-vim.o.statuscolumn = "%=%{&rnu && v:relnum ? v:relnum : (&nu ? v:lnum : '')} %C%s" -- Status column layout. This is assumes 'nu' is always true
+vim.o.statuscolumn = "%=%{&rnu && v:relnum ? v:relnum : (&nu ? v:lnum : '')} %C%s" -- Status column layout. This is assumes 'vim.o.number' is always true
 vim.o.number = true -- Show line numbers
 vim.o.fillchars = 'eob: ' -- Disable sign column chars for empty lines
 vim.o.nospell = true
