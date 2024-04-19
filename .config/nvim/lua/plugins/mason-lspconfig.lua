@@ -69,7 +69,6 @@ end
 
 function M.config()
   local server_settings = {
-    tailwindcss = {},
     tsserver = {},
     bashls = {},
     gopls = {},
