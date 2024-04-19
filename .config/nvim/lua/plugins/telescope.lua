@@ -18,6 +18,11 @@ function M.config()
       find_files = {
         hidden = true,
       },
+      live_grep = {
+        additional_args = {
+          '--fixed-strings',
+        },
+      },
     },
     defaults = {
       default_mappings = {
