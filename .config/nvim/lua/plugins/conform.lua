@@ -3,7 +3,9 @@ local M = { 'stevearc/conform.nvim' }
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
   formatters_by_ft = {
-    typescript = { 'prettierd' },
+    -- FIXME: this does not respect '.prettierrc'
+    typescript = { 'prettier' },
+    typescriptreact = { 'prettier' },
     lua = { 'stylua' },
   },
 }
