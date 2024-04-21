@@ -1,6 +1,8 @@
 local M = { 'NMAC427/guess-indent.nvim' }
 
-M.opts = {}
+M.opts = {
+  override_editorconfig = false,
+}
 
 function M.config(_, opts)
   require('guess-indent').setup(opts)
