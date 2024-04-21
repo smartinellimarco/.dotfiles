@@ -15,7 +15,12 @@ M.opts = {
 }
 
 function M.config(_, opts)
-  require('gitsigns').setup(opts)
+  local gitsigns = require('gitsigns')
+
+  gitsigns.setup(opts)
+
+  -- FIXME: This should behave as treesitter-text-objects
+  vim.keymap.set({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
 end
 
 return M
