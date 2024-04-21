@@ -7,6 +7,7 @@ M.opts = {
     typescript = { 'prettier' },
     typescriptreact = { 'prettier' },
     lua = { 'stylua' },
+    json = { 'prettier' },
   },
 }
 
