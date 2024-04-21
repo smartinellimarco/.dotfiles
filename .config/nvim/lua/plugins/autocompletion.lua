@@ -32,7 +32,7 @@ function M.config()
   local luasnip = require('luasnip')
   local snippet_loader = require('luasnip.loaders.from_vscode')
 
-  -- Lazy load snippet collection
+  -- Lazy load friendly snippets
   snippet_loader.lazy_load()
 
   -- Add parenthesis when completing a function
