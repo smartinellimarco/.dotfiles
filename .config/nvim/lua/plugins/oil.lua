@@ -10,14 +10,14 @@ M.opts = {
   -- TODO: consider adding more once I change the keyboard
   keymaps = {
     ['l'] = 'actions.select',
-    ['<CR>'] = 'actions.select',
     ['<C-v>'] = 'actions.select_vsplit',
     ['<C-x>'] = 'actions.select_split',
     ['h'] = 'actions.parent',
     ['.'] = 'actions.open_cwd',
     ['<leader>o'] = 'actions.close', -- Act as toggle
   },
-  skip_confirm_for_simple_edits = true,
+  skip_confirm_for_simple_edits = false,
+  prompt_save_on_select_new_entry = true,
   use_default_keymaps = false,
 }
 
