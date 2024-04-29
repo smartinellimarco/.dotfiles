@@ -2,6 +2,9 @@ local M = { 'RRethy/vim-illuminate' }
 
 M.opts = {
   delay = 500,
+  providers = {
+    'lsp',
+  },
   filetypes_denylist = {
     'nvcheatsheet',
   },
