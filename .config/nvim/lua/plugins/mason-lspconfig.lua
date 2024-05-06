@@ -69,6 +69,7 @@ end
 
 function M.config()
   local server_settings = {
+    rust_analyzer = {},
     tsserver = {},
     bashls = {},
     gopls = {},

@@ -14,6 +14,7 @@ function M.config(_, opts)
   -- These are package names sourced from the Mason registry,
   -- and may not necessarily match the server names used in lspconfig
   local ensure_installed = {
+    'rust-analyzer',
     'prettier',
     'typescript-language-server',
     'bash-language-server',
