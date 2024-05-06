@@ -3,7 +3,7 @@ local M = { 'windwp/nvim-autopairs' }
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
   check_ts = true,
-  enable_check_bracket_line = false,
+  enable_check_bracket_line = true,
 }
 
 function M.config(_, opts)
