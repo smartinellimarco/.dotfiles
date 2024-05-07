@@ -28,6 +28,7 @@ M.opts = {
         ['ip'] = '@parameter.inner',
         ['as'] = '@call.outer',
         ['is'] = '@call.inner',
+        -- TODO: assignment rhs lhs
       },
     },
   },
