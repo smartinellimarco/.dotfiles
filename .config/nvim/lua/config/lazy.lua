@@ -22,6 +22,7 @@ local opts = {
   },
   ui = {
     border = 'rounded',
+    backdrop = 100,
   },
   change_detection = {
     enabled = false,
