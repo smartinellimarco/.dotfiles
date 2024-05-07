@@ -43,6 +43,7 @@ local function on_attach(_, bufnr)
     })
 
   -- Set keymaps
+  -- TODO: add incoming/outgoing calls
   bufmap('n', 'gd', vim.lsp.buf.definition)
   bufmap('n', 'gD', vim.lsp.buf.declaration)
   bufmap('n', 'gi', vim.lsp.buf.implementation)
@@ -51,7 +52,7 @@ local function on_attach(_, bufnr)
   bufmap('n', 'gr', vim.lsp.buf.rename)
   bufmap('n', 'ga', vim.lsp.buf.code_action)
   bufmap('n', 'gl', vim.diagnostic.open_float)
-  bufmap('n', 'K', vim.lsp.buf.hover)
+  bufmap({ 'n', 'x' }, 'K', vim.lsp.buf.hover)
   bufmap('n', '[d', vim.diagnostic.goto_prev)
   bufmap('n', ']d', vim.diagnostic.goto_next)
   bufmap('i', '<C-s>', vim.lsp.buf.signature_help)
