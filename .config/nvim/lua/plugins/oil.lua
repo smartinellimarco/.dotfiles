@@ -8,11 +8,13 @@ M.opts = {
     show_hidden = true,
   },
   -- TODO: consider adding more once I change the keyboard
+  -- TODO: https://github.com/stevearc/oil.nvim/issues/363
   keymaps = {
     ['l'] = 'actions.select',
+    ['h'] = 'actions.parent',
     ['<C-v>'] = 'actions.select_vsplit',
     ['<C-x>'] = 'actions.select_split',
-    ['h'] = 'actions.parent',
+    ['`'] = 'actions.cd',
     ['.'] = 'actions.open_cwd',
     ['<leader>o'] = 'actions.close', -- Act as toggle
   },
@@ -25,19 +27,6 @@ function M.config(_, opts)
   local oil = require('oil')
 
   oil.setup(opts)
-
-  -- Change cwd when opening neovim with a directory
-  -- argument
-  vim.api.nvim_create_autocmd('VimEnter', {
-    callback = function(args)
-      if args.file ~= '' then
-        local path = string.gsub(args.file, '^oil://', '')
-        if vim.fn.isdirectory(path) ~= 0 then
-          vim.api.nvim_set_current_dir(path)
-        end
-      end
-    end,
-  })
 
   vim.keymap.set('n', '<leader>o', oil.open)
 end
