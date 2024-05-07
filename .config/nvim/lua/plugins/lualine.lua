@@ -1,5 +1,6 @@
 local M = { 'nvim-lualine/lualine.nvim' }
 
+M.dependencies = { 'AndreM222/copilot-lualine' }
 M.opts = {
   options = {
     globalstatus = true,
@@ -19,6 +20,24 @@ M.opts = {
             return ''
           else
             return 'Recording @' .. register
+          end
+        end,
+      },
+      {
+        'copilot',
+        symbols = {
+          spinners = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
+        },
+      },
+      {
+        'lsp-progress',
+        fmt = function()
+          -- TODO: add spinner
+          local clients = vim.lsp.get_active_clients()
+          if next(clients) ~= nil then
+            return ''
+          else
+            return ''
           end
         end,
       },
