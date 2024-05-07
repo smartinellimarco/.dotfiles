@@ -1,5 +1,6 @@
 local M = { 'ggandor/leap.nvim' }
 
+-- TODO: issue: https://github.com/ggandor/leap.nvim/issues/224
 function M.config()
   require('leap').create_default_mappings()
 end
