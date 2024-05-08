@@ -79,16 +79,6 @@ M.opts = {
       },
       filetypes = { 'TelescopePrompt' },
     },
-    {
-      sections = {
-        lualine_a = {
-          function()
-            return 'Cheatsheet'
-          end,
-        },
-      },
-      filetypes = { 'nvcheatsheet' },
-    },
   },
 }
 

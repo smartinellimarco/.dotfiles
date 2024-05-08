@@ -5,9 +5,6 @@ M.opts = {
   providers = {
     'lsp',
   },
-  filetypes_denylist = {
-    'nvcheatsheet',
-  },
 }
 
 function M.config(_, opts)
