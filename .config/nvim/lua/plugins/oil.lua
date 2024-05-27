@@ -7,15 +7,12 @@ M.opts = {
   view_options = {
     show_hidden = true,
   },
-  -- TODO: consider adding more once I change the keyboard
-  -- TODO: https://github.com/stevearc/oil.nvim/issues/363
   keymaps = {
     ['l'] = 'actions.select',
     ['h'] = 'actions.parent',
     ['<C-v>'] = 'actions.select_vsplit',
     ['<C-x>'] = 'actions.select_split',
     ['`'] = 'actions.cd',
-    ['.'] = 'actions.open_cwd',
     ['<leader>o'] = 'actions.close', -- Act as toggle
   },
   skip_confirm_for_simple_edits = false,
