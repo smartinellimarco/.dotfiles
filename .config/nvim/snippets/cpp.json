@@ -1,0 +1,24 @@
+{
+  "Codeforces problem template": {
+    "prefix": "cf",
+    "body": [
+      "#include <iostream>",
+      "",
+      "using namespace std;",
+      "",
+      "int main() {",
+      "\tios_base::sync_with_stdio(0);",
+      "\tcin.tie(0);",
+      "",
+      "\tint t;",
+      "\tcin >> t;",
+      "\twhile (t--) {",
+      "\t\tint n;",
+      "\t\tcin >> n;",
+      "\t\t$1",
+      "\t}",
+      "}"
+    ],
+    "description": "Codeforces problem template"
+  }
+}

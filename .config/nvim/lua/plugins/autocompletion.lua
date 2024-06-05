@@ -32,8 +32,11 @@ function M.config()
   local luasnip = require('luasnip')
   local snippet_loader = require('luasnip.loaders.from_vscode')
 
-  -- Lazy load friendly snippets
+  -- Lazy load snippets
   snippet_loader.lazy_load()
+  snippet_loader.lazy_load({
+    paths = { vim.fn.stdpath('config') .. '/snippets' },
+  })
 
   -- Add parenthesis when completing a function
   cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
@@ -60,8 +63,8 @@ function M.config()
       documentation = cmp.config.window.bordered(),
     },
     sources = {
-      { name = 'nvim_lsp' },
       { name = 'luasnip' },
+      { name = 'nvim_lsp' },
       { name = 'buffer' },
       { name = 'path' },
     },
