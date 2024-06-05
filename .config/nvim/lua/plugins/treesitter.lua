@@ -1,6 +1,7 @@
 local M = { 'nvim-treesitter/nvim-treesitter' }
 
-M.lazy = false -- Lazy loading treesitter may produce errors
+-- WARNING: Lazy loading 'nvim-treesitter' may produce errors
+M.event = { 'BufReadPost', 'BufNewFile' }
 M.build = ':TSUpdate'
 M.dependencies = 'nvim-treesitter/nvim-treesitter-textobjects'
 M.opts = {
