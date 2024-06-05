@@ -1,5 +1,6 @@
 local M = { 'lukas-reineke/indent-blankline.nvim' }
 
+M.event = 'BufReadPost'
 M.main = 'ibl'
 M.opts = {
   indent = { char = '┊' },
