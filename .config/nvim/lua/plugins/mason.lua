@@ -13,23 +13,28 @@ function M.config(_, opts)
 
   -- These are package names sourced from the Mason registry,
   -- and may not necessarily match the server names used in lspconfig
-  local ensure_installed = {
+  local servers = {
     'rust-analyzer',
-    'prettier',
     'typescript-language-server',
     'bash-language-server',
-    'yaml-language-server',
-    'terraform-ls',
-    'stylua',
-    'pyright',
-    'marksman',
-    'lua-language-server',
-    'json-lsp',
     'gopls',
+    'terraform-ls',
+    'marksman',
     'docker-compose-language-service',
     'clangd',
-    'ruff-lsp',
+    'ruff',
+    'pyright',
+    'lua-language-server',
+    'json-lsp',
+    'yaml-language-server',
   }
+
+  local formatters = {
+    'prettier',
+    'stylua',
+  }
+
+  local ensure_installed = vim.list_extend(servers, formatters)
 
   -- Ensure packages are installed and up to date
   registry.refresh(function()
