@@ -1,10 +1,9 @@
--- FIXME: deprecate when 0.10 arrives
 local M = { 'kevinhwang91/nvim-ufo' }
 
 M.dependencies = 'kevinhwang91/promise-async'
 M.opts = {
   provider_selector = function()
-    return { 'treesitter', 'indent' }
+    return { 'lsp' }
   end,
 }
 
