@@ -1,5 +1,7 @@
 local M = { 'lewis6991/gitsigns.nvim' }
 
+-- TODO: Add hunk text object when it behaves like the native
+-- neovim text objects
 M.opts = {
   current_line_blame = true,
   current_line_blame_opts = {
@@ -9,18 +11,10 @@ M.opts = {
   },
   current_line_blame_formatter = '◦ <author>, <author_time:%Y-%m-%d> - <summary>',
   current_line_blame_formatter_nc = '◦ Not committed yet',
-  yadm = {
-    enable = true,
-  },
 }
 
 function M.config(_, opts)
-  local gitsigns = require('gitsigns')
-
-  gitsigns.setup(opts)
-
-  -- FIXME: This should behave as treesitter-text-objects
-  vim.keymap.set({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
+  require('gitsigns').setup(opts)
 end
 
 return M
