@@ -4,6 +4,10 @@ local M = { 'zbirenbaum/copilot.lua' }
 M.cmd = 'Copilot'
 M.event = 'InsertEnter'
 M.opts = {
+  filetypes = {
+    yaml = true,
+    markdown = true,
+  },
   panel = {
     enabled = false,
   },
