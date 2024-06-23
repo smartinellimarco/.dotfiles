@@ -77,27 +77,23 @@ vim.o.foldlevel = 99
 -- Required by nvim-ufo
 vim.o.foldlevelstart = 99
 
--- Reduce messages
+-- Reduce messages by setting various 'shortmess' flags
 vim.opt.shortmess = vim.opt.shortmess
   + {
-    F = true,
-    W = true,
-    I = true,
-    s = true,
-    q = true,
-    A = true,
-    l = true,
-    m = true,
-    r = true,
-    w = true,
-    a = true,
-    o = true,
-    O = true,
-    t = true,
-    T = true,
-    c = true,
-    C = true,
-    S = true,
+    F = true, -- Don't give the file info when editing a file
+    W = true, -- Don't give "written" or "[w]" when writing a file
+    I = true, -- Don't give the intro message when starting Vim
+    s = true, -- Don't give "search hit BOTTOM/TOP" messages
+    q = true, -- Don't show "recording @a" when recording a macro
+    A = true, -- Don't give the "ATTENTION" message when an existing swap file is found
+    a = true, -- Use all abbreviations (l, m, r, w)
+    o = true, -- Overwrite message for writing a file with subsequent message for reading a file
+    O = true, -- Message for reading a file overwrites any previous message
+    t = true, -- Truncate file message at the start if it is too long to fit
+    T = true, -- Truncate other messages in the middle if they are too long to fit
+    c = true, -- Don't give ins-completion-menu messages
+    C = true, -- Don't give messages while scanning for ins-completion items
+    S = true, -- Don't show search count message when searching
   }
 
 -- Do not show neovim mode
