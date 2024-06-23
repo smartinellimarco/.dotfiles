@@ -77,15 +77,27 @@ vim.o.foldlevel = 99
 -- Required by nvim-ufo
 vim.o.foldlevelstart = 99
 
--- Command line
+-- Reduce messages
 vim.opt.shortmess = vim.opt.shortmess
-  + { -- Reduce messages
+  + {
     F = true,
     W = true,
     I = true,
     s = true,
     q = true,
     A = true,
+    l = true,
+    m = true,
+    r = true,
+    w = true,
+    a = true,
+    o = true,
+    O = true,
+    t = true,
+    T = true,
+    c = true,
+    C = true,
+    S = true,
   }
 
 -- Do not show neovim mode
