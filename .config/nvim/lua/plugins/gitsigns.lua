@@ -5,7 +5,7 @@ local M = { 'lewis6991/gitsigns.nvim' }
 M.opts = {
   current_line_blame = true,
   current_line_blame_opts = {
-    delay = 1000,
+    delay = 500,
     ignore_whitespace = false,
     virt_text_priority = 5000, -- LSP diagnostics priority is 4096 (0x1000)
   },
