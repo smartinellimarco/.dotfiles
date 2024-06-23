@@ -1,39 +1,83 @@
 -- Choose leader
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
--- Configs
-vim.o.signcolumn = 'yes:1' -- Use a signcolumn with 1 space for git status
-vim.o.statuscolumn = "%=%{&rnu && v:relnum ? v:relnum : (&nu ? v:lnum : '')} %C%s" -- Status column layout. This is assumes 'vim.o.number' is always true
-vim.o.number = true -- Show line numbers
-vim.o.fillchars = 'eob: ' -- Disable sign column chars for empty lines
-vim.o.nospell = true
-vim.o.cursorline = true -- Highlight line Highlighting
-vim.o.cursoropt = 'number' -- Only highlight line number
-vim.o.updatetime = 500 -- Timeout for CursorHold and swap files
-vim.o.mouse = '' -- Disable mouse
-vim.o.scrolloff = 0 -- No scrolling offset
-vim.o.termguicolors = true -- Enable truecolor
-vim.o.hlsearch = false -- Highlight search results
-vim.o.incsearch = true -- Search incrementally
-vim.o.ignorecase = true -- Case insensitive search
-vim.o.smartcase = true -- Unless capital in search
-vim.o.wildmode = 'list:longest' -- TODO: review
-vim.o.clipboard = 'unnamedplus' -- Enable OS clipboard
-vim.o.wrap = false -- Do not wrap lines
-vim.o.undofile = true -- Persist the undo history
-vim.o.splitright = true -- Open vertical splits to the right side of the screen
-vim.o.splitbelow = true -- Open horizontal splits to the bottom of the screen
-vim.opt.showmode = false -- Do not show neovim mode
-vim.opt.cmdheight = 0 -- Hide commandline
-vim.opt.completeopt = 'menu' -- Options for builtin completion
+-- Disable spelling checks
+vim.o.spell = false
 
--- see: https://github.com/neovim/neovim/pull/17446
--- vim.o.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
--- vim.o.foldcolumn = '1'
-vim.o.foldcolumn = '0' -- Do not show folds in signcolumn
-vim.o.foldlevel = 99 -- Required by nvim-ufo
-vim.o.foldlevelstart = 99 -- Required by nvim-ufo
-vim.o.foldenable = true -- Enable folds
+-- Enable break indent
+vim.o.breakindent = true
+
+-- Wrap lines
+vim.o.wrap = true
+
+-- Highlight line
+vim.o.cursorline = true
+
+-- Timeout for CursorHold and swap files
+vim.o.updatetime = 250
+
+-- Decrease mapped sequence wait time
+vim.opt.timeoutlen = 250
+
+-- Disable mouse
+vim.o.mouse = ''
+
+-- No scrolling offset
+vim.o.scrolloff = 0
+
+-- Highlight search results
+vim.o.hlsearch = true
+
+-- Clear on pressing <Esc> in normal mode
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- Preview substitutions live
+vim.o.incsearch = true
+
+-- Case insensitive search
+vim.o.ignorecase = true
+
+-- Unless capital in search
+vim.o.smartcase = true
+
+-- Enable OS clipboard
+vim.o.clipboard = 'unnamedplus'
+
+-- Persist the undo history
+vim.o.undofile = true
+
+-- Open vertical splits to the right side of the screen
+vim.o.splitright = true
+
+-- Open horizontal splits to the bottom of the screen
+vim.o.splitbelow = true
+
+-- Options for builtin completion
+vim.o.completeopt = 'menu,menuone,noinsert'
+
+-- Command line completion TODO: review
+vim.o.wildmode = 'list:longest'
+
+-- Disable sign column chars for empty lines
+vim.o.fillchars = 'eob: '
+
+-- Use a signcolumn with 1 space for git status
+vim.o.signcolumn = 'yes:1'
+
+-- Show line numbers
+vim.o.number = true
+
+-- Enable folds
+vim.o.foldenable = true
+
+-- Required by nvim-ufo
+vim.o.foldlevel = 99
+
+-- Required by nvim-ufo
+vim.o.foldlevelstart = 99
+
+-- Command line
 vim.opt.shortmess = vim.opt.shortmess
   + { -- Reduce messages
     F = true,
@@ -43,6 +87,12 @@ vim.opt.shortmess = vim.opt.shortmess
     q = true,
     A = true,
   }
+
+-- Do not show neovim mode
+vim.opt.showmode = false
+
+-- Hide commandline
+vim.opt.cmdheight = 0
 
 -- Configure diagnostics virtual text and borders
 vim.diagnostic.config({
@@ -61,5 +111,17 @@ vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
+
+-- Move between windows with <C-hjkl>
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Disable arrow keys in normal mode
+vim.keymap.set('n', '<left>', '<nop>')
+vim.keymap.set('n', '<right>', '<nop>')
+vim.keymap.set('n', '<up>', '<nop>')
+vim.keymap.set('n', '<down>', '<nop>')
 
 -- vim: ts=2 sts=2 sw=2 et
