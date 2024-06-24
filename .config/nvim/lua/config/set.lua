@@ -32,6 +32,9 @@ vim.o.hlsearch = true
 -- Clear on pressing <Esc> in normal mode
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+-- Close window with <C-c>
+vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
+
 -- Preview substitutions live
 vim.o.incsearch = true
 
