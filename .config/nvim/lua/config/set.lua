@@ -56,7 +56,7 @@ vim.o.splitbelow = true
 -- Options for builtin completion
 vim.o.completeopt = 'menu,menuone,noinsert'
 
--- Command line completion TODO: review
+-- Command line completion
 vim.o.wildmode = 'list:longest'
 
 -- Disable sign column chars for empty lines
