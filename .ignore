@@ -3,5 +3,4 @@
 !**/terraform.tfstate
 !**/*.tfvars
 .git
-.venv
 poetry.lock
