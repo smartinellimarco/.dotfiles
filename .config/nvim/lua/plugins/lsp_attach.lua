@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.inlay_hint.enable()
     end
 
-    -- TODO: delete this eventually
+    -- TODO: Delete this eventually
     if client.name == 'ruff' then
       -- Disable hover in favor of Pyright
       client.server_capabilities.hoverProvider = false

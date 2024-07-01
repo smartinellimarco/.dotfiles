@@ -1,6 +1,6 @@
 local M = { 'zbirenbaum/copilot.lua' }
 
--- Node version must be > 18.x
+-- NOTE: Node version must be > 18.x
 M.cmd = 'Copilot'
 M.event = 'InsertEnter'
 M.opts = {

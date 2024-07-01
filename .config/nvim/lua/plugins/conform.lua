@@ -4,7 +4,7 @@ M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
   notify_on_error = false,
   formatters_by_ft = {
-    -- FIXME: this does not respect '.prettierrc'
+    -- FIXME: This does not respect '.prettierrc'
     typescript = { 'prettierd' },
     typescriptreact = { 'prettierd' },
     lua = { 'stylua' },
@@ -17,8 +17,8 @@ function M.config(_, opts)
 
   conform.setup(opts)
 
-  -- FIXME: replicate native 'gw' and 'gq'
-  -- FIXME: guess indent after the async format
+  -- FIXME: Replicate native 'gw' and 'gq'
+  -- FIXME: Guess indent after the async format
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
       async = true,

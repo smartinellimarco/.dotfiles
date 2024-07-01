@@ -1,7 +1,6 @@
 local M = { 'lewis6991/gitsigns.nvim' }
 
--- TODO: Add hunk text object when it behaves like the native
--- neovim text objects
+-- TODO: Add hunk text object when it behaves like the native neovim text objects
 M.opts = {
   current_line_blame = true,
   current_line_blame_opts = {
