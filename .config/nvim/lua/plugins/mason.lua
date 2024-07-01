@@ -30,7 +30,7 @@ function M.config(_, opts)
   }
 
   local formatters = {
-    'prettier',
+    'prettierd',
     'stylua',
   }
 

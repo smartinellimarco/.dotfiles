@@ -2,12 +2,13 @@ local M = { 'stevearc/conform.nvim' }
 
 M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
+  notify_on_error = false,
   formatters_by_ft = {
     -- FIXME: this does not respect '.prettierrc'
-    typescript = { 'prettier' },
-    typescriptreact = { 'prettier' },
+    typescript = { 'prettierd' },
+    typescriptreact = { 'prettierd' },
     lua = { 'stylua' },
-    json = { 'prettier' },
+    json = { 'prettierd' },
   },
 }
 
@@ -16,11 +17,12 @@ function M.config(_, opts)
 
   conform.setup(opts)
 
-  -- TODO: replicate native 'gw' and 'gq'
+  -- FIXME: replicate native 'gw' and 'gq'
+  -- FIXME: guess indent after the async format
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
       async = true,
-      lsp_fallback = true,
+      lsp_format = 'fallback',
       quiet = true,
     })
   end)
