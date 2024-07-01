@@ -32,9 +32,7 @@ vim.o.scrolloff = 0
 vim.o.hlsearch = false
 
 -- Close window with <C-c>
-vim.keymap.set('n', '<C-c>', function()
-  vim.api.nvim_win_close(0, false)
-end)
+vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
 
 -- Preview substitutions live
 vim.o.incsearch = true
