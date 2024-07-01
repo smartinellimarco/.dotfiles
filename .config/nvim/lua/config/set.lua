@@ -1,3 +1,5 @@
+-- TODO: split vertical for help
+
 -- Choose leader
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
@@ -26,14 +28,13 @@ vim.o.mouse = ''
 -- No scrolling offset
 vim.o.scrolloff = 0
 
--- Highlight search results
-vim.o.hlsearch = true
-
--- Clear on pressing <Esc> in normal mode
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- Do not highlight search results
+vim.o.hlsearch = false
 
 -- Close window with <C-c>
-vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
+vim.keymap.set('n', '<C-c>', function()
+  vim.api.nvim_win_close(0, false)
+end)
 
 -- Preview substitutions live
 vim.o.incsearch = true
