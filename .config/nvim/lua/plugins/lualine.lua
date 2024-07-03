@@ -34,7 +34,7 @@ M.opts = {
       sections = {
         lualine_a = {
           function()
-            return 'Plugins'
+            return 'Lazy'
           end,
         },
       },
@@ -44,7 +44,7 @@ M.opts = {
       sections = {
         lualine_a = {
           function()
-            return 'LSPs'
+            return 'Mason'
           end,
         },
       },
