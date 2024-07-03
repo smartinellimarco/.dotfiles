@@ -14,9 +14,6 @@ M.dependencies = {
 
   -- Schema definitions for 'jsonls' and 'yamlls'
   { 'b0o/schemastore.nvim' },
-
-  -- Automatically configure lua_ls for neovim development
-  { 'folke/neodev.nvim' },
 }
 
 function M.config()
@@ -82,9 +79,6 @@ function M.config()
       },
     },
   }
-
-  -- Configure 'lua_ls' for neovim development
-  require('neodev').setup()
 
   -- Capabilities for 'nvim-cmp'
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
