@@ -4,7 +4,6 @@ M.event = { 'BufReadPre', 'BufNewFile' }
 M.opts = {
   notify_on_error = false,
   formatters_by_ft = {
-    -- FIXME: This does not respect '.prettierrc'
     typescript = { 'prettierd' },
     typescriptreact = { 'prettierd' },
     lua = { 'stylua' },
@@ -17,8 +16,7 @@ function M.config(_, opts)
 
   conform.setup(opts)
 
-  -- FIXME: Replicate native 'gw' and 'gq'
-  -- FIXME: Guess indent after the async format
+  -- TODO: https://github.com/NMAC427/guess-indent.nvim/issues/21
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
       async = true,
