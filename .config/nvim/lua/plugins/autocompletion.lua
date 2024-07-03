@@ -18,9 +18,6 @@ M.dependencies = {
   -- Source for the snippet engine
   { 'saadparwaiz1/cmp_luasnip' },
 
-  -- Source for buffers
-  { 'hrsh7th/cmp-buffer' },
-
   -- Source for paths
   { 'hrsh7th/cmp-path' },
 }
@@ -65,7 +62,6 @@ function M.config()
     sources = {
       { name = 'luasnip' },
       { name = 'nvim_lsp' },
-      { name = 'buffer' },
       { name = 'path' },
     },
     snippet = {
