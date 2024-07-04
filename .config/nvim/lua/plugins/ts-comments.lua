@@ -1,7 +1,11 @@
 local M = { 'folke/ts-comments.nvim' }
 
 M.event = { 'VeryLazy' }
-M.opts = {}
+M.opts = {
+  lang = {
+    lua = "-- %s"
+  }
+}
 
 function M.config(_, opts)
   require('ts-comments').setup(opts)
