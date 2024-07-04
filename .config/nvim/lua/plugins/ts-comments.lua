@@ -3,8 +3,9 @@ local M = { 'folke/ts-comments.nvim' }
 M.event = { 'VeryLazy' }
 M.opts = {
   lang = {
-    lua = "-- %s"
-  }
+    lua = '-- %s',
+    go = '// %s',
+  },
 }
 
 function M.config(_, opts)
