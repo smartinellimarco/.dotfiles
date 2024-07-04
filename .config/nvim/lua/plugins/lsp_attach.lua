@@ -77,11 +77,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
     end
 
-    -- Enable LSP inlay hints
-    if client and client.server_capabilities.inlayHintProvider then
-      vim.lsp.inlay_hint.enable()
-    end
-
     -- TODO: Delete this eventually
     if client.name == 'ruff' then
       -- Disable hover in favor of Pyright
