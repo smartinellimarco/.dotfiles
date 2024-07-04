@@ -4,3 +4,5 @@
 !**/*.tfvars
 .git
 poetry.lock
+package-lock.json
+go.sum
