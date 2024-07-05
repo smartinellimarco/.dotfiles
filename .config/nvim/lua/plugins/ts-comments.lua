@@ -5,6 +5,7 @@ M.opts = {
   lang = {
     lua = '-- %s',
     go = '// %s',
+    python = '# %s',
   },
 }
 
