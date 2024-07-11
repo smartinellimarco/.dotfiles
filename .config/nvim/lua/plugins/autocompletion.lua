@@ -20,6 +20,9 @@ M.dependencies = {
 
   -- Source for paths
   { 'hrsh7th/cmp-path' },
+
+  -- Source for buffers
+  { 'hrsh7th/cmp-buffer' },
 }
 
 function M.config()
@@ -63,6 +66,7 @@ function M.config()
       { name = 'luasnip' },
       { name = 'nvim_lsp' },
       { name = 'path' },
+      { name = 'buffer' },
     },
     snippet = {
       expand = function(args)
