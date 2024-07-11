@@ -98,9 +98,6 @@ vim.opt.shortmess = vim.opt.shortmess
     S = true, -- Don't show search count message when searching
   }
 
--- Disable default filetype plugins and indentation options
-vim.cmd([[filetype plugin indent off]])
-
 -- Do not show neovim mode
 vim.opt.showmode = false
 
