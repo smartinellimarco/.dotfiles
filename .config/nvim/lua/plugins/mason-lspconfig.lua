@@ -83,12 +83,6 @@ function M.config()
   -- Capabilities for 'nvim-cmp'
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-  -- Add capabilities for 'nvim-ufo' folds
-  capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true,
-  }
-
   -- Setup all LSPs
   require('mason-lspconfig').setup({
     handlers = {

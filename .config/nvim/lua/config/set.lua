@@ -70,15 +70,6 @@ vim.o.signcolumn = 'yes:1'
 -- Show line numbers
 vim.o.number = true
 
--- Enable folds
-vim.o.foldenable = true
-
--- Required by nvim-ufo
-vim.o.foldlevel = 99
-
--- Required by nvim-ufo
-vim.o.foldlevelstart = 99
-
 -- Reduce messages by setting various 'shortmess' flags
 vim.opt.shortmess = vim.opt.shortmess
   + {
