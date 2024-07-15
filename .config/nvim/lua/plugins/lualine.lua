@@ -64,6 +64,7 @@ M.opts = {
 }
 
 function M.config(_, opts)
+  -- TODO: remove when lualine supports macros
   -- Update lualine on recording events
   vim.api.nvim_create_autocmd('RecordingEnter', {
     callback = function()
