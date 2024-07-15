@@ -34,9 +34,6 @@ function M.config()
 
   -- Lazy load snippets
   snippet_loader.lazy_load()
-  snippet_loader.lazy_load({
-    paths = { vim.fn.stdpath('config') .. '/snippets' },
-  })
 
   -- Add parenthesis when completing a function
   cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
