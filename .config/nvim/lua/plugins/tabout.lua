@@ -15,7 +15,6 @@ M.opts = {
     { open = '[', close = ']' },
     { open = '{', close = '}' },
   },
-  ignore_beginning = true,
   exclude = {},
 }
 
