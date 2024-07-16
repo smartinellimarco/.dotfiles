@@ -1,4 +1,3 @@
-# TODO: https://github.com/sharkdp/fd/issues/1591
 local M = { 'nvim-telescope/telescope.nvim' }
 
 M.event = 'VimEnter'
