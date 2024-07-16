@@ -1,3 +1,4 @@
+-- TODO: https://github.com/abecodes/tabout.nvim/issues/70
 local M = { 'abecodes/tabout.nvim' }
 
 M.dependencies = { 'nvim-treesitter/nvim-treesitter' }
