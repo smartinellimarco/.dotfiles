@@ -2,7 +2,6 @@
 
 -- Choose leader
 vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
 
 -- Disable spelling checks
 vim.o.spell = false
