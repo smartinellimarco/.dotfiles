@@ -1,6 +1,7 @@
 local M = { 'williamboman/mason.nvim' }
 
-M.lazy = false -- Lazy loading mason may produce errors
+-- WARNING: Lazy loading 'mason' may produce errors
+M.lazy = false
 M.opts = {
   ui = {
     border = 'rounded',
