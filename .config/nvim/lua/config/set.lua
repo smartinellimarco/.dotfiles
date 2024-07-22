@@ -30,9 +30,6 @@ vim.o.scrolloff = 0
 -- Do not highlight search results
 vim.o.hlsearch = false
 
--- Close window with <C-c>
-vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
-
 -- Preview substitutions live
 vim.o.incsearch = true
 
@@ -105,6 +102,12 @@ vim.diagnostic.config({
     border = 'rounded',
   },
 })
+
+-- Close window with <C-c>
+vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
+
+-- Tabout
+vim.keymap.set('i', '<Tab>', '<C-o>A')
 
 -- Disable default providers
 vim.g.loaded_node_provider = 0
