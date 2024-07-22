@@ -119,7 +119,7 @@ vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
 
 -- Tabout
-vim.keymap.set('i', '<Tab>', '<C-o>A')
+vim.keymap.set('i', '<Tab>', '<C-c>A')
 
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<nop>')
