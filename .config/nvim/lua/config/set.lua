@@ -103,23 +103,23 @@ vim.diagnostic.config({
   },
 })
 
--- Close window with <C-c>
-vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
-
--- Tabout
-vim.keymap.set('i', '<Tab>', '<C-o>A')
-
 -- Disable default providers
 vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- Close window with <C-c>
+vim.keymap.set('n', '<C-c>', '<cmd>close<CR>')
+
 -- Move between windows with <C-hjkl>
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- Tabout
+vim.keymap.set('i', '<Tab>', '<C-o>A')
 
 -- Disable arrow keys in normal mode
 vim.keymap.set('n', '<left>', '<nop>')
