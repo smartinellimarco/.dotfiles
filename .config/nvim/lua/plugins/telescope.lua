@@ -26,7 +26,6 @@ function M.config()
       },
     },
     defaults = {
-      wrap_results = true,
       default_mappings = {
         i = {
           ['<Esc>'] = actions.close,
@@ -50,15 +49,6 @@ function M.config()
   })
 
   telescope.load_extension('fzf')
-
-  -- Set preview buffer options
-  vim.api.nvim_create_autocmd('User', {
-    pattern = 'TelescopePreviewerLoaded',
-    callback = function()
-      vim.opt_local.number = true
-      vim.opt_local.wrap = true
-    end,
-  })
 
   vim.keymap.set('n', '<leader>e', builtin.find_files)
   vim.keymap.set('n', '<leader>f', builtin.live_grep)
