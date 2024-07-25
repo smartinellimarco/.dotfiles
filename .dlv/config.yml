@@ -21,7 +21,7 @@ aliases:
 max-array-values: 64
 
 # Maximum loaded string length.
-max-string-len: 1024
+max-string-len: 4096
 
 # Output evaluation.
 max-variable-recurse: 5
