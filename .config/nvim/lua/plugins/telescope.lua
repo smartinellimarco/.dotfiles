@@ -51,7 +51,7 @@ function M.config()
 
   telescope.load_extension('fzf')
 
-  -- Set options to the preview
+  -- Set preview buffer options
   vim.api.nvim_create_autocmd('User', {
     pattern = 'TelescopePreviewerLoaded',
     callback = function()
