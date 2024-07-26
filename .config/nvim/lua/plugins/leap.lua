@@ -1,7 +1,14 @@
 local M = { 'ggandor/leap.nvim' }
 
-function M.config()
-  require('leap').create_default_mappings()
+M.opts = {
+  safe_labels = {},
+}
+
+function M.config(_, opts)
+  require('leap').setup(opts)
+
+  vim.keymap.set({ 'x', 'o', 'n' }, 's', '<Plug>(leap)')
+  vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
 end
 
 return M
