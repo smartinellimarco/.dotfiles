@@ -1,5 +1,3 @@
--- TODO: Split vertical for help
-
 -- Choose leader
 vim.g.mapleader = ' '
 
