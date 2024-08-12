@@ -16,6 +16,7 @@ function M.config()
 
   telescope.setup({
     pickers = {
+      -- TODO: https://github.com/sharkdp/fd/issues/1591
       find_files = {
         hidden = true,
       },
