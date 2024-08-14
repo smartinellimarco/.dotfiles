@@ -12,6 +12,12 @@ M.opts = {
     ['h'] = 'actions.parent',
     ['<C-v>'] = 'actions.select_vsplit',
     ['<C-x>'] = 'actions.select_split',
+    ['<C-q>'] = {
+      callback = function()
+        require('oil.actions').send_to_qflist.callback()
+        vim.cmd.copen()
+      end,
+    },
     ['`'] = 'actions.cd',
     ['<leader>o'] = 'actions.close', -- Act as toggle
   },
