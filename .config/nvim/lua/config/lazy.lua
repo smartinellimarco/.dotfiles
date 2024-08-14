@@ -57,7 +57,6 @@ local opts = {
         'compiler',
         'bugreport',
         'ftplugin',
-        'man',
       },
     },
   },
