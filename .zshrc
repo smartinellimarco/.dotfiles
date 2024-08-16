@@ -10,15 +10,32 @@ FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 
 # Config for zsh-autosuggestions
-export ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=()
-export ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(forward-word)
+ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=()
+ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(forward-word)
 
 # Word movement
 bindkey "^f" forward-word
 bindkey "^b" backward-word
 
 # Remove '/' from wordchars to be able to navigate directories
-export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+
+# History configuration
+# TODO: review
+# see: https://zsh.sourceforge.io/Doc/Release/Options.html#History
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=10000000
+SAVEHIST=$HISTSIZE
+
+# This is like enabling inc_append_history too
+setopt share_history
+setopt hist_ignore_all_dups
+setopt hist_find_no_dups
+setopt hist_expire_dups_first
+setopt hist_ignore_dups
+setopt hist_expire_dups_first
+setopt hist_save_no_dups
+setopt hist_reduce_blanks
 
 antidote load
 
