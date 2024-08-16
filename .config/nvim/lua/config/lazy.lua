@@ -56,7 +56,6 @@ local opts = {
         'optwin',
         'compiler',
         'bugreport',
-        'ftplugin',
       },
     },
   },
