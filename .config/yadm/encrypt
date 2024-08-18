@@ -1,12 +1,5 @@
 .config/gh/hosts.yml
-.zsh_history
-.z
-.ipython/profile_name/history.sqlite
-.python_history
-.pdbhistory
 .splight/config
 .aws/credentials
 .aws/config
 .kube/config
-.config/github-copilot/hosts.json
-.config/github-copilot/versions.json
