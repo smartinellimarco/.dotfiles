@@ -78,7 +78,7 @@ cask_dependencies=(
 
 # Install regular dependencies
 for package in "${dependencies[@]}"; do
-  if ! command -v $package &> /dev/null
+  if ! command -v $package &> /dev/null; then
     brew install $package
   fi
 done
