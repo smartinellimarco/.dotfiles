@@ -26,7 +26,6 @@ setopt INTERACTIVE_COMMENTS
 ```zsh
 # Taps
 brew tap hashicorp/tap
-brew tap homebrew/cask-fonts
 
 # Dependencies
 dependencies=(
