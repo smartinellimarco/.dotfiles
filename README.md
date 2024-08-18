@@ -29,7 +29,7 @@ brew tap hashicorp/tap
 # mason: git, curl/wget, unzip, gtar/tar, gzip, bash, sh
 # lazy: git, luarocks
 # telescope: ripgrep, make, clang/gcc, fd
-# kuala: curl, jq
+# kulala: curl, jq, xmllint
 # treesitter: tar, curl/~~git~~, cc/gcc/clang/cl/zig
 # dotfiles: zsh, gh, antidote, yadm, neovim
 # yadm: openssl
@@ -41,6 +41,7 @@ dependencies=(
   ripgrep
   fd
   jq
+  xmlstarlet
   gh
   antidote
   yadm
@@ -51,7 +52,6 @@ dependencies=(
 cask_dependencies=(
   font-symbols-only-nerd-font
   font-jetbrains-mono
-  google-chrome
   kitty
 )
 
