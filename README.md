@@ -19,12 +19,12 @@
 Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
 ```zsh
-
-# Taps
 brew tap hashicorp/tap
 
 # TODO: create a map with the formulae name and command name
-# then only install the formulae if the command does not already exists
+# then only install the formulae if the command does not already exists.
+# TODO: clarify that most of these already exist in MacOS (xcode command line tools),
+# so we only install the missing ones.
 # Dependencies:
 # mason: git, curl/wget, unzip, gtar/tar, gzip, bash, sh
 # lazy: git, luarocks
@@ -34,24 +34,20 @@ brew tap hashicorp/tap
 # dotfiles: zsh, gh, antidote, yadm, neovim
 # yadm: openssl
 
-# TODO: add dependencies for LSPs and formatters
+# TODO: clarify dependencies for LSPs and formatters
 
 dependencies=(
-  nvm
-  luaver
-  pyenv
-  poetry
-  go
-  delve
-  hashicorp/tap/terraform
-
+  luarocks
+  ripgrep
+  fd
+  jq
   gh
-  antidote     
-  yadm        
-  neovim   
+  antidote
+  yadm
+  neovim
+  openssl
 )
 
-# Casks
 cask_dependencies=(
   font-symbols-only-nerd-font
   font-jetbrains-mono
@@ -59,14 +55,12 @@ cask_dependencies=(
   kitty
 )
 
-# Install regular dependencies
 for package in "${dependencies[@]}"; do
   if ! command -v $package &> /dev/null; then
     brew install $package
   fi
 done
 
-# Install cask dependencies
 for cask in "${cask_dependencies[@]}"; do
   if ! brew list --cask $cask &>/dev/null; then
     brew install --cask $cask
