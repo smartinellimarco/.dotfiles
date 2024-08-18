@@ -45,7 +45,7 @@ dependencies=(
   bash          # mason
   sh            # mason
 
-  # see LSP and formatters requirements 
+  # TODO: see LSP and formatters requirements 
   nvm
   pyenv     
   poetry        
@@ -60,13 +60,6 @@ dependencies=(
   yadm        
   neovim   
   gpg     
-
-  openssl       # pyenv
-  readline      # pyenv
-  sqlite3       # pyenv
-  xz            # pyenv
-  zlib          # pyenv
-  tcl-tk        # pyenv
 )
 
 # Casks
