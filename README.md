@@ -18,9 +18,12 @@
 
 Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
+Enable inline comments
 ```zsh
 setopt INTERACTIVE_COMMENTS
+```
 
+```zsh
 # Taps
 brew tap hashicorp/tap
 brew tap homebrew/cask-fonts
