@@ -18,62 +18,55 @@
 
 Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
-Enable inline comments
 ```zsh
-setopt INTERACTIVE_COMMENTS
-```
 
-```zsh
 # Taps
 brew tap hashicorp/tap
 
-# Dependencies
+# TODO: create a map with the formulae name and command name
+# then only install the formulae if the command does not already exists
+# Dependencies:
+# mason: git, curl/wget, unzip, gtar/tar, gzip, bash, sh
+# lazy: git, luarocks
+# telescope: ripgrep, make, clang/gcc, fd
+# kuala: curl, jq
+# treesitter: tar, curl/~~git~~, cc/gcc/clang/cl/zig
+# dotfiles: zsh, gh, antidote, yadm, neovim
+# yadm: openssl
+
+# TODO: add dependencies for LSPs and formatters
+
 dependencies=(
-  jq            # kuala
-  luarocks      # lazy
-  ripgrep       # telescope
-  fd            # telescope
-
-  # curl          # mason, treesitter, kuala
-  # git           # lazy, mason, treesitter
-  # gnu-tar       # mason (gtar), treesitter (tar)
-  # gzip          # mason
-  # gcc           # treesitter, telescope
-  # make          # telescope
-  # bash          # mason
-  # sh            # mason
-  # unzip         # mason
-
-  # TODO: see LSP and formatters requirements 
   nvm
   luaver
-  pyenv     
-  poetry        
-  python        
-  go            
-  delve         
-  hashicorp/tap/terraform  # Hashicorp
+  pyenv
+  poetry
+  go
+  delve
+  hashicorp/tap/terraform
 
   gh
-  # zsh
   antidote     
   yadm        
   neovim   
-  # openssl
 )
 
 # Casks
 cask_dependencies=(
-  font-symbols-only-nerd-font  # Font
-  font-jetbrains-mono          # Font
-  google-chrome                # Browser
-  kitty                        # Terminal emulator
+
+  # Font
+  font-symbols-only-nerd-font
+  font-jetbrains-mono
+
+  # Browser
+  google-chrome
+
+  # Terminal emulator
+  kitty
 )
 
 # Install regular dependencies
 for package in "${dependencies[@]}"; do
-  # TODO: no chequear aca y fijarte que existan de antemano las tools comentadas?
-  # Do not install if there already is an alternate tool
   if ! command -v $package &> /dev/null; then
     brew install $package
   fi
