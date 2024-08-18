@@ -47,6 +47,7 @@ dependencies=(
 
   # TODO: see LSP and formatters requirements 
   nvm
+  luaver
   pyenv     
   poetry        
   python        
