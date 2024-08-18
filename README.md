@@ -100,8 +100,6 @@ Neovim will do the same for lazy plugins, treesitter parsers and mason LSPs.
 
 ## Archive 
 
-Fortunately, yadm offers an easy way of backing up and restoring sensitive configuration files. 
-
 ### Backup
 
 Each file path must be specified in [_~/.config/yadm/encrypt_](https://github.com/smartinellimarco/.dotfiles/blob/master/.config/yadm/encrypt).
