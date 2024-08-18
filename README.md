@@ -53,15 +53,9 @@ dependencies=(
 
 # Casks
 cask_dependencies=(
-
-  # Font
   font-symbols-only-nerd-font
   font-jetbrains-mono
-
-  # Browser
   google-chrome
-
-  # Terminal emulator
   kitty
 )
 
