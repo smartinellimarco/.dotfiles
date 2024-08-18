@@ -29,21 +29,20 @@ brew tap hashicorp/tap
 
 # Dependencies
 dependencies=(
-  git           # lazy, mason, treesitter
-  curl          # mason, treesitter
-  jq            
-  unzip         # mason
-  gnu-tar       # mason, treesitter
-  gzip          # mason
+  jq            # kuala
   luarocks      # lazy
-  gcc           # treesitter, telescope
   ripgrep       # telescope
   fd            # telescope
-  make          # telescope
-  llvm          # telescope, treesitter (clang)
-  wget          # mason
-  bash          # mason
-  sh            # mason
+
+  # curl          # mason, treesitter, kuala
+  # git           # lazy, mason, treesitter
+  # gnu-tar       # mason (gtar), treesitter (tar)
+  # gzip          # mason
+  # gcc           # treesitter, telescope
+  # make          # telescope
+  # bash          # mason
+  # sh            # mason
+  # unzip         # mason
 
   # TODO: see LSP and formatters requirements 
   nvm
@@ -56,22 +55,25 @@ dependencies=(
   hashicorp/tap/terraform  # Hashicorp
 
   gh
-  zsh           
+  # zsh
   antidote     
   yadm        
   neovim   
-  gpg     
+  # openssl
 )
 
 # Casks
 cask_dependencies=(
   font-symbols-only-nerd-font  # Font
   font-jetbrains-mono          # Font
-  kitty                        # Terminal
+  google-chrome                # Browser
+  kitty                        # Terminal emulator
 )
 
 # Install regular dependencies
 for package in "${dependencies[@]}"; do
+  # TODO: no chequear aca y fijarte que existan de antemano las tools comentadas?
+  # Do not install if there already is an alternate tool
   if ! command -v $package &> /dev/null; then
     brew install $package
   fi
