@@ -1,13 +1,10 @@
-<h3 align="center">
-.dotfiles
-</h3>
-
 ## Table of contents
 
 <!--toc:start-->
 - [Table of contents](#table-of-contents)
 - [Getting started](#getting-started)
   - [Requirements](#requirements)
+  - [Installation](#installation)
 - [Archive](#archive)
   - [Backup](#backup)
   - [Restore](#restore)
