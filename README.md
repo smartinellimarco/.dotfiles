@@ -96,7 +96,7 @@ yadm clone https://github.com/smartinellimarco/.dotfiles
 
 The first time you reopen the terminal, antidote will automatically setup all zsh plugins.
 
-Neovim will do the same for lazy plugins, treesitter parsers and mason LSPs.
+Neovim will do the same for lazy plugins, treesitter parsers and mason LSPs & Formatters.
 
 ## Archive 
 
