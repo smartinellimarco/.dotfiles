@@ -37,6 +37,9 @@ setopt hist_expire_dups_first
 setopt hist_save_no_dups
 setopt hist_reduce_blanks
 
+# Enable inline comments for zsh commands
+setopt INTERACTIVE_COMMENTS
+
 antidote load
 
 # Other scripts which won't be included in backup
