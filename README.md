@@ -88,7 +88,7 @@ for cask in "${cask_dependencies[@]}"; do
     brew install --cask $cask
   fi
 done
-```zsh
+```
 
 ### Installation
 
