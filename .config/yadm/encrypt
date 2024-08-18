@@ -1,7 +1,1 @@
 .config/gh/hosts.yml
-
-# TODO: remove these
-.splight/config
-.aws/credentials
-.aws/config
-.kube/config
