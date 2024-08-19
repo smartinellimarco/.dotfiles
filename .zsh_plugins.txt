@@ -3,7 +3,6 @@ mattmc3/ez-compinit
 zsh-users/zsh-completions
 
 # These are not affected by order
-ohmyzsh/ohmyzsh path:lib/history.zsh
 agkozak/zsh-z
 zsh-users/zsh-autosuggestions
 romkatv/powerlevel10k
