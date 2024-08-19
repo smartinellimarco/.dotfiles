@@ -22,6 +22,7 @@ WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
 
 # History configuration
 # TODO: review
+# TODO: ctrl + l push to scrollback without delete
 # see: https://zsh.sourceforge.io/Doc/Release/Options.html#History
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
