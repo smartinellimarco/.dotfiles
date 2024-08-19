@@ -18,23 +18,24 @@
 
 Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
+Most of these tools are available by default on macOS (via Xcode command line tools).
+
+This script only installs the missing ones.
+
+| Tool       | Dependencies                              |
+|------------|-------------------------------------------|
+| mason      | git, curl/wget, unzip, gtar/tar, gzip, bash, sh |
+| lazy       | git, luarocks                             |
+| telescope  | ripgrep, make, clang/gcc, fd              |
+| kulala     | curl, jq, xmllint                         |
+| treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig   |
+| dotfiles   | zsh, gh, antidote, yadm, neovim           |
+| yadm       | openssl                                   |
+
+TODO: clarify dependencies for LSPs and formatters
+
 ```zsh
 brew tap hashicorp/tap
-
-# TODO: create a map with the formulae name and command name
-# then only install the formulae if the command does not already exists.
-# TODO: clarify that most of these already exist in MacOS (xcode command line tools),
-# so we only install the missing ones.
-# Dependencies:
-# mason: git, curl/wget, unzip, gtar/tar, gzip, bash, sh
-# lazy: git, luarocks
-# telescope: ripgrep, make, clang/gcc, fd
-# kulala: curl, jq, xmllint
-# treesitter: tar, curl/~~git~~, cc/gcc/clang/cl/zig
-# dotfiles: zsh, gh, antidote, yadm, neovim
-# yadm: openssl
-
-# TODO: clarify dependencies for LSPs and formatters
 
 dependencies=(
   luarocks
