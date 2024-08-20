@@ -4,7 +4,7 @@ mattmc3/ez-compinit
 # These are not affected by order
 agkozak/zsh-z
 zsh-users/zsh-autosuggestions
-romkatv/powerlevel10k
+romkatv/powerlevel10k kind:fpath
 
 # Keep this at the bottom
 zsh-users/zsh-syntax-highlighting
