@@ -38,7 +38,6 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 setopt hist_reduce_blanks
 
-# TODO: move this to the top maybe?
 # Plugin files (.txt and .zsh)
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
