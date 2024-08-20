@@ -8,13 +8,12 @@ fi
 # Load Homebrew formulae completions into FPATH
 FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
 
-# Load antidote
-source "$HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh"
-
 # Set cache for the completion plugin
 zstyle ':plugin:ez-compinit' 'use-cache' 'yes'
 
 # zsh-autosuggestions configuration
+# After modifying these settings, run: `_zsh_autosuggest_bind_widgets`
+ZSH_AUTOSUGGEST_MANUAL_REBIND=
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=()
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(forward-word)
 
@@ -39,11 +38,27 @@ setopt hist_ignore_dups
 setopt hist_save_no_dups
 setopt hist_reduce_blanks
 
-# Load plugins
-antidote load
+# TODO: move this to the top maybe?
+# Plugin files (.txt and .zsh)
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
+
+# Lazy-load antidote
+fpath=($(brew --prefix)/opt/antidote/share/antidote/functions $fpath)
+autoload -Uz antidote
+
+# Generate a new static file whenever .zsh_plugins.txt is updated.
+if [[ ! ${zsh_plugins}.zsh -nt ${zsh_plugins}.txt ]]; then
+  antidote bundle <${zsh_plugins}.txt >|${zsh_plugins}.zsh
+fi
+
+# Source static plugins.
+source ${zsh_plugins}.zsh
 
 # Source additional scripts (won't be included in backup)
 [ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap"
+
+# Load powerlevel10k prompt
+autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # Load Powerlevel10k configuration
 [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh"
