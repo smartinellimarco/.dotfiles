@@ -1,6 +1,5 @@
 # Keep this at the top
 mattmc3/ez-compinit
-zsh-users/zsh-completions
 
 # These are not affected by order
 agkozak/zsh-z
