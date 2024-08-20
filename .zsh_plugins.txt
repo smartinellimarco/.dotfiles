@@ -6,5 +6,5 @@ agkozak/zsh-z
 zsh-users/zsh-autosuggestions
 romkatv/powerlevel10k
 
-# Keep this block at the bottom
+# Keep this at the bottom
 zsh-users/zsh-syntax-highlighting
