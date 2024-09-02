@@ -11,7 +11,7 @@ source-list-tab-color: "\x1b[90m"
 tab: "⇥ "
 
 # Number of lines printed above and below cursor when listing source code.
-source-list-line-count: 10
+source-list-line-count: 25
 
 # Provided aliases will be added to the default aliases for a given command.
 aliases:
