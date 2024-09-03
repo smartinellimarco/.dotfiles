@@ -17,6 +17,7 @@ function M.config(_, opts)
   conform.setup(opts)
 
   -- TODO: https://github.com/NMAC427/guess-indent.nvim/issues/21
+  -- TODO: https://github.com/stevearc/conform.nvim/blob/master/doc/advanced_topics.md#range-formatting
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
       async = true,
