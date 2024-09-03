@@ -1,3 +1,4 @@
+-- TODO: https://github.com/NMAC427/guess-indent.nvim/issues/21
 local M = { 'NMAC427/guess-indent.nvim' }
 
 M.opts = {
