@@ -19,9 +19,15 @@ M.dependencies = {
 function M.config()
   local servers = {
     rust_analyzer = {},
-    tsserver = {},
+    -- tsserver = {}, -- TODO: https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
     bashls = {},
-    gopls = {},
+    gopls = {
+      settings = {
+        gopls = {
+          gofumpt = true,
+        },
+      },
+    },
     terraformls = {},
     marksman = {},
     docker_compose_language_service = {},
