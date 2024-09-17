@@ -78,7 +78,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 
     -- TODO: Delete this eventually
-    -- TODO: https://github.com/astral-sh/ruff/pull/11803
     if client.name == 'ruff' then
       -- Disable hover in favor of Pyright
       client.server_capabilities.hoverProvider = false

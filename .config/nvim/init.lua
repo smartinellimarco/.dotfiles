@@ -1,3 +1,5 @@
+-- TODO: https://github.com/williamboman/mason.nvim/issues/1657
+-- TODO: https://mise.jdx.dev/ide-integration.html#neovim
 -- If neovim is started from the '/home' or '~/.config' directories
 -- assume that GIT_DIR points to the yadm repository
 -- WARNING: This is done so lualine shows the branch of the yadm repository

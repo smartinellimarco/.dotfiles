@@ -1,3 +1,4 @@
+-- TODO: https://github.com/folke/ts-comments.nvim/issues/53
 local M = { 'folke/ts-comments.nvim' }
 
 M.event = { 'VeryLazy' }

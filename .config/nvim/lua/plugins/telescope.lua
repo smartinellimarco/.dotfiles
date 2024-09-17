@@ -1,3 +1,4 @@
+-- TODO: this is removing the empty buffer after closing
 local M = { 'nvim-telescope/telescope.nvim' }
 
 M.event = 'VimEnter'

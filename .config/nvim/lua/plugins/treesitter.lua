@@ -1,3 +1,6 @@
+-- TODO: add movements https://github.com/nvim-treesitter/nvim-treesitter-textobjects
+-- TODO: https://github.com/chrisgrieser/nvim-various-textobjs
+-- TODO: https://github.com/RRethy/nvim-treesitter-textsubjects
 local M = { 'nvim-treesitter/nvim-treesitter' }
 
 -- WARNING: Lazy loading 'nvim-treesitter' may produce errors
