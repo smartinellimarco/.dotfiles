@@ -64,6 +64,12 @@ vim.o.signcolumn = 'yes:1'
 -- Show line numbers
 vim.o.number = true
 
+-- Sync buffers automatically
+vim.o.autoread = true
+
+-- Disable neovim generating a swapfile and showing the error
+vim.o.swapfile = false
+
 -- Reduce messages by setting various 'shortmess' flags
 vim.opt.shortmess = vim.opt.shortmess
   + {
