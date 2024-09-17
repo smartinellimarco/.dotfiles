@@ -18,7 +18,7 @@
 
 Install [homebrew](https://brew.sh/) and follow post-installation steps.
 
-Most of these tools are available by default on macOS (via Xcode command line tools).
+Most of these dependencies are available by default on macOS (via Xcode command line tools).
 
 This script only installs the missing ones.
 
@@ -32,7 +32,10 @@ This script only installs the missing ones.
 | dotfiles   | zsh, gh, antidote, yadm, neovim           |
 | yadm       | openssl                                   |
 
-TODO: clarify dependencies for LSPs and formatters
+```
+TODO: clarify dependencies for LSPs (npm) and formatters.
+Maybe add mise here https://mise.jdx.dev/configuration.html#global-config-config-mise-config-toml
+```
 
 ```zsh
 brew tap hashicorp/tap
