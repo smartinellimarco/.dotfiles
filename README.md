@@ -38,8 +38,6 @@ Maybe add mise here https://mise.jdx.dev/configuration.html#global-config-config
 ```
 
 ```zsh
-brew tap hashicorp/tap
-
 dependencies=(
   luarocks
   ripgrep
