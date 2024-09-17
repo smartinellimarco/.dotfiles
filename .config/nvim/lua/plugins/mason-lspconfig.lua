@@ -19,7 +19,7 @@ M.dependencies = {
 function M.config()
   local servers = {
     rust_analyzer = {},
-    -- tsserver = {}, -- TODO: https://github.com/neovim/nvim-lspconfig/pull/3232#issuecomment-2331025714
+    ts_ls = {},
     bashls = {},
     gopls = {
       settings = {
