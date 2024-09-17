@@ -112,25 +112,9 @@ This file is automatically sourced in interactive and login shells.
 ## Tips & Troubleshooting
 
 <details>
-  <summary> Setting compiler flags for OpenSSL </summary>
+  <summary>Shared clipboard doesn't work in Neovim</summary>
 <br>
 
-The Python compiler might not be able to find OpenSSL if it's installed with Homebrew.
-
-The following command sets the corresponding flags with the correct installation path.
-
-```zsh
-LDFLAGS="-Wl,-rpath,$(brew --prefix openssl)/lib" \
-CPPFLAGS="-I$(brew --prefix openssl)/include" \
-CONFIGURE_OPTS="--with-openssl=$(brew --prefix openssl)" \
-pyenv install -v <PYTHON_VERSION>
-```
-</details>
-
-<details>
-  <summary> Shared clipboard doesn't work in neovim </summary>
-<br>
-
-See ':h clipboard'.
+Open Neovim and run `:h clipboard` for more information.
 
 </details>
