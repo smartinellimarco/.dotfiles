@@ -16,7 +16,7 @@
 
 ### Requirements
 
-Install [homebrew](https://brew.sh/) and follow post-installation steps.
+Install [homebrew](https://brew.sh/) and skip post-installation steps.
 
 Most of these dependencies are available by default on macOS (via Xcode command line tools).
 
