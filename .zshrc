@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Load Homebrew formulae completions into FPATH
-FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
 # Set cache for the completion plugin
 zstyle ':plugin:ez-compinit' 'use-cache' 'yes'
@@ -42,7 +42,7 @@ setopt hist_reduce_blanks
 zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins
 
 # Lazy-load antidote
-fpath=($(brew --prefix)/opt/antidote/share/antidote/functions $fpath)
+fpath=($HOMEBREW_PREFIX/opt/antidote/share/antidote/functions $fpath)
 autoload -Uz antidote
 
 # Generate a new static file whenever .zsh_plugins.txt is updated.
