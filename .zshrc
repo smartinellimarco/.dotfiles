@@ -54,13 +54,13 @@ fi
 # Source static plugins.
 source ${zsh_plugins}.zsh
 
-# Source additional scripts (won't be included in backup)
-[ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap"
-
 # Load powerlevel10k prompt
 autoload -Uz promptinit && promptinit && prompt powerlevel10k
 
 # Load Powerlevel10k configuration
 [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh"
+
+# Source additional scripts (won't be included in backup)
+[ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap"
 
 # vim: ts=2 sts=2 sw=2 et
