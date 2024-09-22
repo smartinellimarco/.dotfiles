@@ -7,13 +7,14 @@ fi
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
 # Set cache for the completion plugin
+# Run 'run-compinit' after installing new completions
 zstyle ':plugin:ez-compinit' 'use-cache' 'yes'
 
 # Case insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
 # zsh-autosuggestions configuration
-# After modifying these settings, run: `_zsh_autosuggest_bind_widgets`
+# After modifying these settings, run: '_zsh_autosuggest_bind_widgets'
 ZSH_AUTOSUGGEST_MANUAL_REBIND=
 ZSH_AUTOSUGGEST_ACCEPT_WIDGETS=()
 ZSH_AUTOSUGGEST_PARTIAL_ACCEPT_WIDGETS=(forward-word)
