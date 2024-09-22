@@ -55,6 +55,7 @@ cask_dependencies=(
   font-symbols-only-nerd-font
   font-jetbrains-mono
   kitty
+  iina
 )
 
 for package in "${dependencies[@]}"; do
