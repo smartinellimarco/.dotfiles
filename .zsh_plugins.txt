@@ -7,4 +7,4 @@ zsh-users/zsh-autosuggestions
 romkatv/powerlevel10k kind:fpath
 
 # Keep this at the bottom
-zsh-users/zsh-syntax-highlighting
+zdharma-continuum/fast-syntax-highlighting
