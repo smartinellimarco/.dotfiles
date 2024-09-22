@@ -15,7 +15,6 @@ M.opts = {
 
 function M.config(_, opts)
   require('kulala').setup(opts)
-  -- TODO: define keymaps
   -- TODO: https://github.com/mistweaverco/kulala-fmt/issues/12
 end
 
