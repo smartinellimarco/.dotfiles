@@ -1,3 +1,4 @@
+-- TODO: configure tabs
 -- Choose leader
 vim.g.mapleader = ' '
 
