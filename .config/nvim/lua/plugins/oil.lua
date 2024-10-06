@@ -1,7 +1,7 @@
 -- TODO: https://github.com/stevearc/oil.nvim/issues/363
 local M = { 'stevearc/oil.nvim' }
 
-M.event = 'VeryLazy'
+M.event = 'VimEnter'
 M.dependencies = { 'nvim-tree/nvim-web-devicons' }
 M.opts = {
   view_options = {
