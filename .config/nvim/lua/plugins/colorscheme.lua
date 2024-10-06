@@ -7,7 +7,7 @@ M.opts = {}
 function M.config(_, opts)
   require('no-clown-fiesta').setup(opts)
 
-  vim.cmd([[colorscheme no-clown-fiesta]])
+  vim.cmd('colorscheme no-clown-fiesta')
 end
 
 return M
