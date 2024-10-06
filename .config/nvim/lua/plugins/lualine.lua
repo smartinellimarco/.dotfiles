@@ -20,6 +20,12 @@ M.opts = {
             return require('oil').get_current_dir()
           elseif filetype == 'qf' then
             return 'quickfix'
+          elseif filetype == 'TelescopePrompt' then
+            return 'telescope'
+          elseif filetype == 'lazy' then
+            return 'lazy'
+          elseif filetype == 'mason' then
+            return 'mason'
           end
           return filename
         end,
@@ -42,38 +48,6 @@ M.opts = {
     },
     lualine_y = { 'progress' },
     lualine_z = { 'location' },
-  },
-  extensions = {
-    {
-      sections = {
-        lualine_a = {
-          function()
-            return 'Lazy'
-          end,
-        },
-      },
-      filetypes = { 'lazy' },
-    },
-    {
-      sections = {
-        lualine_a = {
-          function()
-            return 'Mason'
-          end,
-        },
-      },
-      filetypes = { 'mason' },
-    },
-    {
-      sections = {
-        lualine_a = {
-          function()
-            return 'Telescope'
-          end,
-        },
-      },
-      filetypes = { 'TelescopePrompt' },
-    },
   },
 }
 
