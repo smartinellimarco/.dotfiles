@@ -1,17 +1,7 @@
 local M = { 'mistweaverco/kulala.nvim' }
 
 M.event = 'VeryLazy'
-M.opts = {
-  show_icons = nil,
-  icons = {
-    inlay = {
-      done = '',
-      loading = '󰦖',
-      error = '',
-    },
-    lualine = '',
-  },
-}
+M.opts = {}
 
 function M.config(_, opts)
   require('kulala').setup(opts)
