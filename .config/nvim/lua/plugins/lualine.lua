@@ -10,7 +10,21 @@ M.opts = {
   },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { { 'filename', path = 1 } },
+    lualine_b = {
+      {
+        'filename',
+        path = 1,
+        fmt = function(filename)
+          local filetype = vim.bo.filetype
+          if filetype == 'oil' then
+            return require('oil').get_current_dir()
+          elseif filetype == 'qf' then
+            return 'quickfix'
+          end
+          return filename
+        end,
+      },
+    },
     lualine_c = { 'branch', 'diagnostics' },
     lualine_x = {
       {
@@ -25,14 +39,11 @@ M.opts = {
         end,
       },
       { 'tabs', show_modified_status = false },
-      'encoding',
     },
     lualine_y = { 'progress' },
     lualine_z = { 'location' },
   },
   extensions = {
-    'oil',
-    'quickfix',
     {
       sections = {
         lualine_a = {
