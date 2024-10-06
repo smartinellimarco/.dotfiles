@@ -3,6 +3,7 @@ local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
   options = {
+    theme = 'no-clown-fiesta',
     globalstatus = true,
     component_separators = '',
     section_separators = '',
@@ -23,6 +24,7 @@ M.opts = {
           end
         end,
       },
+      { 'tabs', show_modified_status = false },
       'encoding',
     },
     lualine_y = { 'progress' },
