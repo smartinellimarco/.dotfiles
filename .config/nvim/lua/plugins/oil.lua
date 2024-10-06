@@ -11,8 +11,10 @@ M.opts = {
     ['-'] = 'actions.parent',
     ['_'] = 'actions.open_cwd',
     ['`'] = 'actions.cd',
+    ['~'] = { 'actions.cd', opts = { scope = 'tab' } },
     ['<C-v>'] = 'actions.select_vsplit',
     ['<C-x>'] = 'actions.select_split',
+    ['<C-t>'] = 'actions.select_tab',
     ['<C-c>'] = 'actions.close',
     ['<leader>o'] = function() end, -- Disable keymap
   },
