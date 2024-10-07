@@ -95,16 +95,6 @@ vim.opt.showmode = false
 -- Do not show tabline
 vim.opt.showtabline = 0
 
--- Switch to the next tab
-vim.keymap.set('n', '<Tab>', function()
-  vim.cmd('tabnext')
-end)
-
--- Switch to the previous tab
-vim.keymap.set('n', '<S-Tab>', function()
-  vim.cmd('tabprevious')
-end)
-
 -- Hide commandline
 vim.opt.cmdheight = 0
 
