@@ -17,7 +17,7 @@ vim.o.cursorline = true
 vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 250
+vim.opt.timeoutlen = 500
 
 -- Disable mouse
 vim.o.mouse = ''
