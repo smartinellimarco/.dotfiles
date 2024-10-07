@@ -92,11 +92,11 @@ vim.opt.shortmess = vim.opt.shortmess
 -- Do not show neovim mode
 vim.opt.showmode = false
 
--- Do not show tabline
-vim.opt.showtabline = 0
-
 -- Hide commandline
 vim.opt.cmdheight = 0
+
+-- Do not show tabline
+vim.opt.showtabline = 0
 
 -- Configure diagnostics virtual text and borders
 vim.diagnostic.config({
