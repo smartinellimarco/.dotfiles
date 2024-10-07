@@ -44,9 +44,8 @@ function M.config()
           ['<C-d>'] = actions.preview_scrolling_down,
           ['<C-w>'] = { '<C-s-w>', type = 'command' }, -- Delete word
 
-          ['<C-q>'] = actions.send_selected_to_qflist + actions.open_qflist,
+          ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
           ['<C-s>'] = actions.toggle_selection,
-          ['<C-a>'] = actions.drop_all + actions.select_all,
         },
       },
     },
