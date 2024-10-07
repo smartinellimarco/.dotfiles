@@ -44,7 +44,7 @@ M.opts = {
           end
         end,
       },
-      { 'tabs', show_modified_status = false },
+      'encoding',
     },
     lualine_y = { 'progress' },
     lualine_z = { 'location' },
