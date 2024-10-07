@@ -19,6 +19,7 @@ M.opts = {
     ['<leader>o'] = function() end, -- Disable keymap
   },
   skip_confirm_for_simple_edits = false,
+  cleanup_delay_ms = 0,
   prompt_save_on_select_new_entry = true,
   use_default_keymaps = false,
 }
