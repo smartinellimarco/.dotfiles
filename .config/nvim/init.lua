@@ -1,6 +1,6 @@
 -- If neovim is started from the '/home' or '~/.config' directories
 -- assume that GIT_DIR points to the yadm repository
--- WARNING: This is done so lualine shows the branch of the yadm repository
+-- NOTE: This is done so lualine shows the branch of the yadm repository
 -- and gitsigns shows the changes
 if vim.env.GIT_DIR == nil then
   local cwd = vim.fn.getcwd()
