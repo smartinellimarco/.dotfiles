@@ -43,6 +43,7 @@ function M.config()
           ['<C-w>'] = { '<C-s-w>', type = 'command' }, -- Delete word
 
           ['<C-q>'] = actions.smart_send_to_qflist + actions.open_qflist,
+          ['<C-a>'] = actions.smart_add_to_qflist + actions.open_qflist,
           ['<C-s>'] = actions.toggle_selection,
         },
       },
