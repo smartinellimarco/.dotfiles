@@ -6,6 +6,7 @@ M.opts = {}
 function M.config(_, opts)
   require('kulala').setup(opts)
   -- TODO: https://github.com/mistweaverco/kulala-fmt/issues/12
+  -- TODO: https://github.com/mistweaverco/kulala-ls
 end
 
 return M
