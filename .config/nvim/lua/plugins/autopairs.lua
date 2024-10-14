@@ -4,6 +4,8 @@ M.event = 'InsertEnter'
 M.opts = {
   check_ts = true,
   enable_check_bracket_line = true,
+  map_c_w = true,
+  map_c_h = true,
 }
 
 function M.config(_, opts)
