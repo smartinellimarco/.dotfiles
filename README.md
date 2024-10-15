@@ -85,17 +85,17 @@ Neovim will do the same for lazy plugins, treesitter parsers and mason LSPs & Fo
 
 ### Backup
 
-Each file path must be specified in [_~/.config/yadm/encrypt_](https://github.com/smartinellimarco/.dotfiles/blob/master/.config/yadm/encrypt).
+Each file path must be specified in [`~/.config/yadm/encrypt`](https://github.com/smartinellimarco/.dotfiles/blob/master/.config/yadm/encrypt).
 
 Then by running
 ```zsh
 GPG_TTY=$TTY yadm encrypt
 ```
-and filling the password prompt, an encrypted file in _~/.local/share/yadm/archive_ will be created with the contents of every listed file.
+and filling the password prompt, an encrypted file in `~/.local/share/yadm/archive` will be created with the contents of every listed file.
 
 ### Restore
 
-Place the archive file in _~/.local/share/yadm/archive_ and run
+Place the archive file in `~/.local/share/yadm/archive` and run
 ```zsh
 yadm decrypt
 ```
@@ -103,16 +103,6 @@ The files will be restored to their original locations.
 
 ## Bootstrap file
 
-Any initialization commands not intended to be backed up in this repository, can be placed in _~/.zsh_bootstrap_.
+Any initialization commands not intended to be backed up in this repository, can be placed in `~/.zsh_bootstrap`.
 
 This file is automatically sourced in interactive and login shells.
-
-## Tips & Troubleshooting
-
-<details>
-  <summary>Shared clipboard doesn't work in Neovim</summary>
-<br>
-
-Open Neovim and run `:h clipboard` for more information.
-
-</details>
