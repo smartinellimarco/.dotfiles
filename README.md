@@ -103,4 +103,4 @@ The files will be restored to their original locations.
 
 ## Bootstrap file
 
-Any initialization commands not intended to be backed up in this repository, can be placed in `~/.zsh_bootstrap` which is automatically sourced.
+Initialization commands not intended for backup in this repository can be placed in `~/.zsh_bootstrap`, which is automatically sourced.
