@@ -7,7 +7,8 @@ fi
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
 # Case insensitive completion and subword completion
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*'
+# TODO: https://github.com/ohmyzsh/ohmyzsh/issues/12762
+zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' 'r:|=*' 'l:|=* r:|=*'
 
 # Word movement bindings
 bindkey "^f" forward-word
