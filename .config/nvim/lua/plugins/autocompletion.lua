@@ -1,4 +1,5 @@
 -- TODO: https://github.com/Saghen/blink.cmp#compared-to-nvim-cmp
+-- https://github.com/hanspinckaers/zap.nvim
 local M = { 'hrsh7th/nvim-cmp' }
 
 M.event = 'InsertEnter'
