@@ -116,4 +116,11 @@ vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- Clear jumplist on Neovim start
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.cmd('clearjumps')
+  end,
+})
+
 -- vim: ts=2 sts=2 sw=2 et
