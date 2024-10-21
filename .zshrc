@@ -8,11 +8,10 @@ FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
 # Case insensitive completion and subword completion
 # TODO: https://github.com/ohmyzsh/ohmyzsh/issues/12762
-zstyle ':completion:*' matcher-list 'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' 'r:|=*' 'l:|=* r:|=*'
-
-# Word movement bindings
-bindkey "^f" forward-word
-bindkey "^b" backward-word
+zstyle ':completion:*' matcher-list \
+  'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' \
+  'r:|=*' \
+  'l:|=* r:|=*'
 
 # Remove '/' from wordchars to be able to navigate directories
 WORDCHARS=${WORDCHARS//\//}
@@ -39,6 +38,9 @@ antidote load
 
 # Load Powerlevel10k configuration
 [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh"
+
+# Source custom keymaps
+[ -f "$HOME/.zsh_keymaps" ] && source "$HOME/.zsh_keymaps"
 
 # Source additional scripts (won't be included in backup)
 [ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap"
