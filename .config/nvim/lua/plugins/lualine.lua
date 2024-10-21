@@ -1,4 +1,4 @@
--- TODO: make macros a plugin
+-- TODO: https://github.com/nvim-lualine/lualine.nvim/pull/
 local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
