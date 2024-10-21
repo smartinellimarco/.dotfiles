@@ -6,8 +6,8 @@ fi
 # Load Homebrew formulae completions into FPATH
 FPATH="$HOMEBREW_PREFIX/share/zsh/site-functions:${FPATH}"
 
-# Case insensitive completion and subword completion
 # TODO: https://github.com/ohmyzsh/ohmyzsh/issues/12762
+# Case insensitive completion and subword completion
 zstyle ':completion:*' matcher-list \
   'm:{[:lower:][:upper:]-_}={[:upper:][:lower:]_-}' \
   'r:|=*' \
