@@ -2,6 +2,7 @@
 bindkey -rp ''
 
 # Set custom keymaps
+bindkey "^[[200~" bracketed-paste        # Paste
 bindkey -R " "-"~" self-insert           # Enable self-insert for a-z, A-Z, 0-9, and symbols
 bindkey "^F" forward-word                # Move forward by word
 bindkey "^B" backward-word               # Move backward by word
