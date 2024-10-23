@@ -1,3 +1,4 @@
+# TODO: https://github.com/romkatv/powerlevel10k/issues/2780
 # Enable Powerlevel10k instant prompt
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -37,12 +38,12 @@ source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 antidote load
 
 # Load Powerlevel10k configuration
-[ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh"
+[ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh" || true
 
 # Source custom keymaps
-[ -f "$HOME/.zsh_keymaps" ] && source "$HOME/.zsh_keymaps"
+[ -f "$HOME/.zsh_keymaps" ] && source "$HOME/.zsh_keymaps" || true
 
 # Source additional scripts (won't be included in backup)
-[ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap"
+[ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap" || true
 
 # vim: ts=2 sts=2 sw=2 et
