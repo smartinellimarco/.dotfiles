@@ -1,4 +1,4 @@
--- TODO: https://github.com/nvim-lualine/lualine.nvim/pull/
+-- TODO: https://github.com/nvim-lualine/lualine.nvim/pull/1227
 local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
