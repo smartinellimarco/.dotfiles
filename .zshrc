@@ -33,7 +33,7 @@ setopt hist_reduce_blanks      # Trim extra spaces before saving
 # Source antidote
 source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+# Initialize plugins
 antidote load
 
 # Load Powerlevel10k configuration
