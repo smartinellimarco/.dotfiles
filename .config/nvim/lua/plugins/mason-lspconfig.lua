@@ -1,4 +1,3 @@
--- TODO: https://mise.jdx.dev/ide-integration.html#neovim
 local M = { 'williamboman/mason-lspconfig.nvim' }
 
 M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
