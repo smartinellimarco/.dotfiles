@@ -9,7 +9,6 @@
   - [Backup](#backup)
   - [Restore](#restore)
 - [Bootstrap file](#bootstrap-file)
-- [Tips & Troubleshooting](#tips-troubleshooting)
 <!--toc:end-->
 
 ## Getting started
@@ -22,19 +21,19 @@ Most of these dependencies are available by default on macOS (via Xcode command 
 
 This script only installs the missing ones.
 
-| Tool       | Dependencies                              |
-|------------|-------------------------------------------|
-| mason      | git, curl/wget, unzip, gtar/tar, gzip, bash, sh |
-| lazy       | git, luarocks                             |
-| telescope  | ripgrep, make, clang/gcc, fd              |
-| kulala     | curl, jq, xmllint                         |
-| treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig   |
-| dotfiles   | zsh, gh, antidote, yadm, neovim           |
-| yadm       | openssl                                   |
+| Tool | Dependencies |
+|------|--------------|
+| .dotfiles | zsh, gh, antidote, yadm, neovim, mise |
+| yadm | openssl |
+| mason.nvim | git, curl/wget, unzip, gtar/tar, gzip, bash, sh |
+| lazy.nvim | git, luarocks |
+| nvim-telescope | ripgrep, make, clang/gcc, fd |
+| nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
 
 ```
-TODO: clarify dependencies for LSPs (npm) and formatters.
-Maybe add mise here https://mise.jdx.dev/configuration.html#global-config-config-mise-config-toml
+TODO: add LSPs and formatters.
+TODO: pin versions of some dependencies
+TODO: delete mason, usar lspconfig
 ```
 
 ```zsh
@@ -42,8 +41,6 @@ dependencies=(
   luarocks
   ripgrep
   fd
-  jq
-  xmlstarlet
   gh
   antidote
   yadm
