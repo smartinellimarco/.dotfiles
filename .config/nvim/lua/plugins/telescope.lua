@@ -1,6 +1,6 @@
 local M = { 'nvim-telescope/telescope.nvim' }
 
-M.event = 'VimEnter'
+M.event = 'VeryLazy'
 M.dependencies = {
   'nvim-lua/plenary.nvim',
   {

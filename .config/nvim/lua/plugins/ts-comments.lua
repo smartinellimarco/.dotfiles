@@ -1,6 +1,6 @@
 local M = { 'folke/ts-comments.nvim' }
 
-M.event = { 'VeryLazy' }
+M.event = 'VeryLazy'
 M.opts = {}
 
 function M.config(_, opts)

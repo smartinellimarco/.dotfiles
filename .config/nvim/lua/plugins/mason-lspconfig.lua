@@ -1,7 +1,8 @@
 local M = { 'williamboman/mason-lspconfig.nvim' }
 
+-- NOTE: nvim-lspconfig can not start later than BufReadPost
+M.event = { 'BufReadPost', 'BufNewFile' }
 M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
-M.event = { 'BufEnter', 'BufNewFile' }
 M.dependencies = {
   -- Helper plugin for configuring LSPs
   {

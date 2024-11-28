@@ -1,6 +1,6 @@
 local M = { 'lukas-reineke/indent-blankline.nvim' }
 
-M.event = 'BufEnter'
+M.event = 'VeryLazy'
 M.main = 'ibl'
 M.opts = {
   indent = { char = '┊' },
