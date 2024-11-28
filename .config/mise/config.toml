@@ -1,7 +1,3 @@
-[tools]
-node = "latest"
-python = "3.11"
-
 [settings]
 disable_hints = ["*"]
 
