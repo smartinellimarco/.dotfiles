@@ -8,7 +8,6 @@ M.opts = {
     typescript = { 'prettierd' },
     typescriptreact = { 'prettierd' },
     lua = { 'stylua' },
-    json = { 'prettierd' },
   },
 }
 
