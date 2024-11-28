@@ -12,7 +12,7 @@ if vim.env.GIT_DIR == nil then
   end
 end
 
-require('lua.settings')
-require('lua.lazy')
+require('settings')
+require('manager')
 
 -- vim: ts=2 sts=2 sw=2 et
