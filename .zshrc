@@ -36,6 +36,9 @@ source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 # Initialize plugins
 antidote load
 
+# Initialize mise
+eval "$(mise activate zsh)"
+
 # Load Powerlevel10k configuration
 [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh" || true
 
