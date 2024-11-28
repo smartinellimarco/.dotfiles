@@ -18,8 +18,6 @@ M.opts = {
           local filetype = vim.bo.filetype
           if filetype == 'oil' then
             return require('oil').get_current_dir()
-          elseif filetype == 'qf' then
-            return 'quickfix'
           elseif filetype == 'TelescopePrompt' then
             return 'telescope'
           elseif filetype == 'lazy' then
