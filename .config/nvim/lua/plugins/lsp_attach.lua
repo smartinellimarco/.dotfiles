@@ -30,6 +30,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       })
 
     -- Set keymaps
+    -- TODO: replace qflist
     bufmap('n', 'gd', vim.lsp.buf.definition)
     bufmap('n', 'gD', vim.lsp.buf.declaration)
     bufmap('n', 'gi', vim.lsp.buf.implementation)
