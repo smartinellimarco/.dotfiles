@@ -1,6 +1,6 @@
 local M = { 'stevearc/conform.nvim' }
 
-M.event = { 'BufReadPost', 'BufNewFile' }
+M.event = { 'BufEnter', 'BufNewFile' }
 M.opts = {
   notify_on_error = false,
   formatters_by_ft = {
