@@ -14,12 +14,6 @@ M.opts = {
     ['`'] = 'actions.cd',
     ['<C-v>'] = 'actions.select_vsplit',
     ['<C-x>'] = 'actions.select_split',
-    ['<C-q>'] = {
-      callback = function()
-        require('oil.actions').send_to_qflist.callback()
-        vim.cmd.copen()
-      end,
-    },
     ['<C-c>'] = 'actions.close',
     ['<leader>o'] = function() end, -- Disable keymap
   },
