@@ -1,20 +1,10 @@
-local M = { 'williamboman/mason-lspconfig.nvim' }
+local M = { 'neovim/nvim-lspconfig' }
 
--- NOTE: nvim-lspconfig can not start later than BufReadPost
+-- NOTE: nvim-lspconfig cannot start later than BufReadPost
 M.event = { 'BufReadPost', 'BufNewFile' }
-M.cmd = { 'LspInfo', 'LspInstall', 'LspStart' }
+M.cmd = { 'LspInfo', 'LspStart' }
 M.dependencies = {
-  -- Helper plugin for configuring LSPs
-  {
-    'neovim/nvim-lspconfig',
-    config = function()
-      -- Configure UI border
-      require('lspconfig.ui.windows').default_options.border = 'rounded'
-    end,
-  },
-
-  -- Schema definitions for 'jsonls' and 'yamlls'
-  { 'b0o/schemastore.nvim' },
+  'b0o/schemastore.nvim', -- Schema definitions for 'jsonls' and 'yamlls'
 }
 
 function M.config()
@@ -92,23 +82,13 @@ function M.config()
   local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
   -- Setup all LSPs
-  require('mason-lspconfig').setup({
-    handlers = {
-      function(server_name)
-        local server = servers[server_name]
+  for server_name, config in pairs(servers) do
+    -- Merge capabilities into the server config
+    config.capabilities =
+      vim.tbl_deep_extend('force', capabilities, config.capabilities or {})
 
-        -- Merge capabilities
-        server.capabilities = vim.tbl_deep_extend(
-          'force',
-          {},
-          capabilities,
-          server.capabilities or {}
-        )
-
-        require('lspconfig')[server_name].setup(server)
-      end,
-    },
-  })
+    require('lspconfig')[server_name].setup(config)
+  end
 end
 
 return M
