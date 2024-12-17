@@ -40,9 +40,8 @@ function M.config()
 
           ['<C-u>'] = actions.preview_scrolling_up,
           ['<C-d>'] = actions.preview_scrolling_down,
-          ['<C-w>'] = { '<C-s-w>', type = 'command' }, -- Delete word
 
-          ['<C-s>'] = actions.toggle_selection,
+          ['<C-w>'] = { '<C-s-w>', type = 'command' }, -- Delete word
         },
       },
     },
