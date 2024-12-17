@@ -1,6 +1,6 @@
 local M = { 'stevearc/conform.nvim' }
 
-M.event = 'BufWritePre'
+M.event = 'BufReadPost'
 M.cmd = 'ConformInfo'
 M.opts = {
   notify_on_error = false,
