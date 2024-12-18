@@ -68,15 +68,11 @@ cask_dependencies=(
 )
 
 for package in "${dependencies[@]}"; do
-  if ! command -v $package &> /dev/null; then
-    brew install $package
-  fi
+  brew install $package
 done
 
 for cask in "${cask_dependencies[@]}"; do
-  if ! brew list --cask $cask &>/dev/null; then
-    brew install --cask $cask
-  fi
+  brew install --cask $cask
 done
 ```
 
