@@ -53,7 +53,7 @@ dependencies=(
   gopls
   terraform-ls
   marksman
-  dockerfile-language-server-nodejs
+  dockerfile-language-server
   ruff
   pyright
   lua-language-server
