@@ -25,15 +25,14 @@ This script only installs the missing ones.
 |------|--------------|
 | .dotfiles | zsh, gh, antidote, yadm, neovim, mise |
 | yadm | openssl |
-| mason.nvim | git, curl/wget, unzip, gtar/tar, gzip, bash, sh |
 | lazy.nvim | git, luarocks |
 | nvim-telescope | ripgrep, make, clang/gcc, fd |
 | nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
+| formatters | prettierd, stylua|
+| LSPs | typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server-nodejs, ruff, pyright, lua-language-server, vscode-langservers-extracted (jsonls), yaml-language-server |
 
 ```
-TODO: add LSPs and formatters.
 TODO: pin versions of some dependencies
-TODO: delete mason, usar lspconfig
 ```
 
 ```zsh
@@ -46,6 +45,20 @@ dependencies=(
   yadm
   neovim
   openssl
+  prettierd
+  stylua
+  rust-analyzer
+  typescript-language-server
+  bash-language-server
+  gopls
+  terraform-ls
+  marksman
+  dockerfile-language-server-nodejs
+  ruff
+  pyright
+  lua-language-server
+  vscode-langservers-extracted
+  yaml-language-server
 )
 
 cask_dependencies=(
