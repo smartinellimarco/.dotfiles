@@ -28,7 +28,7 @@ This script only installs the missing ones.
 | lazy.nvim | git, luarocks |
 | nvim-telescope | ripgrep, make, clang/gcc, fd |
 | nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
-| formatters | prettierd, stylua|
+| formatters | prettierd, stylua, gofumpt |
 | LSPs | typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server-nodejs, ruff, pyright, lua-language-server, vscode-langservers-extracted (jsonls), yaml-language-server |
 
 ```
@@ -47,6 +47,7 @@ dependencies=(
   openssl
   prettierd
   stylua
+  gofumpt
   rust-analyzer
   typescript-language-server
   bash-language-server
