@@ -86,8 +86,7 @@ function M.config()
   for server_name, config in pairs(servers) do
     -- Merge capabilities into the server config
     config.capabilities =
-      vim.tbl_deep_extend('force', capabilities, config.capabilities or {})
-
+      require('blink.cmp').get_lsp_capabilities(config.capabilities)
     require('lspconfig')[server_name].setup(config)
   end
 end
