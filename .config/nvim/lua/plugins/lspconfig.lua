@@ -78,10 +78,6 @@ function M.config()
     },
   }
 
-  -- Capabilities for autocompletion
-  local capabilities =
-    require('blink.cmp').get_lsp_capabilities(servers.capabilities)
-
   -- Setup all LSPs
   for server_name, config in pairs(servers) do
     -- Merge capabilities into the server config
