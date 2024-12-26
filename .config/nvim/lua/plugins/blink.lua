@@ -1,3 +1,8 @@
+-- TODO: only keep one col for / ? and :
+-- TODO: customize snippet movement like with luasnip (-- Do not fallback in order to disable i_CTRL-N and i_CTRL-P)
+-- TODO: lualine blinking
+-- TODO: enable align_to when release comes out
+
 local M = { 'saghen/blink.cmp' }
 
 M.version = '*'
@@ -8,9 +13,8 @@ M.opts = {
     menu = {
       border = 'rounded',
       draw = {
-        -- TODO: enable when release comes out
         -- align_to = 'cursor',
-        columns = {
+        columns = { -- Imitate 'nvim-cmp'
           { 'label' },
           { 'kind_icon', 'kind', gap = 1 },
           { 'label_description' },
@@ -19,20 +23,27 @@ M.opts = {
     },
     documentation = {
       auto_show = true,
-      auto_show_delay_ms = 500,
       window = { border = 'rounded' },
     },
   },
   keymap = {
     preset = 'none',
+
     ['<C-f>'] = { 'accept' },
-    -- Do not fallback in order to disable i_CTRL-N and i_CTRL-P
-    -- TODO: customize snippet forward and backward
-    ['<C-p>'] = { 'snippet_forward', 'select_prev' },
-    ['<C-n>'] = { 'snippet_backward', 'select_next' },
+    ['<C-p>'] = { 'select_prev' },
+    ['<C-n>'] = { 'select_next' },
     ['<C-u>'] = { 'scroll_documentation_up' },
     ['<C-d>'] = { 'scroll_documentation_down' },
     ['<C-e>'] = { 'cancel' },
+
+    cmdline = {
+      preset = 'none',
+
+      ['<C-f>'] = { 'accept' },
+      ['<C-p>'] = { 'select_prev' },
+      ['<C-n>'] = { 'select_next' },
+      ['<Tab>'] = { function() end }, -- TODO: create issue for no-op
+    },
   },
 }
 
