@@ -78,8 +78,9 @@ function M.config()
     },
   }
 
-  -- Capabilities for 'nvim-cmp'
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  -- Capabilities for autocompletion
+  local capabilities =
+    require('blink.cmp').get_lsp_capabilities(servers.capabilities)
 
   -- Setup all LSPs
   for server_name, config in pairs(servers) do
