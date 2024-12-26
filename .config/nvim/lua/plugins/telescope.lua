@@ -27,6 +27,7 @@ function M.config()
       },
     },
     defaults = {
+      prompt_prefix = '   ',
       default_mappings = {
         i = {
           ['<Esc>'] = actions.close,
