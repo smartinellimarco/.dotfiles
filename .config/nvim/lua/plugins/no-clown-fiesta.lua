@@ -1,5 +1,6 @@
 local M = { 'aktersnurra/no-clown-fiesta.nvim' }
 
+M.dev = true
 M.lazy = false
 M.priority = 1000
 M.opts = {}
