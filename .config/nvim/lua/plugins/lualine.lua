@@ -1,9 +1,9 @@
 -- TODO: https://github.com/nvim-lualine/lualine.nvim/pull/1227
+-- TODO: remove command mode refresh
 local M = { 'nvim-lualine/lualine.nvim' }
 
 M.opts = {
   options = {
-    theme = 'no-clown-fiesta',
     globalstatus = true,
     component_separators = '',
     section_separators = '',
