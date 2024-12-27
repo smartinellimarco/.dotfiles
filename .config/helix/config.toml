@@ -1,0 +1,58 @@
+theme='no-clown-fiesta'
+
+[editor]
+mouse=false
+middle-click-paste=false
+line-number='relative'
+cursorline=true
+auto-format=false
+# TODO: preselect completion first item
+completion-timeout=5 # TODO: completion not showing
+preview-completion-insert=false # TODO: review
+completion-trigger-len=2 # TODO: review
+completion-replace=true # TODO: review
+color-modes=true
+popup-border='all' # TODO: review
+
+[editor.statusline]
+left = ["mode", "file-name", "version-control", "spacer","file-modification-indicator" ]
+right = ["spinner","spacer","diagnostics","workspace-diagnostics","position-percentage", "position"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.lsp]
+display-signature-help-docs = false
+
+[editor.cursor-shape]
+insert="bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render= true
+character = '┊'
+
+[editor.gutters]
+layout=['diff','spacer','line-numbers','spacer']
+
+[editor.gutters.line-numbers]
+min-width=1
+
+[editor.smart-tab]
+supersede-menu = true
+
+[keys.normal]
+tab = "move_parent_node_end"
+S-tab = "move_parent_node_start"
+
+[keys.insert]
+S-tab = "move_parent_node_start"
+"C-c" = "normal_mode"
+
+[keys.select]
+tab = "extend_parent_node_end"
+S-tab = "extend_parent_node_start"
+
+# TODO: alt keymaps do not work
