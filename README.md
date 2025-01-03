@@ -26,6 +26,7 @@ This script only installs the missing ones.
 | .dotfiles | zsh, gh, antidote, yadm, neovim, mise |
 | yadm | openssl |
 | lazy.nvim | git, luarocks |
+| blink.cmp | git, curl |
 | nvim-telescope | ripgrep, make, clang/gcc, fd |
 | nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
 | formatters | prettierd, stylua, gofumpt |
