@@ -1,7 +1,8 @@
 -- TODO: https://github.com/nvim-lualine/lualine.nvim/pull/1227
--- TODO: remove command mode refresh
+-- TODO: remove command mode refresh when 'cmdheight' is 0
 local M = { 'nvim-lualine/lualine.nvim' }
 
+M.dependencies = 'yavorski/lualine-macro-recording.nvim'
 M.opts = {
   options = {
     globalstatus = true,
@@ -31,17 +32,7 @@ M.opts = {
     },
     lualine_c = { 'branch', 'diagnostics' },
     lualine_x = {
-      {
-        'macro-recording',
-        fmt = function()
-          local register = vim.fn.reg_recording()
-          if register == '' then
-            return ''
-          else
-            return 'Recording @' .. register
-          end
-        end,
-      },
+      'macro_recording',
       'encoding',
     },
     lualine_y = { 'progress' },
@@ -50,32 +41,6 @@ M.opts = {
 }
 
 function M.config(_, opts)
-  -- Update lualine on recording events
-  vim.api.nvim_create_autocmd('RecordingEnter', {
-    callback = function()
-      require('lualine').refresh({
-        place = { 'statusline' },
-      })
-    end,
-  })
-
-  -- The register does not clean up immediately after
-  -- recording stops, so we have to wait a little bit (50ms)
-  vim.api.nvim_create_autocmd('RecordingLeave', {
-    callback = function()
-      local timer = vim.loop.new_timer()
-      timer:start(
-        50,
-        0,
-        vim.schedule_wrap(function()
-          require('lualine').refresh({
-            place = { 'statusline' },
-          })
-        end)
-      )
-    end,
-  })
-
   require('lualine').setup(opts)
 end
 
