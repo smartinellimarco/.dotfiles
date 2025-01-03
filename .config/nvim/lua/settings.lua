@@ -92,9 +92,6 @@ vim.opt.shortmess = vim.opt.shortmess
 -- Do not show neovim mode
 vim.opt.showmode = false
 
--- Hide commandline
-vim.opt.cmdheight = 0
-
 -- Do not show tabline
 vim.opt.showtabline = 0
 
