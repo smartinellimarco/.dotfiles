@@ -1,19 +1,18 @@
 -- TODO: only keep one col for / ? and :
--- TODO: customize snippet movement like with luasnip (-- Do not fallback in order to disable i_CTRL-N and i_CTRL-P)
--- TODO: lualine blinking
--- TODO: enable align_to when release comes out
+-- TODO: customize snippet movement like with luasnip:
+-- Do not fallback in order to disable i_CTRL-N and i_CTRL-P
 
 local M = { 'saghen/blink.cmp' }
 
 M.version = '*'
-M.event = 'InsertEnter'
+M.event = { 'InsertEnter', 'CmdlineEnter' }
 M.dependencies = 'rafamadriz/friendly-snippets'
 M.opts = {
   completion = {
     menu = {
       border = 'rounded',
       draw = {
-        -- align_to = 'cursor',
+        align_to = 'cursor',
         columns = { -- Imitate 'nvim-cmp'
           { 'label' },
           { 'kind_icon', 'kind', gap = 1 },
@@ -35,7 +34,6 @@ M.opts = {
     ['<C-u>'] = { 'scroll_documentation_up' },
     ['<C-d>'] = { 'scroll_documentation_down' },
     ['<C-e>'] = { 'cancel' },
-
     cmdline = {
       preset = 'none',
 
