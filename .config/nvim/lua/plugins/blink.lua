@@ -27,7 +27,6 @@ M.opts = {
   },
   keymap = {
     preset = 'none',
-
     ['<C-f>'] = { 'accept' },
     ['<C-p>'] = { 'select_prev' },
     ['<C-n>'] = { 'select_next' },
@@ -36,7 +35,6 @@ M.opts = {
     ['<C-e>'] = { 'cancel' },
     cmdline = {
       preset = 'none',
-
       ['<C-f>'] = { 'accept' },
       ['<C-p>'] = { 'select_prev' },
       ['<C-n>'] = { 'select_next' },
