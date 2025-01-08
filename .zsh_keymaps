@@ -11,6 +11,7 @@ bindkey "^[[D" backward-char             # Move backward by char
 bindkey "^W" backward-kill-word          # Delete previous word
 bindkey "^?" backward-delete-char        # Delete previous char
 bindkey "^M" accept-line                 # Run command
+bindkey "^[[5;13~" accept-line           # Run command event with CTRL pressed for efficiency
 bindkey "^C" send-break                  # Stop signal
 bindkey "^L" clear-screen                # Clear screen
 bindkey "^R" history-incremental-search-backward  # Reverse search in history
