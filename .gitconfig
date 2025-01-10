@@ -2,7 +2,7 @@
   email = smartinellimarco@icloud.com
   name = smartinellimarco
 [core]
-  editor = nvim
+  editor = hx
   pager = less --mouse
 [credential "https://github.com"]
   helper = 
