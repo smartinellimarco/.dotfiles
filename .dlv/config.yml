@@ -13,9 +13,6 @@ show-locals-on-backtrace: true
 # Assembly settings
 disassemble-flavor: intel
 
-# Debug info
-debug-info-directories: ["/usr/lib/debug/.build-id"]
-
 # Search settings
 case-insensitive-search: true
 
