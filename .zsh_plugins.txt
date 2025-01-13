@@ -4,6 +4,3 @@ mattmc3/ez-compinit
 # These are not affected by order
 agkozak/zsh-z
 romkatv/powerlevel10k
-
-# Keep this at the bottom
-zdharma-continuum/fast-syntax-highlighting kind:defer
