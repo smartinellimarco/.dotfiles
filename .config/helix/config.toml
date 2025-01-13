@@ -1,44 +1,68 @@
-theme='no-clown-fiesta'
+# TODO List:
+# - Configure LSPs and formatters
+# - Implement preselection of completion first item
+# - Debug completion not displaying correctly
+# - Review completion settings:
+#   - Preview insert behavior
+#   - Trigger length configuration
+#   - Replace functionality
+# - Evaluate popup border theming
+# - Fix non-functioning Alt keymaps
+
+theme = "catppuccin_mocha"
 
 [editor]
-mouse=false
-middle-click-paste=false
-line-number='relative'
-cursorline=true
-auto-format=false
-# TODO: preselect completion first item
-completion-timeout=5 # TODO: completion not showing
-preview-completion-insert=false # TODO: review
-completion-trigger-len=2 # TODO: review
-completion-replace=true # TODO: review
-color-modes=true
-popup-border='all' # TODO: review
+# mouse = true
+# middle-click-paste = false
+line-number = "relative"
+cursorline = true
+# auto-format = false
+# completion-timeout = 5
+# completion-trigger-len = 2
+# completion-replace = true
+# preview-completion-insert = false
+# color-modes = true
+# popup-border = "all"
+jump-label-alphabet =	"asdfghjklqwertyuiopzxcvbnm" # TODO: optimize for qwerty
 
 [editor.statusline]
-left = ["mode", "file-name", "version-control", "spacer","file-modification-indicator" ]
-right = ["spinner","spacer","diagnostics","workspace-diagnostics","position-percentage", "position"]
-mode.normal = "NORMAL"
-mode.insert = "INSERT"
-mode.select = "SELECT"
+left = [
+    "mode",
+    "file-name",
+    "version-control",
+    "spacer",
+    "file-modification-indicator"
+]
+right = [
+    "spinner",
+    "spacer",
+    "diagnostics",
+    "workspace-diagnostics",
+    "position-percentage",
+    "position"
+]
+# mode.normal = "NORMAL"
+# mode.insert = "INSERT"
+# mode.select = "SELECT"
 
 [editor.lsp]
 display-signature-help-docs = false
 
 [editor.cursor-shape]
-insert="bar"
+insert = "bar"
 
 [editor.file-picker]
 hidden = false
 
 [editor.indent-guides]
-render= true
-character = '┊'
+render = true
+character = "┊"
 
 [editor.gutters]
-layout=['diff','spacer','line-numbers','spacer']
+layout = ["diff", "spacer", "line-numbers", "spacer"]
 
 [editor.gutters.line-numbers]
-min-width=1
+min-width = 1
 
 [editor.smart-tab]
 supersede-menu = true
@@ -54,5 +78,3 @@ S-tab = "move_parent_node_start"
 [keys.select]
 tab = "extend_parent_node_end"
 S-tab = "extend_parent_node_start"
-
-# TODO: alt keymaps do not work
