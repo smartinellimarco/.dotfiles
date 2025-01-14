@@ -1,4 +1,5 @@
 !**/.env
+!**/nginx-proxy.conf
 !**/*secrets.yaml
 !**/terraform.tfstate
 !**/*.tfvars
