@@ -1,4 +1,4 @@
-theme = catppuccin-mocha
+theme = tokyonight
 confirm-close-surface = false
 macos-option-as-alt = true
 window-width = 1000
