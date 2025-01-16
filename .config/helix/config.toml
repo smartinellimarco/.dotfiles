@@ -1,4 +1,8 @@
 # TODO List:
+# - jump to next textobject like neovim. eg mi( mi", 
+# - autoformat no anda con algunos lsp nose pq
+# - Accept completion ctrl f or something
+# - CLSP server for snippets
 # - Configure LSPs and formatters
 # - Implement preselection of completion first item
 # - Debug completion not displaying correctly
@@ -9,21 +13,19 @@
 # - Evaluate popup border theming
 # - Fix non-functioning Alt keymaps
 
-theme = "catppuccin_mocha"
+theme = "tokyonight"
 
 [editor]
 # mouse = true
 # middle-click-paste = false
 line-number = "relative"
 cursorline = true
-# auto-format = false
-# completion-timeout = 5
-# completion-trigger-len = 2
-# completion-replace = true
-# preview-completion-insert = false
-# color-modes = true
+completion-timeout = 5
+completion-replace = true
+color-modes = true
 # popup-border = "all"
 jump-label-alphabet =	"asdfghjklqwertyuiopzxcvbnm" # TODO: optimize for qwerty
+end-of-line-diagnostics = "disable"
 
 [editor.statusline]
 left = [
@@ -46,7 +48,10 @@ right = [
 # mode.select = "SELECT"
 
 [editor.lsp]
-display-signature-help-docs = false
+display-signature-help-docs = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
 
 [editor.cursor-shape]
 insert = "bar"
@@ -56,7 +61,6 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = "┊"
 
 [editor.gutters]
 layout = ["diff", "spacer", "line-numbers", "spacer"]
@@ -73,7 +77,6 @@ S-tab = "move_parent_node_start"
 
 [keys.insert]
 S-tab = "move_parent_node_start"
-"C-c" = "normal_mode"
 
 [keys.select]
 tab = "extend_parent_node_end"
