@@ -2,7 +2,6 @@
   email = smartinellimarco@icloud.com
   name = smartinellimarco
 [core]
-  editor = hx
   pager = less --mouse
 [credential "https://github.com"]
   helper = 
@@ -10,5 +9,3 @@
 [credential "https://gist.github.com"]
   helper = 
   helper = !gh auth git-credential
-
-# vim: ts=2 sts=2 sw=2 et
