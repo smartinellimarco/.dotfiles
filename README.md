@@ -23,13 +23,19 @@ This script only installs the missing ones.
 
 | Tool | Dependencies |
 |------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, helix, mise, font-symbols-only-nerd-font, font-jetbrains-mono, kitty |
+| .dotfiles | zsh, gh, antidote, yadm, neovim, mise, font-symbols-only-nerd-font, font-jetbrains-mono, kitty |
 | yadm | openssl |
+| lazy.nvim | git, luarocks |
+| blink.cmp | git, curl |
+| nvim-telescope | ripgrep, make, clang/gcc, fd |
+| nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
 | formatters | prettierd, stylua, gofumpt |
-| LSPs | rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server-nodejs, ruff, pyright, lua-language-server, vscode-langservers-extracted (jsonls), yaml-language-server |
+| LSPs | rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
 
 ```
-TODO: pin versions of some dependencies
+TODO: add taplo
+TODO: remove the vim modeline from files
+TODO: ver que hacer con los delve colors
 ```
 
 ```zsh
@@ -37,8 +43,12 @@ dependencies=(
   gh
   antidote
   yadm
-  helix
+  neovim
+  mise
   openssl
+  luarocks
+  ripgrep
+  fd
   prettierd
   stylua
   gofumpt
