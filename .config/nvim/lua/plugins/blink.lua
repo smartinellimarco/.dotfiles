@@ -9,6 +9,11 @@ M.event = { 'InsertEnter', 'CmdlineEnter' }
 M.dependencies = 'rafamadriz/friendly-snippets'
 M.opts = {
   completion = {
+    list = {
+      selection = {
+        auto_insert = false,
+      },
+    },
     menu = {
       border = 'rounded',
       draw = {

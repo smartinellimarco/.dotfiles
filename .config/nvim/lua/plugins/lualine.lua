@@ -1,4 +1,5 @@
 -- TODO: https://github.com/nvim-lualine/lualine.nvim/pull/1227
+-- TODO: https://github.com/nvim-lualine/lualine.nvim/issues/1371
 local M = { 'nvim-lualine/lualine.nvim' }
 
 M.dependencies = 'yavorski/lualine-macro-recording.nvim'

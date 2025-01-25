@@ -15,6 +15,13 @@ M.opts = {
   indent = {
     enable = true,
   },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      node_incremental = '<A-o>',
+      node_decremental = '<A-i>',
+    },
+  },
   textobjects = {
     select = {
       enable = true,
@@ -34,6 +41,28 @@ M.opts = {
         ['is'] = '@call.inner',
         ['aa'] = '@assignment.outer',
         ['ia'] = '@assignment.inner',
+      },
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        [']f'] = '@function.outer',
+        [']c'] = '@class.outer',
+        [']l'] = '@loop.outer',
+        [']i'] = '@conditional.outer',
+        [']a'] = '@assignment.outer',
+        [']s'] = '@call.outer',
+        [']p'] = '@parameter.outer',
+      },
+      goto_previous_start = {
+        ['[f'] = '@function.outer',
+        ['[c'] = '@class.outer',
+        ['[l'] = '@loop.outer',
+        ['[i'] = '@conditional.outer',
+        ['[a'] = '@assignment.outer',
+        ['[s'] = '@call.outer',
+        ['[p'] = '@parameter.outer',
       },
     },
   },

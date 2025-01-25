@@ -2,7 +2,6 @@ local M = { 'lewis6991/gitsigns.nvim' }
 
 -- TODO: Add hunk text object when it behaves like the native neovim text objects
 -- TODO: jump to next hunk and inside hunk (copy helix)
--- TODO: not seeing hunk
 M.opts = {
   current_line_blame = true,
   current_line_blame_opts = {
