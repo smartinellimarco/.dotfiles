@@ -1,5 +1,7 @@
 # Options
 confirm-close-surface = false
+shell-integration-features = no-cursor
+window-inherit-working-directory = false
 macos-option-as-alt = true
 window-width = 1000
 window-height = 1000
