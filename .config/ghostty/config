@@ -1,7 +1,8 @@
+# TODO: https://github.com/ghostty-org/ghostty/pull/2818
 # Options
 theme = no-clown-fiesta
 confirm-close-surface = false
-window-inherit-working-directory = false
+cursor-style = bar
 macos-option-as-alt = true
 window-width = 1000
 window-height = 1000
