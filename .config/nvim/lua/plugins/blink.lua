@@ -1,4 +1,6 @@
 -- TODO: only keep one col for / ? and :
+-- replace behavior
+-- TODO: completion should fill the '.' repeat action
 -- TODO: customize snippet movement like with luasnip:
 -- Do not fallback in order to disable i_CTRL-N and i_CTRL-P
 
