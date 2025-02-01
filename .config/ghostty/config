@@ -1,4 +1,5 @@
 # Options
+theme = no-clown-fiesta
 confirm-close-surface = false
 shell-integration-features = no-cursor
 window-inherit-working-directory = false
@@ -28,4 +29,6 @@ keybind = cmd+w=close_tab
 keybind = cmd+q=quit
 keybind = cmd+c=copy_to_clipboard
 keybind = cmd+v=paste_from_clipboard
+keybind = cmd+shift+,=reload_config
 
+# vim: ts=2 sts=2 sw=2 et
