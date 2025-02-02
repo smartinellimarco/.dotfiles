@@ -23,7 +23,7 @@ This script only installs the missing ones.
 
 | Tool | Dependencies |
 |------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, neovim, mise, ghostty |
+| .dotfiles | zsh, gh, antidote, yadm, neovim, mise, font-symbols-only-nerd-font, font-jetbrains-mono, kitty |
 | yadm | openssl |
 | lazy.nvim | git, luarocks |
 | blink.cmp | git, curl |
@@ -67,7 +67,9 @@ dependencies=(
 )
 
 cask_dependencies=(
-  ghostty
+  font-symbols-only-nerd-font
+  font-jetbrains-mono
+  kitty
 )
 
 for package in "${dependencies[@]}"; do
