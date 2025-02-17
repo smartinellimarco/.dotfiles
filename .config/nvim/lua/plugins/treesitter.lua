@@ -1,5 +1,3 @@
--- TODO: add movements https://github.com/nvim-treesitter/nvim-treesitter-textobjects (copy helix)
--- TODO: incremental scope selection
 -- TODO: jump to sibling/parent/child
 local M = { 'nvim-treesitter/nvim-treesitter' }
 
