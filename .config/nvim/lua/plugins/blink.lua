@@ -32,6 +32,15 @@ M.opts = {
       window = { border = 'rounded' },
     },
   },
+  cmdline = {
+    keymap = {
+      preset = 'none',
+      ['<C-f>'] = { 'accept' },
+      ['<C-p>'] = { 'select_prev' },
+      ['<C-n>'] = { 'select_next' },
+      ['<Tab>'] = { function() end }, -- TODO: create issue for no-op
+    },
+  },
   keymap = {
     preset = 'none',
     ['<C-f>'] = { 'accept' },
@@ -40,13 +49,6 @@ M.opts = {
     ['<C-u>'] = { 'scroll_documentation_up' },
     ['<C-d>'] = { 'scroll_documentation_down' },
     ['<C-e>'] = { 'cancel' },
-    cmdline = {
-      preset = 'none',
-      ['<C-f>'] = { 'accept' },
-      ['<C-p>'] = { 'select_prev' },
-      ['<C-n>'] = { 'select_next' },
-      ['<Tab>'] = { function() end }, -- TODO: create issue for no-op
-    },
   },
 }
 
