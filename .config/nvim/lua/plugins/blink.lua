@@ -33,6 +33,7 @@ M.opts = {
     },
   },
   cmdline = {
+    completion = { menu = { auto_show = true } },
     keymap = {
       preset = 'none',
       ['<C-f>'] = { 'accept' },
