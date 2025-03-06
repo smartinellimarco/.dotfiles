@@ -1,6 +1,5 @@
 -- TODO: only keep one col for / ? and :
--- replace behavior
--- TODO: completion should fill the '.' repeat action
+-- TODO: replace word
 -- TODO: customize snippet movement like with luasnip:
 -- Do not fallback in order to disable i_CTRL-N and i_CTRL-P
 
@@ -30,16 +29,6 @@ M.opts = {
     documentation = {
       auto_show = true,
       window = { border = 'rounded' },
-    },
-  },
-  cmdline = {
-    completion = { menu = { auto_show = true } },
-    keymap = {
-      preset = 'none',
-      ['<C-f>'] = { 'accept' },
-      ['<C-p>'] = { 'select_prev' },
-      ['<C-n>'] = { 'select_next' },
-      ['<Tab>'] = { function() end }, -- TODO: create issue for no-op
     },
   },
   keymap = {
