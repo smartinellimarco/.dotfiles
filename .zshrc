@@ -21,8 +21,8 @@ WORDCHARS=${WORDCHARS//\//}
 
 # History configuration
 HISTFILE="$HOME/.zsh_history"  # History file path
-HISTSIZE=100000                # Max commands in memory
-SAVEHIST=100000                # Max commands in history file
+HISTSIZE=1000000               # Max commands in memory
+SAVEHIST=1000000               # Max commands in history file
 
 setopt share_history           # Share history across sessions
 setopt hist_ignore_all_dups    # Remove all duplicates
