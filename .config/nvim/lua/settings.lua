@@ -1,3 +1,4 @@
+-- TODO: https://www.reddit.com/r/neovim/comments/1jeg8v4/just_merged_an_option_to_control_the_default/
 -- Choose leader
 vim.g.mapleader = ' '
 
