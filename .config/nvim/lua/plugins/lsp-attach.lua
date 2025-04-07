@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       return
     end
 
+    -- TODO: fix calls
     -- Configure borders for hover
     vim.lsp.handlers['textDocument/hover'] =
       vim.lsp.with(vim.lsp.handlers.hover, {
