@@ -3,6 +3,7 @@
 !**/*secrets.yaml
 !**/terraform.tfstate
 !**/*.tfvars
+!**/.github/
 .git
 poetry.lock
 package-lock.json
