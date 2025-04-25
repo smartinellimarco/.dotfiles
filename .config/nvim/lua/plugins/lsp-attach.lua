@@ -13,23 +13,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
       return
     end
 
-    -- TODO: fix calls
-    -- Configure borders for hover
-    vim.lsp.handlers['textDocument/hover'] =
-      vim.lsp.with(vim.lsp.handlers.hover, {
-        border = 'rounded',
-        relative = 'cursor',
-        silent = true,
-      })
-
-    -- Configure borders for signature help
-    vim.lsp.handlers['textDocument/signatureHelp'] =
-      vim.lsp.with(vim.lsp.handlers.signature_help, {
-        border = 'rounded',
-        relative = 'cursor',
-        silent = true,
-      })
-
     -- Set keymaps
     -- TODO: replace qflist
     bufmap('n', 'gd', vim.lsp.buf.definition)
@@ -42,10 +25,24 @@ vim.api.nvim_create_autocmd('LspAttach', {
     bufmap('n', 'gO', vim.lsp.buf.outgoing_calls)
     bufmap('n', 'gI', vim.lsp.buf.incoming_calls)
     bufmap('n', 'gl', vim.diagnostic.open_float)
-    bufmap({ 'n', 'x' }, 'K', vim.lsp.buf.hover)
+    bufmap(
+      { 'n', 'x' },
+      'K',
+      vim.lsp.with(vim.lsp.handlers.hover, {
+        relative = 'cursor',
+        silent = true,
+      })
+    )
     bufmap('n', '[d', vim.diagnostic.goto_prev)
     bufmap('n', ']d', vim.diagnostic.goto_next)
-    bufmap('i', '<C-s>', vim.lsp.buf.signature_help)
+    bufmap(
+      'i',
+      '<C-s>',
+      vim.lsp.with(vim.lsp.buf.signature_help, {
+        relative = 'cursor',
+        silent = true,
+      })
+    )
 
     -- Remap <C-c> to <Esc> since it does not trigger 'InsertLeave'
     bufmap('i', '<C-c>', '<Esc>')

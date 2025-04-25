@@ -21,7 +21,6 @@ local opts = {
     colorscheme = { 'no-clown-fiesta' },
   },
   ui = {
-    border = 'rounded',
     backdrop = 100,
   },
   change_detection = {

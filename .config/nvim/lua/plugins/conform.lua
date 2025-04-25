@@ -17,6 +17,7 @@ function M.config(_, opts)
 
   conform.setup(opts)
 
+  -- TODO: range formatting for 0.11
   -- TODO: https://github.com/NMAC427/guess-indent.nvim/issues/21
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
     conform.format({
