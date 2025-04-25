@@ -9,5 +9,3 @@
 [credential "https://gist.github.com"]
   helper = 
   helper = !gh auth git-credential
-
-# vim: ts=2 sts=2 sw=2 et

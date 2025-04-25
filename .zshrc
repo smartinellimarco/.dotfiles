@@ -50,5 +50,3 @@ eval "$(mise activate zsh)"
 
 # Source additional scripts (won't be included in backup)
 [ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap" || true
-
-# vim: ts=2 sts=2 sw=2 et

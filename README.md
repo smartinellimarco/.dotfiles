@@ -29,7 +29,6 @@ This script only installs the missing ones.
 | LSPs | haskell-language-server, rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
 
 ```
-TODO: add taplo
 TODO: remove the vim modeline from files
 TODO: htop, tree, watch, uv, postman, pstree
 ```

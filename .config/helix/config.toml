@@ -1,4 +1,5 @@
 # TODO List:
+# Review lsps (taplo), from the runtime config dirs
 # https://github.com/helix-editor/helix/pull/4381
 # https://github.com/helix-editor/helix/issues/5990
 # - rounded borders
