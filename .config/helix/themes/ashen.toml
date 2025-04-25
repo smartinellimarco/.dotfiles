@@ -1,0 +1,243 @@
+# TODO: docstrings python rojas? mejor grises
+# horrible el highlight de los codeblocks en markdown
+# otros strings en rojo no mg, quizas un color mas chill
+# picker en rojo tampoco
+# Syntax highlighting
+# -------------------
+"attribute" = "g_4"
+
+"type" = "blue"
+"type.builtin" = "blue"
+"type.parameter" = "orange_glow"
+"type.enum" = "orange_blaze"
+"type.enum.variant" = "orange_blaze"
+
+"constructor" = "g_1"
+
+"constant" = "orange_blaze"
+"constant.builtin" = "blue"
+"constant.character" = { fg = "red_glowing", modifiers = ["bold"] }
+"constant.character.escape" = "g_2"
+"constant.numeric" = "blue"
+"constant.numeric.integer" = "blue"
+"constant.numeric.float" = { fg = "blue", modifiers = ["italic"] }
+
+"string" = "red_glowing"
+"string.regexp" = "orange_glow"
+"string.special" = "g_2"
+"string.special.url" = { fg = "red_glowing", modifiers = ["bold"] }
+"string.special.path" = { fg = "red_glowing", modifiers = ["bold"] }
+"string.special.symbol" = "orange_smolder"
+
+"comment" = { fg = "g_6", modifiers = ["italic"] }
+"comment.line" = { fg = "g_6", modifiers = ["italic"] }
+"comment.block" = { fg = "g_6", modifiers = ["italic"] }
+"comment.block.documentation" = { fg = "g_5", modifiers = ["italic"] }
+
+"variable" = "g_3"
+"variable.parameter" = { fg = "g_2", modifiers = ["italic"] }
+"variable.builtin" = "blue"
+"variable.other.member" = "g_2"
+"variable.other.member.private" = { fg = "g_2", modifiers = ["italic"] }
+
+"label" = "red_ember" # used for lifetimes
+
+"punctuation" = "g_2"
+"punctuation.special" = "orange_golden"
+"punctuation.bracket" = "g_6"
+"punctuation.delimiter" = "orange_smolder"
+
+"keyword" = "red_ember"
+"keyword.control" = "red_ember"
+"keyword.control.conditional" = { fg = "red_ember", modifiers = ["bold"] }
+"keyword.control.repeat" = { fg = "red_ember", modifiers = ["bold"] }
+"keyword.control.import" = "red_ember"
+"keyword.control.return" = { fg = "red_ember", modifiers = ["bold"] }
+"keyword.control.exception" = { fg = "red_ember", modifiers = ["bold"] }
+"keyword.operator" = "orange_blaze"
+"keyword.directive" = { fg = "red_ember", modifiers = ["italic"] }
+"keyword.function" = { fg = "red_ember", modifiers = ["bold"] }
+"keyword.storage" = "red_ember"
+"keyword.storage.type" = { fg = "red_ember", modifiers = ["italic"] }
+"keyword.storage.modifier" = { fg = "red_ember", modifiers = ["italic"] }
+
+"operator" = "orange_glow"
+
+"function" = { fg = "g_3", modifiers = ["bold"] }
+"function.builtin" = { fg = "g_3", modifiers = ["bold", "italic"] }
+"function.method" = { fg = "g_3", modifiers = ["bold"] }
+"function.method.private" = { fg = "g_3", modifiers = ["bold", "italic"] }
+"function.macro" = "red_ember"
+"function.special" = { fg = "g_3", modifiers = ["bold", "italic"] }
+
+"tag" = { fg = "orange_glow", modifiers = ["italic"] }
+"tag.builtin" = { fg = "orange_glow", modifiers = ["italic", "bold"] }
+
+"namespace" = { fg = "orange_glow", modifiers = ["bold"] }
+
+"special" = "orange_smolder" # fuzzy highlight
+
+"markup.heading" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.heading.marker" = { fg = "g_6", modifiers = ["bold"] }
+"markup.heading.1" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.heading.2" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.heading.3" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.heading.4" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.heading.5" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.heading.6" = { fg = "red_glowing", modifiers = ["bold"] }
+"markup.list" = "orange_glow"
+"markup.list.unnumbered" = "orange_glow"
+"markup.list.numbered" = "orange_glow"
+"markup.list.checked" = { fg = "orange_glow", modifiers = ["bold"] }
+"markup.list.unchecked" = "orange_glow"
+"markup.bold" = { modifiers = ["bold"] }
+"markup.italic" = { modifiers = ["italic"] }
+"markup.strikethrough" = { modifiers = ["crossed_out"] }
+"markup.link" = "red_glowing"
+"markup.link.url" = { fg = "red_glowing", modifiers = ["italic"] }
+"markup.link.label" = "red_ember"
+"markup.link.text" = "red_ember"
+"markup.quote" = { fg = "g_5", modifiers = ["italic"] }
+"markup.raw" = { fg = "g_2", bg = "g_10" }
+"markup.raw.inline" = { fg = "g_2", bg = "g_10" }
+"markup.raw.block" = { fg = "g_2", bg = "g_10" }
+
+"markup.normal.completion" = { fg = "text", bg = "g_10" }
+"markup.normal.hover" = { fg = "text", bg = "g_10" }
+"markup.heading.completion" = { fg = "red_glowing", bg = "g_10", modifiers = ["bold"] }
+"markup.heading.hover" = { fg = "red_glowing", bg = "g_10", modifiers = ["bold"] }
+"markup.raw.inline.completion" = { fg = "g_2", bg = "g_11" }
+"markup.raw.inline.hover" = { fg = "g_2", bg = "g_11" }
+
+"diff.plus" = "g_6"
+"diff.plus.gutter" = { fg = "g_6", modifiers = ["bold"] }
+"diff.minus" = "red_ember"
+"diff.minus.gutter" = { fg = "red_ember", modifiers = ["bold"] }
+"diff.delta" = "brown"
+"diff.delta.moved" = { fg = "brown", modifiers = ["italic"] }
+"diff.delta.conflict" = { fg = "red_flame", modifiers = ["bold"] }
+"diff.delta.gutter" = { fg = "brown", modifiers = ["bold"] }
+
+# User Interface
+# --------------
+"ui.background" = { fg = "text", bg = "background" }
+"ui.background.separator" = { fg = "g_7", bg = "background" }
+
+"ui.linenr" = { fg = "g_8" }
+"ui.linenr.selected" = { fg = "g_6" }
+
+"ui.statusline" = { fg = "g_3", bg = "g_9" }
+"ui.statusline.inactive" = { fg = "g_5", bg = "g_10" }
+"ui.statusline.normal" = { fg = "background", bg = "orange_blaze", modifiers = ["bold"] }
+"ui.statusline.insert" = { fg = "g_1", bg = "g_7", modifiers = ["bold"] }
+"ui.statusline.select" = { fg = "background", bg = "orange_golden", modifiers = ["bold"] }
+"ui.statusline.separator" = { fg = "g_6", bg = "g_9" }
+
+"ui.popup" = { fg = "text", bg = "g_10" }
+"ui.popup.info" = { fg = "g_2", bg = "g_10" }
+"ui.window" = { fg = "g_7" }
+"ui.help" = { fg = "text", bg = "g_10", modifiers = ["bold"] }
+
+"ui.picker" = { fg = "text", bg = "g_10" }
+"ui.picker.header" = { fg = "g_4", bg = "g_10", modifiers = ["bold"] }
+"ui.picker.header.column" = { fg = "g_4", bg = "g_10", modifiers = ["bold"] }
+"ui.picker.header.column.active" = { fg = "orange_blaze", bg = "g_10", modifiers = ["bold"] }
+
+"ui.bufferline" = { fg = "text", bg = "background" }
+"ui.bufferline.active" = { fg = "g_2", bg = "g_10", modifiers = ["bold"] }
+"ui.bufferline.background" = { bg = "background" }
+
+"ui.text" = "text"
+"ui.text.focus" = { fg = "g_2", bg = "g_10", modifiers = ["bold"] }
+"ui.text.inactive" = { fg = "g_7" }
+"ui.text.info" = { fg = "g_3", bg = "g_10" }
+"ui.text.directory" = { fg = "red_ember" }
+
+"ui.virtual" = "g_5"
+"ui.virtual.ruler" = { bg = "cursorline" }
+"ui.virtual.whitespace" = "g_7"
+"ui.virtual.indent-guide" = "g_7"
+"ui.virtual.wrap" = "g_7"
+"ui.virtual.inlay-hint" = { fg = "g_6", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.parameter" = { fg = "g_6", modifiers = ["italic"] }
+"ui.virtual.inlay-hint.type" = { fg = "g_5", modifiers = ["italic"] }
+"ui.virtual.jump-label" = { fg = "orange_blaze", modifiers = ["bold"] }
+
+"ui.selection" = { bg = "g_8" }
+"ui.selection.primary" = { bg = "g_8" }
+
+# TODO: review, dejar el match igual pero con un underline de color visible
+# coopy tokyonight how it makes the tab not look too bright might use a special hightlgiht
+# TODO: revisar este kilombo, no anda bien con los cursor underlined
+"ui.cursor" = { fg = "background", bg = "background" }
+"ui.cursor.normal" = { fg = "background", bg = "orange_muted" }
+"ui.cursor.insert" = { fg = "background", bg = "g_7" }
+"ui.cursor.select" = { fg = "background", bg = "golden_muted" }
+"ui.cursor.match" = { fg = "", bg = "cursorline", modifiers = ["underlined"] }
+"ui.cursor.primary" = { fg = "background", bg = "orange_blaze", modifiers = ["bold"] }
+"ui.cursor.primary.normal" = { fg = "background", bg = "orange_blaze", modifiers = ["bold"] }
+"ui.cursor.primary.insert" = { fg = "background", bg = "g_3", modifiers = ["bold"] }
+"ui.cursor.primary.select" = { fg = "background", bg = "orange_golden", modifiers = ["bold"] }
+
+"ui.cursorline.primary" = { bg = "cursorline" }
+"ui.cursorline.secondary" = { bg = "g_12" }
+"ui.cursorcolumn.primary" = { bg = "cursorline" }
+"ui.cursorcolumn.secondary" = { bg = "g_12" }
+
+"ui.highlight" = { fg = "orange_blaze", bg = "cursorline", modifiers = ["bold"] }
+"ui.highlight.frameline" = { bg = "brown_dark", modifiers = ["bold"] }
+
+"ui.menu" = { fg = "g_2", bg = "g_10" }
+"ui.menu.selected" = { fg = "g_1", bg = "g_8", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "orange_blaze", bg = "g_9" }
+
+"ui.debug.breakpoint" = { fg = "red_flame", modifiers = ["bold"] }
+"ui.debug.active" = { fg = "orange_golden", modifiers = ["bold"] }
+
+"ui.gutter" = { bg = "background" }
+"ui.gutter.selected" = { bg = "g_11" }
+
+"diagnostic" = { fg = "g_5" }
+"diagnostic.error" = { fg = "red_flame" }
+"diagnostic.warning" = { fg = "orange_golden" }
+"diagnostic.info" = { fg = "g_4" }
+"diagnostic.hint" = { fg = "g_5" }
+"diagnostic.unnecessary" = { fg = "g_7", modifiers = ["dim"] }
+"diagnostic.deprecated" = { fg = "g_7", modifiers = ["dim", "crossed_out"] }
+
+"error" = { fg = "red_flame" }
+"warning" = { fg = "orange_golden" }
+"info" = { fg = "g_4" }
+"hint" = { fg = "g_5" }
+
+# Tabstop for snippets
+"tabstop" = { fg = "orange_blaze", modifiers = ["bold"] }
+
+[palette]
+cursorline = "#191919"
+text = "#b4b4b4"
+red_flame = "#C53030"
+red_glowing = "#DF6464"
+red_ember = "#B14242"
+orange_glow = "#D87C4A"
+orange_blaze = "#C4693D"
+orange_muted = "#6D3B22"
+orange_smolder = "#E49A44"
+orange_golden = "#E5A72A"
+golden_muted = "#6D4D0D"
+brown = "#89492a"
+brown_dark = "#322119"
+blue = "#4A8B8B"
+background = "#121212"
+g_1 = "#e5e5e5"
+g_2 = "#d5d5d5"
+g_3 = "#b4b4b4"
+g_4 = "#a7a7a7"
+g_5 = "#949494"
+g_6 = "#737373"
+g_7 = "#535353"
+g_8 = "#323232"
+g_9 = "#212121"
+g_10 = "#1d1d1d"
+g_11 = "#191919"
+g_12 = "#151515"

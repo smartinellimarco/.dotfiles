@@ -1,0 +1,74 @@
+# TODO List:
+# https://github.com/helix-editor/helix/pull/4381
+# https://github.com/helix-editor/helix/issues/5990
+# - rounded borders
+# - keymaps for comp
+# - borders compl menu
+# - escape popups and normal mode with a keymap
+# - snippets and regular comp
+# - jump to next textobject like neovim. eg mi( mi", 
+# - autoformat no anda con algunos lsp nose pq
+# - Accept completion ctrl f or something
+# - CLSP server for snippets
+# - Configure LSPs and formatters
+# - Implement preselection of completion first item
+# - Debug completion not displaying correctly
+# - Review completion settings:
+#   - Preview insert behavior
+#   - Trigger length configuration
+#   - Replace functionality
+# - Evaluate popup border theming
+# - Fix non-functioning Alt keymaps
+
+theme = "ashen"
+
+[editor]
+line-number = "relative"
+cursorline = true
+completion-timeout = 5
+completion-replace = true
+color-modes = true
+popup-border = "all"
+jump-label-alphabet =	"asdfghjklqwertyuiopzxcvbnm" # TODO: optimize for qwerty
+end-of-line-diagnostics = "disable"
+
+[editor.statusline]
+left = [
+    "mode",
+    "file-name",
+    "version-control",
+    "spacer",
+    "file-modification-indicator"
+]
+right = [
+    "spinner",
+    "spacer",
+    "diagnostics",
+    "workspace-diagnostics",
+    "position-percentage",
+    "position"
+]
+
+[editor.lsp]
+display-signature-help-docs = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.gutters]
+layout = ["diff", "spacer", "line-numbers", "spacer"]
+
+[editor.gutters.line-numbers]
+min-width = 1
+
+[keys.insert]
+C-c = "normal_mode"
