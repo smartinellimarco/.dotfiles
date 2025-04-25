@@ -23,19 +23,15 @@ This script only installs the missing ones.
 
 | Tool | Dependencies |
 |------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, neovim, mise, font-symbols-only-nerd-font, font-jetbrains-mono, kitty |
+| .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
 | yadm | openssl |
-| lazy.nvim | git, luarocks |
-| blink.cmp | git, curl |
-| nvim-telescope | ripgrep, make, clang/gcc, fd |
-| nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
 | formatters | prettierd, stylua, gofumpt |
-| LSPs | rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
+| LSPs | haskell-language-server, rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
 
 ```
 TODO: add taplo
 TODO: remove the vim modeline from files
-TODO: ver que hacer con los delve colors
+TODO: htop, tree, watch, uv, postman, pstree
 ```
 
 ```zsh
@@ -43,15 +39,13 @@ dependencies=(
   gh
   antidote
   yadm
-  neovim
+  helix
   mise
   openssl
-  luarocks
-  ripgrep
-  fd
   prettierd
   stylua
   gofumpt
+  haskell-language-server
   rust-analyzer
   typescript-language-server
   bash-language-server
@@ -67,9 +61,7 @@ dependencies=(
 )
 
 cask_dependencies=(
-  font-symbols-only-nerd-font
-  font-jetbrains-mono
-  kitty
+  ghostty
 )
 
 for package in "${dependencies[@]}"; do
