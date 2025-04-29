@@ -1,10 +1,11 @@
 [tools]
 node = "latest"
-python = "3.11"
+python = "latest"
 rust = "latest"
 
 [settings]
 disable_hints = ["*"]
+quiet = true
 
 [settings.python]
 compile = true
