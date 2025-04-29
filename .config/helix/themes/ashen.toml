@@ -1,4 +1,6 @@
 # TODO: docstrings python rojas? mejor grises
+# los errores en colores (fg) me joden
+# la seleccion no incluye el primer caracter
 # horrible el highlight de los codeblocks en markdown
 # otros strings en rojo no mg, quizas un color mas chill
 # picker en rojo tampoco
