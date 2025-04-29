@@ -23,28 +23,29 @@ This script only installs the missing ones.
 
 | Tool | Dependencies |
 |------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
+| .dotfiles | zsh, gh, antidote, yadm, neovim, mise, ghostty |
 | yadm | openssl |
+| lazy.nvim | git, luarocks |
+| blink.cmp | git, curl |
+| nvim-telescope | ripgrep, make, clang/gcc, fd |
+| nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
 | formatters | prettierd, stylua, gofumpt |
-| LSPs | haskell-language-server, rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
-
-```
-TODO: remove the vim modeline from files
-TODO: htop, tree, watch, uv, postman, pstree
-```
+| LSPs | rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
 
 ```zsh
 dependencies=(
   gh
   antidote
   yadm
-  helix
+  neovim
   mise
   openssl
+  luarocks
+  ripgrep
+  fd
   prettierd
   stylua
   gofumpt
-  haskell-language-server
   rust-analyzer
   typescript-language-server
   bash-language-server
