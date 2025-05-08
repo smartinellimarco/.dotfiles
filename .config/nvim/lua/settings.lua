@@ -2,16 +2,16 @@
 vim.g.mapleader = ' '
 
 -- Rounded borders everywhere
-vim.o.winborder = "rounded"
+vim.o.winborder = 'rounded'
 
 -- Disable spelling checks
 vim.o.spell = false
 
--- Enable break indent
-vim.o.breakindent = true
-
 -- Wrap lines
 vim.o.wrap = true
+
+-- Enable break indent
+vim.o.breakindent = true
 
 -- Highlight line
 vim.o.cursorline = true
@@ -20,13 +20,13 @@ vim.o.cursorline = true
 vim.o.updatetime = 250
 
 -- Decrease mapped sequence wait time
-vim.opt.timeoutlen = 500
+vim.opt.timeoutlen = 300
+
+-- Offer solutions instead of errors
+vim.opt.confirm = true
 
 -- Disable mouse
 vim.o.mouse = ''
-
--- No scrolling offset
-vim.o.scrolloff = 0
 
 -- Do not highlight search results
 vim.o.hlsearch = false
@@ -41,7 +41,9 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 
 -- Enable OS clipboard
-vim.o.clipboard = 'unnamedplus'
+vim.schedule(function()
+  vim.o.clipboard = 'unnamedplus'
+end)
 
 -- Persist the undo history
 vim.o.undofile = true
@@ -51,12 +53,6 @@ vim.o.splitright = true
 
 -- Open horizontal splits to the bottom of the screen
 vim.o.splitbelow = true
-
--- Options for builtin completion
-vim.o.completeopt = 'menu,menuone,noinsert'
-
--- Command line completion
-vim.o.wildmode = 'list:longest'
 
 -- Disable sign column chars for empty lines
 vim.o.fillchars = 'eob: '
@@ -69,9 +65,6 @@ vim.o.number = true
 
 -- Sync buffers automatically
 vim.o.autoread = true
-
--- Disable neovim generating a swapfile and showing the error
-vim.o.swapfile = false
 
 -- Reduce messages by setting various 'shortmess' flags
 vim.opt.shortmess = vim.opt.shortmess
@@ -91,9 +84,6 @@ vim.opt.shortmess = vim.opt.shortmess
     C = true, -- Don't give messages while scanning for ins-completion items
     S = true, -- Don't show search count message when searching
   }
-
--- Do not show neovim mode
-vim.opt.showmode = false
 
 -- Hide commandline
 vim.opt.cmdheight = 0

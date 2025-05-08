@@ -53,6 +53,20 @@ function M.config()
   vim.keymap.set('n', '<leader>e', builtin.find_files)
   vim.keymap.set('n', '<leader>f', builtin.live_grep)
   vim.keymap.set('n', '<leader>d', builtin.diagnostics)
+
+  -- TODO: delete this when telescope updates border
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'TelescopeFindPre',
+    callback = function()
+      vim.opt_local.winborder = 'none'
+      vim.api.nvim_create_autocmd('WinLeave', {
+        once = true,
+        callback = function()
+          vim.opt_local.winborder = 'rounded'
+        end,
+      })
+    end,
+  })
 end
 
 return M
