@@ -23,12 +23,8 @@ This script only installs the missing ones.
 
 | Tool | Dependencies |
 |------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, neovim, mise, ghostty |
+| .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
 | yadm | openssl |
-| lazy.nvim | git, luarocks |
-| blink.cmp | git, curl |
-| nvim-telescope | ripgrep, make, clang/gcc, fd |
-| nvim-treesitter | tar, curl, ~~git~~, cc/gcc/clang/cl/zig |
 | formatters | prettierd, stylua, gofumpt |
 | LSPs | rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
 
@@ -37,12 +33,9 @@ dependencies=(
   gh
   antidote
   yadm
-  neovim
+  helix
   mise
   openssl
-  luarocks
-  ripgrep
-  fd
   prettierd
   stylua
   gofumpt
@@ -81,8 +74,6 @@ yadm clone https://github.com/smartinellimarco/.dotfiles
 ```
 
 The first time you reopen the terminal, antidote will automatically setup all zsh plugins.
-
-Neovim will do the same for lazy plugins, treesitter parsers and mason LSPs & Formatters.
 
 ## Archive 
 
