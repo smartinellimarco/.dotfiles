@@ -5,9 +5,6 @@
 - [Getting started](#getting-started)
   - [Requirements](#requirements)
   - [Installation](#installation)
-- [Archive](#archive)
-  - [Backup](#backup)
-  - [Restore](#restore)
 - [Bootstrap file](#bootstrap-file)
 <!--toc:end-->
 
@@ -24,7 +21,6 @@ This script only installs the missing ones.
 | Tool | Dependencies |
 |------|--------------|
 | .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
-| yadm | openssl |
 
 # TODO: nix
 
@@ -35,7 +31,6 @@ dependencies=(
   yadm
   helix
   mise
-  openssl
   ghostty
 )
 
@@ -52,26 +47,6 @@ yadm clone https://github.com/smartinellimarco/.dotfiles
 ```
 
 The first time you reopen the terminal, antidote will automatically setup all zsh plugins.
-
-## Archive 
-
-### Backup
-
-Each file path must be specified in [`~/.config/yadm/encrypt`](https://github.com/smartinellimarco/.dotfiles/blob/master/.config/yadm/encrypt).
-
-Then by running
-```zsh
-GPG_TTY=$TTY yadm encrypt
-```
-and filling the password prompt, an encrypted file in `~/.local/share/yadm/archive` will be created with the contents of every listed file.
-
-### Restore
-
-Place the archive file in `~/.local/share/yadm/archive` and run
-```zsh
-yadm decrypt
-```
-The files will be restored to their original locations.
 
 ## Bootstrap file
 

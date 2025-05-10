@@ -1,4 +1,0 @@
-[pull]
-	rebase = false
-[yadm]
-	cipher = openssl
