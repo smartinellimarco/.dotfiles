@@ -1,10 +1,10 @@
 # https://github.com/helix-editor/helix/pull/4381
 # https://github.com/helix-editor/helix/issues/5990
 # https://github.com/helix-editor/helix/issues/9757
-# https://github.com/sxyazi/yazi/pull/2461 alert LSPs?
 # https://github.com/helix-editor/helix/pull/11497
-# remove autoformat
-# completion keymaps (dont use a patch
+# Integration with 'yadm'
+# Remove autoformat
+# Completion keymaps (dont use a patch)
 # Configure LSPs and formatters
 
 theme = "ashen"
@@ -66,7 +66,6 @@ S-tab = "move_parent_node_start"
 
 [keys.insert]
 S-tab = "move_parent_node_start"
-C-c = "normal_mode"
 
 [keys.select]
 tab = "extend_parent_node_end"
