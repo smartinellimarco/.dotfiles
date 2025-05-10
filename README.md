@@ -25,8 +25,8 @@ This script only installs the missing ones.
 |------|--------------|
 | .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
 | yadm | openssl |
-| formatters | prettierd, stylua, gofumpt |
-| LSPs | rust-analyzer, typescript-language-server, bash-language-server, gopls, terraform-ls, marksman, dockerfile-language-server, ruff, pyright, lua-language-server, vscode-langservers-extracted, yaml-language-server |
+
+# TODO: nix
 
 ```zsh
 dependencies=(
@@ -36,33 +36,11 @@ dependencies=(
   helix
   mise
   openssl
-  prettierd
-  stylua
-  gofumpt
-  rust-analyzer
-  typescript-language-server
-  bash-language-server
-  gopls
-  terraform-ls
-  marksman
-  dockerfile-language-server
-  ruff
-  pyright
-  lua-language-server
-  vscode-langservers-extracted
-  yaml-language-server
-)
-
-cask_dependencies=(
   ghostty
 )
 
 for package in "${dependencies[@]}"; do
   brew install $package
-done
-
-for cask in "${cask_dependencies[@]}"; do
-  brew install --cask $cask
 done
 ```
 
