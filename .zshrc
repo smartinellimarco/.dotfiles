@@ -45,8 +45,26 @@ eval "$(mise activate zsh)"
 # Load Powerlevel10k configuration
 [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh" || true
 
-# Source custom keymaps
-[ -f "$HOME/.zsh_keymaps" ] && source "$HOME/.zsh_keymaps" || true
-
 # Source additional scripts (won't be included in backup)
 [ -f "$HOME/.zsh_bootstrap" ] && source "$HOME/.zsh_bootstrap" || true
+
+# Unbind all default keymaps
+bindkey -rp ''
+
+# Set custom keymaps
+bindkey "^[[200~" bracketed-paste        # Paste
+bindkey -R " "-"~" self-insert           # Enable self-insert for a-z, A-Z, 0-9, and symbols
+bindkey "^F" forward-word                # Move forward by word
+bindkey "^B" backward-word               # Move backward by word
+bindkey "^[[C" forward-char              # Move forward by char
+bindkey "^[[D" backward-char             # Move backward by char
+bindkey "^W" backward-kill-word          # Delete previous word
+bindkey "^?" backward-delete-char        # Delete previous char
+bindkey "^M" accept-line                 # Run command
+bindkey ";5;13~" accept-line             # Run command event with CTRL pressed for efficiency
+bindkey "^C" send-break                  # Stop signal
+bindkey "^L" clear-screen                # Clear screen
+bindkey "^R" history-incremental-search-backward  # Reverse search in history
+bindkey "^P" up-line-or-history          # Navigate up in history
+bindkey "^N" down-line-or-history        # Navigate down in history
+bindkey "^I" expand-or-complete          # Tab completion
