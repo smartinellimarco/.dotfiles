@@ -22,7 +22,7 @@ This script only installs the missing ones.
 |------|--------------|
 | .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
 
-# TODO: nix
+TODO: nix which will replace mise and brew
 
 ```zsh
 dependencies=(

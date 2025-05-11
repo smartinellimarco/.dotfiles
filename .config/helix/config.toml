@@ -59,18 +59,3 @@ layout = ["diff", "spacer", "line-numbers", "spacer"]
 
 [editor.gutters.line-numbers]
 min-width = 1
-
-[keys.normal]
-tab = "move_parent_node_end"
-S-tab = "move_parent_node_start"
-
-[keys.insert]
-S-tab = "move_parent_node_start"
-
-[keys.select]
-tab = "extend_parent_node_end"
-S-tab = "extend_parent_node_start"
-
-[editor.smart-tab]
-enable = true
-supersede-menu = true
