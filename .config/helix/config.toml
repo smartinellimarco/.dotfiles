@@ -59,3 +59,6 @@ layout = ["diff", "spacer", "line-numbers", "spacer"]
 
 [editor.gutters.line-numbers]
 min-width = 1
+
+[editor.smart-tab]
+enable = false
