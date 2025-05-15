@@ -10,7 +10,7 @@
 
 "constructor" = "g_1"
 
-"constant" = "text"
+"constant" = "orange_glow"
 "constant.builtin" = "blue"
 "constant.character" = { fg = "red_glowing", modifiers = ["bold"] }
 "constant.character.escape" = "g_2"
