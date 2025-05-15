@@ -2,10 +2,7 @@
 # https://github.com/helix-editor/helix/issues/5990
 # https://github.com/helix-editor/helix/issues/9757
 # https://github.com/helix-editor/helix/pull/11497
-# Integration with 'yadm'
-# Remove autoformat
-# Completion keymaps (dont use a patch)
-# Configure LSPs and formatters
+# Use 'yadm' as diff provider
 
 theme = "ashen"
 
