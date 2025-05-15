@@ -39,9 +39,6 @@ source $HOMEBREW_PREFIX/opt/antidote/share/antidote/antidote.zsh
 # Initialize plugins
 antidote load
 
-# Initialize mise
-eval "$(mise activate zsh)"
-
 # Load Powerlevel10k configuration
 [ -f "$HOME/.p10k.zsh" ] && source "$HOME/.p10k.zsh" || true
 
@@ -56,6 +53,8 @@ bindkey "^[[200~" bracketed-paste        # Paste
 bindkey -R " "-"~" self-insert           # Enable self-insert for a-z, A-Z, 0-9, and symbols
 bindkey "^F" forward-word                # Move forward by word
 bindkey "^B" backward-word               # Move backward by word
+bindkey "^A" beginning-of-line           # Move to beginning of line
+bindkey "^E" end-of-line                 # Move to end of linebindkey "^[[C" forward-char
 bindkey "^[[C" forward-char              # Move forward by char
 bindkey "^[[D" backward-char             # Move backward by char
 bindkey "^W" backward-kill-word          # Delete previous word
