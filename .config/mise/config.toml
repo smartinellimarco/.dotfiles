@@ -1,6 +1,0 @@
-[settings]
-disable_hints = ["*"]
-quiet = true
-
-[settings.python]
-compile = true
