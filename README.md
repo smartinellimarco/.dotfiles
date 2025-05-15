@@ -20,9 +20,7 @@ This script only installs the missing ones.
 
 | Tool | Dependencies |
 |------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, helix, mise, ghostty |
-
-TODO: nix which will replace mise and brew
+| .dotfiles | zsh, gh, antidote, yadm, helix, ghostty |
 
 ```zsh
 dependencies=(
@@ -30,8 +28,11 @@ dependencies=(
   antidote
   yadm
   helix
-  mise
   ghostty
+
+  uv
+  rustup
+  go
 )
 
 for package in "${dependencies[@]}"; do
