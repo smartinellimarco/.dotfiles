@@ -27,7 +27,6 @@ dependencies=(
   helix
   ghostty
 
-  # Development
   uv
   rustup
   go
