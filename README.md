@@ -18,21 +18,21 @@ Most of these dependencies are available by default on macOS (via Xcode command 
 
 This script only installs the missing ones.
 
-| Tool | Dependencies |
-|------|--------------|
-| .dotfiles | zsh, gh, antidote, yadm, helix, ghostty |
-
 ```zsh
 dependencies=(
+  # zsh
   gh
   antidote
   yadm
   helix
   ghostty
 
+  # Development
   uv
   rustup
   go
+  terraform
+  terraform-ls
 )
 
 for package in "${dependencies[@]}"; do
