@@ -2,9 +2,10 @@
 # https://github.com/helix-editor/helix/issues/5990
 # https://github.com/helix-editor/helix/issues/9757
 # https://github.com/helix-editor/helix/pull/11497
+# The secondary cursors are not a bar
 # Use 'yadm' as diff provider
 
-theme = "ashen"
+theme = "rose_pine_dawn"
 
 [editor]
 line-number = "relative"
