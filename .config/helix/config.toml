@@ -5,7 +5,7 @@
 # The secondary cursors are not a bar
 # Use 'yadm' as diff provider
 
-theme = "rose_pine_dawn"
+theme = "github_dark_dimmed"
 
 [editor]
 line-number = "relative"

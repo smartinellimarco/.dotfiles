@@ -30,6 +30,7 @@ dependencies=(
   uv
   rustup
   go
+  npm
   terraform
   terraform-ls
 )

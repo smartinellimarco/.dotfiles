@@ -1,25 +1,31 @@
 # TODO: find a way to attach scls and uwu to all filetypes
-# Completion for regular words
 [language-server.scls]
 command = "simple-completion-language-server"
+
+[language-server.scls.config]
+max_completion_items = 100
+feature_words = true
+feature_snippets = true
+snippets_first = true
+
+[language-server.ty.config]
+ty.experimental.completions.enable = true
 
 [language-server.uwu]
 command = "uwu_colors"
 
-[language-server.scls.config]
-max_completion_items = 100           # set max completion results len for each group: words, snippets, unicode-input
-feature_words = true                 # enable completion by word
-feature_snippets = true              # enable snippets
-snippets_first = true                # completions will return before snippets by default
-
-[[language]]
-name = "python"
-language-servers = [ "scls", "pylsp", "ruff" ]
+[language-server.ty]
+command = "ty"
+args = [ "server" ]
 
 [[language]]
 name = "hcl"
-language-servers = [ "scls" ]
+language-servers = [ "terraform-ls", "scls" ]
 
 [[language]]
 name = "toml"
 language-servers = [ "scls", "uwu"]
+
+[[language]]
+name = "python"
+language-servers = ["pyright"]
