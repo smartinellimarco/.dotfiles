@@ -1,0 +1,208 @@
+# Syntax Highlighting
+"attribute" = ""  # Class attributes, HTML tag attributes
+
+"type" = ""  # Types
+"type.builtin" = ""  # Primitive types provided by the language (int, usize)
+"type.parameter" = ""  # Generic type parameters (T)
+"type.enum" = ""  # Enum types
+"type.enum.variant" = ""  # Enum variant names
+
+"constructor" = ""  # Constructor functions/methods
+
+"constant" = ""  # Constants
+"constant.builtin" = ""  # Special constants provided by the language (true, false, nil etc)
+"constant.character" = { fg = "", modifiers = ["bold"] }  # Character constants
+"constant.character.escape" = ""  # Escape sequences in character/string literals
+"constant.numeric" = ""  # Numeric constants
+"constant.numeric.integer" = ""  # Integer constants
+"constant.numeric.float" = { fg = "", modifiers = ["italic"] }  # Float constants
+
+"string" = ""  # String literals
+"string.regexp" = ""  # Regular expression literals
+"string.special" = ""  # Special string content
+"string.special.url" = ""  # URL strings
+"string.special.path" = ""  # File path strings
+"string.special.symbol" = ""  # Symbols like Erlang atoms, Ruby symbols, Clojure keywords
+
+"comment" = { fg = "", modifiers = ["italic"] }  # Code comments
+"comment.line" = { fg = "", modifiers = ["italic"] }  # Single line comments (//)
+"comment.block" = { fg = "", modifiers = ["italic"] }  # Block comments (/* */)
+"comment.block.documentation" = { fg = "", modifiers = ["italic"] }  # Block documentation comments (/** */)
+
+"variable" = "NONE"  # Variables
+"variable.parameter" = { fg = "", modifiers = ["italic"] }  # Function parameters
+"variable.builtin" = ""  # Reserved language variables (self, this, super, etc.)
+"variable.other.member" = ""  # Fields of composite data types (structs, unions)
+"variable.other.member.private" = { fg = "", modifiers = ["italic"] }  # Private fields with unique syntax
+
+"label" = ""  # Labels like .class, #id in CSS
+
+"punctuation" = ""  # Punctuation characters
+"punctuation.special" = ""  # String interpolation brackets
+"punctuation.bracket" = ""  # Parentheses, angle brackets, etc.
+"punctuation.delimiter" = ""  # Commas, colons
+
+"keyword" = ""  # Keywords
+"keyword.control" = ""  # Control flow keywords
+"keyword.control.conditional" = { fg = "", modifiers = ["bold"] }  # if, else
+"keyword.control.repeat" = { fg = "", modifiers = ["bold"] }  # for, while, loop
+"keyword.control.import" = ""  # import, export
+"keyword.control.return" = { fg = "", modifiers = ["bold"] }  # return statements
+"keyword.control.exception" = { fg = "", modifiers = ["bold"] }  # try, catch, throw
+"keyword.operator" = ""  # Operator keywords like or, in
+"keyword.directive" = { fg = "", modifiers = ["italic"] }  # Preprocessor directives (#if in C)
+"keyword.function" = { fg = "", modifiers = ["bold"] }  # fn, func
+"keyword.storage" = ""  # Storage keywords
+"keyword.storage.type" = { fg = "", modifiers = ["italic"] }  # class, function, var, let, etc.
+"keyword.storage.modifier" = { fg = "", modifiers = ["italic"] }  # static, mut, const, ref, etc.
+
+"operator" = ""  # Operators like ||, +=, >
+
+"function" = { fg = "", modifiers = ["bold"] }  # Function names
+"function.builtin" = { fg = "", modifiers = ["bold", "italic"] }  # Built-in functions
+"function.method" = { fg = "", modifiers = ["bold"] }  # Method names
+"function.method.private" = { fg = "", modifiers = ["bold", "italic"] }  # Private methods with unique syntax
+"function.macro" = ""  # Macro functions
+"function.special" = { fg = "", modifiers = ["bold", "italic"] }  # Special functions (preprocessor in C)
+
+"tag" = { fg = "", modifiers = ["italic"] }  # Tags (e.g. <body> in HTML)
+"tag.builtin" = { fg = "", modifiers = ["italic", "bold"] }  # Built-in HTML tags
+
+"namespace" = { fg = "", modifiers = ["bold"] }  # Namespaces, modules, packages
+
+"special" = ""  # Special constructs like derive in Rust
+
+# Markup (for documentation, markdown, etc.)
+"markup.heading" = { fg = "", modifiers = ["bold"] }  # Heading text
+"markup.heading.marker" = { fg = "", modifiers = ["bold"] }  # Heading markers (#, ##, etc.)
+"markup.heading.1" = { fg = "", modifiers = ["bold"] }  # H1 heading text
+"markup.heading.2" = { fg = "", modifiers = ["bold"] }  # H2 heading text
+"markup.heading.3" = { fg = "", modifiers = ["bold"] }  # H3 heading text
+"markup.heading.4" = { fg = "", modifiers = ["bold"] }  # H4 heading text
+"markup.heading.5" = { fg = "", modifiers = ["bold"] }  # H5 heading text
+"markup.heading.6" = { fg = "", modifiers = ["bold"] }  # H6 heading text
+"markup.list" = ""  # List items
+"markup.list.unnumbered" = ""  # Unnumbered list items
+"markup.list.numbered" = ""  # Numbered list items
+"markup.list.checked" = { fg = "", modifiers = ["bold"] }  # Checked list items
+"markup.list.unchecked" = ""  # Unchecked list items
+"markup.bold" = { modifiers = ["bold"] }  # Bold text
+"markup.italic" = { modifiers = ["italic"] }  # Italic text
+"markup.strikethrough" = { modifiers = ["crossed_out"] }  # Strikethrough text
+"markup.link" = ""  # Link text
+"markup.link.url" = { fg = "", modifiers = ["italic"] }  # URLs pointed to by links
+"markup.link.label" = ""  # Non-URL link references
+"markup.link.text" = ""  # URL and image descriptions in links
+"markup.quote" = { fg = "", modifiers = ["italic"] }  # Quote blocks
+"markup.raw" = { fg = "", bg = "" }  # Raw/code blocks
+"markup.raw.inline" = { fg = "", bg = "" }  # Inline code
+"markup.raw.block" = { fg = "", bg = "" }  # Code blocks
+
+# Popup/completion markup
+"markup.normal.completion" = { fg = "", bg = "" }  # Normal text in completion popup
+"markup.normal.hover" = { fg = "", bg = "" }  # Normal text in hover popup
+"markup.heading.completion" = { fg = "", bg = "", modifiers = ["bold"] }  # Headings in completion popup
+"markup.heading.hover" = { fg = "", bg = "", modifiers = ["bold"] }  # Headings in hover popup
+"markup.raw.inline.completion" = { fg = "", bg = "" }  # Inline code in completion popup
+"markup.raw.inline.hover" = { fg = "", bg = "" }  # Inline code in hover popup
+
+# Diff/version control
+"diff.plus" = ""  # Added lines
+"diff.plus.gutter" = { fg = "", modifiers = ["bold"] }  # Addition indicator in gutter
+"diff.minus" = ""  # Deleted lines
+"diff.minus.gutter" = { fg = "", modifiers = ["bold"] }  # Deletion indicator in gutter
+"diff.delta" = ""  # Modified lines
+"diff.delta.moved" = { fg = "", modifiers = ["italic"] }  # Renamed or moved files/changes
+"diff.delta.conflict" = { fg = "", modifiers = ["bold"] }  # Merge conflicts
+"diff.delta.gutter" = { fg = "", modifiers = ["bold"] }  # Modification indicator in gutter
+
+
+# User Interface
+"ui.background" = { fg = "", bg = "" }  # Default background
+"ui.background.separator" = { fg = "", bg = "" }  # Picker separator below input line
+
+"ui.linenr" = { fg = "" }  # Line numbers
+"ui.linenr.selected" = { fg = "" }  # Line number for the line the cursor is on
+
+"ui.statusline" = { fg = "", bg = "" }  # Statusline
+"ui.statusline.inactive" = { fg = "", bg = "" }  # Statusline (unfocused document)
+"ui.statusline.normal" = { fg = "", bg = "", modifiers = ["bold"] }  # Statusline mode during normal mode
+"ui.statusline.insert" = { fg = "", bg = "", modifiers = ["bold"] }  # Statusline mode during insert mode
+"ui.statusline.select" = { fg = "", bg = "", modifiers = ["bold"] }  # Statusline mode during select mode
+"ui.statusline.separator" = { fg = "", bg = "" }  # Separator character in statusline
+
+"ui.popup" = { fg = "", bg = "" }  # Documentation popups (e.g. Space + k)
+"ui.popup.info" = { fg = "", bg = "" }  # Prompt for multiple key options
+"ui.window" = { fg = "" }  # Borderlines separating splits
+"ui.help" = { fg = "", bg = "", modifiers = ["bold"] }  # Description box for commands
+
+"ui.picker" = { fg = "", bg = "" }  # File picker, command palette, etc.
+"ui.picker.header" = { fg = "", bg = "", modifiers = ["bold"] }  # Header row area in pickers with multiple columns
+"ui.picker.header.column" = { fg = "", bg = "", modifiers = ["bold"] }  # Column names in pickers
+"ui.picker.header.column.active" = { fg = "", bg = "", modifiers = ["bold"] }  # Active column name in pickers
+
+"ui.bufferline" = { fg = "", bg = "" }  # Style for the buffer line
+"ui.bufferline.active" = { fg = "", bg = "", modifiers = ["bold"] }  # Style for the active buffer
+"ui.bufferline.background" = { bg = "" }  # Style for bufferline background
+
+"ui.text" = ""  # Default text style, command prompts, popup text, etc.
+"ui.text.focus" = { fg = "", bg = "", modifiers = ["bold"] }  # The currently selected line in the picker
+"ui.text.inactive" = { fg = "" }  # Same as ui.text but when the text is inactive (suggestions)
+"ui.text.info" = { fg = "", bg = "" }  # The key: command text in ui.popup.info boxes
+"ui.text.directory" = { fg = "" }  # Directory names in prompt completion
+
+"ui.virtual" = ""  # Virtual text (inlay hints, etc.)
+"ui.virtual.ruler" = { bg = "" }  # Ruler columns (see the editor.rulers config)
+"ui.virtual.whitespace" = ""  # Visible whitespace characters
+"ui.virtual.indent-guide" = ""  # Vertical indent width guides
+"ui.virtual.wrap" = ""  # Soft-wrap indicator
+"ui.virtual.inlay-hint" = { fg = "", modifiers = ["italic"] }  # Default style for inlay hints
+"ui.virtual.inlay-hint.parameter" = { fg = "", modifiers = ["italic"] }  # Inlay hints of kind parameter
+"ui.virtual.inlay-hint.type" = { fg = "", modifiers = ["italic"] }  # Inlay hints of kind type
+"ui.virtual.jump-label" = { fg = "", modifiers = ["bold"] }  # Style for virtual jump labels
+
+"ui.selection" = { bg = "" }  # For selections in the editing area
+"ui.selection.primary" = { bg = "" }  # Primary selection
+
+"ui.cursor" = { fg = "", bg = "" }  # Cursor
+"ui.cursor.normal" = { fg = "", bg = "" }  # Cursor in normal mode
+"ui.cursor.insert" = { fg = "", bg = "" }  # Cursor in insert mode
+"ui.cursor.select" = { fg = "", bg = "" }  # Cursor in select mode
+"ui.cursor.match" = { underline = { color = "", style = "line" } }  # Matching bracket etc.
+"ui.cursor.primary" = { fg = "", bg = "" }  # Cursor with primary selection
+"ui.cursor.primary.normal" = { fg = "", bg = "" }  # Primary cursor in normal mode
+"ui.cursor.primary.insert" = { fg = "", bg = "" }  # Primary cursor in insert mode
+"ui.cursor.primary.select" = { fg = "", bg = "" }  # Primary cursor in select mode
+
+"ui.cursorline.primary" = { bg = "" }  # The line of the primary cursor
+"ui.cursorline.secondary" = { bg = "" }  # The lines of any other cursors
+"ui.cursorcolumn.primary" = { bg = "" }  # The column of the primary cursor
+"ui.cursorcolumn.secondary" = { bg = "" }  # The columns of any other cursors
+
+"ui.highlight" = { fg = "", bg = "", modifiers = ["bold"] }  # Highlighted lines in the picker preview
+"ui.highlight.frameline" = { bg = "", modifiers = ["bold"] }  # Line at which debugging execution is paused
+
+"ui.menu" = { fg = "", bg = "" }  # Code and command completion menus
+"ui.menu.selected" = { fg = "NONE", bg = "", modifiers = ["bold"] }  # Selected autocomplete item
+"ui.menu.scroll" = { fg = "", bg = "" }  # fg sets thumb color, bg sets track color of scrollbar
+
+"ui.debug.breakpoint" = { fg = "", modifiers = ["bold"] }  # Breakpoint indicator, found in the gutter
+"ui.debug.active" = { fg = "", modifiers = ["bold"] }  # Indicator for the line at which debugging execution is paused
+
+"ui.gutter" = { bg = "" }  # Gutter
+"ui.gutter.selected" = { bg = "" }  # Gutter for the line the cursor is on
+
+"diagnostic" = { fg = "" }  # Diagnostics fallback style (editing area)
+"diagnostic.error" = { fg = "", underline = { color = "", style = "line" } }  # Diagnostics error (editing area)
+"diagnostic.warning" = { fg = "", underline = { color = "", style = "line" } }  # Diagnostics warning (editing area)
+"diagnostic.info" = { fg = "", underline = { color = "", style = "line" } }  # Diagnostics info (editing area)
+"diagnostic.hint" = { fg = "", underline = { color = "", style = "dotted" } }  # Diagnostics hint (editing area)
+"diagnostic.unnecessary" = { fg = "", modifiers = ["dim"] }  # Diagnostics with unnecessary tag
+"diagnostic.deprecated" = { fg = "", modifiers = ["dim", "crossed_out"] }  # Diagnostics with deprecated tag
+
+"error" = { fg = "" }  # Diagnostics error (gutter)
+"warning" = { fg = "" }  # Diagnostics warning (gutter)
+"info" = { fg = "" }  # Diagnostics info (gutter)
+"hint" = { fg = "" }  # Diagnostics hint (gutter)
+
+"tabstop" = { fg = "", modifiers = ["bold"] }  # Snippet placeholder
