@@ -29,7 +29,7 @@
 "comment.block" = { fg = "", modifiers = ["italic"] }  # Block comments (/* */)
 "comment.block.documentation" = { fg = "", modifiers = ["italic"] }  # Block documentation comments (/** */)
 
-"variable" = "NONE"  # Variables
+"variable" = ""  # Variables
 "variable.parameter" = { fg = "", modifiers = ["italic"] }  # Function parameters
 "variable.builtin" = ""  # Reserved language variables (self, this, super, etc.)
 "variable.other.member" = ""  # Fields of composite data types (structs, unions)
@@ -183,7 +183,7 @@
 "ui.highlight.frameline" = { bg = "", modifiers = ["bold"] }  # Line at which debugging execution is paused
 
 "ui.menu" = { fg = "", bg = "" }  # Code and command completion menus
-"ui.menu.selected" = { fg = "NONE", bg = "", modifiers = ["bold"] }  # Selected autocomplete item
+"ui.menu.selected" = { fg = "", bg = "", modifiers = ["bold"] }  # Selected autocomplete item
 "ui.menu.scroll" = { fg = "", bg = "" }  # fg sets thumb color, bg sets track color of scrollbar
 
 "ui.debug.breakpoint" = { fg = "", modifiers = ["bold"] }  # Breakpoint indicator, found in the gutter
