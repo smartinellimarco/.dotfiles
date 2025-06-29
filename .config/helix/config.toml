@@ -8,7 +8,6 @@
 # https://github.com/helix-editor/helix/pull/11497
 # https://github.com/helix-editor/helix/issues/1974
 # https://github.com/helix-editor/helix/issues/1125
-# The secondary cursors are not a bar
 # Use 'yadm' as diff provider
 
 theme = "tokyonight"
