@@ -2,8 +2,8 @@
 # https://github.com/ghostty-org/ghostty/issues/1392
 # Config open and config reload? combine with helix?
 # Options
-theme = Github-Dark-Dimmed
-font-size = 11.5
+theme = tokyonight
+font-size = 11
 macos-icon = blueprint
 confirm-close-surface = false
 macos-option-as-alt = true
