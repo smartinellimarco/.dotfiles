@@ -1,3 +1,5 @@
+# https://github.com/o8vm/aiv
+# https://github.com/wildestwest/dotfiles/blob/main/helix/config.toml
 # https://github.com/helix-editor/helix/issues/2254
 # https://github.com/helix-editor/helix/pull/12204
 # https://github.com/helix-editor/helix/pull/4381
@@ -5,10 +7,11 @@
 # https://github.com/helix-editor/helix/issues/9757
 # https://github.com/helix-editor/helix/pull/11497
 # https://github.com/helix-editor/helix/issues/1974
+# https://github.com/helix-editor/helix/issues/1125
 # The secondary cursors are not a bar
 # Use 'yadm' as diff provider
 
-theme = "github_dark_dimmed"
+theme = "tokyonight"
 
 [editor]
 line-number = "relative"
