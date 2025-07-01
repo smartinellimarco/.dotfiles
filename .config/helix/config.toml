@@ -10,7 +10,7 @@
 # https://github.com/helix-editor/helix/issues/1125
 # Use 'yadm' as diff provider
 
-theme = "tokyonight"
+theme = "nord"
 
 [editor]
 line-number = "relative"
