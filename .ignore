@@ -6,5 +6,6 @@
 !**/.github/
 .git
 poetry.lock
+uv.lock
 package-lock.json
 go.sum
