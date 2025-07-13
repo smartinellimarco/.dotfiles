@@ -10,7 +10,7 @@
 # https://github.com/helix-editor/helix/issues/1125
 # Use 'yadm' as diff provider
 
-theme = "nord"
+theme = "kanagawa-dragon"
 
 [editor]
 line-number = "relative"
@@ -42,7 +42,7 @@ right = [
 
 [editor.lsp]
 display-signature-help-docs = false
-display-inlay-hints = true
+display-inlay-hints = false
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
