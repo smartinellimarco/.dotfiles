@@ -7,5 +7,9 @@
 .git
 poetry.lock
 uv.lock
+.ipynb_checkpoints/
+lightning_logs/
 package-lock.json
 go.sum
+.venv
+venv
