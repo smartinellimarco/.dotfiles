@@ -20,7 +20,7 @@ This script only installs the missing ones.
 
 ```zsh
 dependencies=(
-  # zsh
+  # TODO: smartcat
   gh
   antidote
   yadm
@@ -31,8 +31,6 @@ dependencies=(
   rustup
   go
   npm
-  terraform
-  terraform-ls
 )
 
 for package in "${dependencies[@]}"; do
