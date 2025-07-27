@@ -1,14 +1,14 @@
-# https://github.com/o8vm/aiv
+# https://github.com/efugier/smartcat
+# follow cursor?
 # https://github.com/wildestwest/dotfiles/blob/main/helix/config.toml
-# https://github.com/helix-editor/helix/issues/2254
 # https://github.com/helix-editor/helix/pull/12204
-# https://github.com/helix-editor/helix/pull/4381
+# https://github.com/helix-editor/helix/pull/13870
 # https://github.com/helix-editor/helix/issues/5990
-# https://github.com/helix-editor/helix/issues/9757
 # https://github.com/helix-editor/helix/pull/11497
 # https://github.com/helix-editor/helix/issues/1974
 # https://github.com/helix-editor/helix/issues/1125
 # Use 'yadm' as diff provider
+# auto-format not working with ruff
 
 theme = "kanagawa-dragon"
 
@@ -20,12 +20,20 @@ completion-replace = true
 preview-completion-insert = false
 color-modes = true
 popup-border = "all"
-jump-label-alphabet = "asdfghjkltyperwquiozxcvbnm"
-end-of-line-diagnostics = "disable"
+jump-label-alphabet = "lkoipuyhnmjtrewqzxcvbasdfg" # TODO: optimize this for two hands in querty
+default-line-ending = "lf"
+trim-final-newlines = true
+trim-trailing-whitespace = true
+rainbow-brackets = true
+
+[editor.soft-wrap]
+enable = true
 
 [editor.statusline]
 left = [
     "mode",
+    "spacer",
+    "current-working-directory",
     "file-name",
     "version-control",
     "spacer",
@@ -44,9 +52,6 @@ right = [
 display-signature-help-docs = false
 display-inlay-hints = false
 
-[editor.inline-diagnostics]
-cursor-line = "hint"
-
 [editor.cursor-shape]
 insert = "bar"
 
@@ -55,7 +60,11 @@ hidden = false
 
 [editor.indent-guides]
 render = true
-character = "┊"
+skip-levels = 1
+
+[editor.word-completion]
+enable = true
+trigger-length = 1
 
 [editor.gutters]
 layout = ["diff", "spacer", "line-numbers", "spacer"]
@@ -64,4 +73,10 @@ layout = ["diff", "spacer", "line-numbers", "spacer"]
 min-width = 1
 
 [editor.smart-tab]
-enable = false
+enable = true
+
+[keys.insert]
+S-tab = "move_parent_node_start"
+
+[keys.normal.g]
+q = ":format"
