@@ -10,7 +10,7 @@
 # Use 'yadm' as diff provider
 # auto-format not working with ruff
 
-theme = "kanagawa-dragon"
+theme = "gruvbox_material_dark_hard"
 
 [editor]
 line-number = "relative"
@@ -20,7 +20,6 @@ completion-replace = true
 preview-completion-insert = false
 color-modes = true
 popup-border = "all"
-jump-label-alphabet = "lkoipuyhnmjtrewqzxcvbasdfg" # TODO: optimize this for two hands in querty
 default-line-ending = "lf"
 trim-final-newlines = true
 trim-trailing-whitespace = true
