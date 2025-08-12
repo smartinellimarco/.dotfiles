@@ -2,7 +2,7 @@
 # https://github.com/ghostty-org/ghostty/issues/1392
 # Config open and config reload? combine with helix?
 # Options
-theme = Kanagawa Dragon
+theme = gruvbox-material-dark-hard
 font-size = 11
 macos-icon = blueprint
 confirm-close-surface = false
