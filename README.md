@@ -18,19 +18,43 @@ Most of these dependencies are available by default on macOS (via Xcode command 
 
 This script only installs the missing ones.
 
+
+TODO: lazygit lazydocker smartcat fzf zoxide xplr
+
 ```zsh
 dependencies=(
-  # TODO: smartcat
   gh
   antidote
   yadm
   helix
   ghostty
 
+  container
+
+  docker
+  docker-compose
+  docker-buildx
+  docker-credential-helper
+  colima
+
+  awscli
+
+  hashicorp/tap/terraform
+
   uv
   rustup
   go
-  npm
+  node
+
+  dockerfile-language-server
+  bash-language-server
+  typescript-language-server
+  vscode-langservers-extracted
+  yaml-language-server
+  terraform-ls
+  marksman
+
+  dockerfmt
 )
 
 for package in "${dependencies[@]}"; do
