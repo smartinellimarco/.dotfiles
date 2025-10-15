@@ -1,3 +1,0 @@
-[language-server.ty.config]
-ty.experimental.completions.enable = true
-ty.diagnosticMode = "workspace"
