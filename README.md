@@ -14,7 +14,7 @@
 
 Install [homebrew](https://brew.sh/) and skip post-installation steps.
 
-Run
+Run:
 
 ```zsh
 dependencies=(
