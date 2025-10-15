@@ -14,12 +14,7 @@
 
 Install [homebrew](https://brew.sh/) and skip post-installation steps.
 
-Most of these dependencies are available by default on macOS (via Xcode command line tools).
-
-This script only installs the missing ones.
-
-
-TODO: lazygit lazydocker smartcat fzf zoxide xplr television algodekubernetes
+Run
 
 ```zsh
 dependencies=(
@@ -78,6 +73,14 @@ dependencies=(
   websocat
 
   tree
+
+  # lazygit
+  # lazydocker
+  # smartcat
+  # fzf?
+  # nucleo?
+  # zoxide?
+  # television
 )
 
 for package in "${dependencies[@]}"; do
