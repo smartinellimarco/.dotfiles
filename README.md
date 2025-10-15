@@ -19,15 +19,16 @@ Most of these dependencies are available by default on macOS (via Xcode command 
 This script only installs the missing ones.
 
 
-TODO: lazygit lazydocker smartcat fzf zoxide xplr
+TODO: lazygit lazydocker smartcat fzf zoxide xplr television algodekubernetes
 
 ```zsh
 dependencies=(
   gh
   antidote
   yadm
-  helix
   ghostty
+
+  helix
 
   container
 
@@ -38,14 +39,17 @@ dependencies=(
   colima
 
   awscli
-
+  kubectl
   hashicorp/tap/terraform
+
+  just
 
   uv
   rustup
   go
   node
 
+  lua-language-server
   dockerfile-language-server
   bash-language-server
   typescript-language-server
@@ -53,8 +57,27 @@ dependencies=(
   yaml-language-server
   terraform-ls
   marksman
+  gopls
+  tombi
+  # just-lsp
+  # https://github.com/helix-editor/helix/pull/13323, answer how zed does it
+  # ty
 
   dockerfmt
+  ruff
+  gofumpt
+  # mbake
+  # just formatter?
+
+  htmlq
+  jq
+
+  # httpyac?
+  xh
+  grpcurl
+  websocat
+
+  tree
 )
 
 for package in "${dependencies[@]}"; do
