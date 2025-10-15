@@ -16,6 +16,9 @@ zstyle ':completion:*' matcher-list \
   'r:|=*' \
   'l:|=* r:|=*'
 
+# Allow interactive comments
+setopt interactive_comments
+
 # Remove '/' from wordchars to be able to navigate directories
 WORDCHARS=${WORDCHARS//\//}
 
