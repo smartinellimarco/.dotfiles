@@ -51,10 +51,16 @@ antidote load
 # Unbind all default keymaps
 bindkey -rp ''
 
+forward-word-end() {
+  zle vi-forward-word-end
+  zle forward-char
+}
+zle -N forward-word-end
+
 # Set custom keymaps
 bindkey "^[[200~" bracketed-paste  # Paste
 bindkey -R " "-"~" self-insert  # Enable self-insert for a-z, A-Z, 0-9, and symbols
-bindkey "^F" forward-word  # Move forward by word
+bindkey "^F" forward-word-end  # Move forward by word
 bindkey "^B" backward-word  # Move backward by word
 bindkey "^A" beginning-of-line  # Move to beginning of line
 bindkey "^E" end-of-line  # Move to end of linebindkey "^[[C" forward-char
