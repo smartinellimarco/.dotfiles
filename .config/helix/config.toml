@@ -1,49 +1,48 @@
-# follow cursor?
 # https://github.com/helix-editor/helix/pull/12204
 # https://github.com/helix-editor/helix/pull/13870
 # https://github.com/helix-editor/helix/issues/5990
 # https://github.com/helix-editor/helix/pull/11497
-# https://github.com/helix-editor/helix/issues/1974
-# https://github.com/helix-editor/helix/issues/1125
+# https://github.com/helix-editor/helix/pull/11695
+# https://github.com/helix-editor/helix/pull/14544
 # Use 'yadm' as diff provider
-# auto-format not working with ruff
-
+# Auto-format not working with ruff
+# Follow cursor?
 theme = "zed_onedark"
 
 [editor]
-line-number = "relative"
 cursorline = true
-completion-timeout = 5
-completion-replace = true
-preview-completion-insert = false
+line-number = "relative"
 color-modes = true
 popup-border = "all"
+rainbow-brackets = true
+completion-timeout = 5
+completion-replace = true
 default-line-ending = "lf"
 trim-final-newlines = true
 trim-trailing-whitespace = true
-rainbow-brackets = true
 end-of-line-diagnostics = "hint"
+preview-completion-insert = false
 
 [editor.soft-wrap]
 enable = true
 
 [editor.statusline]
 left = [
-    "mode",
-    "spacer",
-    "current-working-directory",
-    "file-name",
-    "version-control",
-    "spacer",
-    "file-modification-indicator"
+  "mode",
+  "spacer",
+  "current-working-directory",
+  "file-name",
+  "version-control",
+  "spacer",
+  "file-modification-indicator"
 ]
 right = [
-    "spinner",
-    "spacer",
-    "diagnostics",
-    "workspace-diagnostics",
-    "position-percentage",
-    "position"
+  "spinner",
+  "spacer",
+  "diagnostics",
+  "workspace-diagnostics",
+  "position-percentage",
+  "position"
 ]
 
 [editor.cursor-shape]
@@ -69,14 +68,12 @@ layout = ["diff", "spacer", "line-numbers", "spacer"]
 [editor.gutters.line-numbers]
 min-width = 1
 
-[keys.normal.g]
-q = ":format"
-
 [keys.normal]
 tab = "move_parent_node_end"
 S-tab = "move_parent_node_start"
-# Print the current line's git blame information to the statusline.
-space.B = ":echo %sh{git blame -L %{cursor_line},+1 %{buffer_name}}"
+
+[keys.normal.g]
+q = ":format"
 
 [keys.insert]
 S-tab = "move_parent_node_start"
