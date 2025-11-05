@@ -7,7 +7,9 @@
 # Use 'yadm' as diff provider
 # Auto-format not working with ruff
 # Follow cursor?
-theme = "zed_onedark"
+# Match inside comments
+# Match arround "" is broken when standing in a "
+theme = "nord"
 
 [editor]
 cursorline = true
