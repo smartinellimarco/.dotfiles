@@ -21,6 +21,7 @@ dependencies=(
   gh
   antidote
   yadm
+
   ghostty
 
   helix
@@ -45,6 +46,8 @@ dependencies=(
   node
 
   lua-language-server
+  # https://github.com/texel-sensei/commit-lsp
+  # TODO: replace with official when the formulae gets fixed
   dockerfile-language-server
   bash-language-server
   typescript-language-server
@@ -55,8 +58,8 @@ dependencies=(
   gopls
   tombi
   # just-lsp
-  # https://github.com/helix-editor/helix/pull/13323, answer how zed does it
   # ty
+  # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations add more from here
 
   dockerfmt
   ruff
@@ -68,14 +71,18 @@ dependencies=(
   jq
 
   # httpyac?
+  # yaak?
   xh
   grpcurl
   websocat
+  trippy
+
+  pastel
 
   tree
 
-  # lazygit
-  # lazydocker
+  lazygit
+  lazydocker
   # smartcat
   # fzf?
   # nucleo?
