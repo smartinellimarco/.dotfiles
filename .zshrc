@@ -6,6 +6,9 @@ fi
 # Set editor
 export EDITOR=hx
 
+# Set XDG config directory
+export XDG_CONFIG_HOME="$HOME/.config"
+
 # Load Homebrew formulae completions into FPATH
 fpath=("$HOMEBREW_PREFIX/share/zsh/site-functions" $fpath)
 
