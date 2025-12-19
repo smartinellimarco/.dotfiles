@@ -36,7 +36,6 @@ dependencies=(
 
   awscli
   kubectl
-  hashicorp/tap/terraform
 
   just
 
@@ -44,11 +43,12 @@ dependencies=(
   rustup
   go
   node
+  mactex
+  hashicorp/tap/terraform
 
+  jdtls
   lua-language-server
-  # https://github.com/texel-sensei/commit-lsp
-  # TODO: replace with official when the formulae gets fixed
-  dockerfile-language-server
+  docker-language-server
   bash-language-server
   typescript-language-server
   vscode-langservers-extracted
@@ -57,24 +57,23 @@ dependencies=(
   marksman
   gopls
   tombi
-  # just-lsp
-  # ty
-  # https://github.com/helix-editor/helix/wiki/Language-Server-Configurations add more from here
+  terror/tap/just-lsp
+  texlab
+  ty
 
   dockerfmt
   ruff
   gofumpt
-  # mbake
-  # just formatter?
+
+  # smartcat
+
+  # yaak?
 
   htmlq
   jq
 
-  # httpyac?
-  # yaak?
-  xh
-  grpcurl
-  websocat
+  btop
+  procs
   trippy
 
   pastel
@@ -83,11 +82,8 @@ dependencies=(
 
   lazygit
   lazydocker
-  # smartcat
-  # fzf?
-  # nucleo?
-  # zoxide?
-  # television
+
+  iamb
 )
 
 for package in "${dependencies[@]}"; do
