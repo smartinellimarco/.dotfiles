@@ -1,6 +1,7 @@
 !**/.env
 !**/.env.integration
 !**/.env.production
+!**/.env.local
 !**/nginx-proxy.conf
 !**/*secrets.yaml
 !**/terraform.tfstate
