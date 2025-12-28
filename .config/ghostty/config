@@ -1,7 +1,6 @@
 # https://github.com/ghostty-org/ghostty/pull/9158
 # Options
 theme = nord
-font-size = 11
 macos-icon = blueprint
 macos-option-as-alt = true
 maximize = true
