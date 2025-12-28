@@ -1,0 +1,169 @@
+\documentclass[letterpaper,11pt]{article}
+
+% ---------- Encoding & Fonts ----------
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{lmodern}
+\usepackage{bold-extra}
+
+% ---------- Unicode safety ----------
+\usepackage{newunicodechar}
+
+% Fix Unicode characters from copy/paste
+\DeclareUnicodeCharacter{00A0}{ } % NBSP → normal space
+\DeclareUnicodeCharacter{2013}{--} % en dash
+\DeclareUnicodeCharacter{2014}{---} % em dash
+
+% ---------- Layout & Style ----------
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{bookmark} % fixes hyperref rerun warning
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome}
+\input{glyphtounicode}
+
+\pdfgentounicode=1
+
+% ---------- Page Style ----------
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\footskip}{5pt} % fixes fancyhdr warning
+
+% ---------- Margins ----------
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% ---------- Section Formatting ----------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% ---------- Custom Commands ----------
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+
+\newcommand{\resumeSubheading}[4]{
+  \item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & #2 \\
+    \textit{\small#3} & \textit{\small#4}
+  \end{tabular*}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}}
+
+\newcommand{\resumeRole}[2]{
+  \item[]
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small#2}
+  \end{tabular*}
+}
+
+\begin{document}
+
+%---------- HEADING ----------
+\begin{center}
+  {\Huge \scshape Marco Martinelli} \\ \vspace{3pt}
+  \small
+  \faAt\ \href{mailto:smartinellimarco@icloud.com}{smartinellimarco@icloud.com} $|$
+  \faGithub\ \href{https://github.com/smartinellimarco}{GitHub}
+\end{center}
+
+%----------- EXPERIENCE -----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Splight}{Argentina}
+{Senior Software Engineer}{Jan 2023 -- Present}
+\resumeItemListStart
+  \resumeItem{Deployed Prefect to orchestrate end-to-end pipelines for industrial and IoT data ingestion, data processing, and machine learning workflows in a real-time, mission-critical platform.}
+  \resumeItem{Built Python and Golang APIs and gRPC services for event-driven, real-time systems on AWS, handling networking, service-to-service communication, and asynchronous, concurrent processing.}
+  \resumeItem{Developed and released Python libraries, CLI tools, GitHub Actions, and Terraform/Pulumi providers to support infrastructure-as-code and streamline automated deployments across the platform.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Winclap}{Argentina}
+{Lead Data Scientist}{Sep 2022 -- Jan 2023}
+\resumeItemListStart
+  \resumeItem{Led the development of a data-driven platform leveraging airflow and machine learning models to optimize marketing budget allocation and maximize ROI.}
+  \resumeItem{Defined team objectives, roadmap planning, and execution oversight.}
+  \resumeItem{Led hiring processes, technical interviews, and provided mentorship and career guidance.}
+  \resumeItem{Maintained regular communication with stakeholders on project progress and outcomes.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Mercado Libre}{Argentina}
+{Senior Machine Learning Engineer}{Jul 2022 -- Sep 2022}
+\resumeItemListStart
+  \resumeItem{Researched, benchmarked, and developed Python libraries for text and image embedding techniques, adopted by multiple teams and minimizing feature rework across company-wide initiatives.}
+  \resumeItem{Served as a mentor in internal machine learning training programs.}
+  \resumeItem{Led technical interviews, roadmap planning, and team onboarding.}
+\resumeItemListEnd
+
+\resumeRole{Semi Senior Machine Learning Engineer}{Mar 2021 -- Jul 2022}
+\resumeItemListStart
+  \resumeItem{Developed computer vision pipelines for fraud prevention and identity verification, applying OCR, object detection, and classification models to credit card and identity document scans.}
+  \resumeItem{Applied object detection to identify brand logos, enabling downstream models to detect counterfeit clothing and improving detection rates by 20\%.}
+\resumeItemListEnd
+
+\resumeRole{Junior Machine Learning Engineer}{Mar 2020 -- Mar 2021}
+\resumeItemListStart
+  \resumeItem{Built computer vision systems for warehouse automation, including barcode and license plate recognition, and detection of mispositioned packages on conveyor belt sorters.}
+  \resumeItem{Implemented face matching and liveness detection pipelines for KYC processes.}
+\resumeItemListEnd
+
+\resumeRole{Software Developer Intern}{Jun 2019 -- Mar 2020}
+\resumeItemListStart
+  \resumeItem{Trained image classification and detection models to enforce marketplace quality standards and detect non-compliant listings.}
+  \resumeItem{Optimized ML model inference using ONNX, TensorRT, quantization, pruning, and mixed-precision techniques, including a high-impact initiative (400k images/minute) that reduced costs by 10$\times$ making its deployment affordable.}
+  \resumeItem{Developed semantic segmentation models to extract clothing from user images, enabling visual search in the marketplace.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%----------- EDUCATION -----------
+\section{Education}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{Universidad Nacional de Córdoba}{Argentina}
+{M.Sc. in Computer Science}{Mar 2019 -- Present}
+
+\resumeSubheading
+{Universidad Nacional de Córdoba}{Argentina}
+{B.Sc. in Computer Science}{Mar 2015 -- Mar 2019}
+
+\resumeSubHeadingListEnd
+
+%----------- CERTIFICATIONS -----------
+\section{Certifications}
+\resumeSubHeadingListStart
+\item \small{
+\textbf{First Certificate in English (B2)} — Cambridge Language School \\
+Credential ID: 13BAR6121018 \hfill Dec 2013
+}
+\resumeSubHeadingListEnd
+
+\end{document}
