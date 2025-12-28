@@ -73,8 +73,7 @@ dependencies=(
   jq
 
   btop
-  procs
-  trippy
+  gping
 
   pastel
 
