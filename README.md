@@ -1,11 +1,12 @@
-## Table of contents
+# Table of contents
 
 <!--toc:start-->
+
 - [Table of contents](#table-of-contents)
-- [Getting started](#getting-started)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
-- [Bootstrap file](#bootstrap-file)
+  - [Getting started](#getting-started)
+    - [Requirements](#requirements)
+    - [Installation](#installation)
+  - [Bootstrap file](#bootstrap-file)
 <!--toc:end-->
 
 ## Getting started
@@ -60,12 +61,11 @@ dependencies=(
   terror/tap/just-lsp
   texlab
   ty
-
-  dockerfmt
   ruff
-  gofumpt
+  rumdl
 
-  # smartcat
+  dockerfmt # NOTE: unused
+  gofumpt # TODO: configure gopls to use this
 
   # yaak?
 
@@ -73,11 +73,6 @@ dependencies=(
   jq
 
   btop
-  gping
-
-  pastel
-
-  tree
 
   lazygit
   lazydocker
@@ -93,12 +88,15 @@ done
 ### Installation
 
 Clone the repository using yadm
+
 ```zsh
 yadm clone https://github.com/smartinellimarco/.dotfiles
 ```
 
-The first time you reopen the terminal, antidote will automatically setup all zsh plugins.
+The first time you reopen the terminal, antidote will automatically setup all
+zsh plugins.
 
 ## Bootstrap file
 
-Initialization commands not intended for backup in this repository can be placed in `~/.zsh_bootstrap`, which is automatically sourced.
+Initialization commands not intended for backup in this repository can be placed
+in `~/.zsh_bootstrap`, which is automatically sourced.
