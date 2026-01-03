@@ -5,6 +5,7 @@ fi
 
 # Set editor
 export EDITOR=hx
+export VISUAL=hx
 
 # Set XDG config directory
 export XDG_CONFIG_HOME="$HOME/.config"
