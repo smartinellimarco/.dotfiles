@@ -1,14 +1,7 @@
-# https://github.com/helix-editor/helix/pull/12204
-# https://github.com/helix-editor/helix/pull/13870
-# https://github.com/helix-editor/helix/issues/5990
-# https://github.com/helix-editor/helix/pull/11497
-# https://github.com/helix-editor/helix/pull/11695
-# https://github.com/helix-editor/helix/pull/14544
-# Use 'yadm' as diff provider
-# Auto-format not working with ruff
-# Follow cursor?
-# Match inside comments
-# Match arround "" is broken when standing in a "
+# TODO: use 'yadm' as diff provider
+# TODO: auto-format not working with ruff
+# TODO: match inside comments
+# TODO: match arround "" is broken when standing in a "
 theme = "nord"
 
 [editor]

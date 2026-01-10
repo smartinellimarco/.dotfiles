@@ -1,4 +1,3 @@
-# https://github.com/ghostty-org/ghostty/pull/9158
 # Options
 theme = nord
 macos-icon = blueprint
@@ -6,6 +5,7 @@ macos-option-as-alt = true
 maximize = true
 window-vsync = false
 confirm-close-surface = false
+window-inherit-working-directory = false
 
 # Remove default keymaps
 keybind=clear

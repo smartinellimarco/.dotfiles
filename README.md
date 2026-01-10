@@ -63,21 +63,17 @@ dependencies=(
   ty
   ruff
   rumdl
+  # TODO: commit-lsp
 
-  dockerfmt # NOTE: unused
-  gofumpt # TODO: configure gopls to use this
-
-  # yaak?
+  dockerfmt # TODO: unused
+  gofumpt # TODO: make gopls use this, remove if not required
 
   htmlq
   jq
 
-  btop
-
-  lazygit
-  lazydocker
-
+  # TODO: yaak/nexus?
   iamb
+  k9s
 )
 
 for package in "${dependencies[@]}"; do
