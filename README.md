@@ -18,6 +18,13 @@ Install [homebrew](https://brew.sh/) and skip post-installation steps.
 Run:
 
 ```zsh
+# TODO: remove this once all taps are auto-searchable
+taps=(
+  hashicorp/tap
+  terror/tap/
+  texel-sensei/commit-lsp https://github.com/texel-sensei/commit-lsp
+)
+
 dependencies=(
   gh
   antidote
@@ -63,9 +70,11 @@ dependencies=(
   ty
   ruff
   rumdl
-  # TODO: commit-lsp
+  texel-sensei/commit-lsp/commit-lsp
 
-  dockerfmt # TODO: unused
+  # TODO: actions-languageserver
+
+  dockerfmt
   gofumpt # TODO: make gopls use this, remove if not required
 
   htmlq
@@ -76,9 +85,15 @@ dependencies=(
   k9s
 )
 
+for tap in "${taps[@]}"; do
+  brew tap $tap
+done
+
 for package in "${dependencies[@]}"; do
   brew install $package
 done
+
+brew services start colima
 ```
 
 ### Installation
