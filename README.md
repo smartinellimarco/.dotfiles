@@ -43,7 +43,7 @@ dependencies=(
   colima
 
   awscli
-  kubectl
+  kubernetes-cli
 
   just
 
