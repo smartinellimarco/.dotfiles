@@ -18,7 +18,10 @@ Install [homebrew](https://brew.sh/) and skip post-installation steps.
 Run:
 
 ```zsh
+# Install dependencies
 brew bundle --file ~/Brewfile
+
+# Auto start services at boot
 brew services start colima
 ```
 
