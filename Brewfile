@@ -6,11 +6,13 @@ brew "gh"
 brew "antidote"
 brew "yadm"
 
+brew "helix", args: ["HEAD"]
+
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
 brew "docker-credential-helper"
-brew "colima"
+brew "colima", restart_service: :changed
 
 brew "awscli"
 brew "kubernetes-cli"
@@ -52,5 +54,6 @@ brew "jq"
 brew "iamb"
 brew "k9s"
 
+# TODO: mactex, container
 cask "ghostty@tip"
 cask "claude-code"
