@@ -20,9 +20,6 @@ Run:
 ```zsh
 # Install dependencies
 brew bundle --file ~/Brewfile
-
-# Auto start services at boot
-brew services start colima
 ```
 
 ### Installation
