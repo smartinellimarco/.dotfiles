@@ -3,4 +3,3 @@ mattmc3/ez-compinit
 
 # These are not affected by order
 agkozak/zsh-z
-romkatv/powerlevel10k
