@@ -1,11 +1,10 @@
 # Options
 theme = nord
-macos-icon = blueprint
-macos-option-as-alt = true
 maximize = true
 window-vsync = false
 confirm-close-surface = false
 window-inherit-working-directory = false
+macos-option-as-alt = true
 
 # Remove default keymaps
 keybind=clear
@@ -13,7 +12,7 @@ keybind=clear
 # MacOS styled keymaps
 keybind = cmd+t=new_tab
 keybind = cmd+n=new_window
-keybind = cmd+w=close_tab
+keybind = cmd+w=close_surface
 keybind = cmd+q=quit
 keybind = cmd+1=goto_tab:1
 keybind = cmd+2=goto_tab:2
