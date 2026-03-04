@@ -1,5 +1,3 @@
-# TODO: use 'yadm' as diff provider
-# TODO: auto-format not working
 # TODO: match inside comments
 theme = "nord"
 
