@@ -71,4 +71,3 @@ bindkey "^R" history-incremental-search-backward  # Reverse search in history
 bindkey "^P" up-line-or-history  # Navigate up in history
 bindkey "^N" down-line-or-history  # Navigate down in history
 bindkey "^I" expand-or-complete  # Tab completion
-
