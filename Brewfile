@@ -1,59 +1,101 @@
+# Taps
 tap "hashicorp/tap"
 tap "terror/tap"
-tap "texel-sensei/commit-lsp", "https://github.com/texel-sensei/commit-lsp"
 
+# Github
 brew "gh"
+# TODO: actions-languageserver
+
+# zsh
 brew "antidote"
+brew "bash-language-server"
+
+# Dotfiles
 brew "yadm"
 
+# Editor
 brew "helix", args: ["HEAD"]
 
+# Terminal emulator
+cask "ghostty"
+
+# Shell utilities
+brew "jq"
+brew "htmlq"
+brew "tree"
+
+# TODO: yaak/nexus?
+
+# Containers
+# TODO: cask "container"
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
 brew "docker-credential-helper"
-brew "colima", restart_service: :changed
-
-brew "awscli"
-brew "kubernetes-cli"
-
-brew "just"
-
-brew "uv"
-brew "rustup"
-brew "go"
-brew "node"
-brew "hashicorp/tap/terraform"
-
-brew "jdtls"
-brew "lua-language-server"
-brew "docker-language-server"
-brew "bash-language-server"
-brew "typescript-language-server"
-brew "vscode-langservers-extracted"
-brew "yaml-language-server"
-brew "terraform-ls"
-brew "marksman"
-brew "gopls"
-brew "tombi"
-brew "terror/tap/just-lsp"
-brew "texlab"
-brew "ty"
-brew "ruff"
-brew "rumdl"
-brew "texel-sensei/commit-lsp/commit-lsp"
-# TODO: actions-languageserver
-
+brew "colima"
 brew "dockerfmt"
-brew "gofumpt" # TODO: make gopls use this, remove if not required
+brew "docker-language-server"
 
-# TODO: yaak/nexus?
-brew "htmlq"
-brew "jq"
+# Terraform
+brew "terraform"
+brew "terraform-ls"
 
-brew "iamb"
+# AWS
+brew "awscli"
+
+# Kubernetes
+brew "kubernetes-cli"
 brew "k9s"
 
-# TODO: mactex, container
-cask "ghostty@tip"
-cask "claude-code"
+# C / C++
+brew "meson"
+brew "cmake"
+brew "bear"
+
+# Go
+brew "go"
+brew "gopls"
+brew "gofumpt" # TODO: use this or check lsp config
+brew "delve"
+brew "protobuf"
+brew "protoc-gen-go"
+
+# Rust
+brew "rustup"
+brew "rust-analyzer"
+
+# Python
+brew "uv"
+brew "ruff"
+brew "ty"
+
+# Web
+brew "node"
+brew "typescript-language-server"
+brew "vscode-langservers-extracted" # HTML, CSS, JS, JSON
+
+# YAML
+brew "yaml-language-server"
+
+# TOML
+brew "tombi"
+
+# Java
+brew "jdtls"
+
+# Lua
+# TODO: lua interpreter or manager
+brew "luarocks"
+brew "lua-language-server"
+
+# Markdown
+brew "marksman"
+brew "rumdl"
+
+# LaTeX
+cask "mactex"
+brew "texlab"
+
+# Just
+brew "just"
+brew "just-lsp"
