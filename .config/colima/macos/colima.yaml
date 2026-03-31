@@ -1,0 +1,9 @@
+cpu: 4
+memory: 8
+vmType: vz # Apple virtualization framework, faster than qemu on macOS
+mountType: virtiofs # Fastest mount driver, requires vz
+mountInotify: true # Propagate file change events into the VM
+rosetta: true # Native x86_64 emulation on Apple Silicon, faster than qemu binfmt
+mounts:
+  - location: ~ # Mount home so we can have access to credentials
+    writable: true
