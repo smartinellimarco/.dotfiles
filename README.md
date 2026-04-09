@@ -19,7 +19,7 @@ Run:
 
 ```zsh
 # Install dependencies
-brew bundle --file ~/Brewfile
+brew bundle --file https://github.com/smartinellimarco/.dotfiles/raw/master/Brewfile
 ```
 
 ### Installation
