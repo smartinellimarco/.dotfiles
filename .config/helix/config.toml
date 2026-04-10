@@ -3,6 +3,7 @@
 theme = "nord"
 
 [editor]
+insecure = true
 cursorline = true
 line-number = "relative"
 color-modes = true
