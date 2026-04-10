@@ -7,6 +7,7 @@
     - [Requirements](#requirements)
     - [Installation](#installation)
   - [Bootstrap file](#bootstrap-file)
+  - [Colima](#colima)
 <!--toc:end-->
 
 ## Getting started
@@ -37,3 +38,13 @@ zsh plugins.
 
 Initialization commands not intended for backup in this repository can be placed
 in `~/.zsh_bootstrap`, which is automatically sourced.
+
+## Colima
+
+Spawn Colima VM:
+
+MacOS:
+
+```zsh
+colima start --cpus 4 --memory 8 --vm-type vz --mount-type virtiofs --mount-inotify --vz-rosetta --mount $HOME:w
+```
