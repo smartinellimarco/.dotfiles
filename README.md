@@ -48,3 +48,11 @@ MacOS:
 ```zsh
 colima start --cpus 4 --memory 8 --vm-type vz --mount-type virtiofs --mount-inotify --vz-rosetta --mount $HOME:w
 ```
+
+Stop the VM (e.g. to re-spawn with different `--cpus`, `--memory`, or a larger
+`--disk`; note that disk can only grow, and `arch` / `vm-type` cannot change at
+all — those require `colima delete` first):
+
+```zsh
+colima stop
+```
