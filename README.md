@@ -1,13 +1,13 @@
 # Table of contents
 
 <!--toc:start-->
-
 - [Table of contents](#table-of-contents)
   - [Getting started](#getting-started)
     - [Requirements](#requirements)
     - [Installation](#installation)
   - [Bootstrap file](#bootstrap-file)
   - [Colima](#colima)
+    - [MacOS](#macos)
 <!--toc:end-->
 
 ## Getting started
@@ -41,9 +41,7 @@ in `~/.zsh_bootstrap`, which is automatically sourced.
 
 ## Colima
 
-Spawn Colima VM:
-
-MacOS:
+Spawn the Colima VM on macOS:
 
 ```zsh
 colima start --cpus 4 --memory 8 --vm-type vz --mount-type virtiofs --mount-inotify --vz-rosetta --mount $HOME:w
