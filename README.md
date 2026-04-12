@@ -7,7 +7,6 @@
     - [Installation](#installation)
   - [Bootstrap file](#bootstrap-file)
   - [Colima](#colima)
-    - [MacOS](#macos)
 <!--toc:end-->
 
 ## Getting started
@@ -19,7 +18,6 @@ Install [homebrew](https://brew.sh/) and skip post-installation steps.
 Run:
 
 ```zsh
-# Install dependencies
 brew bundle --file https://github.com/smartinellimarco/.dotfiles/raw/master/Brewfile
 ```
 
