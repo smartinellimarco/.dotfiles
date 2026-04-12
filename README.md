@@ -15,8 +15,6 @@
 
 Install [homebrew](https://brew.sh/) and skip post-installation steps.
 
-Run:
-
 ```zsh
 brew bundle --file https://github.com/smartinellimarco/.dotfiles/raw/master/Brewfile
 ```
