@@ -13,7 +13,7 @@
 
 ### Requirements
 
-Install [homebrew](https://brew.sh/) and skip post-installation steps.
+Install [homebrew](https://brew.sh/) and skip post-installation steps:
 
 ```zsh
 brew bundle --file https://github.com/smartinellimarco/.dotfiles/raw/master/Brewfile
@@ -21,7 +21,7 @@ brew bundle --file https://github.com/smartinellimarco/.dotfiles/raw/master/Brew
 
 ### Installation
 
-Clone the repository using yadm
+Clone the repository using yadm:
 
 ```zsh
 yadm clone https://github.com/smartinellimarco/.dotfiles
