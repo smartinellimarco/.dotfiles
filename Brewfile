@@ -91,6 +91,7 @@ brew "lua-language-server"
 # Markdown
 brew "marksman"
 brew "rumdl"
+brew "zola"
 
 # LaTeX
 cask "mactex"
