@@ -4,3 +4,9 @@ export XDG_DATA_HOME="$HOME/.local/share"
 
 # Docker CLI doesn't respect XDG, needs explicit override
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+
+# Cargo
+export PATH="$HOME/.cargo/bin:$PATH"
+
+# Uv
+export PATH="$HOME/.local/share/../bin:$PATH"
