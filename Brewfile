@@ -27,7 +27,8 @@ brew "tree"
 # TODO: yaak/nexus?
 
 # Containers
-# TODO: cask "container"
+cask "container"
+
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
@@ -64,6 +65,10 @@ brew "protoc-gen-go"
 brew "rustup"
 brew "rust-analyzer"
 
+# Zig
+brew zig
+brew zls
+
 # Python
 brew "uv"
 brew "ruff"
@@ -85,6 +90,8 @@ brew "jdtls"
 
 # Lua
 # TODO: lua interpreter or manager
+brew "lua"
+brew "luau"
 brew "luarocks"
 brew "lua-language-server"
 
