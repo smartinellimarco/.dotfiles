@@ -68,6 +68,14 @@ min-width = 1
 tab = "move_parent_node_end"
 S-tab = "move_parent_node_start"
 
+w = "move_next_sub_word_end"
+b = "move_prev_sub_word_start"
+e = "move_next_sub_word_start"
+
+W = "move_next_long_word_end"
+B = "move_prev_long_word_start"
+E = "move_next_long_word_start"
+
 [keys.normal.g]
 q = ":format"
 
@@ -77,3 +85,11 @@ S-tab = "move_parent_node_start"
 [keys.select]
 tab = "extend_parent_node_end"
 S-tab = "extend_parent_node_start"
+
+w = "extend_next_sub_word_end"
+b = "extend_prev_sub_word_start"
+e = "extend_next_sub_word_start"
+
+W = "extend_next_long_word_end"
+B = "extend_prev_long_word_start"
+E = "extend_next_long_word_start"
