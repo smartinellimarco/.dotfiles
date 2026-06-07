@@ -89,7 +89,6 @@ brew "tombi"
 brew "jdtls"
 
 # Lua
-# TODO: lua interpreter or manager
 brew "lua"
 brew "luau"
 brew "luarocks"
