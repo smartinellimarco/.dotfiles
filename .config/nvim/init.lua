@@ -502,8 +502,6 @@ do
   conform.setup({
     notify_on_error = false,
     formatters_by_ft = {
-      typescript = { 'prettierd' },
-      typescriptreact = { 'prettierd' },
       lua = { 'stylua' },
     },
   })
@@ -519,7 +517,6 @@ end
 -- Per-server overrides live in ~/.config/nvim/after/lsp/<name>.lua
 local servers = {
   'rust_analyzer',
-  'ts_ls',
   'bashls',
   'gopls',
   'terraformls',
