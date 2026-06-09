@@ -38,11 +38,23 @@ end)
 -- See :h 'shortmess' for flag meanings
 vim.opt.shortmess:append('WIsqAacS')
 
--- TODO: still needed?
 vim.diagnostic.config({
   signs = false,
   virtual_text = { prefix = '◦', spacing = 0 },
   float = { border = 'rounded' },
+  update_in_insert = false, -- don't publish new diags while typing
+})
+
+-- Hide diagnostic visuals entirely while in insert mode.
+vim.api.nvim_create_autocmd('InsertEnter', {
+  callback = function()
+    vim.diagnostic.hide()
+  end,
+})
+vim.api.nvim_create_autocmd('InsertLeave', {
+  callback = function()
+    vim.diagnostic.show()
+  end,
 })
 
 vim.api.nvim_create_autocmd('VimEnter', {
@@ -51,9 +63,7 @@ vim.api.nvim_create_autocmd('VimEnter', {
   end,
 })
 
--- ============================================================
--- PLUGINS (vim.pack)
--- ============================================================
+-- plugins (vim.pack)
 
 local gh = function(repo)
   return 'https://github.com/' .. repo
@@ -118,21 +128,32 @@ vim.pack.add({
   gh('RRethy/vim-illuminate'),
 })
 
--- ============================================================
--- COLORSCHEME
--- ============================================================
+-- colorscheme
 
 require('nord').setup({
   borders = true,
   styles = {
     comments = { italic = true },
   },
+  on_highlights = function(hl, c)
+    -- Leap: colored letters, no backgrounds.
+    hl.LeapMatch = { fg = c.frost.polar_water, bold = true, nocombine = true }
+    hl.LeapLabel = { fg = c.aurora.yellow, bold = true }
+    hl.LeapLabelPrimary = { fg = c.aurora.green, bold = true, nocombine = true }
+    hl.LeapLabelSecondary =
+      { fg = c.aurora.purple, bold = true, nocombine = true }
+    hl.LeapLabelSelected =
+      { fg = c.aurora.yellow, bold = true, nocombine = true }
+    -- Diagnostic virtual text: drop the colored strip background.
+    hl.DiagnosticVirtualTextError = { fg = c.aurora.red }
+    hl.DiagnosticVirtualTextWarn = { fg = c.aurora.yellow }
+    hl.DiagnosticVirtualTextInfo = { fg = c.frost.ice }
+    hl.DiagnosticVirtualTextHint = { fg = c.frost.artic_water }
+  end,
 })
 vim.cmd.colorscheme('nord')
 
--- ============================================================
--- PLUGIN SETUP
--- ============================================================
+-- plugin setup
 
 require('nvim-autopairs').setup({
   check_ts = true,
@@ -349,6 +370,11 @@ do
   vim.keymap.set('n', 'gri', builtin.lsp_implementations)
   vim.keymap.set('n', 'grt', builtin.lsp_type_definitions)
   vim.keymap.set('n', 'gO', builtin.lsp_document_symbols)
+  vim.api.nvim_create_autocmd('LspAttach', {
+    callback = function(ev)
+      vim.keymap.set('n', '<C-]>', builtin.lsp_definitions, { buffer = ev.buf })
+    end,
+  })
 end
 
 -- Treesitter (parsers via tree-sitter-manager.nvim)
@@ -430,12 +456,12 @@ require('blink.cmp').setup({
   keymap = {
     preset = 'none',
     ['<C-f>'] = { 'accept' },
-    -- chain: menu selection → snippet jump → default keybind
-    ['<C-n>'] = { 'select_next', 'snippet_forward', 'fallback' },
-    ['<C-p>'] = { 'select_prev', 'snippet_backward', 'fallback' },
+    ['<C-n>'] = { 'select_next', 'snippet_forward' },
+    ['<C-p>'] = { 'select_prev', 'snippet_backward' },
     ['<C-u>'] = { 'scroll_documentation_up' },
     ['<C-d>'] = { 'scroll_documentation_down' },
     ['<C-e>'] = { 'cancel' },
+    ['<C-x>'] = { 'show' },
   },
   cmdline = {
     completion = {
@@ -468,9 +494,7 @@ do
   end)
 end
 
--- ============================================================
--- LSP
--- ============================================================
+-- lsp
 
 -- Per-server overrides live in ~/.config/nvim/after/lsp/<name>.lua
 local servers = {
@@ -488,6 +512,7 @@ local servers = {
   'lua_ls',
   'jsonls',
   'yamlls',
+  'tombi',
 }
 
 vim.lsp.config('*', {
