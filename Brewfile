@@ -1,6 +1,6 @@
 # Taps
-tap "hashicorp/tap"
-tap "terror/tap"
+tap "hashicorp/tap", trusted: true
+tap "terror/tap", trusted: true
 
 # Github
 brew "gh"
@@ -14,7 +14,10 @@ brew "bash-language-server"
 brew "yadm"
 
 # Editor
-brew "helix", args: ["HEAD"]
+brew "neovim"
+brew "tree-sitter-cli"
+brew "ripgrep"
+brew "fd"
 
 # Terminal emulator
 cask "ghostty"
@@ -26,9 +29,10 @@ brew "tree"
 
 # TODO: yaak/nexus?
 
-# Containers
-cask "container"
+# Container
+brew "container"
 
+# Docker
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
@@ -48,36 +52,26 @@ brew "awscli"
 brew "kubernetes-cli"
 brew "k9s"
 
-# C / C++
-brew "meson"
-brew "cmake"
-brew "bear"
-
 # Go
 brew "go"
 brew "gopls"
-brew "gofumpt" # TODO: use this or check lsp config
 brew "delve"
-brew "protobuf"
-brew "protoc-gen-go"
 
 # Rust
 brew "rustup"
 brew "rust-analyzer"
 
 # Zig
-brew zig
-brew zls
+brew "zigup"
+brew "zls"
 
 # Python
 brew "uv"
 brew "ruff"
 brew "ty"
 
-# Web
-brew "node"
-brew "typescript-language-server"
-brew "vscode-langservers-extracted" # HTML, CSS, JS, JSON
+# JSON
+brew "vscode-langservers-extracted"
 
 # YAML
 brew "yaml-language-server"
@@ -85,19 +79,12 @@ brew "yaml-language-server"
 # TOML
 brew "tombi"
 
-# Java
-brew "jdtls"
-
 # Lua
-brew "lua"
-brew "luau"
-brew "luarocks"
 brew "lua-language-server"
+brew "stylua"
 
 # Markdown
-brew "marksman"
 brew "rumdl"
-brew "zola"
 
 # LaTeX
 cask "mactex"
