@@ -1,7 +1,0 @@
-# TODO: not working
-[language-server.ty.config]
-diagnosticMode = "workspace"
-
-# TODO: not working
-[language-server.rust-analyzer.config]
-check.command = "clippy"
