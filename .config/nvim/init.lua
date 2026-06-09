@@ -113,7 +113,6 @@ vim.pack.add({
   gh('stevearc/conform.nvim'),
 
   -- LSP
-  gh('b0o/schemastore.nvim'),
   gh('neovim/nvim-lspconfig'),
   gh('folke/lazydev.nvim'),
   gh('RRethy/vim-illuminate'),
@@ -165,30 +164,65 @@ do
     current_line_blame_formatter = '◦ <author>, <author_time:%Y-%m-%d> - <summary>',
     current_line_blame_formatter_nc = '◦ Not committed yet',
   })
-  vim.keymap.set('n', ']h', function()
-    gs.nav_hunk('next')
-  end)
-  vim.keymap.set('n', '[h', function()
-    gs.nav_hunk('prev')
-  end)
-  -- ih: like vif — jumps to next hunk if cursor isn't on one, then selects.
-  -- nav_hunk is async, so we resolve the next hunk ourselves and move the
-  -- cursor synchronously — otherwise select_hunk runs at the pre-move
-  -- position and op-pending (dih) sees no motion and cancels the operator.
-  -- Delete-only hunks (added.count == 0) are skipped: there's no line in the
-  -- buffer to select for them, and select_hunk produces a wonky range
-  -- (e.g. `0G` for top-delete) that spans from the original cursor position.
+  -- gs.nav_hunk is async, which breaks operator-pending motions
+  -- (the callback returns before the cursor moves, so vim sees no motion).
+  -- We resolve the target hunk synchronously from gs.get_hunks() and jump.
+  local function jump_to(h)
+    local n = vim.api.nvim_buf_line_count(0)
+    local line = math.max(1, math.min(h.added.start, n))
+    vim.api.nvim_win_set_cursor(0, { line, 0 })
+  end
+
+  local function nav(dir)
+    return function()
+      local hunks = gs.get_hunks(0) or {}
+      if #hunks == 0 then
+        return
+      end
+      local row = vim.api.nvim_win_get_cursor(0)[1]
+      local target
+      if dir == 'next' then
+        for _, h in ipairs(hunks) do
+          if h.added.start > row then
+            target = h
+            break
+          end
+        end
+        target = target or hunks[1]
+      else
+        for i = #hunks, 1, -1 do
+          if hunks[i].added.start < row then
+            target = hunks[i]
+            break
+          end
+        end
+        target = target or hunks[#hunks]
+      end
+      jump_to(target)
+    end
+  end
+
+  vim.keymap.set({ 'n', 'x', 'o' }, ']h', nav('next'))
+  vim.keymap.set({ 'n', 'x', 'o' }, '[h', nav('prev'))
+
+  -- ih: text object — containing hunk, else next, else wrap. Selects iff
+  -- the hunk has buffer content (added.count > 0); pure-delete hunks just
+  -- get a cursor jump, because select_hunk would emit a wonky range for
+  -- them (e.g. `0G` when added.start is 0 for a top-of-file delete).
   vim.keymap.set({ 'o', 'x' }, 'ih', function()
-    local hunks = vim.tbl_filter(function(h)
-      return h.added.count > 0
-    end, gs.get_hunks(0) or {})
+    local hunks = gs.get_hunks(0) or {}
     if #hunks == 0 then
       return
     end
     local row = vim.api.nvim_win_get_cursor(0)[1]
+    local function contains(h)
+      return h.added.count > 0
+        and row >= h.added.start
+        and row <= h.added.start + h.added.count - 1
+    end
     local target
     for _, h in ipairs(hunks) do
-      if row >= h.added.start and row <= h.added.start + h.added.count - 1 then
+      if contains(h) then
         target = h
         break
       end
@@ -202,8 +236,10 @@ do
       end
       target = target or hunks[1]
     end
-    vim.api.nvim_win_set_cursor(0, { target.added.start, 0 })
-    gs.select_hunk()
+    jump_to(target)
+    if target.added.count > 0 then
+      gs.select_hunk()
+    end
   end)
 end
 
@@ -221,14 +257,8 @@ require('lualine').setup({
       {
         'filename',
         path = 1,
-        fmt = function(filename)
-          local filetype = vim.bo.filetype
-          if filetype == 'oil' then
-            return require('oil').get_current_dir()
-          elseif filetype == 'TelescopePrompt' then
-            return 'telescope'
-          end
-          return filename
+        fmt = function(name)
+          return vim.bo.filetype == 'TelescopePrompt' and 'telescope' or name
         end,
       },
     },
@@ -413,6 +443,9 @@ require('lazydev').setup({
 require('illuminate').configure({
   providers = { 'lsp', 'treesitter', 'regex' },
   delay = 100,
+  filetypes_denylist = {
+    'oil',
+  },
 })
 
 -- Blink completion
@@ -472,7 +505,6 @@ do
       typescript = { 'prettierd' },
       typescriptreact = { 'prettierd' },
       lua = { 'stylua' },
-      go = { 'gofumpt' },
     },
   })
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
@@ -491,9 +523,11 @@ local servers = {
   'bashls',
   'gopls',
   'terraformls',
-  'marksman',
-  'docker_compose_language_service',
-  'clangd',
+  'rumdl',
+  'docker_language_server',
+  'texlab',
+  'zls',
+  'just',
   'ruff',
   'ty',
   'lua_ls',
@@ -505,5 +539,3 @@ vim.lsp.config('*', {
   capabilities = require('blink.cmp').get_lsp_capabilities(),
 })
 vim.lsp.enable(servers)
-
--- vim: ts=2 sts=2 sw=2 et
