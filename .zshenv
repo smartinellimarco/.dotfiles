@@ -10,3 +10,6 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 # Uv
 export PATH="$HOME/.local/share/../bin:$PATH"
+
+# Node
+# ...
