@@ -354,7 +354,7 @@ end
 -- Treesitter (parsers via tree-sitter-manager.nvim)
 do
   require('tree-sitter-manager').setup({
-    ensure_installed = 'all',
+    auto_install = true,
     nerdfont = false,
   })
 
