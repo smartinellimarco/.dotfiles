@@ -109,9 +109,6 @@ vim.pack.add({
   gh('folke/ts-comments.nvim'),
   gh('NMAC427/guess-indent.nvim'),
 
-  -- File manager
-  gh('stevearc/oil.nvim'),
-
   -- Telescope
   gh('nvim-lua/plenary.nvim'),
   gh('nvim-telescope/telescope.nvim'),
@@ -299,31 +296,39 @@ require('lualine').setup({
   },
 })
 
-do
-  local oil = require('oil')
-  oil.setup({
-    view_options = { show_hidden = true },
-    columns = {},
-    keymaps = {
-      ['<CR>'] = 'actions.select',
-      ['-'] = 'actions.parent',
-      ['_'] = 'actions.open_cwd',
-      ['`'] = 'actions.cd',
-      ['<C-v>'] = 'actions.select_vsplit',
-      ['<C-x>'] = 'actions.select_split',
-      ['<C-c>'] = 'actions.close',
-      ['<leader>o'] = function() end,
+require('neo-tree').setup({
+  close_if_last_window = true,
+  popup_border_style = 'rounded',
+  default_component_configs = {
+    icon = {
+      folder_closed = '+',
+      folder_open = '-',
+      folder_empty = '·',
+      folder_empty_open = '·',
+      default = '·',
+      use_filtered_colors = true,
     },
-    skip_confirm_for_simple_edits = false,
-    ---@diagnostic disable-next-line: assign-type-mismatch
-    cleanup_delay_ms = false, -- oil's @field says integer? but false disables cleanup
-    prompt_save_on_select_new_entry = true,
-    use_default_keymaps = false,
-  })
-  vim.keymap.set('n', '<leader>o', oil.open)
-end
-
-require('neo-tree').setup({})
+    git_status = {
+      symbols = {
+        added = '+',
+        deleted = '-',
+        modified = '~',
+        renamed = '>',
+        untracked = '?',
+        ignored = '!',
+        unstaged = '*',
+        staged = 's',
+        conflict = 'x',
+      },
+    },
+  },
+  filesystem = {
+    use_libuv_file_watcher = true,
+    follow_current_file = { enabled = true },
+    filtered_items = { hide_dotfiles = false },
+    hijack_netrw_behavior = 'open_default',
+  },
+})
 require('lsp-file-operations').setup()
 vim.keymap.set('n', '<leader>e', function()
   if vim.bo.filetype == 'neo-tree' then
@@ -452,7 +457,7 @@ require('illuminate').configure({
   providers = { 'lsp', 'treesitter', 'regex' },
   delay = 100,
   filetypes_denylist = {
-    'oil',
+    'neo-tree',
   },
 })
 
