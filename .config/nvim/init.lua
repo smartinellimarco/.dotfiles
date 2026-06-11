@@ -229,14 +229,14 @@ do
     end
   end
 
-  vim.keymap.set({ 'n', 'x', 'o' }, ']h', nav('next'))
-  vim.keymap.set({ 'n', 'x', 'o' }, '[h', nav('prev'))
+  vim.keymap.set({ 'n', 'x', 'o' }, ']g', nav('next'))
+  vim.keymap.set({ 'n', 'x', 'o' }, '[g', nav('prev'))
 
-  -- ih: text object — containing hunk, else next, else wrap. Selects iff
+  -- ig: text object — containing hunk, else next, else wrap. Selects iff
   -- the hunk has buffer content (added.count > 0); pure-delete hunks just
   -- get a cursor jump, because select_hunk would emit a wonky range for
   -- them (e.g. `0G` when added.start is 0 for a top-of-file delete).
-  vim.keymap.set({ 'o', 'x' }, 'ih', function()
+  vim.keymap.set({ 'o', 'x' }, 'ig', function()
     local hunks = gs.get_hunks(0) or {}
     if #hunks == 0 then
       return
