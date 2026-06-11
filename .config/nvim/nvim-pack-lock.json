@@ -45,6 +45,11 @@
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
+    "neo-tree.nvim": {
+      "rev": "83e7a2982fd12b9c3d35bc39dd5877cd91a02a61",
+      "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
+      "version": "3.0.0 - 4.0.0"
+    },
     "nord.nvim": {
       "rev": "87394d4fc35c901bbe38326a78d31ab1ead826b6",
       "src": "https://github.com/gbprod/nord.nvim"
@@ -53,9 +58,17 @@
       "rev": "9fb62116b891184049c50ca6ffb0d3bc100a1a6e",
       "src": "https://github.com/AlexvZyl/nordic.nvim"
     },
+    "nui.nvim": {
+      "rev": "de740991c12411b663994b2860f1a4fd0937c130",
+      "src": "https://github.com/MunifTanjim/nui.nvim"
+    },
     "nvim-autopairs": {
       "rev": "7b9923abad60b903ece7c52940e1321d39eccc79",
       "src": "https://github.com/windwp/nvim-autopairs"
+    },
+    "nvim-lsp-file-operations": {
+      "rev": "b9c795d3973e8eec22706af14959bc60c579e771",
+      "src": "https://github.com/antosha417/nvim-lsp-file-operations"
     },
     "nvim-lspconfig": {
       "rev": "ed19590a3a9792901553c388d1aadafce012f80d",

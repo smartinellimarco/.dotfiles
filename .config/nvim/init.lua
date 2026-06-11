@@ -83,6 +83,15 @@ vim.api.nvim_create_autocmd('PackChanged', {
 })
 
 vim.pack.add({
+  -- Filetree
+  {
+    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
+    version = vim.version.range('3'),
+  },
+  'https://github.com/nvim-lua/plenary.nvim',
+  'https://github.com/MunifTanjim/nui.nvim',
+  gh('antosha417/nvim-lsp-file-operations'),
+
   -- Colorscheme
   gh('gbprod/nord.nvim'),
 
@@ -314,6 +323,16 @@ do
   vim.keymap.set('n', '<leader>o', oil.open)
 end
 
+require('neo-tree').setup({})
+require('lsp-file-operations').setup()
+vim.keymap.set('n', '<leader>e', function()
+  if vim.bo.filetype == 'neo-tree' then
+    vim.cmd('Neotree close')
+  else
+    vim.cmd('Neotree focus')
+  end
+end)
+
 -- Leap
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
@@ -333,7 +352,11 @@ do
   local actions = require('telescope.actions')
   telescope.setup({
     pickers = {
-      find_files = { hidden = true },
+      find_files = require('telescope.themes').get_dropdown({
+        hidden = true,
+        previewer = false,
+        -- layout_config = { width = 0.65 },
+      }),
       live_grep = { additional_args = { '--fixed-strings' } },
     },
     defaults = {
@@ -342,7 +365,7 @@ do
       layout_config = {
         width = 0.99,
         height = 0.99,
-        preview_width = 0.55,
+        horizontal = { preview_width = 0.55 },
       },
       preview = { treesitter = true },
       default_mappings = {
@@ -362,9 +385,10 @@ do
     },
   })
   telescope.load_extension('fzf')
-  vim.keymap.set('n', '<leader>e', builtin.find_files)
-  vim.keymap.set('n', '<leader>f', builtin.live_grep)
+  vim.keymap.set('n', '<leader>f', builtin.find_files)
+  vim.keymap.set('n', '<leader>/', builtin.live_grep)
   vim.keymap.set('n', '<leader>d', builtin.diagnostics)
+
   -- Replace default qflist-based LSP pickers
   vim.keymap.set('n', 'grr', builtin.lsp_references)
   vim.keymap.set('n', 'gri', builtin.lsp_implementations)
