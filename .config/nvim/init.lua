@@ -327,6 +327,12 @@ require('neo-tree').setup({
     follow_current_file = { enabled = true },
     filtered_items = { hide_dotfiles = false },
     hijack_netrw_behavior = 'open_default',
+    window = {
+      mappings = {
+        -- disable fuzzy finder
+        ['/'] = 'noop',
+      },
+    },
   },
 })
 require('lsp-file-operations').setup()
