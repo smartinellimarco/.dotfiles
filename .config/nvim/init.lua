@@ -426,6 +426,14 @@ do
 
   local select = require('nvim-treesitter-textobjects.select').select_textobject
   local move = require('nvim-treesitter-textobjects.move')
+  -- nvim-treesitter-textobjects crashes on buffers without a parser (e.g. neo-tree).
+  local function with_parser(fn)
+    return function(...)
+      if vim.treesitter.get_parser(0, nil, { error = false }) then
+        fn(...)
+      end
+    end
+  end
   local captures = {
     f = '@function',
     c = '@class',
@@ -436,18 +444,18 @@ do
     a = '@assignment',
   }
   for key, capture in pairs(captures) do
-    vim.keymap.set({ 'x', 'o' }, 'a' .. key, function()
+    vim.keymap.set({ 'x', 'o' }, 'a' .. key, with_parser(function()
       select(capture .. '.outer', 'textobjects')
-    end)
-    vim.keymap.set({ 'x', 'o' }, 'i' .. key, function()
+    end))
+    vim.keymap.set({ 'x', 'o' }, 'i' .. key, with_parser(function()
       select(capture .. '.inner', 'textobjects')
-    end)
-    vim.keymap.set({ 'n', 'x', 'o' }, ']' .. key, function()
+    end))
+    vim.keymap.set({ 'n', 'x', 'o' }, ']' .. key, with_parser(function()
       move.goto_next_start(capture .. '.outer', 'textobjects')
-    end)
-    vim.keymap.set({ 'n', 'x', 'o' }, '[' .. key, function()
+    end))
+    vim.keymap.set({ 'n', 'x', 'o' }, '[' .. key, with_parser(function()
       move.goto_previous_start(capture .. '.outer', 'textobjects')
-    end)
+    end))
   end
 end
 
