@@ -62,7 +62,7 @@ brew "rustup"
 brew "rust-analyzer"
 
 # Zig
-brew "zigup"
+brew "zig"
 brew "zls"
 
 # Python
