@@ -91,6 +91,5 @@ cask "mactex"
 brew "texlab"
 
 # Just
-# TODO: zsh completions not working
 brew "just"
 brew "just-lsp"
