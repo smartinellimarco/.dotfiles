@@ -13,6 +13,10 @@
       "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "gitsigns-yadm.nvim": {
+      "rev": "da5655074ab8b2e910104de280ce528f7f91f823",
+      "src": "https://github.com/purarue/gitsigns-yadm.nvim"
+    },
     "gitsigns.nvim": {
       "rev": "25050e4ed39e628282831d4cbecb1850454ce915",
       "src": "https://github.com/lewis6991/gitsigns.nvim"

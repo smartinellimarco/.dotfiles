@@ -1,14 +1,3 @@
--- If nvim is started from '$HOME' or '$HOME/.config', point GIT_DIR at the
--- yadm repo so lualine shows the dotfiles branch and gitsigns picks up changes
-if vim.env.GIT_DIR == nil then
-  local cwd = vim.fn.getcwd()
-  local homedir = vim.fn.expand('~')
-  local configdir = vim.fn.expand('~/.config')
-  if cwd == homedir or string.sub(cwd, 1, #configdir) == configdir then
-    vim.env.GIT_DIR = vim.fn.systemlist('yadm introspect repo')[1]
-  end
-end
-
 vim.loader.enable()
 
 vim.g.mapleader = ' '
@@ -99,6 +88,8 @@ vim.pack.add({
   gh('nvim-lualine/lualine.nvim'),
   gh('yavorski/lualine-macro-recording.nvim'),
   gh('lewis6991/gitsigns.nvim'),
+  gh('purarue/gitsigns-yadm.nvim'),
+
   gh('lukas-reineke/indent-blankline.nvim'),
 
   -- Editing
@@ -182,6 +173,9 @@ require('ibl').setup({
 do
   local gs = require('gitsigns')
   gs.setup({
+    _on_attach_pre = function(bufnr, callback)
+      require('gitsigns-yadm').yadm_signs(callback, { bufnr = bufnr })
+    end,
     current_line_blame = false,
     current_line_blame_opts = {
       delay = 500,
@@ -444,18 +438,34 @@ do
     a = '@assignment',
   }
   for key, capture in pairs(captures) do
-    vim.keymap.set({ 'x', 'o' }, 'a' .. key, with_parser(function()
-      select(capture .. '.outer', 'textobjects')
-    end))
-    vim.keymap.set({ 'x', 'o' }, 'i' .. key, with_parser(function()
-      select(capture .. '.inner', 'textobjects')
-    end))
-    vim.keymap.set({ 'n', 'x', 'o' }, ']' .. key, with_parser(function()
-      move.goto_next_start(capture .. '.outer', 'textobjects')
-    end))
-    vim.keymap.set({ 'n', 'x', 'o' }, '[' .. key, with_parser(function()
-      move.goto_previous_start(capture .. '.outer', 'textobjects')
-    end))
+    vim.keymap.set(
+      { 'x', 'o' },
+      'a' .. key,
+      with_parser(function()
+        select(capture .. '.outer', 'textobjects')
+      end)
+    )
+    vim.keymap.set(
+      { 'x', 'o' },
+      'i' .. key,
+      with_parser(function()
+        select(capture .. '.inner', 'textobjects')
+      end)
+    )
+    vim.keymap.set(
+      { 'n', 'x', 'o' },
+      ']' .. key,
+      with_parser(function()
+        move.goto_next_start(capture .. '.outer', 'textobjects')
+      end)
+    )
+    vim.keymap.set(
+      { 'n', 'x', 'o' },
+      '[' .. key,
+      with_parser(function()
+        move.goto_previous_start(capture .. '.outer', 'textobjects')
+      end)
+    )
   end
 end
 
