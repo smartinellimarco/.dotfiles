@@ -14,10 +14,7 @@ brew "bash-language-server"
 brew "yadm"
 
 # Editor
-brew "neovim"
-brew "tree-sitter-cli"
-brew "ripgrep"
-brew "fd"
+brew "helix", args: ["HEAD"]
 
 # Terminal emulator
 cask "ghostty"
@@ -44,6 +41,7 @@ brew "docker-language-server"
 # Terraform
 brew "terraform"
 brew "terraform-ls"
+brew "helm"
 
 # AWS
 brew "awscli"
@@ -81,7 +79,6 @@ brew "tombi"
 
 # Lua
 brew "lua-language-server"
-brew "stylua"
 
 # Markdown
 brew "rumdl"
