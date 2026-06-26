@@ -71,3 +71,17 @@ bindkey "^R" history-incremental-search-backward  # Reverse search in history
 bindkey "^P" up-line-or-history  # Navigate up in history
 bindkey "^N" down-line-or-history  # Navigate down in history
 bindkey "^I" expand-or-complete  # Tab completion
+
+function br {
+    local cmd cmd_file code
+    cmd_file=$(mktemp)
+    if broot --outcmd "$cmd_file" "$@"; then
+        cmd=$(<"$cmd_file")
+        command rm -f "$cmd_file"
+        eval "$cmd"
+    else
+        code=$?
+        command rm -f "$cmd_file"
+        return "$code"
+    fi
+}
