@@ -55,6 +55,12 @@ brew "k9s"
 brew "go"
 brew "gopls"
 brew "delve"
+brew "go-air"
+brew "gofumpt"
+brew "golangci-lint"
+
+# Git hooks
+brew "pre-commit"
 
 # Rust
 brew "rustup"
