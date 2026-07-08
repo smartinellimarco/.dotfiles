@@ -1,0 +1,16 @@
+[[verbs]]
+invocation = "edit"
+shortcut = "e"
+key = "enter"
+apply_to = "text_file"
+external = "$EDITOR {file:space-separated}"
+leave_broot = false
+
+[[verbs]]
+invocation = "terminal"
+key = "ctrl-t"
+execution = "$SHELL"
+set_working_dir = true
+leave_broot = false
+
+# TODO: keymaps for panel navigation
