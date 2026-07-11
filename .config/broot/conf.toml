@@ -1,9 +1,0 @@
-# TODO: issue for fixing the branch icon in br -g
-default_flags = "-h"
-icon_theme = "nerdfonts"
-
-[[imports]]
-file = "nord.toml"
-
-[[imports]]
-file = "verbs.toml"
