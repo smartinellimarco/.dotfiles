@@ -63,3 +63,9 @@ all — those require `colima delete` first):
 ```zsh
 colima stop
 ```
+
+## Compile Curriculum Vitae
+
+```bash
+pdflatex cv.tex
+```
