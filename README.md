@@ -8,6 +8,7 @@
   - [Bootstrap file](#bootstrap-file)
   - [Update packages](#update-packages)
   - [Colima](#colima)
+  - [Compile Curriculum Vitae](#compile-curriculum-vitae)
 <!--toc:end-->
 
 ## Getting started
