@@ -1,3 +1,4 @@
+
 # TODO: create issue for an option for setting the default terminal
 
 # Options
@@ -8,6 +9,7 @@ confirm-close-surface = false
 window-inherit-working-directory = false
 macos-option-as-alt = true
 right-click-action = copy-or-paste
+auto-update = off
 
 # Remove default keymaps
 keybind=clear
