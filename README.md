@@ -46,8 +46,13 @@ brew upgrade --greedy --yes && brew upgrade helix --fetch-HEAD && antidote updat
 Spawn the Colima VM on macOS:
 
 ```zsh
-colima start --cpus 4 --memory 8 --vm-type vz --mount-type virtiofs
---mount-inotify --vz-rosetta --mount $HOME:w
+colima start --cpus 4 \
+             --memory 8 \
+             --vm-type vz \
+             --mount-type virtiofs \
+             --mount-inotify \
+             --vz-rosetta \
+             --mount $HOME:w
 ```
 
 Stop the VM (e.g. to re-spawn with different `--cpus`, `--memory`, or a larger
