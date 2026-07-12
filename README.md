@@ -6,6 +6,7 @@
     - [Requirements](#requirements)
     - [Installation](#installation)
   - [Bootstrap file](#bootstrap-file)
+  - [Update packages](#update-packages)
   - [Colima](#colima)
 <!--toc:end-->
 
