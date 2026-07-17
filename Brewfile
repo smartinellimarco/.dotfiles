@@ -1,6 +1,7 @@
 # Taps
 tap "hashicorp/tap", trusted: true
 tap "terror/tap", trusted: true
+tap "redpanda-data/tap", trusted: true
 
 # Github
 brew "gh"
@@ -43,12 +44,19 @@ brew "terraform"
 brew "terraform-ls"
 brew "helm"
 
+# Pulumi
+brew "pulumi"
+
 # AWS
 brew "awscli"
 
 # Kubernetes
 brew "kubernetes-cli"
 brew "k9s"
+
+# Brokers
+brew "nats"
+brew "redpanda"
 
 # Go
 brew "go"
