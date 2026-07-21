@@ -24,6 +24,7 @@ cask "ghostty"
 brew "jq"
 brew "htmlq"
 brew "tree"
+brew "watch"
 
 # TODO: yaak/nexus?
 
