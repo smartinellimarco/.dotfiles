@@ -40,9 +40,9 @@ in `~/.zsh_bootstrap`, which is automatically sourced.
 ## Update packages
 
 ```zsh
+antidote update && \
 brew upgrade --greedy --yes && \
 brew upgrade helix --fetch-HEAD && \
-antidote update && \
 brew autoremove && \
 brew cleanup
 ```
