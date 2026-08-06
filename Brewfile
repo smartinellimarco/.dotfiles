@@ -23,7 +23,10 @@ cask "ghostty"
 
 # Shell utilities
 brew "jq"
-brew "htmlq"
+# brew "xq"
+# brew "htmlq"
+# brew "mq"
+# brew "yq"
 brew "tree"
 brew "watch"
 
