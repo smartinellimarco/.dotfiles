@@ -1,5 +1,4 @@
-# TODO: match inside comments
-# TODO: remove options equal to the defaults
+# TODO: 'mic' 'mac' don't work
 theme = "nord"
 
 [editor]
@@ -12,10 +11,9 @@ idle-timeout = 50
 completion-timeout = 5
 completion-replace = true
 completion-trigger-len = 1
-default-line-ending = "lf"
+default-line-ending = "native"
 trim-final-newlines = true
 trim-trailing-whitespace = true
-end-of-line-diagnostics = "hint"
 preview-completion-insert = false
 
 [editor.workspace-trust]
@@ -66,32 +64,5 @@ layout = ["diff", "spacer", "line-numbers", "spacer"]
 [editor.gutters.line-numbers]
 min-width = 1
 
-[keys.normal]
-tab = "move_parent_node_end"
-S-tab = "move_parent_node_start"
-
-w = "move_next_sub_word_start"
-b = "move_prev_sub_word_start"
-e = "move_next_sub_word_end"
-
-W = "move_next_long_word_start"
-B = "move_prev_long_word_start"
-E = "move_next_long_word_end"
-
-[keys.normal.g]
-q = ":format"
-
-[keys.insert]
-S-tab = "move_parent_node_start"
-
-[keys.select]
-tab = "extend_parent_node_end"
-S-tab = "extend_parent_node_start"
-
-w = "extend_next_sub_word_start"
-b = "extend_prev_sub_word_start"
-e = "extend_next_sub_word_end"
-
-W = "extend_next_long_word_start"
-B = "extend_prev_long_word_start"
-E = "extend_next_long_word_end"
+[editor.smart-tab]
+enable = false
