@@ -58,7 +58,9 @@ colima start --cpus 4 \
              --mount-type virtiofs \
              --mount-inotify \
              --vz-rosetta \
-             --mount $HOME:w
+             --mount $HOME:w \
+             --dns 10.250.0.2 \
+             --dns 1.1.1.1  # Internal resolver first, CloudFlare as fallback
 ```
 
 Stop the VM (e.g. to re-spawn with different `--cpus`, `--memory`, or a larger
@@ -71,6 +73,6 @@ colima stop
 
 ## Compile Curriculum Vitae
 
-```bash
+```zsh
 pdflatex cv.tex
 ```
