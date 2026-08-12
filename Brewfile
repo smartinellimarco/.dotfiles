@@ -6,7 +6,8 @@ tap "nats-io/nats-tools", trusted: true
 
 # Github
 brew "gh"
-# TODO: actions-languageserver
+brew "actions-languageserver"
+brew "zizmor"
 
 # zsh
 brew "antidote"
@@ -70,6 +71,7 @@ brew "delve"
 brew "go-air"
 brew "gofumpt"
 brew "golangci-lint"
+brew "golangci-lint-langserver"
 
 # Git hooks
 brew "pre-commit"
