@@ -23,11 +23,8 @@ brew "helix", args: ["HEAD"]
 cask "ghostty"
 
 # Shell utilities
+# TODO: xq htmlq mq yq
 brew "jq"
-# brew "xq"
-# brew "htmlq"
-# brew "mq"
-# brew "yq"
 brew "tree"
 brew "watch"
 
