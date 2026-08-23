@@ -5,6 +5,7 @@
 theme = nord
 maximize = true
 window-vsync = false
+cursor-style = bar
 confirm-close-surface = false
 window-inherit-working-directory = false
 macos-option-as-alt = true
