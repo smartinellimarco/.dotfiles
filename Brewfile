@@ -27,6 +27,7 @@ cask "ghostty"
 brew "jq"
 brew "tree"
 brew "watch"
+brew "btop"
 
 # TODO: yaak/nexus?
 
