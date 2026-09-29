@@ -20,7 +20,7 @@ brew "yadm"
 brew "helix", args: ["HEAD"]
 
 # Terminal emulator
-cask "ghostty"
+cask "ghostty@tip"
 
 # Shell utilities
 # TODO: xq htmlq mq yq
