@@ -44,7 +44,7 @@ antidote update && \
 brew upgrade --greedy --yes && \
 brew upgrade helix --fetch-HEAD && \
 brew autoremove && \
-brew cleanup
+brew cleanup --prune=all
 ```
 
 ## Colima
