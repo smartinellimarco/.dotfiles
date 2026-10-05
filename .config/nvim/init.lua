@@ -135,6 +135,7 @@ vim.pack.add({
   -- LSP
   gh('neovim/nvim-lspconfig'),
   gh('folke/lazydev.nvim'),
+  gh('b0o/SchemaStore.nvim'),
   gh('RRethy/vim-illuminate'),
 })
 
@@ -583,6 +584,15 @@ vim.lsp.config('golangci_lint_ls', {
       vim.deepcopy(golangci_cmd),
       { '--disable=govet' }
     ),
+  },
+})
+
+vim.lsp.config('jsonls', {
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
   },
 })
 
