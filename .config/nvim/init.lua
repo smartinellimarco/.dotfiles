@@ -2,6 +2,8 @@ vim.loader.enable()
 
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
+-- ftplugin maps (e.g. python's ]] and ]m) would shadow the treesitter moves
+vim.g.no_plugin_maps = true
 
 vim.o.winborder = 'rounded'
 vim.o.breakindent = true
@@ -225,11 +227,11 @@ do
   vim.keymap.set({ 'n', 'x', 'o' }, ']g', nav('next'))
   vim.keymap.set({ 'n', 'x', 'o' }, '[g', nav('prev'))
 
-  -- ig: text object — containing hunk, else next, else wrap. Selects iff
+  -- ih: text object — containing hunk, else next, else wrap. Selects iff
   -- the hunk has buffer content (added.count > 0); pure-delete hunks just
   -- get a cursor jump, because select_hunk would emit a wonky range for
   -- them (e.g. `0G` when added.start is 0 for a top-of-file delete).
-  vim.keymap.set({ 'o', 'x' }, 'ig', function()
+  vim.keymap.set({ 'o', 'x' }, 'ih', function()
     local hunks = gs.get_hunks(0) or {}
     if #hunks == 0 then
       return
@@ -382,16 +384,17 @@ do
       end
     end
   end
-  local captures = {
+  -- Select: af/if function, ac/ic class, aa/ia parameter, ao/io block,
+  -- au/iu call, a=/i= assignment. Keeps vim's ap, as, al, an free.
+  local selects = {
     f = '@function',
     c = '@class',
-    l = '@loop',
-    i = '@conditional',
-    p = '@parameter',
-    s = '@call',
-    a = '@assignment',
+    a = '@parameter',
+    o = '@block',
+    u = '@call',
+    ['='] = '@assignment',
   }
-  for key, capture in pairs(captures) do
+  for key, capture in pairs(selects) do
     vim.keymap.set(
       { 'x', 'o' },
       'a' .. key,
@@ -406,18 +409,31 @@ do
         select(capture .. '.inner', 'textobjects')
       end)
     )
+  end
+
+  -- Move: vim's own ]m (function) and ]] (class), plus ]o for control flow.
+  -- Keeps nvim's ]d, ]q, ]l, ]t, ]a, ]b, ]s, ]c free.
+  local moves = {
+    [']m'] = { move.goto_next_start, '@function.outer' },
+    ['[m'] = { move.goto_previous_start, '@function.outer' },
+    [']M'] = { move.goto_next_end, '@function.outer' },
+    ['[M'] = { move.goto_previous_end, '@function.outer' },
+    [']]'] = { move.goto_next_start, '@class.outer' },
+    ['[['] = { move.goto_previous_start, '@class.outer' },
+    [']['] = { move.goto_next_end, '@class.outer' },
+    ['[]'] = { move.goto_previous_end, '@class.outer' },
+    [']o'] = { move.goto_next_start, { '@conditional.outer', '@loop.outer' } },
+    ['[o'] = {
+      move.goto_previous_start,
+      { '@conditional.outer', '@loop.outer' },
+    },
+  }
+  for lhs, m in pairs(moves) do
     vim.keymap.set(
       { 'n', 'x', 'o' },
-      ']' .. key,
+      lhs,
       with_parser(function()
-        move.goto_next_start(capture .. '.outer', 'textobjects')
-      end)
-    )
-    vim.keymap.set(
-      { 'n', 'x', 'o' },
-      '[' .. key,
-      with_parser(function()
-        move.goto_previous_start(capture .. '.outer', 'textobjects')
+        m[1](m[2], 'textobjects')
       end)
     )
   end
