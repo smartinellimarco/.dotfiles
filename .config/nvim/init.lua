@@ -123,6 +123,10 @@ require('nord').setup({
     hl.DiagnosticVirtualTextWarn = { fg = c.aurora.yellow }
     hl.DiagnosticVirtualTextInfo = { fg = c.frost.ice }
     hl.DiagnosticVirtualTextHint = { fg = c.frost.artic_water }
+    -- Blink: editor background and the same border as the other floats.
+    hl.BlinkCmpMenu = { link = 'Normal' }
+    hl.BlinkCmpMenuBorder = { link = 'FloatBorder' }
+    hl.BlinkCmpDocBorder = { link = 'FloatBorder' }
   end,
 })
 vim.cmd.colorscheme('nord')
