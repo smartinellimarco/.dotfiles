@@ -17,7 +17,11 @@ brew "bash-language-server"
 brew "yadm"
 
 # Editor
-brew "helix", args: ["HEAD"]
+brew "neovim", args: ["HEAD"]
+brew "tree-sitter-cli"
+brew "ripgrep"
+brew "fd"
+brew "stylua"
 
 # Terminal emulator
 cask "ghostty@tip"
