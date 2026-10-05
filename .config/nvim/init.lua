@@ -19,6 +19,10 @@ vim.o.fillchars = 'eob: '
 vim.o.signcolumn = 'yes:1'
 vim.o.number = true
 vim.o.showtabline = 0
+vim.o.cmdheight = 0
+
+-- With no cmdline row, messages go to ui2's floating msg window, see :h ui2
+require('vim._core.ui2').enable({ msg = { targets = 'msg' } })
 
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
