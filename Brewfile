@@ -33,7 +33,7 @@ cask "ghostty@tip"
 brew "jq"
 brew "tree"
 brew "watch"
-brew "btop"
+brew "procs"
 
 # TODO: yaak/nexus?
 
