@@ -49,6 +49,29 @@ vim.api.nvim_create_autocmd('InsertLeave', {
   end,
 })
 
+-- Relative numbers only in the focused window outside insert and cmdline mode.
+vim.api.nvim_create_autocmd(
+  { 'BufEnter', 'FocusGained', 'InsertLeave', 'CmdlineLeave', 'WinEnter' },
+  {
+    callback = function()
+      if vim.o.number and vim.api.nvim_get_mode().mode ~= 'i' then
+        vim.o.relativenumber = true
+      end
+    end,
+  }
+)
+vim.api.nvim_create_autocmd(
+  { 'BufLeave', 'FocusLost', 'InsertEnter', 'CmdlineEnter', 'WinLeave' },
+  {
+    callback = function()
+      if vim.o.number then
+        vim.o.relativenumber = false
+        vim.cmd('redraw')
+      end
+    end,
+  }
+)
+
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     vim.cmd('clearjumps')
