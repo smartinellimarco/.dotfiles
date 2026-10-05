@@ -133,7 +133,7 @@ require('nvim-autopairs').setup({
 
 require('ts-comments').setup()
 
-require('guess-indent').setup()
+require('guess-indent').setup({})
 
 require('ibl').setup({
   indent = { char = '┊' },
