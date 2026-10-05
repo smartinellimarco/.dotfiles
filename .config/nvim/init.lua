@@ -5,6 +5,9 @@ vim.g.maplocalleader = ' '
 -- ftplugin maps (e.g. python's ]] and ]m) would shadow the treesitter moves
 vim.g.no_plugin_maps = true
 
+-- <C-c> leaves insert without firing InsertLeave, which the autocmds below rely on
+vim.keymap.set('i', '<C-c>', '<Esc>')
+
 vim.o.winborder = 'rounded'
 vim.o.breakindent = true
 vim.o.cursorline = true
