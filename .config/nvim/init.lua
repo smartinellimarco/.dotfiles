@@ -301,6 +301,7 @@ do
       height = 0.9,
       width = 0.9,
       row = 0.5,
+      backdrop = 100,
       preview = { layout = 'horizontal', horizontal = 'right:50%' },
     },
     keymap = {
