@@ -21,6 +21,7 @@ brew "neovim", args: ["HEAD"]
 brew "tree-sitter-cli"
 brew "ripgrep"
 brew "fd"
+brew "fzf"
 brew "stylua"
 
 # Terminal emulator

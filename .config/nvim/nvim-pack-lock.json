@@ -13,6 +13,10 @@
       "rev": "b4d01b0fdf3c9a549961c2f9ffe8dc09be166219",
       "src": "https://github.com/rafamadriz/friendly-snippets"
     },
+    "fzf-lua": {
+      "rev": "bba13a0d260ca5e049683344ba70791c9ad8ece6",
+      "src": "https://github.com/ibhagwan/fzf-lua"
+    },
     "gitsigns-yadm.nvim": {
       "rev": "55575b2af68c0c6c73b1c1f8fe7c54e1e7fe8480",
       "src": "https://github.com/purarue/gitsigns-yadm.nvim"
@@ -83,15 +87,6 @@
     "plenary.nvim": {
       "rev": "74b06c6c75e4eeb3108ec01852001636d85a932b",
       "src": "https://github.com/nvim-lua/plenary.nvim"
-    },
-    "telescope-fzf-native.nvim": {
-      "rev": "b25b749b9db64d375d782094e2b9dce53ad53a40",
-      "src": "https://github.com/nvim-telescope/telescope-fzf-native.nvim"
-    },
-    "telescope.nvim": {
-      "rev": "5255aa27c422de944791318024167ad5d40aad20",
-      "src": "https://github.com/nvim-telescope/telescope.nvim",
-      "version": ">=0.0.0"
     },
     "tree-sitter-manager.nvim": {
       "rev": "d93782393d7d4b48ddbdbcb0fdff6f8cb8d7043a",

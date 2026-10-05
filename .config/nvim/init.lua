@@ -57,19 +57,6 @@ local gh = function(repo)
   return 'https://github.com/' .. repo
 end
 
--- Build hooks fire on install/update via PackChanged. Register before add().
-vim.api.nvim_create_autocmd('PackChanged', {
-  callback = function(ev)
-    local name, kind = ev.data.spec.name, ev.data.kind
-    if
-      name == 'telescope-fzf-native.nvim'
-      and (kind == 'install' or kind == 'update')
-    then
-      vim.system({ 'make' }, { cwd = ev.data.path }):wait()
-    end
-  end,
-})
-
 vim.pack.add({
   -- Filetree
   {
@@ -98,12 +85,8 @@ vim.pack.add({
   gh('folke/ts-comments.nvim'),
   gh('NMAC427/guess-indent.nvim'),
 
-  -- Telescope
-  {
-    src = gh('nvim-telescope/telescope.nvim'),
-    version = vim.version.range('*'),
-  },
-  gh('nvim-telescope/telescope-fzf-native.nvim'),
+  -- Picker
+  gh('ibhagwan/fzf-lua'),
 
   -- Treesitter
   gh('romus204/tree-sitter-manager.nvim'),
@@ -270,7 +253,7 @@ require('lualine').setup({
         'filename',
         path = 1,
         fmt = function(name)
-          return vim.bo.filetype == 'TelescopePrompt' and 'telescope' or name
+          return vim.bo.filetype == 'fzf' and 'fzf' or name
         end,
       },
     },
@@ -337,58 +320,42 @@ vim.keymap.set('n', '<A-o>', 'van', { remap = true })
 vim.keymap.set('x', '<A-o>', 'an', { remap = true })
 vim.keymap.set('x', '<A-i>', 'in', { remap = true })
 
--- Telescope
+-- Fzf-lua, helix-like layout: centered float, preview on the right
 do
-  local telescope = require('telescope')
-  local builtin = require('telescope.builtin')
-  local actions = require('telescope.actions')
-  telescope.setup({
-    pickers = {
-      find_files = require('telescope.themes').get_dropdown({
-        hidden = true,
-        previewer = false,
-        -- layout_config = { width = 0.65 },
-      }),
-      live_grep = { additional_args = { '--fixed-strings' } },
+  local fzf = require('fzf-lua')
+  fzf.setup({
+    winopts = {
+      height = 0.9,
+      width = 0.9,
+      row = 0.5,
+      preview = { layout = 'horizontal', horizontal = 'right:50%' },
     },
-    defaults = {
-      prompt_prefix = '> ',
-      layout_strategy = 'horizontal',
-      layout_config = {
-        width = 0.99,
-        height = 0.99,
-        horizontal = { preview_width = 0.55 },
+    keymap = {
+      builtin = {
+        true,
+        ['<C-u>'] = 'preview-half-page-up',
+        ['<C-d>'] = 'preview-half-page-down',
       },
-      preview = { treesitter = true },
-      default_mappings = {
-        i = {
-          ['<Esc>'] = actions.close,
-          ['<C-c>'] = actions.close,
-          ['<C-n>'] = actions.move_selection_next,
-          ['<C-p>'] = actions.move_selection_previous,
-          ['<CR>'] = actions.select_default,
-          ['<C-x>'] = actions.select_horizontal,
-          ['<C-v>'] = actions.select_vertical,
-          ['<C-u>'] = actions.preview_scrolling_up,
-          ['<C-d>'] = actions.preview_scrolling_down,
-          ['<C-w>'] = { '<C-s-w>', type = 'command' },
-        },
+    },
+    actions = {
+      files = {
+        true,
+        ['ctrl-x'] = fzf.actions.file_split,
       },
     },
   })
-  telescope.load_extension('fzf')
-  vim.keymap.set('n', '<leader>f', builtin.find_files)
-  vim.keymap.set('n', '<leader>/', builtin.live_grep)
-  vim.keymap.set('n', '<leader>d', builtin.diagnostics)
+  vim.keymap.set('n', '<leader>f', fzf.files)
+  vim.keymap.set('n', '<leader>/', fzf.live_grep)
+  vim.keymap.set('n', '<leader>d', fzf.diagnostics_workspace)
 
   -- Replace default qflist-based LSP pickers
-  vim.keymap.set('n', 'grr', builtin.lsp_references)
-  vim.keymap.set('n', 'gri', builtin.lsp_implementations)
-  vim.keymap.set('n', 'grt', builtin.lsp_type_definitions)
-  vim.keymap.set('n', 'gO', builtin.lsp_document_symbols)
+  vim.keymap.set('n', 'grr', fzf.lsp_references)
+  vim.keymap.set('n', 'gri', fzf.lsp_implementations)
+  vim.keymap.set('n', 'grt', fzf.lsp_typedefs)
+  vim.keymap.set('n', 'gO', fzf.lsp_document_symbols)
   vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
-      vim.keymap.set('n', '<C-]>', builtin.lsp_definitions, { buffer = ev.buf })
+      vim.keymap.set('n', '<C-]>', fzf.lsp_definitions, { buffer = ev.buf })
     end,
   })
 end
