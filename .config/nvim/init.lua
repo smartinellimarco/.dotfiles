@@ -58,14 +58,8 @@ local gh = function(repo)
 end
 
 vim.pack.add({
-  -- Filetree
-  {
-    src = 'https://github.com/nvim-neo-tree/neo-tree.nvim',
-    version = vim.version.range('3'),
-  },
-  'https://github.com/nvim-lua/plenary.nvim',
-  'https://github.com/MunifTanjim/nui.nvim',
-  gh('antosha417/nvim-lsp-file-operations'),
+  -- File manager
+  gh('stevearc/oil.nvim'),
 
   -- Colorscheme
   gh('gbprod/nord.nvim'),
@@ -264,52 +258,27 @@ require('lualine').setup({
   },
 })
 
-require('neo-tree').setup({
-  close_if_last_window = true,
-  popup_border_style = 'rounded',
-  default_component_configs = {
-    icon = {
-      folder_closed = '+',
-      folder_open = '-',
-      folder_empty = '·',
-      folder_empty_open = '·',
-      default = '·',
-      use_filtered_colors = true,
+do
+  local oil = require('oil')
+  oil.setup({
+    view_options = { show_hidden = true },
+    columns = {},
+    keymaps = {
+      ['<CR>'] = 'actions.select',
+      ['-'] = 'actions.parent',
+      ['_'] = 'actions.open_cwd',
+      ['`'] = 'actions.cd',
+      ['<C-v>'] = { 'actions.select', opts = { vertical = true } },
+      ['<C-x>'] = { 'actions.select', opts = { horizontal = true } },
+      ['<C-c>'] = 'actions.close',
+      ['<leader>o'] = function() end,
     },
-    git_status = {
-      symbols = {
-        added = '+',
-        deleted = '-',
-        modified = '~',
-        renamed = '>',
-        untracked = '?',
-        ignored = '!',
-        unstaged = '*',
-        staged = 's',
-        conflict = 'x',
-      },
-    },
-  },
-  filesystem = {
-    use_libuv_file_watcher = true,
-    follow_current_file = { enabled = true },
-    filtered_items = { hide_dotfiles = false },
-    window = {
-      mappings = {
-        -- disable fuzzy finder
-        ['/'] = 'noop',
-      },
-    },
-  },
-})
-require('lsp-file-operations').setup()
-vim.keymap.set('n', '<leader>e', function()
-  if vim.bo.filetype == 'neo-tree' then
-    vim.cmd('Neotree close')
-  else
-    vim.cmd('Neotree focus')
-  end
-end)
+    ---@diagnostic disable-next-line: assign-type-mismatch
+    cleanup_delay_ms = false, -- oil's @field says integer? but false disables cleanup
+    use_default_keymaps = false,
+  })
+  vim.keymap.set('n', '<leader>o', oil.open)
+end
 
 -- Leap
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
@@ -373,7 +342,7 @@ do
 
   local select = require('nvim-treesitter-textobjects.select').select_textobject
   local move = require('nvim-treesitter-textobjects.move')
-  -- nvim-treesitter-textobjects crashes on buffers without a parser (e.g. neo-tree).
+  -- nvim-treesitter-textobjects crashes on buffers without a parser (e.g. oil).
   local function with_parser(fn)
     return function(...)
       if vim.treesitter.get_parser(0, nil, { error = false }) then
@@ -432,7 +401,7 @@ require('lazydev').setup({
 -- illuminate — highlights other occurrences of word under cursor
 require('illuminate').configure({
   filetypes_denylist = {
-    'neo-tree',
+    'oil',
   },
 })
 
@@ -604,7 +573,19 @@ local servers = {
   'tombi',
 }
 
+-- Advertise the file operations oil sends, some servers only register them then
 vim.lsp.config('*', {
-  capabilities = require('lsp-file-operations').default_capabilities(),
+  capabilities = {
+    workspace = {
+      fileOperations = {
+        willCreate = true,
+        didCreate = true,
+        willRename = true,
+        didRename = true,
+        willDelete = true,
+        didDelete = true,
+      },
+    },
+  },
 })
 vim.lsp.enable(servers)
