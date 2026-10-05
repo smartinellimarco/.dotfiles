@@ -12,6 +12,7 @@ brew "zizmor"
 # zsh
 brew "antidote"
 brew "bash-language-server"
+brew "shfmt"
 
 # Dotfiles
 brew "yadm"
@@ -52,6 +53,7 @@ brew "docker-language-server"
 brew "terraform"
 brew "terraform-ls"
 brew "helm"
+brew "helm-ls"
 
 # Pulumi
 brew "pulumi"
@@ -97,6 +99,7 @@ brew "vscode-langservers-extracted"
 
 # YAML
 brew "yaml-language-server"
+brew "yamlfmt"
 
 # TOML
 brew "tombi"
@@ -106,11 +109,11 @@ brew "lua-language-server"
 
 # Markdown
 brew "rumdl"
-brew "marksman"
 
 # LaTeX
 cask "mactex"
 brew "texlab"
+brew "tex-fmt"
 
 # Just
 brew "just"

@@ -490,6 +490,16 @@ do
     notify_on_error = false,
     formatters_by_ft = {
       lua = { 'stylua' },
+      go = { 'gofumpt' },
+      sh = { 'shfmt' },
+      bash = { 'shfmt' },
+      dockerfile = { 'dockerfmt' },
+      terraform = { 'terraform_fmt' },
+      ['terraform-vars'] = { 'terraform_fmt' },
+      just = { 'just' },
+      markdown = { 'rumdl' },
+      tex = { 'tex-fmt' },
+      yaml = { 'yamlfmt' },
     },
   })
   vim.keymap.set({ 'n', 'x' }, 'gq', function()
@@ -499,11 +509,56 @@ end
 
 -- lsp
 
-vim.lsp.config('gopls', {
-  settings = {
-    gopls = {
-      gofumpt = true,
-    },
+-- Filetypes nvim doesn't detect but helm_ls and docker_language_server expect
+local function in_chart(path)
+  return vim.fs.root(path, 'Chart.yaml') ~= nil
+end
+vim.filetype.add({
+  filename = {
+    ['compose.yaml'] = 'yaml.docker-compose',
+    ['compose.yml'] = 'yaml.docker-compose',
+    ['docker-compose.yaml'] = 'yaml.docker-compose',
+    ['docker-compose.yml'] = 'yaml.docker-compose',
+    ['docker-bake.hcl'] = 'hcl.docker-bake',
+  },
+  pattern = {
+    ['.*/templates/.*%.ya?ml'] = function(path)
+      return in_chart(path) and 'helm' or nil
+    end,
+    ['.*/templates/.*%.tpl'] = 'helm',
+    ['.*/%.github/workflows/.*%.ya?ml'] = 'yaml.ghactions',
+    ['.*/values.*%.ya?ml'] = function(path)
+      return in_chart(path) and 'yaml.helm-values' or nil
+    end,
+  },
+})
+
+-- One server per YAML flavor: compose, helm values and workflows have their own
+vim.lsp.config('yamlls', { filetypes = { 'yaml' } })
+
+-- Homebrew ships the binary as actions-languageserver
+vim.lsp.config('gh_actions_ls', {
+  cmd = { 'actions-languageserver', '--stdio' },
+  filetypes = { 'yaml.ghactions' },
+})
+
+vim.lsp.config('zizmor', { filetypes = { 'yaml', 'yaml.ghactions' } })
+
+-- ty owns hover, see https://docs.astral.sh/ruff/editors/setup/#neovim
+vim.lsp.config('ruff', {
+  on_init = function(client)
+    client.server_capabilities.hoverProvider = false
+  end,
+})
+
+-- gopls already runs the vet analyzers
+local golangci_cmd = vim.lsp.config.golangci_lint_ls.init_options.command --[[@as string[] ]]
+vim.lsp.config('golangci_lint_ls', {
+  init_options = {
+    command = vim.list_extend(
+      vim.deepcopy(golangci_cmd),
+      { '--disable=govet' }
+    ),
   },
 })
 
@@ -528,7 +583,9 @@ local servers = {
   'rust_analyzer',
   'bashls',
   'gopls',
+  'golangci_lint_ls',
   'terraformls',
+  'helm_ls',
   'rumdl',
   'docker_language_server',
   'texlab',
@@ -538,7 +595,12 @@ local servers = {
   'ty',
   'lua_ls',
   'jsonls',
+  'html',
+  'cssls',
+  'eslint',
   'yamlls',
+  'gh_actions_ls',
+  'zizmor',
   'tombi',
 }
 
