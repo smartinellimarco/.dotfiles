@@ -1,18 +1,12 @@
 # Taps
 tap "hashicorp/tap", trusted: true
 
-# Github
-brew "gh"
-brew "actions-languageserver"
-brew "zizmor"
-
-# zsh
+# Shell
+brew "yadm"
 brew "antidote"
+cask "ghostty@tip"
 brew "bash-language-server"
 brew "shfmt"
-
-# Dotfiles
-brew "yadm"
 
 # Editor
 brew "neovim"
@@ -20,26 +14,26 @@ brew "tree-sitter-cli"
 brew "ripgrep"
 brew "fd"
 brew "fzf"
-brew "stylua"
 
-# Terminal emulator
-cask "ghostty@tip"
-
-# Shell utilities
+# CLI
+brew "jq"
 brew "yq"
 brew "htmlq"
 brew "mq"
-brew "jq"
 brew "tree"
 brew "watch"
 brew "procs"
 
 # TODO: yaak/nexus?
 
-# Container
-brew "container"
+# Git
+brew "gh"
+brew "pre-commit"
+brew "actions-languageserver"
+brew "zizmor"
 
-# Docker
+# Containers
+brew "container"
 brew "docker"
 brew "docker-compose"
 brew "docker-buildx"
@@ -48,23 +42,15 @@ brew "colima"
 brew "dockerfmt"
 brew "docker-language-server"
 
-# Terraform
+# Cloud
+brew "awscli"
 brew "terraform"
 brew "terraform-ls"
-brew "helm"
-brew "helm-ls"
-
-# Pulumi
 brew "pulumi"
-
-# AWS
-brew "awscli"
-
-# Kubernetes
 brew "kubernetes-cli"
 brew "k9s"
-
-# Brokers
+brew "helm"
+brew "helm-ls"
 brew "nats"
 
 # Go
@@ -75,9 +61,6 @@ brew "go-air"
 brew "gofumpt"
 brew "golangci-lint"
 brew "golangci-lint-langserver"
-
-# Git hooks
-brew "pre-commit"
 
 # Rust
 brew "rustup"
@@ -92,6 +75,10 @@ brew "uv"
 brew "ruff"
 brew "ty"
 
+# Lua
+brew "lua-language-server"
+brew "stylua"
+
 # JSON
 brew "vscode-langservers-extracted"
 
@@ -101,9 +88,6 @@ brew "yamlfmt"
 
 # TOML
 brew "tombi"
-
-# Lua
-brew "lua-language-server"
 
 # Markdown
 brew "rumdl"
