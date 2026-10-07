@@ -18,7 +18,7 @@ brew "shfmt"
 brew "yadm"
 
 # Editor
-brew "neovim", args: ["HEAD"]
+brew "neovim"
 brew "tree-sitter-cli"
 brew "ripgrep"
 brew "fd"
