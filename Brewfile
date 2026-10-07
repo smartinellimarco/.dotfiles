@@ -26,7 +26,9 @@ brew "stylua"
 cask "ghostty@tip"
 
 # Shell utilities
-# TODO: xq htmlq mq yq
+brew "yq"
+brew "htmlq"
+brew "mq"
 brew "jq"
 brew "tree"
 brew "watch"
