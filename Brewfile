@@ -1,7 +1,5 @@
 # Taps
 tap "hashicorp/tap", trusted: true
-tap "terror/tap", trusted: true
-tap "nats-io/nats-tools", trusted: true
 
 # Github
 brew "gh"
