@@ -401,6 +401,8 @@ do
   vim.keymap.set('n', 'gri', fzf.lsp_implementations)
   vim.keymap.set('n', 'grt', fzf.lsp_typedefs)
   vim.keymap.set('n', 'gO', fzf.lsp_document_symbols)
+  vim.keymap.set('n', 'grD', fzf.lsp_declarations)
+  vim.keymap.set('n', 'gW', fzf.lsp_live_workspace_symbols)
   vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
       vim.keymap.set('n', '<C-]>', fzf.lsp_definitions, { buffer = ev.buf })
