@@ -317,8 +317,21 @@ do
     ---@diagnostic disable-next-line: assign-type-mismatch
     cleanup_delay_ms = false, -- oil's @field says integer? but false disables cleanup
     use_default_keymaps = false,
+    watch_for_changes = true,
   })
   vim.keymap.set('n', '<leader>o', oil.open)
+
+  -- Oil drops fs events while a buffer is modified, so re-render when it goes back to clean.
+  vim.api.nvim_create_autocmd('BufModifiedSet', {
+    pattern = 'oil://*',
+    callback = function(args)
+      local was_modified = vim.b[args.buf].oil_was_modified
+      vim.b[args.buf].oil_was_modified = vim.bo[args.buf].modified
+      if was_modified and not vim.bo[args.buf].modified and not require('oil.mutator').is_mutating() then
+        require('oil.view').render_buffer_async(args.buf)
+      end
+    end,
+  })
 end
 
 -- Leap
