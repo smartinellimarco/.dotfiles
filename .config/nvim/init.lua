@@ -334,6 +334,30 @@ do
   })
 end
 
+-- Watch the dirs of loaded files and checktime so autoread picks up external edits.
+do
+  local watchers = {}
+  local timer = assert(vim.uv.new_timer())
+  vim.api.nvim_create_autocmd({ 'BufReadPost', 'BufNewFile', 'BufWritePost' }, {
+    callback = function(args)
+      if vim.bo[args.buf].buftype ~= '' then
+        return
+      end
+      local dir = vim.fs.dirname(vim.api.nvim_buf_get_name(args.buf))
+      if watchers[dir] or not vim.uv.fs_stat(dir) then
+        return
+      end
+      watchers[dir] = assert(vim.uv.new_fs_event())
+      watchers[dir]:start(dir, {}, function()
+        -- Debounce bursts like git checkout into one checktime.
+        timer:start(100, 0, vim.schedule_wrap(function()
+          vim.cmd.checktime()
+        end))
+      end)
+    end,
+  })
+end
+
 -- Leap
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
