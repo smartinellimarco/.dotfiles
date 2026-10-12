@@ -1,0 +1,32 @@
+background = #101315
+foreground = #cacccc
+cursor-color = #a5aeb4
+selection-background = #798186
+selection-foreground = #101315
+
+palette = 0=#101315
+palette = 1=#565d60
+palette = 2=#9fa5a9
+palette = 3=#d9dbdc
+palette = 4=#798186
+palette = 5=#aeaeae
+palette = 6=#707070
+palette = 7=#cacccc
+palette = 8=#7f7f7f
+palette = 9=#de6145
+palette = 10=#343d41
+palette = 11=#c9c2b4
+palette = 12=#5d6367
+palette = 13=#9a9a9a
+palette = 14=#707070
+palette = 15=#a5aeb4
+
+cursor-text = #101315
+unfocused-split-fill = #101315
+split-divider-color = #343d41
+search-foreground = #101315
+search-background = #c9c2b4
+search-selected-foreground = #101315
+search-selected-background = #D87C4A
+window-titlebar-background = #101315
+window-titlebar-foreground = #cacccc

@@ -1,7 +1,7 @@
 # TODO: create issue for an option for setting the default terminal
 
 # Options
-theme = nord
+theme = solitude
 maximize = true
 window-vsync = false
 cursor-style = bar
