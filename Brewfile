@@ -9,7 +9,7 @@ brew "bash-language-server"
 brew "shfmt"
 
 # Editor
-brew "neovim"
+brew "helix", args: ["HEAD"]
 brew "tree-sitter-cli"
 brew "ripgrep"
 brew "fd"
