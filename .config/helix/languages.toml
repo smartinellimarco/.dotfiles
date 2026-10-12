@@ -1,0 +1,5 @@
+[language-server.ty.config]
+diagnosticMode = "workspace"
+
+[language-server.rust-analyzer.config]
+check.command = "clippy"
