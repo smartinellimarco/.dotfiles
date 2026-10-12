@@ -41,7 +41,7 @@ in `~/.zsh_bootstrap`, which is automatically sourced.
 
 ```zsh
 antidote update && \
-brew upgrade --greedy --yes && \
+brew upgrade --greedy --fetch-HEAD --yes && \
 brew autoremove && \
 brew cleanup --prune=all
 ```
