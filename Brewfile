@@ -10,10 +10,6 @@ brew "shfmt"
 
 # Editor
 brew "helix", args: ["HEAD"]
-brew "tree-sitter-cli"
-brew "ripgrep"
-brew "fd"
-brew "fzf"
 
 # CLI
 brew "jq"
