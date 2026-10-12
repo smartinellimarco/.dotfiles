@@ -366,6 +366,9 @@ end
 -- Leap
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
+require('leap').opts.vim_opts['wo.conceallevel'] = function(win)
+  return vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'oil' and vim.wo[win].conceallevel or 0
+end
 
 -- Incremental selection, see :h treesitter-incremental-selection
 vim.keymap.set('n', '<A-o>', 'van', { remap = true })
