@@ -1,5 +1,5 @@
 # TODO: 'mic' 'mac' don't work
-theme = "solitude"
+theme = "nord"
 
 [editor]
 cursorline = true
