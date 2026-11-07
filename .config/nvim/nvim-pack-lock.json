@@ -53,10 +53,6 @@
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
       "src": "https://github.com/nvim-lualine/lualine.nvim"
     },
-    "nord.nvim": {
-      "rev": "87394d4fc35c901bbe38326a78d31ab1ead826b6",
-      "src": "https://github.com/gbprod/nord.nvim"
-    },
     "nvim-autopairs": {
       "rev": "430522f95fe4fb7c511ec64f8c1a90cc6a66c05c",
       "src": "https://github.com/windwp/nvim-autopairs"

@@ -102,9 +102,6 @@ vim.pack.add({
   -- File manager
   gh('stevearc/oil.nvim'),
 
-  -- Colorscheme
-  gh('gbprod/nord.nvim'),
-
   -- UI
   gh('nvim-lualine/lualine.nvim'),
   gh('yavorski/lualine-macro-recording.nvim'),
@@ -146,28 +143,32 @@ vim.pack.add({
 
 -- colorscheme
 
-require('nord').setup({
-  on_highlights = function(hl, c)
-    -- Leap: colored letters, no backgrounds.
-    hl.LeapMatch = { fg = c.frost.polar_water, bold = true, nocombine = true }
-    hl.LeapLabel = { fg = c.aurora.yellow, bold = true }
-    hl.LeapLabelPrimary = { fg = c.aurora.green, bold = true, nocombine = true }
-    hl.LeapLabelSecondary =
-      { fg = c.aurora.purple, bold = true, nocombine = true }
-    hl.LeapLabelSelected =
-      { fg = c.aurora.yellow, bold = true, nocombine = true }
-    -- Diagnostic virtual text: drop the colored strip background.
-    hl.DiagnosticVirtualTextError = { fg = c.aurora.red }
-    hl.DiagnosticVirtualTextWarn = { fg = c.aurora.yellow }
-    hl.DiagnosticVirtualTextInfo = { fg = c.frost.ice }
-    hl.DiagnosticVirtualTextHint = { fg = c.frost.artic_water }
-    -- Blink: editor background and the same border as the other floats.
-    hl.BlinkCmpMenu = { link = 'Normal' }
-    hl.BlinkCmpMenuBorder = { link = 'FloatBorder' }
-    hl.BlinkCmpDocBorder = { link = 'FloatBorder' }
-  end,
-})
-vim.cmd.colorscheme('nord')
+vim.cmd.colorscheme('eyesclosed')
+
+do
+  local set_hl = vim.api.nvim_set_hl
+  -- Leap: colored letters, no backgrounds.
+  set_hl(0, 'LeapMatch', { fg = '#B7C8CB', bold = true, nocombine = true })
+  set_hl(0, 'LeapLabel', { fg = '#ECD8AE', bold = true })
+  set_hl(
+    0,
+    'LeapLabelPrimary',
+    { fg = '#779BB0', bold = true, nocombine = true }
+  )
+  set_hl(
+    0,
+    'LeapLabelSecondary',
+    { fg = '#9A9DAE', bold = true, nocombine = true }
+  )
+  set_hl(
+    0,
+    'LeapLabelSelected',
+    { fg = '#ECD8AE', bold = true, nocombine = true }
+  )
+  -- Blink: same border as the other floats.
+  set_hl(0, 'BlinkCmpMenuBorder', { link = 'FloatBorder' })
+  set_hl(0, 'BlinkCmpDocBorder', { link = 'FloatBorder' })
+end
 
 -- plugin setup
 
@@ -280,7 +281,6 @@ end
 
 require('lualine').setup({
   options = {
-    theme = 'nord',
     globalstatus = true,
     icons_enabled = false,
     component_separators = '',
