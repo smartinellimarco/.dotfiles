@@ -332,7 +332,11 @@ do
     callback = function(args)
       local was_modified = vim.b[args.buf].oil_was_modified
       vim.b[args.buf].oil_was_modified = vim.bo[args.buf].modified
-      if was_modified and not vim.bo[args.buf].modified and not require('oil.mutator').is_mutating() then
+      if
+        was_modified
+        and not vim.bo[args.buf].modified
+        and not require('oil.mutator').is_mutating()
+      then
         require('oil.view').render_buffer_async(args.buf)
       end
     end,
@@ -355,9 +359,13 @@ do
       watchers[dir] = assert(vim.uv.new_fs_event())
       watchers[dir]:start(dir, {}, function()
         -- Debounce bursts like git checkout into one checktime.
-        timer:start(100, 0, vim.schedule_wrap(function()
-          vim.cmd.checktime()
-        end))
+        timer:start(
+          100,
+          0,
+          vim.schedule_wrap(function()
+            vim.cmd.checktime()
+          end)
+        )
       end)
     end,
   })
@@ -367,7 +375,9 @@ end
 vim.keymap.set({ 'n', 'x', 'o' }, 's', '<Plug>(leap)')
 vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
 require('leap').opts.vim_opts['wo.conceallevel'] = function(win)
-  return vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'oil' and vim.wo[win].conceallevel or 0
+  return vim.bo[vim.api.nvim_win_get_buf(win)].filetype == 'oil'
+      and vim.wo[win].conceallevel
+    or 0
 end
 
 -- Incremental selection, see :h treesitter-incremental-selection
