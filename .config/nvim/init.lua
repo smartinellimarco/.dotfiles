@@ -400,17 +400,32 @@ do
       },
     },
   })
-  vim.keymap.set('n', '<leader>f', fzf.files)
-  vim.keymap.set('n', '<leader>/', fzf.live_grep)
-  vim.keymap.set('n', '<leader>d', fzf.diagnostics_workspace)
+  local function workspace_root()
+    return vim.fs.root(vim.fn.getcwd(), { '.git', '.svn', '.jj', '.helix' })
+  end
+  vim.keymap.set('n', '<leader>f', function()
+    fzf.files({ cwd = workspace_root() })
+  end)
+  vim.keymap.set('n', '<leader>F', fzf.files)
+  vim.keymap.set('n', '<leader>/', function()
+    fzf.live_grep({ cwd = workspace_root() })
+  end)
+  vim.keymap.set('n', '<leader>?', fzf.keymaps)
+  vim.keymap.set('n', '<leader>b', fzf.buffers)
+  vim.keymap.set('n', '<leader>j', fzf.jumps)
+  vim.keymap.set('n', '<leader>g', fzf.git_status)
+  vim.keymap.set('n', "<leader>'", fzf.resume)
+  vim.keymap.set('n', '<leader>d', fzf.diagnostics_document)
+  vim.keymap.set('n', '<leader>D', fzf.diagnostics_workspace)
 
   -- Replace default qflist-based LSP pickers
   vim.keymap.set('n', 'grr', fzf.lsp_references)
   vim.keymap.set('n', 'gri', fzf.lsp_implementations)
   vim.keymap.set('n', 'grt', fzf.lsp_typedefs)
-  vim.keymap.set('n', 'gO', fzf.lsp_document_symbols)
   vim.keymap.set('n', 'grD', fzf.lsp_declarations)
-  vim.keymap.set('n', 'gW', fzf.lsp_live_workspace_symbols)
+  vim.keymap.set('n', '<leader>s', fzf.lsp_document_symbols)
+  vim.keymap.set('n', '<leader>S', fzf.lsp_live_workspace_symbols)
+  vim.keymap.del('n', 'gO')
   vim.api.nvim_create_autocmd('LspAttach', {
     callback = function(ev)
       vim.keymap.set('n', '<C-]>', fzf.lsp_definitions, { buffer = ev.buf })
