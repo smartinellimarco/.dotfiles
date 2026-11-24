@@ -11,13 +11,6 @@ brew "shfmt"
 # Editor
 brew "helix", args: ["HEAD"]
 
-# Neovim
-brew "neovim"
-brew "tree-sitter-cli"
-brew "ripgrep"
-brew "fd"
-brew "fzf"
-
 # CLI
 brew "jq"
 brew "yq"
